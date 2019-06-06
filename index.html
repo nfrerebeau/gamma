@@ -140,9 +140,9 @@
 <a class="sourceLine" id="cb3-18" data-line-number="18"></a>
 <a class="sourceLine" id="cb3-19" data-line-number="19">## Estimate the gamma dose rate</a>
 <a class="sourceLine" id="cb3-20" data-line-number="20">spectrum <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb3-21" data-line-number="21"><span class="st">  </span>gamma<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/gamma/topics/read">read</a></span>(<span class="dt">skip =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb3-22" data-line-number="22"><span class="st">  </span>gamma<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/gamma/topics/calibrate">calibrate</a></span>(<span class="dt">lines =</span> calib_lines) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb3-23" data-line-number="23"><span class="st">  </span>gamma<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/gamma/topics/predict">predict</a></span>(BDX1, ., <span class="dt">simplify =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb3-21" data-line-number="21"><span class="st">  </span>gamma<span class="op">::</span><span class="kw"><a href="http://gamma.archaeo.science/reference/read.html">read</a></span>(<span class="dt">skip =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-22" data-line-number="22"><span class="st">  </span>gamma<span class="op">::</span><span class="kw"><a href="http://gamma.archaeo.science/reference/calibrate.html">calibrate</a></span>(<span class="dt">lines =</span> calib_lines) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-23" data-line-number="23"><span class="st">  </span>gamma<span class="op">::</span><span class="kw"><a href="http://gamma.archaeo.science/reference/predict.html">predict</a></span>(BDX1, ., <span class="dt">simplify =</span> <span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb3-24" data-line-number="24"><span class="co">#&gt;           value    error</span></a>
 <a class="sourceLine" id="cb3-25" data-line-number="25"><span class="co">#&gt; test_CNF 3971.7 129.7577</span></a></code></pre></div>
 </div>
