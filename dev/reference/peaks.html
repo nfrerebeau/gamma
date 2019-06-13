@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.0.9004</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9001</span>
       </span>
     </div>
 
@@ -143,18 +143,15 @@
 
 <span class='co'># S4 method for GammaSpectrum,numeric</span>
 <span class='fu'>fitPeaks</span>(<span class='no'>object</span>, <span class='no'>peaks</span>, <span class='kw'>bounds</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='no'>...</span>)
-
-<span class='co'># S4 method for PeakPosition,missing</span>
-<span class='fu'>fitPeaks</span>(<span class='no'>object</span>, <span class='kw'>bounds</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
+  <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>object</th>
-      <td><p>An object of class <a href='GammaSpectrum.html'>GammaSpectrum</a> or
-<a href='PeakPosition.html'>PeakPosition</a>.</p></td>
+      <td><p>A <a href='GammaSpectrum-class.html'>GammaSpectrum</a> or <a href='PeakPosition-class.html'>PeakPosition</a>
+object.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -192,8 +189,8 @@ unconstrained.</p></td>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>findPeaks</code> returns an object of class <a href='PeakPosition.html'>PeakPosition</a>.</p>
-<p><code>fitPeaks</code> returns an object of class <a href='PeakModel.html'>PeakModel</a>.</p>
+    <p><code>findPeaks</code> returns an object of class <a href='PeakPosition-class.html'>PeakPosition</a>.</p>
+<p><code>fitPeaks</code> returns an object of class <a href='PeakModel-class.html'>PeakModel</a>.</p>
     
     <h2 class="hasAnchor" id="peak-detection"><a class="anchor" href="#peak-detection"></a>Peak detection</h2>
 
@@ -208,7 +205,9 @@ unconstrained.</p></td>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='processBaseline.html'>estimateBaseline</a></p></div>
+    <div class='dont-index'><p>Other signal processing: <code><a href='integrateSignal.html'>integrateSignal</a></code>,
+  <code><a href='processBaseline.html'>processBaseline</a></code>, <code><a href='smooth.html'>smooth</a></code>,
+  <code><a href='stabilize.html'>stabilize</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -217,27 +216,17 @@ unconstrained.</p></td>
 <span class='no'>spectrum</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_file</span>, <span class='kw'>skip</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
 <span class='co'># Find peaks</span>
-(<span class='no'>peaks</span> <span class='kw'>&lt;-</span> <span class='fu'>findPeaks</span>(<span class='no'>spectrum</span>))</div><div class='output co'>#&gt; 5 peaks were detected:
-#&gt;         chanel    energy counts       rate
-#&gt; peak #1     86  248.1211   2376 0.70180828
-#&gt; peak #2    210  621.9622    840 0.24811404
-#&gt; peak #3    316  943.0964    297 0.08772603
-#&gt; peak #4    496 1491.7134    910 0.26879021
-#&gt; peak #5    876 2663.5239    110 0.03249112</div><div class='input'><span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>peaks</span>)</div><div class='img'><img src='peaks-1.png' alt='' width='700' height='433' /></div><div class='input'>
+(<span class='no'>peaks</span> <span class='kw'>&lt;-</span> <span class='fu'>findPeaks</span>(<span class='no'>spectrum</span>))</div><div class='output co'>#&gt; 2 peaks were detected:
+#&gt;   chanel    energy
+#&gt; 1    316  943.0964
+#&gt; 2    496 1491.7134</div><div class='input'><span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>spectrum</span>, <span class='no'>peaks</span>)</div><div class='img'><img src='peaks-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Fit peaks</span>
-<span class='co'>## Using previously detected peaks</span>
-(<span class='no'>fit1</span> <span class='kw'>&lt;-</span> <span class='fu'>fitPeaks</span>(<span class='no'>peaks</span>))</div><div class='output co'>#&gt; 5 peaks were estimated:
+<span class='co'>## Specify starting positions</span>
+(<span class='no'>fit</span> <span class='kw'>&lt;-</span> <span class='fu'>fitPeaks</span>(<span class='no'>spectrum</span>, <span class='kw'>peaks</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>86</span>, <span class='fl'>496</span>, <span class='fl'>876</span>)))</div><div class='output co'>#&gt; 3 peaks were estimated:
 #&gt;              mean        sd     height
-#&gt; peak #1  85.80644  2.685600 2447.41272
-#&gt; peak #2 208.04992  7.068457  816.19416
-#&gt; peak #3 320.70330 15.149748  253.64254
-#&gt; peak #4 494.86226  9.744063  877.72082
-#&gt; peak #5 877.18589 14.328315   98.54375</div><div class='input'><span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>fit1</span>)</div><div class='img'><img src='peaks-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'>## Specifying starting positions</span>
-(<span class='no'>fit2</span> <span class='kw'>&lt;-</span> <span class='fu'>fitPeaks</span>(<span class='no'>spectrum</span>, <span class='kw'>peaks</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>86</span>, <span class='fl'>496</span>, <span class='fl'>876</span>)))</div><div class='output co'>#&gt; 3 peaks were estimated:
-#&gt;              mean        sd     height
-#&gt; peak #1  85.80644  2.685600 2447.41272
-#&gt; peak #2 494.86226  9.744063  877.72082
-#&gt; peak #3 877.18589 14.328315   98.54375</div><div class='input'><span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>fit2</span>)</div><div class='img'><img src='peaks-3.png' alt='' width='700' height='433' /></div></pre>
+#&gt; peak #1  85.80661  2.685029 2447.49073
+#&gt; peak #2 494.86407  9.735420  877.48702
+#&gt; peak #3 877.21062 14.232939   98.20443</div><div class='input'><span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>fit</span>)</div><div class='img'><img src='peaks-2.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -262,7 +251,7 @@ unconstrained.</p></td>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href='https://www.u-bordeaux-montaigne.fr'><img src="http://gamma.archaeo.science/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="http://gamma.archaeo.science/logo_lascarbx.jpg" height="64" /></a>.</p>
+  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href='https://www.u-bordeaux-montaigne.fr'><img src="http://gamma.archaeo.science/reference/figures/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="http://gamma.archaeo.science/reference/figures/logo_lascarbx.jpg" height="64" /></a>.</p>
 </div>
 
 <div class="pkgdown">

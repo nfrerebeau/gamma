@@ -32,7 +32,7 @@
 
 <meta property="og:title" content="Smooth — smooth" />
 
-<meta property="og:description" content="Smooth" />
+<meta property="og:description" content="Smoothes a spectrum." />
 
 <meta property="og:image" content="http://gamma.archaeo.science/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.0.9004</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9001</span>
       </span>
     </div>
 
@@ -129,7 +129,7 @@
 
     <div class="ref-description">
     
-    <p>Smooth</p>
+    <p>Smoothes a spectrum.</p>
     
     </div>
 
@@ -137,19 +137,19 @@
 
 <span class='co'># S4 method for GammaSpectra</span>
 <span class='fu'>smooth</span>(<span class='no'>object</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"unweighted"</span>,
-  <span class='st'>"weighted"</span>), <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='no'>...</span>)
+  <span class='st'>"weighted"</span>, <span class='st'>"savitzky"</span>), <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fl'>2</span>)
 
 <span class='co'># S4 method for GammaSpectrum</span>
 <span class='fu'>smooth</span>(<span class='no'>object</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"unweighted"</span>,
-  <span class='st'>"weighted"</span>), <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='no'>...</span>)</pre>
+  <span class='st'>"weighted"</span>, <span class='st'>"savitzky"</span>), <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fl'>2</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>object</th>
-      <td><p>A spectrum to be smoothed (a <a href='GammaSpectrum.html'>GammaSpectrum</a> or
-<a href='GammaSpectra.html'>GammaSpectra</a> object).</p></td>
+      <td><p>A <a href='GammaSpectrum-class.html'>GammaSpectrum</a> or <a href='GammaSpectra-class.html'>GammaSpectra</a>
+object.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -158,35 +158,91 @@
     <tr>
       <th>method</th>
       <td><p>A <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character</a></code> string specifying the smoothing
-method to be used. It must be one of "<code>unweighted</code>" (default) or
-"<code>weighted</code>". Any unambiguous substring can be given.</p></td>
+method to be used. It must be one of "<code>unweighted</code>" (default),
+"<code>weighted</code>" or "<code>savitzky</code>" (see details).
+Any unambiguous substring can be given.</p></td>
     </tr>
     <tr>
       <th>m</th>
-      <td><p>An odd <code><a href='https://www.rdocumentation.org/packages/base/topics/integer'>integer</a></code> value giving the number of adjacent
-points to mean.</p></td>
+      <td><p>An odd <code><a href='https://www.rdocumentation.org/packages/base/topics/integer'>integer</a></code> scalar giving the number of adjacent
+points to be used.</p></td>
+    </tr>
+    <tr>
+      <th>p</th>
+      <td><p>An <code><a href='https://www.rdocumentation.org/packages/base/topics/integer'>integer</a></code> scalar giving the polynomial degree.
+Only used if <code>method</code> is <code>savitzky</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <a href='GammaSpectrum.html'>GammaSpectrum</a> or <a href='GammaSpectra.html'>GammaSpectra</a> object.</p>
+    <p>A <a href='GammaSpectrum-class.html'>GammaSpectrum</a> or <a href='GammaSpectra-class.html'>GammaSpectra</a> object.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The following smoothing methods are available:</p><dl class='dl-horizontal'>
   <dt>unweighted</dt><dd><p>Unweighted sliding-average or rectangular smooth.
-  It replaces each point in the signal with the average of <code>m</code> adjacent
+  It replaces each point in the signal with the average of \(m\) adjacent
   points.</p></dd>
   <dt>weighted</dt><dd><p>Weighted sliding-average or triangular smooth.
-  It replaces each point in the signal with the weighted mean of <code>m</code>
+  It replaces each point in the signal with the weighted mean of \(m\)
   adjacent points.</p></dd>
- </dl><p>There will be \((m - 1)/2\) points both at the beginning and at the end of
- the spectrum for which a complete <code>m</code>-width smooth cannot be
+  <dt>savitzky</dt><dd><p>Savitzky-Golay filter. This method is based on the
+  least-squares fitting of polynomials to segments of \(m\) adjacent
+  points.</p></dd>
+ </dl><p>There will be \((m - 1) / 2\) points both at the beginning and at the end
+ of the spectrum for which a complete \(m\)-width smooth cannot be
  calculated. To prevent data loss, progressively smaller smooths are used at
- the ends of the spectra.</p>
+ the ends of the spectrum if <code>method</code> is <code>unweighted</code> or
+ <code>weighted</code>. If the Savitzky-Golay filter is used, the original
+ \((m - 1) / 2\) points at the ends of the spectrum are preserved.</p>
+    
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Gorry, P. A. (1990). General Least-Squares Smoothing and Differentiation by
+ the Convolution (Savitzky-Golay) Method. <em>Analytical Chemistry</em>, 62(6),
+ p. 570-573.
+ DOI: <a href='https://doi.org/10.1021/ac00205a007'>10.1021/ac00205a007</a>.</p>
+<p>Savitzky, A. and Golay, M. J. E. (1964). Smoothing and Differentiation of
+ Data by Simplified Least Squares Procedures. <em>Analytical Chemistry</em>,
+ 36(8), p. 1627-1639.
+ DOI: <a href='https://doi.org/10.1021/ac60214a047'>10.1021/ac60214a047</a>.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Other signal processing: <code><a href='integrateSignal.html'>integrateSignal</a></code>,
+  <code><a href='peaks.html'>peaks</a></code>, <code><a href='processBaseline.html'>processBaseline</a></code>,
+  <code><a href='stabilize.html'>stabilize</a></code></p></div>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>magrittr</span>)</div><div class='output co'>#&gt; <span class='message'></span>
+#&gt; <span class='message'>Attaching package: ‘magrittr’</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:testthat’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    equals, is_less_than, not</span></div><div class='input'>
+<span class='co'># Import CNF files</span>
+<span class='no'>spc_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"extdata/test_CNF.cnf"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
+<span class='no'>spectrum</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_file</span>, <span class='kw'>skip</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
+<span class='co'># Plot spectrum</span>
+<span class='no'>spectrum</span> <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='processBaseline.html'>removeBaseline</a></span>() <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='plot.html'>plot</a></span>()</div><div class='img'><img src='smooth-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='co'># Rectangular smooth</span>
+<span class='no'>spectrum</span> <span class='kw'>%&gt;%</span>
+  <span class='fu'>smooth</span>(<span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"unweighted"</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='processBaseline.html'>removeBaseline</a></span>() <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='plot.html'>plot</a></span>()</div><div class='img'><img src='smooth-2.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='co'># Triangular smooth</span>
+<span class='no'>spectrum</span> <span class='kw'>%&gt;%</span>
+  <span class='fu'>smooth</span>(<span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"weighted"</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>5</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='processBaseline.html'>removeBaseline</a></span>() <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='plot.html'>plot</a></span>()</div><div class='img'><img src='smooth-3.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='co'># Savitzky–Golay</span>
+<span class='no'>spectrum</span> <span class='kw'>%&gt;%</span>
+  <span class='fu'>smooth</span>(<span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"savitzky"</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fl'>2</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='processBaseline.html'>removeBaseline</a></span>() <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='plot.html'>plot</a></span>()</div><div class='img'><img src='smooth-4.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -196,7 +252,13 @@ points to mean.</p></td>
       <li><a href="#value">Value</a></li>
 
       <li><a href="#details">Details</a></li>
-          </ul>
+
+      <li><a href="#references">References</a></li>
+
+      <li><a href="#see-also">See also</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
     <h2>Author</h2>
     <p>N. Frerebeau</p>
@@ -205,7 +267,7 @@ points to mean.</p></td>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href='https://www.u-bordeaux-montaigne.fr'><img src="http://gamma.archaeo.science/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="http://gamma.archaeo.science/logo_lascarbx.jpg" height="64" /></a>.</p>
+  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href='https://www.u-bordeaux-montaigne.fr'><img src="http://gamma.archaeo.science/reference/figures/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="http://gamma.archaeo.science/reference/figures/logo_lascarbx.jpg" height="64" /></a>.</p>
 </div>
 
 <div class="pkgdown">

@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.0.9004</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9001</span>
       </span>
     </div>
 
@@ -158,19 +158,28 @@ file extensions. It must be one or more of "<code>cnf</code>", "<code>tka</code>
     </tr>
     <tr>
       <th>skip</th>
-      <td><p>A list of <code><a href='https://www.rdocumentation.org/packages/base/topics/numeric'>numeric</a></code> vectors or of
-<code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical</a></code> scalars (re-cycled to the number of files to be
-imported).
-If <code>numeric</code>, the corresponding chanels of the data file will be
-skipped. If <code>TRUE</code>, it will try to automatically process the
-spectrum: all channels before the first maximum will be skipped. If
-<code>NULL</code> (the default), all data are imported.</p></td>
+      <td><p>An <code><a href='https://www.rdocumentation.org/packages/base/topics/integer'>integer</a></code> vector or a <code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical</a></code> scalar
+(see details). If <code>NULL</code> (the default) or <code>FALSE</code>, all data are
+imported.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An object of class <a href='GammaSpectra.html'>GammaSpectra</a>.</p>
+    <p>A <a href='GammaSpectra-class.html'>GammaSpectra</a> object if more than one spectrum are imported
+ at once, else a <a href='GammaSpectrum-class.html'>GammaSpectrum</a> object.</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>If <code>skip</code> is not <code>NULL</code>, several channels are skipped during
+ import to retain only a part of the spectrum.
+ If <code>skip</code> is an <code>integer</code> vector, the corresponding chanels of the
+ data file will be skipped.
+ If <code>skip</code> is <code>TRUE</code>, an attempt is made to define the number of
+ channels to skip at the beginning of the spectrum. This skips all channels
+ before the highest count maximum. This is intended to deal with the artefact
+ produced by the rapid growth of random background noise towards low
+ energies.</p>
     
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
@@ -190,16 +199,16 @@ spectrum: all channels before the first maximum will be skipped. If
 #&gt;   Date: 2019-02-07 11:48:18
 #&gt;   Number of chanels: 1024
 #&gt;   Energy range (keV): -7 - 3124.91
-#&gt;   Dose rate: not known</div><div class='input'>
+#&gt;   Dose rate: unknown</div><div class='input'>
 <span class='co'># Import a TKA file</span>
 <span class='no'>tka_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"extdata/test_TKA.tka"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
 (<span class='no'>tka_spectrum</span> <span class='kw'>&lt;-</span> <span class='fu'>read</span>(<span class='no'>tka_file</span>))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt;   Reference: test_TKA
 #&gt;   Instrument: unknown
-#&gt;   Date: 2019-06-06 10:09:14
+#&gt;   Date: 2019-06-13 15:42:02
 #&gt;   Number of chanels: 1024
 #&gt;   Energy range (keV): not calibrated
-#&gt;   Dose rate: not known</div><div class='input'>
+#&gt;   Dose rate: unknown</div><div class='input'>
 <span class='co'># Import all files in a given directory</span>
 <span class='co'># Skip the 35 first chanels</span>
 <span class='no'>spc_dir</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"extdata/"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
@@ -211,6 +220,8 @@ spectrum: all channels before the first maximum will be skipped. If
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
 
       <li><a href="#note">Note</a></li>
 
@@ -226,7 +237,7 @@ spectrum: all channels before the first maximum will be skipped. If
 
       <footer>
       <div class="copyright">
-  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href='https://www.u-bordeaux-montaigne.fr'><img src="http://gamma.archaeo.science/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="http://gamma.archaeo.science/logo_lascarbx.jpg" height="64" /></a>.</p>
+  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href='https://www.u-bordeaux-montaigne.fr'><img src="http://gamma.archaeo.science/reference/figures/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="http://gamma.archaeo.science/reference/figures/logo_lascarbx.jpg" height="64" /></a>.</p>
 </div>
 
 <div class="pkgdown">

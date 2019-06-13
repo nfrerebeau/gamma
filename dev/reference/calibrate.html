@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.0.9004</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9001</span>
       </span>
     </div>
 
@@ -123,7 +123,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Spectrum calibration</h1>
-    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/calibrate.R'><code>R/calibrate.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/calibrate-methods.R'><code>R/calibrate-methods.R</code></a></small>
     <div class="hidden name"><code>calibrate.Rd</code></div>
     </div>
 
@@ -141,6 +141,9 @@
 <span class='co'># S4 method for GammaSpectrum,list</span>
 <span class='fu'>calibrate</span>(<span class='no'>object</span>, <span class='no'>lines</span>, <span class='no'>...</span>)
 
+<span class='co'># S4 method for GammaSpectrum,PeakPosition</span>
+<span class='fu'>calibrate</span>(<span class='no'>object</span>, <span class='no'>lines</span>, <span class='no'>...</span>)
+
 <span class='co'># S4 method for PeakModel,numeric</span>
 <span class='fu'>calibrate</span>(<span class='no'>object</span>, <span class='no'>lines</span>, <span class='no'>...</span>)</pre>
     
@@ -149,8 +152,8 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>object</th>
-      <td><p>An object of class <a href='GammaSpectrum.html'>GammaSpectrum</a>,
-<a href='GammaSpectra.html'>GammaSpectra</a> or <a href='PeakModel.html'>PeakModel</a>.</p></td>
+      <td><p>A <a href='GammaSpectrum-class.html'>GammaSpectrum</a> object,
+<a href='GammaSpectra-class.html'>GammaSpectra</a> or <a href='PeakModel-class.html'>PeakModel</a>.</p></td>
     </tr>
     <tr>
       <th>lines</th>
@@ -168,7 +171,7 @@ numeric <code>vector</code>, each element must be an expected energy value.</p><
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An object of class <a href='GammaSpectrum.html'>GammaSpectrum</a>.</p>
+    <p>A <a href='GammaSpectrum-class.html'>GammaSpectrum</a> object.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
@@ -181,10 +184,10 @@ numeric <code>vector</code>, each element must be an expected energy value.</p><
 (<span class='no'>tka_spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>tka_file</span>, <span class='kw'>skip</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt;   Reference: test_TKA
 #&gt;   Instrument: unknown
-#&gt;   Date: 2019-06-06 10:09:05
+#&gt;   Date: 2019-06-13 15:41:54
 #&gt;   Number of chanels: 989
 #&gt;   Energy range (keV): not calibrated
-#&gt;   Dose rate: not known</div><div class='input'>
+#&gt;   Dose rate: unknown</div><div class='input'>
 <span class='co'>## 1. Use observed peak positions</span>
 <span class='co'>### Set peak positions (chanel) and expected energy values</span>
 <span class='no'>calib_lines</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(
@@ -196,10 +199,10 @@ numeric <code>vector</code>, each element must be an expected energy value.</p><
 (<span class='no'>spc1</span> <span class='kw'>&lt;-</span> <span class='fu'>calibrate</span>(<span class='no'>tka_spc</span>, <span class='kw'>lines</span> <span class='kw'>=</span> <span class='no'>calib_lines</span>))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt;   Reference: test_TKA
 #&gt;   Instrument: unknown
-#&gt;   Date: 2019-06-06 10:09:05
+#&gt;   Date: 2019-06-13 15:41:54
 #&gt;   Number of chanels: 989
 #&gt;   Energy range (keV): 90.39 - 3068.96
-#&gt;   Dose rate: not known</div><div class='input'><span class='co'>### Inspect results</span>
+#&gt;   Dose rate: unknown</div><div class='input'><span class='co'>### Inspect results</span>
 <span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>spc1</span>, <span class='kw'>xaxis</span> <span class='kw'>=</span> <span class='st'>"energy"</span>, <span class='kw'>yaxis</span> <span class='kw'>=</span> <span class='st'>"rate"</span>) +
   <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/ggplot2/topics/geom_abline'>geom_vline</a></span>(<span class='kw'>xintercept</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>238</span>, <span class='fl'>1461</span>, <span class='fl'>2614.5</span>), <span class='kw'>linetype</span> <span class='kw'>=</span> <span class='fl'>3</span>) +
   <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/ggplot2/topics/labs'>labs</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"Energy [keV]"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='st'>"Count rate [1/s]"</span>)</div><div class='img'><img src='calibrate-1.png' alt='' width='700' height='433' /></div><div class='input'>
@@ -210,10 +213,10 @@ numeric <code>vector</code>, each element must be an expected energy value.</p><
 (<span class='no'>spc2</span> <span class='kw'>&lt;-</span> <span class='fu'>calibrate</span>(<span class='no'>peaks</span>, <span class='kw'>lines</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>238</span>, <span class='fl'>1461</span>, <span class='fl'>2614.5</span>)))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt;   Reference: test_TKA
 #&gt;   Instrument: unknown
-#&gt;   Date: 2019-06-06 10:09:06
+#&gt;   Date: 2019-06-13 15:41:55
 #&gt;   Number of chanels: 989
 #&gt;   Energy range (keV): 89.34 - 3061.28
-#&gt;   Dose rate: not known</div><div class='input'><span class='co'>### Inspect results</span>
+#&gt;   Dose rate: unknown</div><div class='input'><span class='co'>### Inspect results</span>
 <span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>spc2</span>, <span class='kw'>xaxis</span> <span class='kw'>=</span> <span class='st'>"energy"</span>, <span class='kw'>yaxis</span> <span class='kw'>=</span> <span class='st'>"rate"</span>) +
   <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/ggplot2/topics/geom_abline'>geom_vline</a></span>(<span class='kw'>xintercept</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>238</span>, <span class='fl'>1461</span>, <span class='fl'>2614.5</span>), <span class='kw'>linetype</span> <span class='kw'>=</span> <span class='fl'>3</span>) +
   <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/ggplot2/topics/labs'>labs</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"Energy [keV]"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='st'>"Count rate [1/s]"</span>)</div><div class='img'><img src='calibrate-3.png' alt='' width='700' height='433' /></div></pre>
@@ -237,7 +240,7 @@ numeric <code>vector</code>, each element must be an expected energy value.</p><
 
       <footer>
       <div class="copyright">
-  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href='https://www.u-bordeaux-montaigne.fr'><img src="http://gamma.archaeo.science/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="http://gamma.archaeo.science/logo_lascarbx.jpg" height="64" /></a>.</p>
+  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href='https://www.u-bordeaux-montaigne.fr'><img src="http://gamma.archaeo.science/reference/figures/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="http://gamma.archaeo.science/reference/figures/logo_lascarbx.jpg" height="64" /></a>.</p>
 </div>
 
 <div class="pkgdown">

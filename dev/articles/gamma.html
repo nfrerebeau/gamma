@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.0.9004</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9001</span>
       </span>
     </div>
 
@@ -94,7 +94,7 @@
                         <h4 class="author">G. Guérin</h4>
                         <h4 class="author">C. Lahaye</h4>
             
-            <h4 class="date">2019-06-06</h4>
+            <h4 class="date">2019-06-13</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/crp2a/gamma/blob/master/vignettes/gamma.Rmd"><code>vignettes/gamma.Rmd</code></a></small>
       <div class="hidden name"><code>gamma.Rmd</code></div>
@@ -137,7 +137,7 @@
 <a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt;   Date: 2019-02-07 11:48:18</span></a>
 <a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt;   Number of chanels: 989</span></a>
 <a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt;   Energy range (keV): 97.94 - 3124.91</span></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt;   Dose rate: not known</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt;   Dose rate: unknown</span></a>
 <a class="sourceLine" id="cb2-12" data-line-number="12"></a>
 <a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co"># Import a TKA file</span></a>
 <a class="sourceLine" id="cb2-14" data-line-number="14">tka_test &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata/test_TKA.tka"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
@@ -145,10 +145,10 @@
 <a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co">#&gt; Gamma spectrum:</span></a>
 <a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co">#&gt;   Reference: test_TKA</span></a>
 <a class="sourceLine" id="cb2-18" data-line-number="18"><span class="co">#&gt;   Instrument: unknown</span></a>
-<a class="sourceLine" id="cb2-19" data-line-number="19"><span class="co">#&gt;   Date: 2019-06-06 10:10:07</span></a>
+<a class="sourceLine" id="cb2-19" data-line-number="19"><span class="co">#&gt;   Date: 2019-06-13 15:42:20</span></a>
 <a class="sourceLine" id="cb2-20" data-line-number="20"><span class="co">#&gt;   Number of chanels: 989</span></a>
 <a class="sourceLine" id="cb2-21" data-line-number="21"><span class="co">#&gt;   Energy range (keV): not calibrated</span></a>
-<a class="sourceLine" id="cb2-22" data-line-number="22"><span class="co">#&gt;   Dose rate: not known</span></a>
+<a class="sourceLine" id="cb2-22" data-line-number="22"><span class="co">#&gt;   Dose rate: unknown</span></a>
 <a class="sourceLine" id="cb2-23" data-line-number="23"></a>
 <a class="sourceLine" id="cb2-24" data-line-number="24"><span class="co"># Import all files in a given directory</span></a>
 <a class="sourceLine" id="cb2-25" data-line-number="25">files_test &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
@@ -158,177 +158,86 @@
 <div id="inspect-spectrum" class="section level1">
 <h1 class="hasAnchor">
 <a href="#inspect-spectrum" class="anchor"></a>Inspect spectrum</h1>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co"># Plot TKA spectrum</span></a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co"># Plot CNF spectrum</span></a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="../reference/plot.html">plot</a></span>(spc_cnf) <span class="op">+</span></a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
 <p><img src="gamma_files/figure-html/inspect-1.png" width="672" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># Plot spectra</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw"><a href="../reference/plot.html">plot</a></span>(spc, <span class="dt">facet =</span> <span class="ot">TRUE</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
-<p><img src="gamma_files/figure-html/inspect-2.png" width="672" style="display: block; margin: auto;"></p>
 </div>
 <div id="calibrate-the-energy-scale" class="section level1">
 <h1 class="hasAnchor">
 <a href="#calibrate-the-energy-scale" class="anchor"></a>Calibrate the energy scale</h1>
-<p>The energy calibration of a spectrum is the most tricky part. To do this, you must specify the position of at least two observed peaks and the corresponding energy value (in keV).</p>
-<p>The package allows you to provide the channel-energy pairs you want to use. However, the spectrum can be noisy so it is difficult to properly determine the peak channel. In this case, a better approach may be to fit each peak with a Gaussian curve and then use the parameters estimated in this way.</p>
+<p>The energy calibration of a spectrum is the most tricky part. To do this, you must specify the position of at least three observed peaks and the corresponding energy value (in keV).</p>
+<p>The package allows you to provide the channel-energy pairs you want to use. However, the spectrum can be noisy so it is difficult to properly determine the peak channel. In this case, a better approach may be to pre-process the spectrum (variance-stabilization, smoothing and baseline correction) and perform a peak detection. Once the identified peaks are satisfactory, you can set the corresponding energy values (in keV) and use these lines to calibrate the energy scale of the spectrum.</p>
 <p>Regardless of the approach you choose, it is strongly recommended to check the result before proceeding.</p>
-<div id="peak-parameters-estimation" class="section level2">
+<div id="workflow" class="section level2">
 <h2 class="hasAnchor">
-<a href="#peak-parameters-estimation" class="anchor"></a>Peak parameters estimation</h2>
-<p>The automatic estimation of peak parameters is performed in two steps that can influence the final result. First, the baseline of the spectrum is estimated and removed. Then, a non-linear model is fitted for each peak. The model parameters can finally be used for the spectrum energy scale calibration.</p>
-<p>These two steps (baseline and peak fitting) are performed in one go. The following sections will help you to fine-tune the individual parameters.</p>
-<div id="estimate-and-remove-baseline" class="section level3">
+<a href="#workflow" class="anchor"></a>Workflow</h2>
+<p>The following steps illustrate how to properly fine-tune the parameters for spectrum processing before peak detection.</p>
+<div id="stabilization" class="section level3">
 <h3 class="hasAnchor">
-<a href="#estimate-and-remove-baseline" class="anchor"></a>Estimate and remove baseline</h3>
+<a href="#stabilization" class="anchor"></a>Stabilization</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># Use a square root transformation</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">transformed &lt;-<span class="st"> </span>gamma<span class="op">::</span><span class="kw"><a href="http://gamma.archaeo.science/reference/stabilize.html">stabilize</a></span>(spc_tka, <span class="dt">transformation =</span> sqrt)</a></code></pre></div>
+</div>
+<div id="smoothing" class="section level3">
+<h3 class="hasAnchor">
+<a href="#smoothing" class="anchor"></a>Smoothing</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># Use a 21 point Savitzky-Golay-Filter to smooth the spectrum</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">smoothed &lt;-<span class="st"> </span><span class="kw"><a href="../reference/smooth.html">smooth</a></span>(transformed, <span class="dt">method =</span> <span class="st">"savitzky"</span>, <span class="dt">m =</span> <span class="dv">21</span>)</a></code></pre></div>
+</div>
+<div id="baseline-correction" class="section level3">
+<h3 class="hasAnchor">
+<a href="#baseline-correction" class="anchor"></a>Baseline correction</h3>
 <p>The baseline estimation is performed using the SNIP algorithm <span class="citation">(Ryan et al. 1988; Morháč et al. 1997; Morháč and Matoušek 2008)</span>. You can apply the LLS operator to your data, use a decreasing clipping window or change the number of iterations (see references).</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># Estimate the baseline of a single file</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co"># Default parameters:</span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co"># * The LLS operator is not used,</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co"># * An increasing clipping window is used,</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co"># * 100 iterations are performed.</span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6">baseline &lt;-<span class="st"> </span><span class="kw"><a href="../reference/processBaseline.html">estimateBaseline</a></span>(spc_tka)</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co"># Plot spectrum + baseline</span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="kw"><a href="../reference/plot.html">plot</a></span>(spc_tka, baseline) <span class="op">+</span></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># Estimate the baseline of a single file</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">baseline &lt;-<span class="st"> </span><span class="kw"><a href="../reference/processBaseline.html">estimateBaseline</a></span>(smoothed, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co"># Plot spectrum + baseline</span></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="kw"><a href="../reference/plot.html">plot</a></span>(smoothed, baseline) <span class="op">+</span></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Spectrum + baseline"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
 <p><img src="gamma_files/figure-html/baseline-estimate-1.png" width="672" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># Substract the previously estimated baseline</span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">spc_clean1 &lt;-<span class="st"> </span>spc_tka <span class="op">-</span><span class="st"> </span>baseline</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co"># Or, remove the baseline in one go</span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">spc_clean2 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/processBaseline.html">removeBaseline</a></span>(spc_tka)</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/identical">identical</a></span>(spc_clean1, spc_clean2)</a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">#&gt; [1] TRUE</span></a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="co"># Plot the corrected spectrum</span></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="kw"><a href="../reference/plot.html">plot</a></span>(spc_clean1) <span class="op">+</span></a>
-<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># Substract the estimated baseline</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">corrected &lt;-<span class="st"> </span>smoothed <span class="op">-</span><span class="st"> </span>baseline</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co"># Or, remove the baseline in one go</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co"># corrected &lt;- removeBaseline(smoothed)</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="co"># Plot the corrected spectrum</span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="kw"><a href="../reference/plot.html">plot</a></span>(corrected) <span class="op">+</span></a>
+<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Baseline-corrected spectrum"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
 <p><img src="gamma_files/figure-html/baseline-remove-1.png" width="672" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># You can change the default parameters (see help for details)</span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co"># help(SNIP)</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3">spc_clean3 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/processBaseline.html">removeBaseline</a></span>(spc_tka, <span class="dt">LLS =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co"># The default settings don't seem too bad</span></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="kw"><a href="../reference/plot.html">plot</a></span>(spc_clean1, spc_clean3) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
-<p><img src="gamma_files/figure-html/baseline-plot-1.png" width="672" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># You can remove the baseline of multiple spectra in one go</span></a>
 <a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co"># Note that the same parameters will be used for all spectra</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3">spc_clean &lt;-<span class="st"> </span><span class="kw"><a href="../reference/processBaseline.html">removeBaseline</a></span>(spc)</a></code></pre></div>
+<a class="sourceLine" id="cb8-3" data-line-number="3">clean &lt;-<span class="st"> </span><span class="kw"><a href="../reference/processBaseline.html">removeBaseline</a></span>(spc)</a></code></pre></div>
 </div>
-<div id="automatic-peak-detection" class="section level3">
+<div id="peak-detection" class="section level3">
 <h3 class="hasAnchor">
-<a href="#automatic-peak-detection" class="anchor"></a>Automatic peak detection</h3>
-<p>Once you have fixed the parameters for the baseline estimation, you can try to automatically find peaks in the spectrum. A local maximum has to be the highest one in the given window and has to be higher than <span class="math inline">\(k\)</span> times the noise to be recognized as peak.</p>
-<p>Again, peak finding is performed on the baseline corrected spectrum, so you may want to pass extra arguments for the baseline estimation.</p>
+<a href="#peak-detection" class="anchor"></a>Peak detection</h3>
+<p>Once you have a baseline-corrected spectrum, you can try to automatically find peaks in the spectrum. A local maximum has to be the highest one in the given window and has to be higher than <span class="math inline">\(k\)</span> times the noise to be recognized as peak.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># Detect peaks in a single file</span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">peak_index &lt;-<span class="st"> </span><span class="kw"><a href="../reference/peaks.html">findPeaks</a></span>(spc_tka)</a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co"># Plot spectrum</span></a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="kw"><a href="../reference/plot.html">plot</a></span>(peak_index) <span class="op">+</span></a>
-<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
-<p><img src="gamma_files/figure-html/peak-detection-1.png" width="672" style="display: block; margin: auto;"></p>
-<table class="table">
-<caption>Automatic peak detection</caption>
-<thead><tr class="header">
-<th></th>
-<th align="right">Chanel</th>
-<th align="right">Energy [keV]</th>
-<th align="right">Count</th>
-<th align="right">Count rate [1/s]</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>peak #1</td>
-<td align="right">86</td>
-<td align="right">NA</td>
-<td align="right">2376</td>
-<td align="right">0.702</td>
-</tr>
-<tr class="even">
-<td>peak #2</td>
-<td align="right">210</td>
-<td align="right">NA</td>
-<td align="right">840</td>
-<td align="right">0.248</td>
-</tr>
-<tr class="odd">
-<td>peak #3</td>
-<td align="right">316</td>
-<td align="right">NA</td>
-<td align="right">297</td>
-<td align="right">0.088</td>
-</tr>
-<tr class="even">
-<td>peak #4</td>
-<td align="right">496</td>
-<td align="right">NA</td>
-<td align="right">910</td>
-<td align="right">0.269</td>
-</tr>
-<tr class="odd">
-<td>peak #5</td>
-<td align="right">876</td>
-<td align="right">NA</td>
-<td align="right">110</td>
-<td align="right">0.032</td>
-</tr>
-</tbody>
-</table>
-<p>The result of this automatic detection can be used as starting positions for peak fitting.</p>
+<a class="sourceLine" id="cb9-2" data-line-number="2">peaks &lt;-<span class="st"> </span><span class="kw"><a href="../reference/peaks.html">findPeaks</a></span>(corrected)</a></code></pre></div>
 </div>
-<div id="peak-fitting" class="section level3">
+<div id="energy-scale-calibration" class="section level3">
 <h3 class="hasAnchor">
-<a href="#peak-fitting" class="anchor"></a>Peak fitting</h3>
-<p>If you know the approximate position of some peaks, you can refine it by fitting each peak with a Gaussian. The parameters of these non-linear models are determined using the <em>port</em> algorithm (see <code><a href="https://www.rdocumentation.org/packages/utils/topics/help">help(nls)</a></code> from the <code>{stats}</code> package).</p>
-<p>You only need to provide the starting peak positions (chanel). If problems arise, it may be useful to constrain the parameters (see <code><a href="https://www.rdocumentation.org/packages/utils/topics/help">help(fit)</a></code>) or improve the baseline estimate (peak fitting is performed on the baseline corrected spectrum).</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># Fit peaks at a given chanel</span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">peak_fit &lt;-<span class="st"> </span><span class="kw"><a href="../reference/peaks.html">fitPeaks</a></span>(spc_tka, <span class="dt">peaks =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">86</span>, <span class="dv">496</span>, <span class="dv">876</span>))</a>
+<a href="#energy-scale-calibration" class="anchor"></a>Energy scale calibration</h3>
+<p>If you know the correspondence between several channels and the energy scale, you can use these pairs of values to calibrate the spectrum. A second order polynomial model is fitted on these energy <em>vs</em> chanel values, then used to predict the new energy scale of the spectrum.</p>
+<p>You can use the results of the peak detection and set the expected energy values.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># Set the energy values (in keV)</span></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw">setEnergy</span>(peaks) &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">238</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="dv">1461</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="dv">2615</span>)</a>
 <a class="sourceLine" id="cb10-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb10-4" data-line-number="4">## Plot results</a>
-<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="kw"><a href="../reference/plot.html">plot</a></span>(peak_fit) <span class="op">+</span></a>
-<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Fitted peaks from fixed starting positions"</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
-<p><img src="gamma_files/figure-html/peak-fit-manual-1.png" width="672" style="display: block; margin: auto;"></p>
-<table class="table">
-<caption>Peak positions</caption>
-<thead><tr class="header">
-<th></th>
-<th align="right">Mean (chanel)</th>
-<th align="right">Std. dev. (chanel)</th>
-<th align="right">Height (count)</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>peak #1</td>
-<td align="right">85.806</td>
-<td align="right">2.686</td>
-<td align="right">2447.413</td>
-</tr>
-<tr class="even">
-<td>peak #2</td>
-<td align="right">494.862</td>
-<td align="right">9.744</td>
-<td align="right">877.721</td>
-</tr>
-<tr class="odd">
-<td>peak #3</td>
-<td align="right">877.186</td>
-<td align="right">14.328</td>
-<td align="right">98.544</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="energy-scale-calibration" class="section level2">
-<h2 class="hasAnchor">
-<a href="#energy-scale-calibration" class="anchor"></a>Energy scale calibration</h2>
-<p>If you know the correspondence between several channels and the energy scale, you can use these pairs of values to calibrate the spectrum. A second order polynomial model is fitted on these energy <em>vs</em> chanel values, then the chanel values are used to predict the new energy scale.</p>
+<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co"># Calibrate the spectrum using the peak positions</span></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">scaled &lt;-<span class="st"> </span><span class="kw"><a href="../reference/calibrate.html">calibrate</a></span>(spc_tka, peaks)</a>
+<a class="sourceLine" id="cb10-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co"># Plot the spectrum (note the top scale)</span></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="kw"><a href="../reference/plot.html">plot</a></span>(scaled) <span class="op">+</span></a>
+<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Calibrated spectrum"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
+<p><img src="gamma_files/figure-html/calibrate-fit-1.png" width="672" style="display: block; margin: auto;"></p>
+<p>Alternatively, you can do it by hand.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co"># Create a list of chanel-enegy pairs</span></a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="co"># Names are optional, but values must always be set in this order</span></a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co"># (channel then energy)</span></a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="co"># Names are optional, but values must always be set in this order:</span></a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co"># channel then energy</span></a>
 <a class="sourceLine" id="cb11-4" data-line-number="4">calib_lines &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(</a>
 <a class="sourceLine" id="cb11-5" data-line-number="5">  <span class="dt">Pb212 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dt">chanel =</span> <span class="dv">84</span>, <span class="dt">energy =</span> <span class="dv">238</span>),</a>
 <a class="sourceLine" id="cb11-6" data-line-number="6">  <span class="dt">K40 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dt">chanel =</span> <span class="dv">492</span>, <span class="dt">energy =</span> <span class="dv">1461</span>),</a>
@@ -336,65 +245,80 @@
 <a class="sourceLine" id="cb11-8" data-line-number="8">)</a>
 <a class="sourceLine" id="cb11-9" data-line-number="9"></a>
 <a class="sourceLine" id="cb11-10" data-line-number="10"><span class="co"># Calibrate the spectrum using these fixed lines</span></a>
-<a class="sourceLine" id="cb11-11" data-line-number="11">tka_scaled1 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/calibrate.html">calibrate</a></span>(spc_tka, <span class="dt">lines =</span> calib_lines)</a></code></pre></div>
-<p>Alternatively, you can use the results of the peak fitting and pass the expected energy values.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co"># Calibrate the spectrum using the peak models</span></a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="co"># Lines should be in keV</span></a>
-<a class="sourceLine" id="cb12-3" data-line-number="3">tka_scaled2 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/calibrate.html">calibrate</a></span>(peak_fit, <span class="dt">lines =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">238</span>, <span class="dv">1461</span>, <span class="dv">2615</span>))</a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="co"># Plot the spectrum (note the top scale)</span></a>
-<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="kw"><a href="../reference/plot.html">plot</a></span>(tka_scaled2) <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Calibrated spectra"</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-8" data-line-number="8"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
-<p><img src="gamma_files/figure-html/calibrate-fit-1.png" width="672" style="display: block; margin: auto;"></p>
+<a class="sourceLine" id="cb11-11" data-line-number="11">scaled2 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/calibrate.html">calibrate</a></span>(spc_tka, <span class="dt">lines =</span> calib_lines)</a></code></pre></div>
+</div>
+</div>
+<div id="use-the-pipe" class="section level2">
+<h2 class="hasAnchor">
+<a href="#use-the-pipe" class="anchor"></a>Use the pipe!</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co"># Spectrum pre-processing and peak detection</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">pks &lt;-<span class="st"> </span>spc_tka <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/stabilize.html">stabilize</a></span>(<span class="dt">transformation =</span> sqrt) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="../reference/smooth.html">smooth</a></span>(<span class="dt">method =</span> <span class="st">"savitzky"</span>, <span class="dt">m =</span> <span class="dv">21</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="../reference/processBaseline.html">removeBaseline</a></span>(<span class="dt">decreasing =</span> <span class="ot">TRUE</span>, <span class="dt">k =</span> <span class="dv">100</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="../reference/peaks.html">findPeaks</a></span>()</a>
+<a class="sourceLine" id="cb12-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb12-8" data-line-number="8"><span class="co"># Set the energy values (in keV)</span></a>
+<a class="sourceLine" id="cb12-9" data-line-number="9"><span class="kw">setEnergy</span>(pks) &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">238</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="dv">1461</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="dv">2615</span>)</a>
+<a class="sourceLine" id="cb12-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb12-11" data-line-number="11"><span class="co"># Calibrate the energy scale</span></a>
+<a class="sourceLine" id="cb12-12" data-line-number="12">cal &lt;-<span class="st"> </span><span class="kw"><a href="../reference/calibrate.html">calibrate</a></span>(spc_tka, pks)</a>
+<a class="sourceLine" id="cb12-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb12-14" data-line-number="14"><span class="co"># Plot spectrum</span></a>
+<a class="sourceLine" id="cb12-15" data-line-number="15"><span class="kw"><a href="../reference/plot.html">plot</a></span>(cal, pks) <span class="op">+</span></a>
+<a class="sourceLine" id="cb12-16" data-line-number="16"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
+<p><img src="gamma_files/figure-html/pipe-1.png" width="672" style="display: block; margin: auto;"></p>
 </div>
 </div>
 <div id="estimate-the-gamma-dose-rate" class="section level1">
 <h1 class="hasAnchor">
 <a href="#estimate-the-gamma-dose-rate" class="anchor"></a>Estimate the gamma dose rate</h1>
 <p>To estimate the gamma dose rate, you can either use one of the calibration curves distributed with this package or build your own.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co"># Load one of the built-in curves</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(BDX1) <span class="co"># IRAMAT-CRP2A (Bordeaux)</span></a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(AIX1) <span class="co"># CEREGE (Aix-en-Provence)</span></a></code></pre></div>
 <p>The construction of a calibration curve requires a set of reference spectra for which the gamma dose rate is known and a background noise measurement. First, each reference spectrum is integrated over a given interval, then normalized to active time and corrected for background noise. The dose rate is finally modelled by the integrated signal value used as a linear predictor.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co"># Import the reference spectra</span></a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">calib_dir &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata/crp2a/calibration"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
-<a class="sourceLine" id="cb13-3" data-line-number="3">calib_spc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(calib_dir, <span class="dt">skip =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb13-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="co"># Import the spectra for background noise measurement</span></a>
-<a class="sourceLine" id="cb13-6" data-line-number="6">noise_dir &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata/crp2a/background"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
-<a class="sourceLine" id="cb13-7" data-line-number="7">noise_spc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(noise_dir, <span class="dt">skip =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb13-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb13-9" data-line-number="9"><span class="co"># Set the known dose rates</span></a>
-<a class="sourceLine" id="cb13-10" data-line-number="10"><span class="kw">setDoseRate</span>(calib_spc) &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(</a>
-<a class="sourceLine" id="cb13-11" data-line-number="11">  <span class="dt">BRIQUE =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1986</span>, <span class="dv">36</span>),</a>
-<a class="sourceLine" id="cb13-12" data-line-number="12">  <span class="dt">C341 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">850</span>, <span class="dv">21</span>),</a>
-<a class="sourceLine" id="cb13-13" data-line-number="13">  <span class="dt">C347 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1424</span>, <span class="dv">24</span>),</a>
-<a class="sourceLine" id="cb13-14" data-line-number="14">  <span class="dt">GOU =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1575</span>, <span class="dv">17</span>),</a>
-<a class="sourceLine" id="cb13-15" data-line-number="15">  <span class="dt">LMP =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">642</span>, <span class="dv">18</span>),</a>
-<a class="sourceLine" id="cb13-16" data-line-number="16">  <span class="dt">MAZ =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1141</span>, <span class="dv">12</span>),</a>
-<a class="sourceLine" id="cb13-17" data-line-number="17">  <span class="dt">PEP =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">2538</span>, <span class="dv">112</span>)</a>
-<a class="sourceLine" id="cb13-18" data-line-number="18">)</a>
-<a class="sourceLine" id="cb13-19" data-line-number="19"></a>
-<a class="sourceLine" id="cb13-20" data-line-number="20"><span class="co"># Build the calibration curve</span></a>
-<a class="sourceLine" id="cb13-21" data-line-number="21">calib_curve &lt;-<span class="st"> </span><span class="kw"><a href="../reference/fit.html">fit</a></span>(</a>
-<a class="sourceLine" id="cb13-22" data-line-number="22">  calib_spc,</a>
-<a class="sourceLine" id="cb13-23" data-line-number="23">  noise_spc,</a>
-<a class="sourceLine" id="cb13-24" data-line-number="24">  <span class="dt">range =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">165</span>, <span class="dv">2800</span>), <span class="co"># Set the integration range (in keV)</span></a>
-<a class="sourceLine" id="cb13-25" data-line-number="25">  <span class="dt">intercept =</span> <span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb13-26" data-line-number="26">)</a>
-<a class="sourceLine" id="cb13-27" data-line-number="27"></a>
-<a class="sourceLine" id="cb13-28" data-line-number="28"><span class="co"># The linear model can be accessed for further investigations</span></a>
-<a class="sourceLine" id="cb13-29" data-line-number="29"><span class="co"># summary(calib_curve[["model"]])</span></a>
-<a class="sourceLine" id="cb13-30" data-line-number="30"></a>
-<a class="sourceLine" id="cb13-31" data-line-number="31"><span class="co"># Plot the calibration curve</span></a>
-<a class="sourceLine" id="cb13-32" data-line-number="32"><span class="kw"><a href="../reference/plot.html">plot</a></span>(calib_curve) <span class="op">+</span></a>
-<a class="sourceLine" id="cb13-33" data-line-number="33"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="co"># Import the reference spectra</span></a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">calib_dir &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata/crp2a/calibration"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
+<a class="sourceLine" id="cb14-3" data-line-number="3">calib_spc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(calib_dir, <span class="dt">skip =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb14-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="co"># Import the spectra for background noise measurement</span></a>
+<a class="sourceLine" id="cb14-6" data-line-number="6">noise_dir &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata/crp2a/background"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
+<a class="sourceLine" id="cb14-7" data-line-number="7">noise_spc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(noise_dir, <span class="dt">skip =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb14-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb14-9" data-line-number="9"><span class="co"># Set the known dose rates</span></a>
+<a class="sourceLine" id="cb14-10" data-line-number="10"><span class="kw">setDoseRate</span>(calib_spc) &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(</a>
+<a class="sourceLine" id="cb14-11" data-line-number="11">  <span class="dt">BRIQUE =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1986</span>, <span class="dv">36</span>),</a>
+<a class="sourceLine" id="cb14-12" data-line-number="12">  <span class="dt">C341 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">850</span>, <span class="dv">21</span>),</a>
+<a class="sourceLine" id="cb14-13" data-line-number="13">  <span class="dt">C347 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1424</span>, <span class="dv">24</span>),</a>
+<a class="sourceLine" id="cb14-14" data-line-number="14">  <span class="dt">GOU =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1575</span>, <span class="dv">17</span>),</a>
+<a class="sourceLine" id="cb14-15" data-line-number="15">  <span class="dt">LMP =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">642</span>, <span class="dv">18</span>),</a>
+<a class="sourceLine" id="cb14-16" data-line-number="16">  <span class="dt">MAZ =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1141</span>, <span class="dv">12</span>),</a>
+<a class="sourceLine" id="cb14-17" data-line-number="17">  <span class="dt">PEP =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">2538</span>, <span class="dv">112</span>)</a>
+<a class="sourceLine" id="cb14-18" data-line-number="18">)</a>
+<a class="sourceLine" id="cb14-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb14-20" data-line-number="20"><span class="co"># Build the calibration curve</span></a>
+<a class="sourceLine" id="cb14-21" data-line-number="21">calib_curve &lt;-<span class="st"> </span><span class="kw"><a href="../reference/fit.html">fit</a></span>(</a>
+<a class="sourceLine" id="cb14-22" data-line-number="22">  calib_spc,</a>
+<a class="sourceLine" id="cb14-23" data-line-number="23">  noise_spc,</a>
+<a class="sourceLine" id="cb14-24" data-line-number="24">  <span class="dt">range =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">165</span>, <span class="dv">2800</span>), <span class="co"># Set the integration range (in keV)</span></a>
+<a class="sourceLine" id="cb14-25" data-line-number="25">  <span class="dt">intercept =</span> <span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb14-26" data-line-number="26">)</a>
+<a class="sourceLine" id="cb14-27" data-line-number="27"></a>
+<a class="sourceLine" id="cb14-28" data-line-number="28"><span class="co"># The linear model can be accessed for further investigations</span></a>
+<a class="sourceLine" id="cb14-29" data-line-number="29"><span class="co"># summary(calib_curve[["model"]])</span></a>
+<a class="sourceLine" id="cb14-30" data-line-number="30"></a>
+<a class="sourceLine" id="cb14-31" data-line-number="31"><span class="co"># Plot the calibration curve</span></a>
+<a class="sourceLine" id="cb14-32" data-line-number="32"><span class="kw"><a href="../reference/plot.html">plot</a></span>(calib_curve) <span class="op">+</span></a>
+<a class="sourceLine" id="cb14-33" data-line-number="33"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
 <p><img src="gamma_files/figure-html/dose-rate-calib-1.png" width="480" style="display: block; margin: auto;"></p>
 <p>New dose rate values can be predicted.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="co"># Import spectra</span></a>
-<a class="sourceLine" id="cb14-2" data-line-number="2">test_dir &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata/crp2a/test"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
-<a class="sourceLine" id="cb14-3" data-line-number="3">test_spc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(test_dir, <span class="dt">skip =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb14-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="co"># Estimate the gamma dose rate</span></a>
-<a class="sourceLine" id="cb14-6" data-line-number="6">dose_rate &lt;-<span class="st"> </span><span class="kw"><a href="../reference/predict.html">predict</a></span>(calib_curve, test_spc, <span class="dt">simplify =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="co"># Import spectra</span></a>
+<a class="sourceLine" id="cb15-2" data-line-number="2">test_dir &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata/crp2a/test"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
+<a class="sourceLine" id="cb15-3" data-line-number="3">test_spc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(test_dir, <span class="dt">skip =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb15-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb15-5" data-line-number="5"><span class="co"># Estimate the gamma dose rate</span></a>
+<a class="sourceLine" id="cb15-6" data-line-number="6">dose_rate &lt;-<span class="st"> </span><span class="kw"><a href="../reference/predict.html">predict</a></span>(calib_curve, test_spc, <span class="dt">simplify =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <table class="table">
 <caption>Gamma dose rate estimates</caption>
 <thead><tr class="header">
@@ -483,8 +407,8 @@
       <li><a href="#inspect-spectrum">Inspect spectrum</a></li>
       <li>
 <a href="#calibrate-the-energy-scale">Calibrate the energy scale</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#peak-parameters-estimation">Peak parameters estimation</a></li>
-      <li><a href="#energy-scale-calibration">Energy scale calibration</a></li>
+<li><a href="#workflow">Workflow</a></li>
+      <li><a href="#use-the-pipe">Use the pipe!</a></li>
       </ul>
 </li>
       <li><a href="#estimate-the-gamma-dose-rate">Estimate the gamma dose rate</a></li>
@@ -497,7 +421,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href="https://www.u-bordeaux-montaigne.fr"><img src="http://gamma.archaeo.science/logo_ubm.jpg" height="48"></a>, <a href="https://lascarbx.labex.u-bordeaux.fr"><img src="http://gamma.archaeo.science/logo_lascarbx.jpg" height="64"></a>.</p>
+  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href="https://www.u-bordeaux-montaigne.fr"><img src="http://gamma.archaeo.science/reference/figures/logo_ubm.jpg" height="48"></a>, <a href="https://lascarbx.labex.u-bordeaux.fr"><img src="http://gamma.archaeo.science/reference/figures/logo_lascarbx.jpg" height="64"></a>.</p>
 </div>
 
 <div class="pkgdown">

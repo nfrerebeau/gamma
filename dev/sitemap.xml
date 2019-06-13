@@ -10,37 +10,37 @@
     <loc>http://gamma.archaeo.science/reference/BDX1.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/BaseLine.html</loc>
+    <loc>http://gamma.archaeo.science/reference/BaseLine-class.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/CalibrationCurve.html</loc>
+    <loc>http://gamma.archaeo.science/reference/CalibrationCurve-class.html</loc>
   </url>
   <url>
     <loc>http://gamma.archaeo.science/reference/FWHM.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/GammaSpectra.html</loc>
+    <loc>http://gamma.archaeo.science/reference/GammaSpectra-class.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/GammaSpectrum.html</loc>
-  </url>
-  <url>
-    <loc>http://gamma.archaeo.science/reference/LLS.html</loc>
+    <loc>http://gamma.archaeo.science/reference/GammaSpectrum-class.html</loc>
   </url>
   <url>
     <loc>http://gamma.archaeo.science/reference/MAD.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/PeakModel.html</loc>
+    <loc>http://gamma.archaeo.science/reference/PeakModel-class.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/PeakPosition.html</loc>
+    <loc>http://gamma.archaeo.science/reference/PeakPosition-class.html</loc>
   </url>
   <url>
     <loc>http://gamma.archaeo.science/reference/SNIP.html</loc>
   </url>
   <url>
     <loc>http://gamma.archaeo.science/reference/calibrate.html</loc>
+  </url>
+  <url>
+    <loc>http://gamma.archaeo.science/reference/decay.html</loc>
   </url>
   <url>
     <loc>http://gamma.archaeo.science/reference/extract.html</loc>
@@ -50,6 +50,9 @@
   </url>
   <url>
     <loc>http://gamma.archaeo.science/reference/gamma-package.html</loc>
+  </url>
+  <url>
+    <loc>http://gamma.archaeo.science/reference/helpers.html</loc>
   </url>
   <url>
     <loc>http://gamma.archaeo.science/reference/integrateSignal.html</loc>
@@ -73,7 +76,22 @@
     <loc>http://gamma.archaeo.science/reference/read.html</loc>
   </url>
   <url>
+    <loc>http://gamma.archaeo.science/reference/simulate.html</loc>
+  </url>
+  <url>
     <loc>http://gamma.archaeo.science/reference/smooth.html</loc>
+  </url>
+  <url>
+    <loc>http://gamma.archaeo.science/reference/smoothRectangular.html</loc>
+  </url>
+  <url>
+    <loc>http://gamma.archaeo.science/reference/smoothSavitzky.html</loc>
+  </url>
+  <url>
+    <loc>http://gamma.archaeo.science/reference/smoothTriangular.html</loc>
+  </url>
+  <url>
+    <loc>http://gamma.archaeo.science/reference/stabilize.html</loc>
   </url>
   <url>
     <loc>http://gamma.archaeo.science/articles/cerege_1.html</loc>

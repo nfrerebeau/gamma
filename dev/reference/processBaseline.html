@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.0.9004</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9001</span>
       </span>
     </div>
 
@@ -139,11 +139,11 @@
 
 <span class='co'># S4 method for GammaSpectra</span>
 <span class='fu'>estimateBaseline</span>(<span class='no'>object</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"SNIP"</span>),
-  <span class='no'>...</span>)
+  <span class='kw'>LLS</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>decreasing</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>100</span>)
 
 <span class='co'># S4 method for GammaSpectrum</span>
 <span class='fu'>estimateBaseline</span>(<span class='no'>object</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"SNIP"</span>),
-  <span class='no'>...</span>)
+  <span class='kw'>LLS</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>decreasing</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>100</span>)
 
 <span class='co'># S4 method for GammaSpectra</span>
 <span class='fu'>removeBaseline</span>(<span class='no'>object</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"SNIP"</span>), <span class='no'>...</span>)
@@ -156,31 +156,54 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>object</th>
-      <td><p>A <code><a href='https://www.rdocumentation.org/packages/base/topics/numeric'>numeric</a></code> vector.</p></td>
+      <td><p>A <a href='GammaSpectrum-class.html'>GammaSpectrum</a> or <a href='GammaSpectra-class.html'>GammaSpectra</a>
+object.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Extra parameters passed to internal functions.</p></td>
+      <td><p>Extra parameters passed to <code>estimateBaseline</code>.</p></td>
     </tr>
     <tr>
       <th>method</th>
       <td><p>A <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character</a></code> string specifying the method to be
-used for baseline estimation.</p></td>
+used for baseline estimation (see details).</p></td>
+    </tr>
+    <tr>
+      <th>LLS</th>
+      <td><p>A <code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical</a></code> scalar: should the LLS operator be applied
+on <code>x</code> before employing SNIP algorithm?</p></td>
+    </tr>
+    <tr>
+      <th>decreasing</th>
+      <td><p>A <code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical</a></code> scalar: should a decreasing
+clipping window be used? Only used if <code>method</code> is <code>SNIP</code>.</p></td>
+    </tr>
+    <tr>
+      <th>k</th>
+      <td><p>An <code><a href='https://www.rdocumentation.org/packages/base/topics/integer'>integer</a></code> value giving the numerber of iterations.
+Only used if <code>method</code> is <code>SNIP</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>estimateBaseline</code> and <code>removeBaseline</code> return a
- <a href='GammaSpectrum.html'>GammaSpectrum</a> or <a href='GammaSpectra.html'>GammaSpectra</a> object (same as
+    <p>A <a href='GammaSpectrum-class.html'>GammaSpectrum</a> or <a href='GammaSpectra-class.html'>GammaSpectra</a> object (same as
  <code>object</code>).</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The following methods are availble for baseline estimation:</p><dl class='dl-horizontal'>
+  <dt>SNIP</dt><dd><p>Sensitive Nonlinear Iterative Peak clipping algorithm
+  (see references).</p></dd>
+ </dl>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Morháč, M., Kliman, J., Matoušek, V., Veselský, M. and Turzo, I. (1997).
  Background elimination methods for multidimensional gamma-ray spectra.
  <em>Nuclear Instruments and Methods in Physics Research Section A:
- Accelerators, Spectrometers, Detectors and Associated Equipment</em>, 401(1), p. 113-132.
+ Accelerators, Spectrometers, Detectors and Associated Equipment</em>, 401(1),
+ p. 113-132.
  DOI: <a href='https://doi.org/10.1016/S0168-9002(97)01023-1'>10.1016/S0168-9002(97)01023-1</a></p>
 <p>Morháč, M. and Matoušek, V. (2008). Peak Clipping Algorithms for Background
  Estimation in Spectroscopic Data. <em>Applied Spectroscopy</em>, 62(1), p. 91-106.
@@ -191,6 +214,12 @@ used for baseline estimation.</p></td>
  <em>Nuclear Instruments and Methods in Physics Research Section B:
  Beam Interactions with Materials and Atoms</em>, 34(3), p. 396-402.
  DOI: <a href='https://doi.org/10.1016/0168-583X(88)90063-8'>10.1016/0168-583X(88)90063-8</a></p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Other signal processing: <code><a href='integrateSignal.html'>integrateSignal</a></code>,
+  <code><a href='peaks.html'>peaks</a></code>, <code><a href='smooth.html'>smooth</a></code>,
+  <code><a href='stabilize.html'>stabilize</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -217,7 +246,11 @@ used for baseline estimation.</p></td>
       
       <li><a href="#value">Value</a></li>
 
+      <li><a href="#details">Details</a></li>
+
       <li><a href="#references">References</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
@@ -229,7 +262,7 @@ used for baseline estimation.</p></td>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href='https://www.u-bordeaux-montaigne.fr'><img src="http://gamma.archaeo.science/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="http://gamma.archaeo.science/logo_lascarbx.jpg" height="64" /></a>.</p>
+  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href='https://www.u-bordeaux-montaigne.fr'><img src="http://gamma.archaeo.science/reference/figures/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="http://gamma.archaeo.science/reference/figures/logo_lascarbx.jpg" height="64" /></a>.</p>
 </div>
 
 <div class="pkgdown">

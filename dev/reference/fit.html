@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.0.9004</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9001</span>
       </span>
     </div>
 
@@ -148,7 +148,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>object</th>
-      <td><p>An object of class <a href='GammaSpectra.html'>GammaSpectra</a>.</p></td>
+      <td><p>An object of class <a href='GammaSpectra-class.html'>GammaSpectra</a>.</p></td>
     </tr>
     <tr>
       <th>noise</th>
@@ -184,7 +184,7 @@ informations about the instrument for which the curve is built.</p></td>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Returns an object of class <a href='CalibrationCurve.html'>CalibrationCurve</a>.</p>
+    <p>A <a href='CalibrationCurve-class.html'>CalibrationCurve</a> object.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
@@ -192,7 +192,8 @@ informations about the instrument for which the curve is built.</p></td>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='predict.html'>predict</a>, <a href='integrateSignal.html'>integrateSignal</a></p></div>
+    <div class='dont-index'><p><a href='integrateSignal.html'>integrateSignal</a></p>
+<p>Other dose rate: <code><a href='predict.html'>predict</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -240,7 +241,7 @@ informations about the instrument for which the curve is built.</p></td>
 #&gt; </div><div class='input'>
 <span class='co'># Plot the curve</span>
 <span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>calib_curve</span>) +
-  <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/ggplot2/topics/labs'>labs</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"Signal"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='st'>"Dose rate [µGy/y]"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='img'><img src='fit-1.png' alt='' width='700' height='433' /></div><div class='input'>
+  <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/ggplot2/topics/labs'>labs</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"Signal"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='st'>"Dose rate [µGy/y]"</span>)</div><div class='img'><img src='fit-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Estimate gamma dose rates</span>
 (<span class='no'>dose_rate</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='predict.html'>predict</a></span>(<span class='no'>calib_curve</span>, <span class='no'>spc_calib</span>))</div><div class='output co'>#&gt; $BRIQUE
 #&gt; [1] 1993.88962   71.79665
@@ -285,7 +286,7 @@ informations about the instrument for which the curve is built.</p></td>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href='https://www.u-bordeaux-montaigne.fr'><img src="http://gamma.archaeo.science/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="http://gamma.archaeo.science/logo_lascarbx.jpg" height="64" /></a>.</p>
+  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href='https://www.u-bordeaux-montaigne.fr'><img src="http://gamma.archaeo.science/reference/figures/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="http://gamma.archaeo.science/reference/figures/logo_lascarbx.jpg" height="64" /></a>.</p>
 </div>
 
 <div class="pkgdown">

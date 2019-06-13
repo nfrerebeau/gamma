@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.0.9004</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9001</span>
       </span>
     </div>
 
@@ -153,37 +153,37 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="BaseLine.html">BaseLine-class</a></code> </p>
+          <p><code><a href="BaseLine-class.html">BaseLine-class</a></code> </p>
         </td>
         <td><p>An S4 class to represent a spectrum baseline</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="CalibrationCurve.html">`[[`(<i>&lt;CalibrationCurve&gt;</i>)</a></code> </p>
+          <p><code><a href="CalibrationCurve-class.html">`[[`(<i>&lt;CalibrationCurve&gt;</i>)</a></code> </p>
         </td>
         <td><p>An S4 class to represent a calibration curve</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="GammaSpectra.html">`[`(<i>&lt;GammaSpectra&gt;</i>)</a></code> <code><a href="GammaSpectra.html">`[[`(<i>&lt;GammaSpectra&gt;</i>)</a></code> </p>
+          <p><code><a href="GammaSpectra-class.html">`[`(<i>&lt;GammaSpectra&gt;</i>)</a></code> <code><a href="GammaSpectra-class.html">`[[`(<i>&lt;GammaSpectra&gt;</i>)</a></code> </p>
         </td>
         <td><p>An S4 class to represent a collection of gamma sectra</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="GammaSpectrum.html">`[[`(<i>&lt;GammaSpectrum&gt;</i>)</a></code> <code><a href="GammaSpectrum.html">length(<i>&lt;GammaSpectrum&gt;</i>)</a></code> </p>
+          <p><code><a href="GammaSpectrum-class.html">`[[`(<i>&lt;GammaSpectrum&gt;</i>)</a></code> <code><a href="GammaSpectrum-class.html">length(<i>&lt;GammaSpectrum&gt;</i>)</a></code> </p>
         </td>
         <td><p>An S4 class to represent a gamma sectrum</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="PeakModel.html">`[[`(<i>&lt;PeakModel&gt;</i>)</a></code> </p>
+          <p><code><a href="PeakModel-class.html">`[[`(<i>&lt;PeakModel&gt;</i>)</a></code> </p>
         </td>
         <td><p>An S4 class to represent a set peaks</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="PeakPosition.html">`[[`(<i>&lt;PeakPosition&gt;</i>)</a></code> </p>
+          <p><code><a href="PeakPosition-class.html">`[[`(<i>&lt;PeakPosition&gt;</i>)</a></code> </p>
         </td>
         <td><p>An S4 class to represent a set of peaks</p></td>
       </tr><tr>
@@ -195,7 +195,7 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="extract.html">getDoseRate()</a></code> <code><a href="extract.html">`setDoseRate<-`()</a></code> </p>
+          <p><code><a href="extract.html">getDoseRate()</a></code> <code><a href="extract.html">`setDoseRate<-`()</a></code> <code><a href="extract.html">getEnergy()</a></code> <code><a href="extract.html">`setEnergy<-`()</a></code> </p>
         </td>
         <td><p>Extract or Replace Parts of an Object</p></td>
       </tr><tr>
@@ -219,7 +219,7 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="plot.html">plot(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;GammaSpectrum&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;GammaSpectra&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;PeakPosition&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;PeakModel&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;CalibrationCurve&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> </p>
+          <p><code><a href="plot.html">plot(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;GammaSpectrum&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;GammaSpectra&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;PeakPosition&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;PeakModel&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;CalibrationCurve&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> </p>
         </td>
         <td><p>Plot</p></td>
       </tr><tr>
@@ -243,9 +243,21 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="simulate.html">simulate()</a></code> </p>
+        </td>
+        <td><p>Simulate a Gamma Spectrum</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="smooth.html">smooth()</a></code> </p>
         </td>
         <td><p>Smooth</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="stabilize.html">stabilize()</a></code> </p>
+        </td>
+        <td><p>Transform Intensities</p></td>
       </tr>
     </tbody>
     </table>
@@ -261,7 +273,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href='https://www.u-bordeaux-montaigne.fr'><img src="http://gamma.archaeo.science/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="http://gamma.archaeo.science/logo_lascarbx.jpg" height="64" /></a>.</p>
+  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href='https://www.u-bordeaux-montaigne.fr'><img src="http://gamma.archaeo.science/reference/figures/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="http://gamma.archaeo.science/reference/figures/logo_lascarbx.jpg" height="64" /></a>.</p>
 </div>
 
 <div class="pkgdown">

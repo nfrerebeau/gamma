@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">gamma</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.0.9004</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9001</span>
       </span>
     </div>
 
@@ -141,11 +141,11 @@
 <a class="sourceLine" id="cb3-18" data-line-number="18"></a>
 <a class="sourceLine" id="cb3-19" data-line-number="19">## Estimate the gamma dose rate</a>
 <a class="sourceLine" id="cb3-20" data-line-number="20">spectrum <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb3-21" data-line-number="21"><span class="st">  </span>gamma<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/gamma/topics/read">read</a></span>(<span class="dt">skip =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb3-22" data-line-number="22"><span class="st">  </span>gamma<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/gamma/topics/calibrate">calibrate</a></span>(<span class="dt">lines =</span> calib_lines) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb3-23" data-line-number="23"><span class="st">  </span>gamma<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/gamma/topics/predict">predict</a></span>(BDX1, ., <span class="dt">simplify =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb3-24" data-line-number="24"><span class="co">#&gt;           value    error</span></a>
-<a class="sourceLine" id="cb3-25" data-line-number="25"><span class="co">#&gt; test_CNF 3971.7 129.7577</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-21" data-line-number="21"><span class="st">  </span>gamma<span class="op">::</span><span class="kw"><a href="http://gamma.archaeo.science/reference/read.html">read</a></span>(<span class="dt">skip =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-22" data-line-number="22"><span class="st">  </span>gamma<span class="op">::</span><span class="kw"><a href="http://gamma.archaeo.science/reference/calibrate.html">calibrate</a></span>(<span class="dt">lines =</span> calib_lines) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-23" data-line-number="23"><span class="st">  </span>gamma<span class="op">::</span><span class="kw"><a href="http://gamma.archaeo.science/reference/predict.html">predict</a></span>(BDX1, ., <span class="dt">simplify =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb3-24" data-line-number="24"><span class="co">#&gt;             value   error</span></a>
+<a class="sourceLine" id="cb3-25" data-line-number="25"><span class="co">#&gt; test_CNF 3920.159 130.913</span></a></code></pre></div>
 </div>
 <div id="contributing" class="section level2">
 <h2 class="hasAnchor">
@@ -177,6 +177,12 @@
 <li><small><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></small></li>
 </ul>
 </div>
+<div class="citation">
+<h2>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html">Citing gamma</a></li>
+</ul>
+</div>
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
@@ -185,9 +191,9 @@
 <li>Guillaume Guérin <br><small class="roles"> Author </small> <a href="https://orcid.org/https://orcid.org/0000-0001-6298-5579" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
 <li>Christelle Lahaye <br><small class="roles"> Author </small> <a href="https://orcid.org/https://orcid.org/0000-0003-2215-9015" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
 <li>
-<a href="https://www.u-bordeaux-montaigne.fr"><img src="http://gamma.archaeo.science/logo_ubm.jpg" height="48"></a> <br><small class="roles"> Copyright holder, funder </small>  </li>
+<a href="https://www.u-bordeaux-montaigne.fr"><img src="http://gamma.archaeo.science/reference/figures/logo_ubm.jpg" height="48"></a> <br><small class="roles"> Copyright holder, funder </small>  </li>
 <li>
-<a href="https://lascarbx.labex.u-bordeaux.fr"><img src="http://gamma.archaeo.science/logo_lascarbx.jpg" height="64"></a> <br><small class="roles"> Funder </small>  </li>
+<a href="https://lascarbx.labex.u-bordeaux.fr"><img src="http://gamma.archaeo.science/reference/figures/logo_lascarbx.jpg" height="64"></a> <br><small class="roles"> Funder </small>  </li>
 <li><a href="authors.html">All authors...</a></li>
 </ul>
 </div>
@@ -195,7 +201,8 @@
       <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.org/crp2a/gamma"><img src="https://travis-ci.org/crp2a/gamma.svg?branch=master" alt="Build Status"></a></li>
+<li><a href="https://ci.appveyor.com/project/nfrerebeau/gamma/branch/master"><img src="https://ci.appveyor.com/api/projects/status/h7jjppg72oiq9pnf/branch/master?svg=true" alt="Appveyor build status"></a></li>
+<li><a href="https://travis-ci.org/crp2a/gamma"><img src="https://travis-ci.org/crp2a/gamma.svg?branch=master" alt="Travis build Status"></a></li>
 <li><a href="https://codecov.io/gh/crp2a/gamma"><img src="https://codecov.io/gh/crp2a/gamma/branch/master/graph/badge.svg" alt="codecov"></a></li>
 <li><a href="https://github.com/crp2a/gamma/releases"><img src="https://img.shields.io/github/release/crp2a/gamma.svg" alt="GitHub Release"></a></li>
 <li><a href="https://cran.r-project.org/package=gamma"><img src="http://www.r-pkg.org/badges/version/gamma" alt="CRAN Version"></a></li>
@@ -210,7 +217,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href="https://www.u-bordeaux-montaigne.fr"><img src="http://gamma.archaeo.science/logo_ubm.jpg" height="48"></a>, <a href="https://lascarbx.labex.u-bordeaux.fr"><img src="http://gamma.archaeo.science/logo_lascarbx.jpg" height="64"></a>.</p>
+  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href="https://www.u-bordeaux-montaigne.fr"><img src="http://gamma.archaeo.science/reference/figures/logo_ubm.jpg" height="48"></a>, <a href="https://lascarbx.labex.u-bordeaux.fr"><img src="http://gamma.archaeo.science/reference/figures/logo_lascarbx.jpg" height="64"></a>.</p>
 </div>
 
 <div class="pkgdown">
