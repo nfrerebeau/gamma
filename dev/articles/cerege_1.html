@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9001</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9002</span>
       </span>
     </div>
 
@@ -92,7 +92,7 @@
             <h3 class="subtitle">Canberra Inspector 1000 - NaI</h3>
                         <h4 class="author">CEREGE Luminescence Team</h4>
             
-            <h4 class="date">2019-06-13</h4>
+            <h4 class="date">2019-06-14</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/crp2a/gamma/blob/master/vignettes/cerege_1.Rmd"><code>vignettes/cerege_1.Rmd</code></a></small>
       <div class="hidden name"><code>cerege_1.Rmd</code></div>
@@ -128,12 +128,7 @@
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># Plot calibration spectra</span></a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="../reference/plot.html">plot</a></span>(calib_spc, <span class="dt">xaxis =</span> <span class="st">"energy"</span>, <span class="dt">yaxis =</span> <span class="st">"rate"</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Calibration spectra"</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; Registered S3 methods overwritten by 'ggplot2':</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt;   method         from </span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt;   [.quosures     rlang</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt;   c.quosures     rlang</span></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt;   print.quosures rlang</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
 <p><img src="cerege_1_files/figure-html/inspect-1.png" width="672" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"></a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co"># Plot background noise spectrum</span></a>
@@ -148,7 +143,7 @@
 <div id="reference-spectra" class="section level3">
 <h3 class="hasAnchor">
 <a href="#reference-spectra" class="anchor"></a>Reference spectra</h3>
-<p>Energies in keV (expected chanel):</p>
+<p>Lines used for energy scale calibration (in keV):</p>
 <ul>
 <li>Pb212: 238 (85)</li>
 <li>K40: 1461 (495)</li>
@@ -235,22 +230,16 @@
 <div id="background-noise-spectrum" class="section level3">
 <h3 class="hasAnchor">
 <a href="#background-noise-spectrum" class="anchor"></a>Background noise spectrum</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># noise_spc %&gt;%</span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="co">#   stabilize(transformation = sqrt) %&gt;%</span></a>
-<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="co">#   smooth(method = "savitzky", m = 21) %&gt;%</span></a>
-<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co">#   removeBaseline(decreasing = TRUE, k = 100) %&gt;%</span></a>
-<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co">#   findPeaks()</span></a>
-<a class="sourceLine" id="cb10-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb10-7" data-line-number="7">noise_lines &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(</a>
-<a class="sourceLine" id="cb10-8" data-line-number="8">  <span class="dt">Pb212 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dt">chanel =</span> <span class="dv">86</span>, <span class="dt">energy =</span> <span class="dv">238</span>),</a>
-<a class="sourceLine" id="cb10-9" data-line-number="9">  <span class="dt">K40 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dt">chanel =</span> <span class="dv">496</span>, <span class="dt">energy =</span> <span class="dv">1461</span>),</a>
-<a class="sourceLine" id="cb10-10" data-line-number="10">  <span class="dt">Tl208 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dt">chanel =</span> <span class="dv">870</span>, <span class="dt">energy =</span> <span class="dv">2615</span>)</a>
-<a class="sourceLine" id="cb10-11" data-line-number="11">)</a>
-<a class="sourceLine" id="cb10-12" data-line-number="12">noise_scaled &lt;-<span class="st"> </span><span class="kw"><a href="../reference/calibrate.html">calibrate</a></span>(noise_spc, <span class="dt">lines =</span> noise_lines)</a>
-<a class="sourceLine" id="cb10-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb10-14" data-line-number="14"><span class="kw"><a href="../reference/plot.html">plot</a></span>(noise_spc, noise_scaled, <span class="dt">xaxis =</span> <span class="st">"energy"</span>, <span class="dt">yaxis =</span> <span class="st">"rate"</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb10-15" data-line-number="15"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/geom_abline">geom_vline</a></span>(<span class="dt">xintercept =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">238</span>, <span class="dv">1461</span>, <span class="dv">2615</span>), <span class="dt">linetype =</span> <span class="dv">3</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb10-16" data-line-number="16"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">noise_lines &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">  <span class="dt">Pb212 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dt">chanel =</span> <span class="dv">86</span>, <span class="dt">energy =</span> <span class="dv">238</span>),</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">  <span class="dt">K40 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dt">chanel =</span> <span class="dv">496</span>, <span class="dt">energy =</span> <span class="dv">1461</span>),</a>
+<a class="sourceLine" id="cb10-4" data-line-number="4">  <span class="dt">Tl208 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dt">chanel =</span> <span class="dv">870</span>, <span class="dt">energy =</span> <span class="dv">2615</span>)</a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">)</a>
+<a class="sourceLine" id="cb10-6" data-line-number="6">noise_scaled &lt;-<span class="st"> </span><span class="kw"><a href="../reference/calibrate.html">calibrate</a></span>(noise_spc, <span class="dt">lines =</span> noise_lines)</a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="kw"><a href="../reference/plot.html">plot</a></span>(noise_spc, noise_scaled, <span class="dt">xaxis =</span> <span class="st">"energy"</span>, <span class="dt">yaxis =</span> <span class="st">"rate"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/geom_abline">geom_vline</a></span>(<span class="dt">xintercept =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">238</span>, <span class="dv">1461</span>, <span class="dv">2615</span>), <span class="dt">linetype =</span> <span class="dv">3</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
 <p><img src="cerege_1_files/figure-html/calibrate-noise-1.png" width="672" style="display: block; margin: auto;"></p>
 </div>
 </div>
@@ -272,40 +261,17 @@
 <a class="sourceLine" id="cb12-4" data-line-number="4">  <span class="dt">range =</span> integration_range,</a>
 <a class="sourceLine" id="cb12-5" data-line-number="5">  <span class="dt">NiEi =</span> <span class="ot">TRUE</span></a>
 <a class="sourceLine" id="cb12-6" data-line-number="6">)</a>
-<a class="sourceLine" id="cb12-7" data-line-number="7">knitr<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(</a>
-<a class="sourceLine" id="cb12-8" data-line-number="8">  <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/cbind">rbind</a></span>(noise),</a>
-<a class="sourceLine" id="cb12-9" data-line-number="9">  <span class="dt">digits =</span> <span class="dv">3</span>,</a>
-<a class="sourceLine" id="cb12-10" data-line-number="10">  <span class="dt">caption =</span> <span class="st">"Background spectrum integration"</span></a>
-<a class="sourceLine" id="cb12-11" data-line-number="11">)</a></code></pre></div>
+<a class="sourceLine" id="cb12-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb12-8" data-line-number="8"><span class="co"># Integrate reference spectra</span></a>
+<a class="sourceLine" id="cb12-9" data-line-number="9">signal &lt;-<span class="st"> </span><span class="kw"><a href="../reference/integrateSignal.html">integrateSignal</a></span>(</a>
+<a class="sourceLine" id="cb12-10" data-line-number="10">  calib_scaled, </a>
+<a class="sourceLine" id="cb12-11" data-line-number="11">  <span class="dt">range =</span> integration_range, </a>
+<a class="sourceLine" id="cb12-12" data-line-number="12">  <span class="dt">noise =</span> noise,</a>
+<a class="sourceLine" id="cb12-13" data-line-number="13">  <span class="dt">NiEi =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb12-14" data-line-number="14">  <span class="dt">simplify =</span> <span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb12-15" data-line-number="15">)</a></code></pre></div>
 <table class="table">
-<caption>Background spectrum integration</caption>
-<thead><tr class="header">
-<th></th>
-<th align="right">value</th>
-<th align="right">error</th>
-</tr></thead>
-<tbody><tr class="odd">
-<td>noise</td>
-<td align="right">1108.057</td>
-<td align="right">0.536</td>
-</tr></tbody>
-</table>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="co"># Integrate reference spectra</span></a>
-<a class="sourceLine" id="cb13-3" data-line-number="3">signal &lt;-<span class="st"> </span><span class="kw"><a href="../reference/integrateSignal.html">integrateSignal</a></span>(</a>
-<a class="sourceLine" id="cb13-4" data-line-number="4">  calib_scaled, </a>
-<a class="sourceLine" id="cb13-5" data-line-number="5">  <span class="dt">range =</span> integration_range, </a>
-<a class="sourceLine" id="cb13-6" data-line-number="6">  <span class="dt">noise =</span> noise,</a>
-<a class="sourceLine" id="cb13-7" data-line-number="7">  <span class="dt">NiEi =</span> <span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb13-8" data-line-number="8">  <span class="dt">simplify =</span> <span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb13-9" data-line-number="9">)</a>
-<a class="sourceLine" id="cb13-10" data-line-number="10">knitr<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(</a>
-<a class="sourceLine" id="cb13-11" data-line-number="11">  signal,</a>
-<a class="sourceLine" id="cb13-12" data-line-number="12">  <span class="dt">digits =</span> <span class="dv">3</span>,</a>
-<a class="sourceLine" id="cb13-13" data-line-number="13">  <span class="dt">caption =</span> <span class="st">"Reference spectra integration"</span></a>
-<a class="sourceLine" id="cb13-14" data-line-number="14">)</a></code></pre></div>
-<table class="table">
-<caption>Reference spectra integration</caption>
+<caption>Spectra integration</caption>
 <thead><tr class="header">
 <th></th>
 <th align="right">value</th>
@@ -313,28 +279,33 @@
 </tr></thead>
 <tbody>
 <tr class="odd">
+<td>noise</td>
+<td align="right">1108.057</td>
+<td align="right">0.536</td>
+</tr>
+<tr class="even">
 <td>BRIQUE</td>
-<td align="right">110923.34</td>
+<td align="right">110923.336</td>
 <td align="right">4.934</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>C341</td>
-<td align="right">46657.02</td>
+<td align="right">46657.016</td>
 <td align="right">5.215</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>C347</td>
-<td align="right">81872.43</td>
+<td align="right">81872.435</td>
 <td align="right">6.850</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>GOU</td>
-<td align="right">89644.92</td>
+<td align="right">89644.921</td>
 <td align="right">7.153</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>PEP</td>
-<td align="right">139957.18</td>
+<td align="right">139957.184</td>
 <td align="right">9.144</td>
 </tr>
 </tbody>
@@ -347,55 +318,46 @@
 <div id="set-dose-rates" class="section level3">
 <h3 class="hasAnchor">
 <a href="#set-dose-rates" class="anchor"></a>Set dose rates</h3>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">setDoseRate</span>(calib_scaled) &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(</a>
-<a class="sourceLine" id="cb14-2" data-line-number="2">  <span class="dt">BRIQUE =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1986</span>, <span class="dv">36</span>),</a>
-<a class="sourceLine" id="cb14-3" data-line-number="3">  <span class="dt">C341 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">850</span>, <span class="dv">21</span>),</a>
-<a class="sourceLine" id="cb14-4" data-line-number="4">  <span class="dt">C347 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1424</span>, <span class="dv">24</span>),</a>
-<a class="sourceLine" id="cb14-5" data-line-number="5">  <span class="dt">GOU =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1575</span>, <span class="dv">17</span>),</a>
-<a class="sourceLine" id="cb14-6" data-line-number="6">  <span class="dt">PEP =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">2538</span>, <span class="dv">112</span>)</a>
-<a class="sourceLine" id="cb14-7" data-line-number="7">)</a>
-<a class="sourceLine" id="cb14-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb14-9" data-line-number="9"><span class="kw"><a href="../reference/extract.html">getDoseRate</a></span>(calib_scaled)</a>
-<a class="sourceLine" id="cb14-10" data-line-number="10"><span class="co">#&gt;        value error</span></a>
-<a class="sourceLine" id="cb14-11" data-line-number="11"><span class="co">#&gt; BRIQUE  1986    36</span></a>
-<a class="sourceLine" id="cb14-12" data-line-number="12"><span class="co">#&gt; C341     850    21</span></a>
-<a class="sourceLine" id="cb14-13" data-line-number="13"><span class="co">#&gt; C347    1424    24</span></a>
-<a class="sourceLine" id="cb14-14" data-line-number="14"><span class="co">#&gt; GOU     1575    17</span></a>
-<a class="sourceLine" id="cb14-15" data-line-number="15"><span class="co">#&gt; PEP     2538   112</span></a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="st">"clermont"</span>)</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw">setDoseRate</span>(calib_scaled) &lt;-<span class="st"> </span>clermont[, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"gamma"</span>, <span class="st">"gamma_error"</span>)]</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="kw"><a href="../reference/extract.html">getDoseRate</a></span>(calib_scaled)</a>
+<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="co">#&gt;            value     error</span></a>
+<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="co">#&gt; BRIQUE 1986.4620  35.61968</span></a>
+<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="co">#&gt; C341    849.9668  20.91993</span></a>
+<a class="sourceLine" id="cb13-8" data-line-number="8"><span class="co">#&gt; C347   1423.8589  25.09817</span></a>
+<a class="sourceLine" id="cb13-9" data-line-number="9"><span class="co">#&gt; GOU    1575.2249  16.00118</span></a>
+<a class="sourceLine" id="cb13-10" data-line-number="10"><span class="co">#&gt; PEP    2538.2217 110.27982</span></a></code></pre></div>
 </div>
 <div id="linear-regression" class="section level3">
 <h3 class="hasAnchor">
 <a href="#linear-regression" class="anchor"></a>Linear regression</h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="co"># Build calibration curve</span></a>
-<a class="sourceLine" id="cb15-2" data-line-number="2">(AIX1 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/fit.html">fit</a></span>(</a>
-<a class="sourceLine" id="cb15-3" data-line-number="3">  calib_scaled,</a>
-<a class="sourceLine" id="cb15-4" data-line-number="4">  noise_scaled,</a>
-<a class="sourceLine" id="cb15-5" data-line-number="5">  <span class="dt">range =</span> integration_range,</a>
-<a class="sourceLine" id="cb15-6" data-line-number="6">  <span class="dt">intercept =</span> <span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb15-7" data-line-number="7">  <span class="dt">details =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(</a>
-<a class="sourceLine" id="cb15-8" data-line-number="8">    <span class="dt">laboratory =</span> <span class="st">"CEREGE"</span>,</a>
-<a class="sourceLine" id="cb15-9" data-line-number="9">    <span class="dt">instrument =</span> <span class="st">"InSpector 1000"</span>,</a>
-<a class="sourceLine" id="cb15-10" data-line-number="10">    <span class="dt">detector =</span> <span class="st">"NaI"</span>,</a>
-<a class="sourceLine" id="cb15-11" data-line-number="11">    <span class="dt">authors =</span> <span class="st">"CEREGE Luminescence Team"</span></a>
-<a class="sourceLine" id="cb15-12" data-line-number="12">  )</a>
-<a class="sourceLine" id="cb15-13" data-line-number="13">))</a>
-<a class="sourceLine" id="cb15-14" data-line-number="14"><span class="co">#&gt; Calibration curve:</span></a>
-<a class="sourceLine" id="cb15-15" data-line-number="15"><span class="co">#&gt;    Details:</span></a>
-<a class="sourceLine" id="cb15-16" data-line-number="16"><span class="co">#&gt;    - Laboratory: CEREGE </span></a>
-<a class="sourceLine" id="cb15-17" data-line-number="17"><span class="co">#&gt;    - Instrument: InSpector 1000 </span></a>
-<a class="sourceLine" id="cb15-18" data-line-number="18"><span class="co">#&gt;    - Detector: NaI </span></a>
-<a class="sourceLine" id="cb15-19" data-line-number="19"><span class="co">#&gt;    - Authors: CEREGE Luminescence Team </span></a>
-<a class="sourceLine" id="cb15-20" data-line-number="20"><span class="co">#&gt;    - Date: 2019-06-13 15:42:08 </span></a>
-<a class="sourceLine" id="cb15-21" data-line-number="21"><span class="co">#&gt;    Model summary:</span></a>
-<a class="sourceLine" id="cb15-22" data-line-number="22"><span class="co">#&gt;    - Slope: 0.018 +/- 0 </span></a>
-<a class="sourceLine" id="cb15-23" data-line-number="23"><span class="co">#&gt;    - Intercept: -32.717 +/- 47.688 </span></a>
-<a class="sourceLine" id="cb15-24" data-line-number="24"><span class="co">#&gt;    - Residual standard error: 33.46 </span></a>
-<a class="sourceLine" id="cb15-25" data-line-number="25"><span class="co">#&gt;    - Multiple R-squared: 0.99789 </span></a>
-<a class="sourceLine" id="cb15-26" data-line-number="26"><span class="co">#&gt;    - Adjusted R-squared: 0.99719</span></a>
-<a class="sourceLine" id="cb15-27" data-line-number="27"></a>
-<a class="sourceLine" id="cb15-28" data-line-number="28"><span class="co"># Plot Calibration curve</span></a>
-<a class="sourceLine" id="cb15-29" data-line-number="29"><span class="kw"><a href="../reference/plot.html">plot</a></span>(AIX1) <span class="op">+</span></a>
-<a class="sourceLine" id="cb15-30" data-line-number="30"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="co"># Build calibration curve</span></a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">(AIX1 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/fit.html">fit</a></span>(</a>
+<a class="sourceLine" id="cb14-3" data-line-number="3">  calib_scaled,</a>
+<a class="sourceLine" id="cb14-4" data-line-number="4">  noise_scaled,</a>
+<a class="sourceLine" id="cb14-5" data-line-number="5">  <span class="dt">range =</span> integration_range,</a>
+<a class="sourceLine" id="cb14-6" data-line-number="6">  <span class="dt">intercept =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb14-7" data-line-number="7">  <span class="dt">details =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(</a>
+<a class="sourceLine" id="cb14-8" data-line-number="8">    <span class="dt">laboratory =</span> <span class="st">"CEREGE"</span>,</a>
+<a class="sourceLine" id="cb14-9" data-line-number="9">    <span class="dt">instrument =</span> <span class="st">"InSpector 1000"</span>,</a>
+<a class="sourceLine" id="cb14-10" data-line-number="10">    <span class="dt">detector =</span> <span class="st">"NaI"</span>,</a>
+<a class="sourceLine" id="cb14-11" data-line-number="11">    <span class="dt">authors =</span> <span class="st">"CEREGE Luminescence Team"</span></a>
+<a class="sourceLine" id="cb14-12" data-line-number="12">  )</a>
+<a class="sourceLine" id="cb14-13" data-line-number="13">))</a>
+<a class="sourceLine" id="cb14-14" data-line-number="14"><span class="co">#&gt; Calibration curve:</span></a>
+<a class="sourceLine" id="cb14-15" data-line-number="15"><span class="co">#&gt;    Date: 2019-06-14 14:38:14 </span></a>
+<a class="sourceLine" id="cb14-16" data-line-number="16"><span class="co">#&gt;    Model summary:</span></a>
+<a class="sourceLine" id="cb14-17" data-line-number="17"><span class="co">#&gt;    - Slope: 0.0182 +/- 0.00048 </span></a>
+<a class="sourceLine" id="cb14-18" data-line-number="18"><span class="co">#&gt;    - Intercept: -32.9699 +/- 47.7378 </span></a>
+<a class="sourceLine" id="cb14-19" data-line-number="19"><span class="co">#&gt;    - Residual standard error: 33.49 </span></a>
+<a class="sourceLine" id="cb14-20" data-line-number="20"><span class="co">#&gt;    - Multiple R-squared: 0.99789 </span></a>
+<a class="sourceLine" id="cb14-21" data-line-number="21"><span class="co">#&gt;    - Adjusted R-squared: 0.99719 </span></a>
+<a class="sourceLine" id="cb14-22" data-line-number="22"><span class="co">#&gt;    - F-statistic: 1419 on 1 and 3 DF</span></a>
+<a class="sourceLine" id="cb14-23" data-line-number="23"></a>
+<a class="sourceLine" id="cb14-24" data-line-number="24"><span class="co"># Plot Calibration curve</span></a>
+<a class="sourceLine" id="cb14-25" data-line-number="25"><span class="kw"><a href="../reference/plot.html">plot</a></span>(AIX1) <span class="op">+</span></a>
+<a class="sourceLine" id="cb14-26" data-line-number="26"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
 <p><img src="cerege_1_files/figure-html/calibration-1.png" width="480" style="display: block; margin: auto;"></p>
 </div>
 <div id="check-model" class="section level3">
@@ -406,20 +368,33 @@
 #&gt; stats::lm(formula = fit_formula, data = fit_data, weights = fit_weights)
 #&gt; 
 #&gt; Residuals:
-#&gt;         1         2         3         4         5 
-#&gt;  -0.03719  33.58083 -33.32390 -23.77963  23.55989 
+#&gt;        1        2        3        4        5 
+#&gt;   0.2051  33.6014 -33.5611 -23.6839  23.4384 
 #&gt; 
 #&gt; Coefficients:
 #&gt;                Estimate Std. Error t value Pr(&gt;|t|)    
-#&gt; (Intercept)  -3.272e+01  4.769e+01  -0.686    0.542    
-#&gt; signal_value  1.820e-02  4.827e-04  37.706  4.1e-05 ***
+#&gt; (Intercept)  -3.297e+01  4.774e+01  -0.691    0.539    
+#&gt; signal_value  1.820e-02  4.832e-04  37.676 4.11e-05 ***
 #&gt; ---
 #&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #&gt; 
-#&gt; Residual standard error: 33.46 on 3 degrees of freedom
+#&gt; Residual standard error: 33.49 on 3 degrees of freedom
 #&gt; Multiple R-squared:  0.9979, Adjusted R-squared:  0.9972 
-#&gt; F-statistic:  1422 on 1 and 3 DF,  p-value: 4.103e-05</code></pre>
+#&gt; F-statistic:  1419 on 1 and 3 DF,  p-value: 4.113e-05</code></pre>
 <p><img src="cerege_1_files/figure-html/lm-check-1.png" width="672" style="display: block; margin: auto;"></p>
+<table class="table">
+<caption>Information Criterion</caption>
+<thead><tr class="header">
+<th></th>
+<th align="right">AIC</th>
+<th align="right">BIC</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td>AIX1</td>
+<td align="right">52.749</td>
+<td align="right">51.578</td>
+</tr></tbody>
+</table>
 </div>
 </div>
 <div id="r-session" class="section level2">
@@ -445,7 +420,7 @@
 #&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     
 #&gt; 
 #&gt; other attached packages:
-#&gt; [1] magrittr_1.5     gamma_0.1.1.9001
+#&gt; [1] magrittr_1.5     gamma_0.1.1.9002
 #&gt; 
 #&gt; loaded via a namespace (and not attached):
 #&gt;  [1] Rcpp_1.0.1       highr_0.8        compiler_3.6.0   pillar_1.4.1    

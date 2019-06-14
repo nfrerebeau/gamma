@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9001</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9002</span>
       </span>
     </div>
 
@@ -184,7 +184,7 @@ numeric <code>vector</code>, each element must be an expected energy value.</p><
 (<span class='no'>tka_spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>tka_file</span>, <span class='kw'>skip</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt;   Reference: test_TKA
 #&gt;   Instrument: unknown
-#&gt;   Date: 2019-06-13 15:41:54
+#&gt;   Date: 2019-06-14 14:37:56
 #&gt;   Number of chanels: 989
 #&gt;   Energy range (keV): not calibrated
 #&gt;   Dose rate: unknown</div><div class='input'>
@@ -199,7 +199,7 @@ numeric <code>vector</code>, each element must be an expected energy value.</p><
 (<span class='no'>spc1</span> <span class='kw'>&lt;-</span> <span class='fu'>calibrate</span>(<span class='no'>tka_spc</span>, <span class='kw'>lines</span> <span class='kw'>=</span> <span class='no'>calib_lines</span>))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt;   Reference: test_TKA
 #&gt;   Instrument: unknown
-#&gt;   Date: 2019-06-13 15:41:54
+#&gt;   Date: 2019-06-14 14:37:56
 #&gt;   Number of chanels: 989
 #&gt;   Energy range (keV): 90.39 - 3068.96
 #&gt;   Dose rate: unknown</div><div class='input'><span class='co'>### Inspect results</span>
@@ -213,7 +213,7 @@ numeric <code>vector</code>, each element must be an expected energy value.</p><
 (<span class='no'>spc2</span> <span class='kw'>&lt;-</span> <span class='fu'>calibrate</span>(<span class='no'>peaks</span>, <span class='kw'>lines</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>238</span>, <span class='fl'>1461</span>, <span class='fl'>2614.5</span>)))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt;   Reference: test_TKA
 #&gt;   Instrument: unknown
-#&gt;   Date: 2019-06-13 15:41:55
+#&gt;   Date: 2019-06-14 14:37:56
 #&gt;   Number of chanels: 989
 #&gt;   Energy range (keV): 89.34 - 3061.28
 #&gt;   Dose rate: unknown</div><div class='input'><span class='co'>### Inspect results</span>

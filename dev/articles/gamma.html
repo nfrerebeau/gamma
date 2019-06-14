@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9001</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9002</span>
       </span>
     </div>
 
@@ -94,7 +94,7 @@
                         <h4 class="author">G. Guérin</h4>
                         <h4 class="author">C. Lahaye</h4>
             
-            <h4 class="date">2019-06-13</h4>
+            <h4 class="date">2019-06-14</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/crp2a/gamma/blob/master/vignettes/gamma.Rmd"><code>vignettes/gamma.Rmd</code></a></small>
       <div class="hidden name"><code>gamma.Rmd</code></div>
@@ -145,7 +145,7 @@
 <a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co">#&gt; Gamma spectrum:</span></a>
 <a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co">#&gt;   Reference: test_TKA</span></a>
 <a class="sourceLine" id="cb2-18" data-line-number="18"><span class="co">#&gt;   Instrument: unknown</span></a>
-<a class="sourceLine" id="cb2-19" data-line-number="19"><span class="co">#&gt;   Date: 2019-06-13 15:42:20</span></a>
+<a class="sourceLine" id="cb2-19" data-line-number="19"><span class="co">#&gt;   Date: 2019-06-14 14:37:43</span></a>
 <a class="sourceLine" id="cb2-20" data-line-number="20"><span class="co">#&gt;   Number of chanels: 989</span></a>
 <a class="sourceLine" id="cb2-21" data-line-number="21"><span class="co">#&gt;   Energy range (keV): not calibrated</span></a>
 <a class="sourceLine" id="cb2-22" data-line-number="22"><span class="co">#&gt;   Dose rate: unknown</span></a>
@@ -287,30 +287,23 @@
 <a class="sourceLine" id="cb14-7" data-line-number="7">noise_spc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(noise_dir, <span class="dt">skip =</span> <span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb14-8" data-line-number="8"></a>
 <a class="sourceLine" id="cb14-9" data-line-number="9"><span class="co"># Set the known dose rates</span></a>
-<a class="sourceLine" id="cb14-10" data-line-number="10"><span class="kw">setDoseRate</span>(calib_spc) &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(</a>
-<a class="sourceLine" id="cb14-11" data-line-number="11">  <span class="dt">BRIQUE =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1986</span>, <span class="dv">36</span>),</a>
-<a class="sourceLine" id="cb14-12" data-line-number="12">  <span class="dt">C341 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">850</span>, <span class="dv">21</span>),</a>
-<a class="sourceLine" id="cb14-13" data-line-number="13">  <span class="dt">C347 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1424</span>, <span class="dv">24</span>),</a>
-<a class="sourceLine" id="cb14-14" data-line-number="14">  <span class="dt">GOU =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1575</span>, <span class="dv">17</span>),</a>
-<a class="sourceLine" id="cb14-15" data-line-number="15">  <span class="dt">LMP =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">642</span>, <span class="dv">18</span>),</a>
-<a class="sourceLine" id="cb14-16" data-line-number="16">  <span class="dt">MAZ =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1141</span>, <span class="dv">12</span>),</a>
-<a class="sourceLine" id="cb14-17" data-line-number="17">  <span class="dt">PEP =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">2538</span>, <span class="dv">112</span>)</a>
-<a class="sourceLine" id="cb14-18" data-line-number="18">)</a>
-<a class="sourceLine" id="cb14-19" data-line-number="19"></a>
-<a class="sourceLine" id="cb14-20" data-line-number="20"><span class="co"># Build the calibration curve</span></a>
-<a class="sourceLine" id="cb14-21" data-line-number="21">calib_curve &lt;-<span class="st"> </span><span class="kw"><a href="../reference/fit.html">fit</a></span>(</a>
-<a class="sourceLine" id="cb14-22" data-line-number="22">  calib_spc,</a>
-<a class="sourceLine" id="cb14-23" data-line-number="23">  noise_spc,</a>
-<a class="sourceLine" id="cb14-24" data-line-number="24">  <span class="dt">range =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">165</span>, <span class="dv">2800</span>), <span class="co"># Set the integration range (in keV)</span></a>
-<a class="sourceLine" id="cb14-25" data-line-number="25">  <span class="dt">intercept =</span> <span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb14-26" data-line-number="26">)</a>
-<a class="sourceLine" id="cb14-27" data-line-number="27"></a>
-<a class="sourceLine" id="cb14-28" data-line-number="28"><span class="co"># The linear model can be accessed for further investigations</span></a>
-<a class="sourceLine" id="cb14-29" data-line-number="29"><span class="co"># summary(calib_curve[["model"]])</span></a>
-<a class="sourceLine" id="cb14-30" data-line-number="30"></a>
-<a class="sourceLine" id="cb14-31" data-line-number="31"><span class="co"># Plot the calibration curve</span></a>
-<a class="sourceLine" id="cb14-32" data-line-number="32"><span class="kw"><a href="../reference/plot.html">plot</a></span>(calib_curve) <span class="op">+</span></a>
-<a class="sourceLine" id="cb14-33" data-line-number="33"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
+<a class="sourceLine" id="cb14-10" data-line-number="10"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="st">"clermont"</span>)</a>
+<a class="sourceLine" id="cb14-11" data-line-number="11"><span class="kw">setDoseRate</span>(calib_spc) &lt;-<span class="st"> </span>clermont[, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"gamma"</span>, <span class="st">"gamma_error"</span>)]</a>
+<a class="sourceLine" id="cb14-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb14-13" data-line-number="13"><span class="co"># Build the calibration curve</span></a>
+<a class="sourceLine" id="cb14-14" data-line-number="14">calib_curve &lt;-<span class="st"> </span><span class="kw"><a href="../reference/fit.html">fit</a></span>(</a>
+<a class="sourceLine" id="cb14-15" data-line-number="15">  calib_spc,</a>
+<a class="sourceLine" id="cb14-16" data-line-number="16">  noise_spc,</a>
+<a class="sourceLine" id="cb14-17" data-line-number="17">  <span class="dt">range =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">165</span>, <span class="dv">2800</span>), <span class="co"># Set the integration range (in keV)</span></a>
+<a class="sourceLine" id="cb14-18" data-line-number="18">  <span class="dt">intercept =</span> <span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb14-19" data-line-number="19">)</a>
+<a class="sourceLine" id="cb14-20" data-line-number="20"></a>
+<a class="sourceLine" id="cb14-21" data-line-number="21"><span class="co"># The linear model can be accessed for further investigations</span></a>
+<a class="sourceLine" id="cb14-22" data-line-number="22"><span class="co"># summary(calib_curve[["model"]])</span></a>
+<a class="sourceLine" id="cb14-23" data-line-number="23"></a>
+<a class="sourceLine" id="cb14-24" data-line-number="24"><span class="co"># Plot the calibration curve</span></a>
+<a class="sourceLine" id="cb14-25" data-line-number="25"><span class="kw"><a href="../reference/plot.html">plot</a></span>(calib_curve) <span class="op">+</span></a>
+<a class="sourceLine" id="cb14-26" data-line-number="26"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
 <p><img src="gamma_files/figure-html/dose-rate-calib-1.png" width="480" style="display: block; margin: auto;"></p>
 <p>New dose rate values can be predicted.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="co"># Import spectra</span></a>
@@ -329,53 +322,53 @@
 <tbody>
 <tr class="odd">
 <td>BR2011-08</td>
-<td align="right">313.632</td>
-<td align="right">11.137</td>
+<td align="right">313.556</td>
+<td align="right">11.123</td>
 </tr>
 <tr class="even">
 <td>BR2011-15A</td>
-<td align="right">195.302</td>
-<td align="right">6.939</td>
+<td align="right">195.203</td>
+<td align="right">6.930</td>
 </tr>
 <tr class="odd">
 <td>BR2011-15B</td>
-<td align="right">193.735</td>
-<td align="right">6.881</td>
+<td align="right">193.636</td>
+<td align="right">6.871</td>
 </tr>
 <tr class="even">
 <td>BR2011-16</td>
-<td align="right">141.665</td>
-<td align="right">5.033</td>
+<td align="right">141.555</td>
+<td align="right">5.025</td>
 </tr>
 <tr class="odd">
 <td>BR2011-20</td>
-<td align="right">1358.085</td>
-<td align="right">48.209</td>
+<td align="right">1358.215</td>
+<td align="right">48.169</td>
 </tr>
 <tr class="even">
 <td>BR2011-23</td>
-<td align="right">393.568</td>
-<td align="right">13.972</td>
+<td align="right">393.508</td>
+<td align="right">13.957</td>
 </tr>
 <tr class="odd">
 <td>BR2011-24</td>
-<td align="right">349.229</td>
-<td align="right">12.400</td>
+<td align="right">349.160</td>
+<td align="right">12.386</td>
 </tr>
 <tr class="even">
 <td>BR2011-26</td>
-<td align="right">338.581</td>
-<td align="right">12.021</td>
+<td align="right">338.510</td>
+<td align="right">12.007</td>
 </tr>
 <tr class="odd">
 <td>BR2011-27</td>
-<td align="right">272.910</td>
-<td align="right">9.692</td>
+<td align="right">272.827</td>
+<td align="right">9.680</td>
 </tr>
 <tr class="even">
 <td>BR2011-29</td>
-<td align="right">235.469</td>
-<td align="right">8.361</td>
+<td align="right">235.378</td>
+<td align="right">8.349</td>
 </tr>
 </tbody>
 </table>

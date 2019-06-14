@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9001</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9002</span>
       </span>
     </div>
 
@@ -152,7 +152,8 @@ values are used.</p></td>
     </tr>
     <tr>
       <th>epsilon</th>
-      <td><p>A <code><a href='https://www.rdocumentation.org/packages/base/topics/numeric'>numeric</a></code> value.</p></td>
+      <td><p>A <code><a href='https://www.rdocumentation.org/packages/base/topics/numeric'>numeric</a></code> value giving the error introduced by
+the energy calibration of the spectrum.</p></td>
     </tr>
     <tr>
       <th>simplify</th>
@@ -181,15 +182,8 @@ simplified to a matrix? If <code>FALSE</code> (default), returns a list.</p></td
 <span class='no'>spc_calib</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_dir</span>, <span class='kw'>skip</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
 <span class='co'># Set dose rate values and errors for each spectrum</span>
-<span class='fu'>setDoseRate</span>(<span class='no'>spc_calib</span>) <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(
-  <span class='kw'>BRIQUE</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>1986</span>, <span class='fl'>36</span>),
-  <span class='kw'>C341</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>850</span>, <span class='fl'>21</span>),
-  <span class='kw'>C347</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>1424</span>, <span class='fl'>24</span>),
-  <span class='kw'>GOU</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>1575</span>, <span class='fl'>17</span>),
-  <span class='kw'>LMP</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>642</span>, <span class='fl'>18</span>),
-  <span class='kw'>MAZ</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>1141</span>, <span class='fl'>12</span>),
-  <span class='kw'>PEP</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>2538</span>, <span class='fl'>112</span>)
-)
+<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='st'>"clermont"</span>)
+<span class='fu'>setDoseRate</span>(<span class='no'>spc_calib</span>) <span class='kw'>&lt;-</span> <span class='no'>clermont</span>[, <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"gamma"</span>, <span class='st'>"gamma_error"</span>)]
 
 <span class='co'># Build the calibration curve</span>
 <span class='no'>calib_curve</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='fit.html'>fit</a></span>(
@@ -205,43 +199,43 @@ simplified to a matrix? If <code>FALSE</code> (default), returns a list.</p></td
 #&gt; 
 #&gt; Residuals:
 #&gt;       1       2       3       4       5       6       7 
-#&gt;  -7.890  13.441  -2.945 -53.620  23.586  -9.501  36.929 
+#&gt;  -7.683  13.381  -3.229 -53.579  23.502  -9.187  36.796 
 #&gt; 
 #&gt; Coefficients:
 #&gt;                Estimate Std. Error t value Pr(&gt;|t|)    
-#&gt; (Intercept)  -8.646e+02  4.768e+01  -18.13 9.37e-06 ***
-#&gt; signal_value  3.441e-02  6.853e-04   50.21 5.92e-08 ***
+#&gt; (Intercept)  -8.649e+02  4.755e+01  -18.19 9.23e-06 ***
+#&gt; signal_value  3.442e-02  6.835e-04   50.36 5.84e-08 ***
 #&gt; ---
 #&gt; Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 #&gt; 
-#&gt; Residual standard error: 32.05 on 5 degrees of freedom
+#&gt; Residual standard error: 31.97 on 5 degrees of freedom
 #&gt; Multiple R-squared:  0.998,	Adjusted R-squared:  0.9976 
-#&gt; F-statistic:  2521 on 1 and 5 DF,  p-value: 5.92e-08
+#&gt; F-statistic:  2536 on 1 and 5 DF,  p-value: 5.837e-08
 #&gt; </div><div class='input'>
 <span class='co'># Plot the curve</span>
 <span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>calib_curve</span>) +
   <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/ggplot2/topics/labs'>labs</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"Signal"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='st'>"Dose rate [µGy/y]"</span>)</div><div class='img'><img src='predict-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Estimate gamma dose rates</span>
 (<span class='no'>dose_rate</span> <span class='kw'>&lt;-</span> <span class='fu'>predict</span>(<span class='no'>calib_curve</span>, <span class='no'>spc_calib</span>))</div><div class='output co'>#&gt; $BRIQUE
-#&gt; [1] 1993.88962   71.79665
+#&gt; [1] 1994.14465   71.74336
 #&gt; 
 #&gt; $C341
-#&gt; [1] 836.55857  30.12355
+#&gt; [1] 836.58607  30.09833
 #&gt; 
 #&gt; $C347
-#&gt; [1] 1426.94479   51.38271
+#&gt; [1] 1427.08836   51.34318
 #&gt; 
 #&gt; $GOU
-#&gt; [1] 1628.62023   58.64447
+#&gt; [1] 1628.80345   58.60004
 #&gt; 
 #&gt; $LMP
-#&gt; [1] 618.41398  22.26849
+#&gt; [1] 618.39859  22.24856
 #&gt; 
 #&gt; $MAZ
-#&gt; [1] 1150.50136   41.42817
+#&gt; [1] 1150.59059   41.39534
 #&gt; 
 #&gt; $PEP
-#&gt; [1] 2501.07145   90.06074
+#&gt; [1] 2501.42620   89.99515
 #&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
