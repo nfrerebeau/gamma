@@ -1,90 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://gamma.archaeo.science/index.html</loc>
+    <loc>https://crp2a.github.io/gamma/index.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/AIX1.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/AIX100.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/BDX1.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/BDX100.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/BaseLine-class.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/BaseLine-class.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/CalibrationCurve-class.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/CalibrationCurve-class.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/FWHM.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/GammaSpectra-class.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/GammaSpectra-class.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/GammaSpectrum-class.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/GammaSpectrum-class.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/PeakPosition-class.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/LLS.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/SNIP.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/MAD.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/access.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/PeakModel-class.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/baseline.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/PeakPosition-class.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/clermont.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/SNIP.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/doserate.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/calibrate.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/dot-decay.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/extract.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/dot-decay_La.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/fit.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/energy.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/gamma-package.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/gamma-package.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/helpers.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/integrate.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/integrateSignal.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/launch_app.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/operators.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/operators.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/peaks.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/peaks.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/plot.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/plot.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/predict.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/read.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/processBaseline.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/simulate.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/read.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/slice.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/reference/smooth.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/smooth.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/articles/cerege_1.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/stabilize.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/articles/crp2a_1.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/subset.html</loc>
   </url>
   <url>
-    <loc>http://gamma.archaeo.science/articles/gamma.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/summarise.html</loc>
+  </url>
+  <url>
+    <loc>https://crp2a.github.io/gamma/articles/cerege_1.html</loc>
+  </url>
+  <url>
+    <loc>https://crp2a.github.io/gamma/articles/crp2a_1.html</loc>
+  </url>
+  <url>
+    <loc>https://crp2a.github.io/gamma/articles/gamma.html</loc>
   </url>
 </urlset>
