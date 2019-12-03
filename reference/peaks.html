@@ -163,7 +163,7 @@ object.</p></td>
     </tr>
     <tr>
       <th>method</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> string specifying the methode to be
+      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> string specifying the method to be
 used for background noise estimation (see below).</p></td>
     </tr>
     <tr>
@@ -182,12 +182,15 @@ half window size.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>An object of class <a href='PeakPosition-class.html'>PeakPosition</a>.</p>
-    <h2 class="hasAnchor" id="peak-detection"><a class="anchor" href="#peak-detection"></a>Peak detection</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    
-
-<p>A local maximum has to be the highest one in the given window and has to be
+    <p>A local maximum has to be the highest one in the given window and has to be
  higher than \(SNR \times noise\) to be recognized as peak.</p>
+<p>The following methods are availble for noise estimation:</p><dl class='dl-horizontal'>
+  <dt>MAD</dt><dd><p>Median Absolute Deviation.</p></dd>
+ 
+</dl>
+
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other signal processing: <code><a href='baseline.html'>baseline</a></code>,
@@ -211,7 +214,7 @@ half window size.</p></td>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
-      <li><a href="#peak-detection">Peak detection</a></li>
+      <li><a href="#details">Details</a></li>
       <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
@@ -224,7 +227,7 @@ half window size.</p></td>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guilhem Paradol, <a href='https://www.u-bordeaux-montaigne.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_lascarbx.jpg" height="64" /></a>.</p>
+  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guilhem Paradol, <a href='https://www.u-bordeaux-montaigne.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_lascarbx.jpg" height="64" /></a>, <a href='https://amidex.univ-amu.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_amidex.jpg" height="48" /></a>.</p>
 </div>
 
 <div class="pkgdown">

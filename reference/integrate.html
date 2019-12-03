@@ -172,8 +172,8 @@ range to integrate within (in keV).</p></td>
     </tr>
     <tr>
       <th>noise</th>
-      <td><p>A length-two <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> vector giving the noise
-value and error, respectively (see details).</p></td>
+      <td><p>A length-two <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> vector giving the background
+noise integration value and error, respectively (see details).</p></td>
     </tr>
     <tr>
       <th>NiEi</th>
@@ -189,8 +189,9 @@ simplified to a matrix? The default value, <code>FALSE</code>, returns a list.</
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>If <code>simplify</code> is <code>FALSE</code> returns a list of length-two
- numeric vectors (default), else returns a matrix.</p>
+    <p>If <code>simplify</code> is <code>FALSE</code> (the default) returns a list of
+ length-two numeric vectors (the dose rate and its error), else returns a
+ matrix.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>It assumes that each spectrum is calibrated in energy.</p>
@@ -229,7 +230,7 @@ simplified to a matrix? The default value, <code>FALSE</code>, returns a list.</
 
       <footer>
       <div class="copyright">
-  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guilhem Paradol, <a href='https://www.u-bordeaux-montaigne.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_lascarbx.jpg" height="64" /></a>.</p>
+  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guilhem Paradol, <a href='https://www.u-bordeaux-montaigne.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_lascarbx.jpg" height="64" /></a>, <a href='https://amidex.univ-amu.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_amidex.jpg" height="48" /></a>.</p>
 </div>
 
 <div class="pkgdown">

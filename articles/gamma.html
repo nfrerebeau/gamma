@@ -98,7 +98,7 @@
       <h1>Manual</h1>
                         <h4 class="author">N. Frerebeau</h4>
             
-            <h4 class="date">2019-11-07</h4>
+            <h4 class="date">2019-12-03</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/crp2a/gamma/blob/master/vignettes/gamma.Rmd"><code>vignettes/gamma.Rmd</code></a></small>
       <div class="hidden name"><code>gamma.Rmd</code></div>
@@ -138,26 +138,28 @@
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; Gamma spectrum:</span></a>
 <a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; *  name: test_CNF</span></a>
 <a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt; *  date: 2019-02-07 11:48:18</span></a>
-<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt; *  live time: 3385.54</span></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt; *  real time: 3403.67</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt; *  live_time: 3385.54</span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt; *  real_time: 3403.67</span></a>
 <a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt; *  chanels: 1024</span></a>
-<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt; *  energy range: -7 3124.91</span></a>
-<a class="sourceLine" id="cb3-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co"># Import a TKA file</span></a>
-<a class="sourceLine" id="cb3-14" data-line-number="14">tka_test &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/test_TKA.tka"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
-<a class="sourceLine" id="cb3-15" data-line-number="15">(spc_tka &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(tka_test))</a>
-<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt; Gamma spectrum:</span></a>
-<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt; *  name: test_TKA</span></a>
-<a class="sourceLine" id="cb3-18" data-line-number="18"><span class="co">#&gt; *  date: 2019-11-07 18:22:04</span></a>
-<a class="sourceLine" id="cb3-19" data-line-number="19"><span class="co">#&gt; *  live time: 3385.54</span></a>
-<a class="sourceLine" id="cb3-20" data-line-number="20"><span class="co">#&gt; *  real time: 3403.67</span></a>
-<a class="sourceLine" id="cb3-21" data-line-number="21"><span class="co">#&gt; *  chanels: 1024</span></a>
-<a class="sourceLine" id="cb3-22" data-line-number="22"><span class="co">#&gt; *  energy range: not calibrated</span></a>
-<a class="sourceLine" id="cb3-23" data-line-number="23"></a>
-<a class="sourceLine" id="cb3-24" data-line-number="24"><span class="co"># Import all files in a given directory</span></a>
-<a class="sourceLine" id="cb3-25" data-line-number="25">files_test &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
-<a class="sourceLine" id="cb3-26" data-line-number="26">(spc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(files_test))</a>
-<a class="sourceLine" id="cb3-27" data-line-number="27"><span class="co">#&gt; A collection of 2 gamma spectra: test_CNF, test_TKA</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt; *  energy_min: -7.00403203118913</span></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt; *  energy_max: 3124.91452789307</span></a>
+<a class="sourceLine" id="cb3-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co"># Import a TKA file</span></a>
+<a class="sourceLine" id="cb3-15" data-line-number="15">tka_test &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/test_TKA.tka"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
+<a class="sourceLine" id="cb3-16" data-line-number="16">(spc_tka &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(tka_test))</a>
+<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt; Gamma spectrum:</span></a>
+<a class="sourceLine" id="cb3-18" data-line-number="18"><span class="co">#&gt; *  name: test_TKA</span></a>
+<a class="sourceLine" id="cb3-19" data-line-number="19"><span class="co">#&gt; *  date: 2019-12-03 16:55:36</span></a>
+<a class="sourceLine" id="cb3-20" data-line-number="20"><span class="co">#&gt; *  live_time: 3385.54</span></a>
+<a class="sourceLine" id="cb3-21" data-line-number="21"><span class="co">#&gt; *  real_time: 3403.67</span></a>
+<a class="sourceLine" id="cb3-22" data-line-number="22"><span class="co">#&gt; *  chanels: 1024</span></a>
+<a class="sourceLine" id="cb3-23" data-line-number="23"><span class="co">#&gt; *  energy_min: NA</span></a>
+<a class="sourceLine" id="cb3-24" data-line-number="24"><span class="co">#&gt; *  energy_max: NA</span></a>
+<a class="sourceLine" id="cb3-25" data-line-number="25"></a>
+<a class="sourceLine" id="cb3-26" data-line-number="26"><span class="co"># Import all files in a given directory</span></a>
+<a class="sourceLine" id="cb3-27" data-line-number="27">files_test &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
+<a class="sourceLine" id="cb3-28" data-line-number="28">(spc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(files_test))</a>
+<a class="sourceLine" id="cb3-29" data-line-number="29"><span class="co">#&gt; A collection of 2 gamma spectra: test_CNF, test_TKA</span></a></code></pre></div>
 </div>
 <div id="inspect-spectrum" class="section level1">
 <h1 class="hasAnchor">
@@ -339,12 +341,24 @@
 <a class="sourceLine" id="cb17-3" data-line-number="3">test_spc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(test_dir)</a>
 <a class="sourceLine" id="cb17-4" data-line-number="4"></a>
 <a class="sourceLine" id="cb17-5" data-line-number="5"><span class="co"># Estimate the gamma dose rate</span></a>
-<a class="sourceLine" id="cb17-6" data-line-number="6">dose_rate &lt;-<span class="st"> </span><span class="kw"><a href="../reference/doserate.html">predict_dose</a></span>(calib_curve, test_spc, <span class="dt">simplify =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb17-6" data-line-number="6">dose_rate &lt;-<span class="st"> </span><span class="kw"><a href="../reference/doserate.html">predict_dose</a></span>(calib_curve, test_spc, <span class="dt">simplify =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb17-7" data-line-number="7"><span class="co">#&gt; Warning: The following values do not lie in the curve range:</span></a>
+<a class="sourceLine" id="cb17-8" data-line-number="8"><span class="co">#&gt; * BR2011-08</span></a>
+<a class="sourceLine" id="cb17-9" data-line-number="9"><span class="co">#&gt; * BR2011-15A</span></a>
+<a class="sourceLine" id="cb17-10" data-line-number="10"><span class="co">#&gt; * BR2011-15B</span></a>
+<a class="sourceLine" id="cb17-11" data-line-number="11"><span class="co">#&gt; * BR2011-16</span></a>
+<a class="sourceLine" id="cb17-12" data-line-number="12"><span class="co">#&gt; * BR2011-23</span></a>
+<a class="sourceLine" id="cb17-13" data-line-number="13"><span class="co">#&gt; * BR2011-24</span></a>
+<a class="sourceLine" id="cb17-14" data-line-number="14"><span class="co">#&gt; * BR2011-26</span></a>
+<a class="sourceLine" id="cb17-15" data-line-number="15"><span class="co">#&gt; * BR2011-27</span></a>
+<a class="sourceLine" id="cb17-16" data-line-number="16"><span class="co">#&gt; * BR2011-29</span></a>
+<a class="sourceLine" id="cb17-17" data-line-number="17"><span class="co">#&gt; * SC2019</span></a></code></pre></div>
 <table class="table">
 <caption>Gamma dose rate estimates</caption>
 <thead><tr class="header">
 <th></th>
 <th align="left">name</th>
+<th align="right">live_time</th>
 <th align="right">signal_value</th>
 <th align="right">signal_error</th>
 <th align="right">dose_value</th>
@@ -354,6 +368,7 @@
 <tr class="odd">
 <td>BR2011-08</td>
 <td align="left">BR2011-08</td>
+<td align="right">644.83</td>
 <td align="right">11308.46</td>
 <td align="right">10.79</td>
 <td align="right">313.56</td>
@@ -362,6 +377,7 @@
 <tr class="even">
 <td>BR2011-15A</td>
 <td align="left">BR2011-15A</td>
+<td align="right">446.14</td>
 <td align="right">7593.46</td>
 <td align="right">12.26</td>
 <td align="right">195.20</td>
@@ -370,6 +386,7 @@
 <tr class="odd">
 <td>BR2011-15B</td>
 <td align="left">BR2011-15B</td>
+<td align="right">706.06</td>
 <td align="right">7544.27</td>
 <td align="right">9.79</td>
 <td align="right">193.64</td>
@@ -378,6 +395,7 @@
 <tr class="even">
 <td>BR2011-16</td>
 <td align="left">BR2011-16</td>
+<td align="right">730.80</td>
 <td align="right">5909.53</td>
 <td align="right">9.39</td>
 <td align="right">141.56</td>
@@ -386,6 +404,7 @@
 <tr class="odd">
 <td>BR2011-20</td>
 <td align="left">BR2011-20</td>
+<td align="right">402.00</td>
 <td align="right">44099.22</td>
 <td align="right">18.66</td>
 <td align="right">1358.22</td>
@@ -394,6 +413,7 @@
 <tr class="even">
 <td>BR2011-23</td>
 <td align="left">BR2011-23</td>
+<td align="right">1144.75</td>
 <td align="right">13818.07</td>
 <td align="right">8.43</td>
 <td align="right">393.51</td>
@@ -402,6 +422,7 @@
 <tr class="odd">
 <td>BR2011-24</td>
 <td align="left">BR2011-24</td>
+<td align="right">644.51</td>
 <td align="right">12426.02</td>
 <td align="right">10.95</td>
 <td align="right">349.16</td>
@@ -410,6 +431,7 @@
 <tr class="even">
 <td>BR2011-26</td>
 <td align="left">BR2011-26</td>
+<td align="right">895.67</td>
 <td align="right">12091.73</td>
 <td align="right">9.29</td>
 <td align="right">338.51</td>
@@ -418,6 +440,7 @@
 <tr class="odd">
 <td>BR2011-27</td>
 <td align="left">BR2011-27</td>
+<td align="right">559.04</td>
 <td align="right">10029.99</td>
 <td align="right">11.37</td>
 <td align="right">272.83</td>
@@ -426,6 +449,7 @@
 <tr class="even">
 <td>BR2011-29</td>
 <td align="left">BR2011-29</td>
+<td align="right">1248.95</td>
 <td align="right">8854.52</td>
 <td align="right">7.58</td>
 <td align="right">235.38</td>
@@ -434,6 +458,7 @@
 <tr class="odd">
 <td>SC2019</td>
 <td align="left">SC2019</td>
+<td align="right">729.41</td>
 <td align="right">3401.60</td>
 <td align="right">9.03</td>
 <td align="right">61.66</td>
@@ -485,7 +510,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guilhem Paradol, <a href="https://www.u-bordeaux-montaigne.fr"><img src="https://crp2a.github.io/gamma/reference/figures/logo_ubm.jpg" height="48"></a>, <a href="https://lascarbx.labex.u-bordeaux.fr"><img src="https://crp2a.github.io/gamma/reference/figures/logo_lascarbx.jpg" height="64"></a>.</p>
+  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guilhem Paradol, <a href="https://www.u-bordeaux-montaigne.fr"><img src="https://crp2a.github.io/gamma/reference/figures/logo_ubm.jpg" height="48"></a>, <a href="https://lascarbx.labex.u-bordeaux.fr"><img src="https://crp2a.github.io/gamma/reference/figures/logo_lascarbx.jpg" height="64"></a>, <a href="https://amidex.univ-amu.fr"><img src="https://crp2a.github.io/gamma/reference/figures/logo_amidex.jpg" height="48"></a>.</p>
 </div>
 
 <div class="pkgdown">

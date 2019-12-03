@@ -177,8 +177,9 @@ object.</p></td>
     </tr>
     <tr>
       <th>noise</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/list.html'>list</a></code> of two numeric values giving the noise
-value and error.</p></td>
+      <td><p>A <a href='GammaSpectrum-class.html'>GammaSpectrum</a> object or a length-two
+<code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> vector giving the background noise integration
+value and error, respectively.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -198,23 +199,23 @@ range to integrate within (in keV).</p></td>
     <tr>
       <th>intercept</th>
       <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: should the intercept of the
-curve be estimated?</p></td>
+curve be estimated? Change this only if you know what you are doing.</p></td>
     </tr>
     <tr>
       <th>weights</th>
       <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: should weights be used in the
-fitting process. If <code>TRUE</code>, the inverse of the squared dose errors are
-used.</p></td>
+fitting process. If <code>TRUE</code>, the inverse of the squared dose rate
+errors are used. Change this only if you know what you are doing.</p></td>
     </tr>
     <tr>
       <th>details</th>
-      <td><p>A list of <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vector specifying additional
-informations about the instrument for which the curve is built.</p></td>
+      <td><p>A <code><a href='https://rdrr.io/r/base/list.html'>list</a></code> of length-one vector specifying
+additional informations about the instrument for which the curve is built.</p></td>
     </tr>
     <tr>
       <th>epsilon</th>
       <td><p>A <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> value giving an extra error term
-introduced by the energy calibration of the spectrum.</p></td>
+introduced by the calibration of the energy scale of the spectrum.</p></td>
     </tr>
     <tr>
       <th>simplify</th>
@@ -229,6 +230,11 @@ simplified to a matrix? If <code>FALSE</code> (default), returns a list.</p></td
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p><code>predict_dose</code> predicts in-situ gamma dose rate.</p>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Mercier, N. &amp; Falguères, C. (2007). Field Gamma Dose-Rate Measurement with
+ a NaI(Tl) Detector: Re-Evaluation of the "Threshold" Technique.
+ <em>Ancient TL</em>, 25(1), p. 1-4.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='integrate.html'>integrate_signal</a></p></div>
@@ -255,7 +261,7 @@ simplified to a matrix? If <code>FALSE</code> (default), returns a list.</p></td
 #&gt; stats::lm(formula = fit_formula, data = fit_data, weights = fit_weights)
 #&gt; 
 #&gt; Residuals:
-#&gt;       1       2       3       4       5       6       7 
+#&gt;  BRIQUE    C341    C347     GOU     LMP     MAZ     PEP 
 #&gt;  -6.557  14.199   1.574 -52.632  19.994 -10.003  33.425 
 #&gt; 
 #&gt; Coefficients:
@@ -273,33 +279,34 @@ simplified to a matrix? If <code>FALSE</code> (default), returns a list.</p></td
 <span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>calib_curve</span>) +
   <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"Signal"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='st'>"Dose rate [µGy/y]"</span>)</div><div class='img'><img src='doserate-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Estimate gamma dose rates</span>
-(<span class='no'>dose_rate</span> <span class='kw'>&lt;-</span> <span class='fu'>predict_dose</span>(<span class='no'>calib_curve</span>, <span class='no'>spectra</span>))</div><div class='output co'>#&gt; $BRIQUE
-#&gt;          name signal_value signal_error dose_value dose_error
-#&gt; BRIQUE BRIQUE     64058.09     4.883637   1993.019   37.68772
+(<span class='no'>dose_rate</span> <span class='kw'>&lt;-</span> <span class='fu'>predict_dose</span>(<span class='no'>calib_curve</span>, <span class='no'>spectra</span>))</div><div class='output co'>#&gt; <span class='warning'>Warning: The following value does not lie in the curve range:</span>
+#&gt; <span class='warning'>* LMP</span></div><div class='output co'>#&gt; $BRIQUE
+#&gt;          name live_time signal_value signal_error dose_value dose_error
+#&gt; BRIQUE BRIQUE   8473.45     64058.09     4.883637   1993.019   37.68772
 #&gt; 
 #&gt; $C341
-#&gt;      name signal_value signal_error dose_value dose_error
-#&gt; C341 C341     27733.18     10.55402    835.768   15.80733
+#&gt;      name live_time signal_value signal_error dose_value dose_error
+#&gt; C341 C341    976.08     27733.18     10.55402    835.768   15.80733
 #&gt; 
 #&gt; $C347
-#&gt;      name signal_value signal_error dose_value dose_error
-#&gt; C347 C347     46143.33     14.34199   1422.284   26.89862
+#&gt;      name live_time signal_value signal_error dose_value dose_error
+#&gt; C347 C347    703.92     46143.33     14.34199   1422.284   26.89862
 #&gt; 
 #&gt; $GOU
-#&gt;     name signal_value signal_error dose_value dose_error
-#&gt; GOU  GOU     52596.04     12.53753   1627.857   30.78475
+#&gt;     name live_time signal_value signal_error dose_value dose_error
+#&gt; GOU  GOU   1008.58     52596.04     12.53753   1627.857   30.78475
 #&gt; 
 #&gt; $LMP
-#&gt;     name signal_value signal_error dose_value dose_error
-#&gt; LMP  LMP     21020.28     10.23343   621.9063   11.76397
+#&gt;     name live_time signal_value signal_error dose_value dose_error
+#&gt; LMP  LMP     908.2     21020.28     10.23343   621.9063   11.76397
 #&gt; 
 #&gt; $MAZ
-#&gt;     name signal_value signal_error dose_value dose_error
-#&gt; MAZ  MAZ     37640.75     11.53483   1151.407   21.77563
+#&gt;     name live_time signal_value signal_error dose_value dose_error
+#&gt; MAZ  MAZ    965.86     37640.75     11.53483   1151.407   21.77563
 #&gt; 
 #&gt; $PEP
-#&gt;     name signal_value signal_error dose_value dose_error
-#&gt; PEP  PEP     80122.28     20.45709   2504.797   47.36931
+#&gt;     name live_time signal_value signal_error dose_value dose_error
+#&gt; PEP  PEP    507.07     80122.28     20.45709   2504.797   47.36931
 #&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -308,6 +315,7 @@ simplified to a matrix? If <code>FALSE</code> (default), returns a list.</p></td
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
       <li><a href="#details">Details</a></li>
+      <li><a href="#references">References</a></li>
       <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
@@ -320,7 +328,7 @@ simplified to a matrix? If <code>FALSE</code> (default), returns a list.</p></td
 
       <footer>
       <div class="copyright">
-  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guilhem Paradol, <a href='https://www.u-bordeaux-montaigne.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_lascarbx.jpg" height="64" /></a>.</p>
+  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guilhem Paradol, <a href='https://www.u-bordeaux-montaigne.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_lascarbx.jpg" height="64" /></a>, <a href='https://amidex.univ-amu.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_amidex.jpg" height="48" /></a>.</p>
 </div>
 
 <div class="pkgdown">
