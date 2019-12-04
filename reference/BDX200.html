@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Peaks — find_peaks • gamma</title>
+<title>CRP2A Calibration Curve LaBr #2 — BDX200 • gamma</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,8 +42,8 @@
 
 
 
-<meta property="og:title" content="Peaks — find_peaks" />
-<meta property="og:description" content="Finds local maxima in sequential data." />
+<meta property="og:title" content="CRP2A Calibration Curve LaBr #2 — BDX200" />
+<meta property="og:description" content="CRP2A Calibration Curve LaBr #2" />
 <meta property="og:image" content="https://crp2a.github.io/gamma/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -134,93 +134,55 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Peaks</h1>
-    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/peaks.R'><code>R/peaks.R</code></a></small>
-    <div class="hidden name"><code>peaks.Rd</code></div>
+    <h1>CRP2A Calibration Curve LaBr #2</h1>
+    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <div class="hidden name"><code>BDX200.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Finds local maxima in sequential data.</p>
+    <p>CRP2A Calibration Curve LaBr #2</p>
     </div>
 
-    <pre class="usage"><span class='fu'>find_peaks</span>(<span class='no'>object</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='st'>"BDX200"</span>)</pre>
 
-<span class='co'># S4 method for GammaSpectrum</span>
-<span class='fu'>find_peaks</span>(<span class='no'>object</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"MAD"</span>),
-  <span class='kw'>SNR</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>span</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>object</th>
-      <td><p>A <a href='GammaSpectrum-class.html'>GammaSpectrum</a> or <a href='PeakPosition-class.html'>PeakPosition</a>
-object.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Extra parameters to be passed to internal methods.</p></td>
-    </tr>
-    <tr>
-      <th>method</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> string specifying the method to be
-used for background noise estimation (see below).</p></td>
-    </tr>
-    <tr>
-      <th>SNR</th>
-      <td><p>An <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> giving the signal-to-noise-ratio for
-peak detection (see below).</p></td>
-    </tr>
-    <tr>
-      <th>span</th>
-      <td><p>An <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> giving the half window size (in number
-of chanels). If <code>NULL</code>, 5% of the number of chanels is used as the
-half window size.</p></td>
-    </tr>
-    </table>
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>An object of class <a href='PeakPosition-class.html'>PeakPosition</a>.</p>
+    <p>An object of class <code>CalibrationCurve</code> of length 1.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>A local maximum has to be the highest one in the given window and has to be
- higher than \(SNR \times noise\) to be recognized as peak.</p>
-<p>The following methods are availble for noise estimation:</p><dl class='dl-horizontal'>
-  <dt>MAD</dt><dd><p>Median Absolute Deviation.</p></dd>
- 
-</dl>
+    
+<table class='table'>
+<tr><td><strong>Laboratory</strong></td><td>IRAMAT-CRP2A (UMR 5060)</td></tr>
+<tr><td><strong>Instrument</strong></td><td>Canberra Inspector 1000</td></tr>
+<tr><td><strong>Detector</strong></td><td>LaBr</td></tr>
+<tr><td><strong>Authors</strong></td><td>CRP2A Luminescence Team</td></tr>
+</table>
+
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other signal processing: <code><a href='baseline.html'>baseline</a></code>,
-  <code><a href='integrate.html'>integrate_signal</a></code>,
-  <code><a href='slice.html'>slice_signal</a></code>, <code><a href='smooth.html'>smooth_signal</a></code>,
-  <code><a href='stabilize.html'>stabilize_signal</a></code></p></div>
+    <div class='dont-index'><p>Other datasets: <code><a href='decay_La.html'>.decay_La</a></code>,
+  <code><a href='decay.html'>.decay</a></code>, <code><a href='AIX100.html'>AIX100</a></code>,
+  <code><a href='BDX100.html'>BDX100</a></code>, <code><a href='BDX300.html'>BDX300</a></code>,
+  <code><a href='clermont.html'>clermont</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Import a Canberra CNF file</span>
-<span class='no'>spc_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/test_CNF.cnf"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
-<span class='no'>spectrum</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_file</span>)
-
-<span class='co'># Find peaks</span>
-(<span class='no'>peaks</span> <span class='kw'>&lt;-</span> <span class='fu'>find_peaks</span>(<span class='no'>spectrum</span>))</div><div class='output co'>#&gt; 2 peaks were detected:
-#&gt;   chanel     energy
-#&gt; 1     35   94.93504
-#&gt; 2    496 1491.71339</div><div class='input'><span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>spectrum</span>, <span class='no'>peaks</span>)</div><div class='img'><img src='peaks-1.png' alt='' width='700' height='433' /></div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='co'>## Load the curve</span>
+<span class='kw pkg'>utils</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='st'>"BDX200"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
+<span class='no'>BDX200</span>
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
+      <li><a href="#format">Format</a></li>
       <li><a href="#details">Details</a></li>
       <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 
-    <h2>Author</h2>
-    <p>N. Frerebeau</p>
   </div>
 </div>
 

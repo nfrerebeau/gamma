@@ -10,6 +10,12 @@
     <loc>https://crp2a.github.io/gamma/reference/BDX100.html</loc>
   </url>
   <url>
+    <loc>https://crp2a.github.io/gamma/reference/BDX200.html</loc>
+  </url>
+  <url>
+    <loc>https://crp2a.github.io/gamma/reference/BDX300.html</loc>
+  </url>
+  <url>
     <loc>https://crp2a.github.io/gamma/reference/BaseLine-class.html</loc>
   </url>
   <url>
@@ -37,13 +43,13 @@
     <loc>https://crp2a.github.io/gamma/reference/clermont.html</loc>
   </url>
   <url>
+    <loc>https://crp2a.github.io/gamma/reference/decay.html</loc>
+  </url>
+  <url>
+    <loc>https://crp2a.github.io/gamma/reference/decay_La.html</loc>
+  </url>
+  <url>
     <loc>https://crp2a.github.io/gamma/reference/doserate.html</loc>
-  </url>
-  <url>
-    <loc>https://crp2a.github.io/gamma/reference/dot-decay.html</loc>
-  </url>
-  <url>
-    <loc>https://crp2a.github.io/gamma/reference/dot-decay_La.html</loc>
   </url>
   <url>
     <loc>https://crp2a.github.io/gamma/reference/energy.html</loc>
