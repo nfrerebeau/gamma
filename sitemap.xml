@@ -4,16 +4,16 @@
     <loc>https://crp2a.github.io/gamma/index.html</loc>
   </url>
   <url>
-    <loc>https://crp2a.github.io/gamma/reference/AIX100.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/AIX_NaI_curve.html</loc>
   </url>
   <url>
-    <loc>https://crp2a.github.io/gamma/reference/BDX100.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/AIX_NaI_data.html</loc>
   </url>
   <url>
-    <loc>https://crp2a.github.io/gamma/reference/BDX200.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/BDX_LaBr_1_curve.html</loc>
   </url>
   <url>
-    <loc>https://crp2a.github.io/gamma/reference/BDX300.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/BDX_LaBr_1_data.html</loc>
   </url>
   <url>
     <loc>https://crp2a.github.io/gamma/reference/BaseLine-class.html</loc>
@@ -59,9 +59,6 @@
   </url>
   <url>
     <loc>https://crp2a.github.io/gamma/reference/integrate.html</loc>
-  </url>
-  <url>
-    <loc>https://crp2a.github.io/gamma/reference/launch_app.html</loc>
   </url>
   <url>
     <loc>https://crp2a.github.io/gamma/reference/operators.html</loc>

@@ -17,23 +17,27 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -45,7 +49,9 @@
 <meta property="og:title" content="An S4 Class to Represent a Collection of Gamma Sectra — GammaSpectra-class" />
 <meta property="og:description" content="Represents a collection of spectra of gamma ray spectrometry measurements." />
 <meta property="og:image" content="https://crp2a.github.io/gamma/logo.png" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@nfrerebeau" />
+<meta name="twitter:site" content="@CRP2A" />
 
 
 
@@ -63,7 +69,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -116,7 +122,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/crp2a/gamma">
+  <a href="https://github.com/crp2a/gamma/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -153,7 +159,7 @@
 
     
 
-<p>In the code snippets below, <code>x</code> is a <code>GammaSpectra</code> object.</p><dl class='dl-horizontal'>
+<p>In the code snippets below, <code>x</code> is a <code>GammaSpectra</code> object.</p><dl>
  <dt><code><a href='https://rdrr.io/r/base/length.html'>length(x)</a></code></dt><dd><p>Get the number of elements in <code>x</code>.</p></dd>
  <dt><code><a href='access.html'>get_names(x)</a></code>, <code>set_names(x) &lt;- value</code></dt><dd><p>Retrieves or sets
   the names of <code>x</code> according to <code>value</code>.</p></dd>
@@ -168,7 +174,7 @@
 
     
 
-<p>In the code snippets below, <code>x</code> is a <code>GammaSpectra</code> object.</p><dl class='dl-horizontal'>
+<p>In the code snippets below, <code>x</code> is a <code>GammaSpectra</code> object.</p><dl>
  <dt><code>as(x, "data.frame")</code></dt><dd><p>Coerces <code>x</code> to a long
  <code><a href='https://rdrr.io/r/base/data.frame.html'>data frame</a></code>.</p></dd>
 
@@ -178,7 +184,7 @@
 
     
 
-<p>In the code snippets below, <code>x</code> is a <code>GammaSpectra</code> object.</p><dl class='dl-horizontal'>
+<p>In the code snippets below, <code>x</code> is a <code>GammaSpectra</code> object.</p><dl>
  <dt><code>x[i]</code></dt><dd><p>Extracts the elements selected by subscript <code>i</code>.
   <code>i</code> can be <code>missing</code> or <code>NULL</code>, <code>numeric</code> or
   <code>character</code> vector or a <code>factor</code>.
@@ -196,26 +202,29 @@
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='GammaSpectrum-class.html'>GammaSpectrum</a>.</p>
-<p>Other class: <code><a href='BaseLine-class.html'>BaseLine-class</a></code>,
-  <code><a href='CalibrationCurve-class.html'>CalibrationCurve-class</a></code>,
-  <code><a href='GammaSpectrum-class.html'>GammaSpectrum-class</a></code>,
-  <code><a href='PeakPosition-class.html'>PeakPosition-class</a></code></p></div>
+<p>Other class: 
+<code><a href='BaseLine-class.html'>BaseLine-class</a></code>,
+<code><a href='CalibrationCurve-class.html'>DoseRateModel-class</a></code>,
+<code><a href='GammaSpectrum-class.html'>GammaSpectrum-class</a></code>,
+<code><a href='PeakPosition-class.html'>PeakPosition-class</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Import all CNF files in a given directory</span>
-<span class='no'>spc_dir</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/BDX100/calibration"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
-(<span class='no'>spectra</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_dir</span>))</div><div class='output co'>#&gt; A collection of 7 gamma spectra: BRIQUE, C341, C347, GOU, LMP, MAZ, PEP</div><div class='input'>
+<span class='no'>spc_dir</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/BDX_LaBr_1/calibration"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
+(<span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_dir</span>))</div><div class='output co'>#&gt; A collection of 7 gamma spectra: BRIQUE, C341, C347, GOU, LMP, MAZ, PEP</div><div class='input'>
 <span class='co'>## Access</span>
-<span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span>(<span class='no'>spectra</span>)</div><div class='output co'>#&gt; [1] 7</div><div class='input'><span class='fu'><a href='access.html'>get_names</a></span>(<span class='no'>spectra</span>)</div><div class='output co'>#&gt;   BRIQUE     C341     C347      GOU      LMP      MAZ      PEP 
-#&gt; "BRIQUE"   "C341"   "C347"    "GOU"    "LMP"    "MAZ"    "PEP" </div><div class='input'><span class='fu'><a href='access.html'>get_hash</a></span>(<span class='no'>spectra</span>)</div><div class='output co'>#&gt;                             BRIQUE                               C341 
+<span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span>(<span class='no'>spc</span>)</div><div class='output co'>#&gt; [1] 7</div><div class='input'><span class='fu'><a href='access.html'>get_hash</a></span>(<span class='no'>spc</span>)</div><div class='output co'>#&gt;                             BRIQUE                               C341 
 #&gt; "1ecdbddaaee7354b19082631943927b4" "02c49b9e0a7c2f7e9441e0cc3a84f80a" 
 #&gt;                               C347                                GOU 
 #&gt; "09cfc2439cec1da653fea6e8669e2024" "04ee6c79a025c22e99237b45f2b02891" 
 #&gt;                                LMP                                MAZ 
 #&gt; "00032c2568e676366fa6c7a3ad642cef" "97c207f151ebefbfb48d5851aecbe931" 
 #&gt;                                PEP 
-#&gt; "71a3b09a7cc55c07d8d07b55e2b50e4f" </div><div class='input'><span class='fu'><a href='access.html'>get_chanels</a></span>(<span class='no'>spectra</span>)</div><div class='output co'>#&gt; BRIQUE   C341   C347    GOU    LMP    MAZ    PEP 
-#&gt;   1024   1024   1024   1024   1024   1024   1024 </div><div class='input'><span class='fu'><a href='access.html'>get_energy</a></span>(<span class='no'>spectra</span>)</div><div class='output co'>#&gt;              min      max
+#&gt; "71a3b09a7cc55c07d8d07b55e2b50e4f" </div><div class='input'><span class='fu'><a href='access.html'>get_names</a></span>(<span class='no'>spc</span>)</div><div class='output co'>#&gt;   BRIQUE     C341     C347      GOU      LMP      MAZ      PEP 
+#&gt; "BRIQUE"   "C341"   "C347"    "GOU"    "LMP"    "MAZ"    "PEP" </div><div class='input'><span class='fu'><a href='access.html'>get_time</a></span>(<span class='no'>spc</span>, <span class='st'>"live"</span>)</div><div class='output co'>#&gt;  BRIQUE    C341    C347     GOU     LMP     MAZ     PEP 
+#&gt; 8473.45  976.08  703.92 1008.58  908.20  965.86  507.07 </div><div class='input'><span class='fu'><a href='access.html'>get_time</a></span>(<span class='no'>spc</span>, <span class='st'>"real"</span>)</div><div class='output co'>#&gt;  BRIQUE    C341    C347     GOU     LMP     MAZ     PEP 
+#&gt; 8501.68  978.36  705.96 1011.56  910.17  968.34  508.96 </div><div class='input'><span class='fu'><a href='access.html'>get_nchanels</a></span>(<span class='no'>spc</span>)</div><div class='output co'>#&gt; BRIQUE   C341   C347    GOU    LMP    MAZ    PEP 
+#&gt;   1024   1024   1024   1024   1024   1024   1024 </div><div class='input'><span class='fu'><a href='access.html'>range_energy</a></span>(<span class='no'>spc</span>)</div><div class='output co'>#&gt;              min      max
 #&gt; BRIQUE  3.827601 3243.211
 #&gt; C341    8.993622 3278.179
 #&gt; C347    9.836247 3291.249
@@ -225,7 +234,8 @@
 #&gt; PEP     7.349223 3252.673</div><div class='input'>
 <span class='co'>## Coerce</span>
 <span class='co'># \donttest{</span>
-<span class='fu'>as</span>(<span class='no'>spectra</span>, <span class='st'>"data.frame"</span>)</div><div class='output co'>#&gt;      chanel      energy count         rate   name
+<span class='co'>## Return a long data frame</span>
+<span class='fu'>as</span>(<span class='no'>spc</span>, <span class='st'>"data.frame"</span>)</div><div class='output co'>#&gt;      chanel      energy count         rate   name
 #&gt; 1         1    3.827601     0 0.0000000000 BRIQUE
 #&gt; 2         2    6.946445     0 0.0000000000 BRIQUE
 #&gt; 3         3   10.065383     0 0.0000000000 BRIQUE
@@ -7396,7 +7406,7 @@
 #&gt; 7168   1024 3252.672842     0 0.0000000000    PEP</div><div class='input'><span class='co'># }</span>
 
 <span class='co'>## Subset</span>
-<span class='no'>spectra</span>[] <span class='co'># All spectra</span></div><div class='output co'>#&gt; A collection of 7 gamma spectra: BRIQUE, C341, C347, GOU, LMP, MAZ, PEP</div><div class='input'><span class='no'>spectra</span>[<span class='kw'>NULL</span>] <span class='co'># All spectra</span></div><div class='output co'>#&gt; A collection of 7 gamma spectra: BRIQUE, C341, C347, GOU, LMP, MAZ, PEP</div><div class='input'><span class='no'>spectra</span>[<span class='fl'>1</span>] <span class='co'># The first spectrum</span></div><div class='output co'>#&gt; A collection of 1 gamma spectrum: BRIQUE</div><div class='input'><span class='no'>spectra</span>[-<span class='fl'>6</span>] <span class='co'># Delete the sixth spectrum</span></div><div class='output co'>#&gt; A collection of 6 gamma spectra: BRIQUE, C341, C347, GOU, LMP, PEP</div><div class='input'><span class='no'>spectra</span>[<span class='fl'>1</span>:<span class='fl'>3</span>] <span class='co'># The first three spectra</span></div><div class='output co'>#&gt; A collection of 3 gamma spectra: BRIQUE, C341, C347</div><div class='input'><span class='no'>spectra</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>3</span>)] <span class='co'># The first and third spectra</span></div><div class='output co'>#&gt; A collection of 2 gamma spectra: BRIQUE, C347</div><div class='input'><span class='no'>spectra</span>[<span class='st'>"BRIQUE"</span>] <span class='co'># The spectrum named 'BRIQUE'</span></div><div class='output co'>#&gt; A collection of 1 gamma spectrum: BRIQUE</div><div class='input'><span class='no'>spectra</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"BRIQUE"</span>, <span class='st'>"C347"</span>)] <span class='co'># The spectra named 'BRIQUE' and 'C347'</span></div><div class='output co'>#&gt; A collection of 2 gamma spectra: BRIQUE, C347</div><div class='input'><span class='no'>spectra</span>[<span class='fl'>1</span>:<span class='fl'>3</span>, <span class='st'>"energy"</span>] <span class='co'># The slot 'energy' of the first three spectra</span></div><div class='output co'>#&gt; $BRIQUE
+<span class='no'>spc</span>[] <span class='co'># All spectra</span></div><div class='output co'>#&gt; A collection of 7 gamma spectra: BRIQUE, C341, C347, GOU, LMP, MAZ, PEP</div><div class='input'><span class='no'>spc</span>[<span class='kw'>NULL</span>] <span class='co'># All spectra</span></div><div class='output co'>#&gt; A collection of 7 gamma spectra: BRIQUE, C341, C347, GOU, LMP, MAZ, PEP</div><div class='input'><span class='no'>spc</span>[<span class='fl'>1</span>] <span class='co'># The first spectrum</span></div><div class='output co'>#&gt; A collection of 1 gamma spectrum: BRIQUE</div><div class='input'><span class='no'>spc</span>[-<span class='fl'>6</span>] <span class='co'># Delete the sixth spectrum</span></div><div class='output co'>#&gt; A collection of 6 gamma spectra: BRIQUE, C341, C347, GOU, LMP, PEP</div><div class='input'><span class='no'>spc</span>[<span class='fl'>1</span>:<span class='fl'>3</span>] <span class='co'># The first three spectra</span></div><div class='output co'>#&gt; A collection of 3 gamma spectra: BRIQUE, C341, C347</div><div class='input'><span class='no'>spc</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>3</span>)] <span class='co'># The first and third spectra</span></div><div class='output co'>#&gt; A collection of 2 gamma spectra: BRIQUE, C347</div><div class='input'><span class='no'>spc</span>[<span class='st'>"BRIQUE"</span>] <span class='co'># The spectrum named 'BRIQUE'</span></div><div class='output co'>#&gt; A collection of 1 gamma spectrum: BRIQUE</div><div class='input'><span class='no'>spc</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"BRIQUE"</span>, <span class='st'>"C347"</span>)] <span class='co'># The spectra named 'BRIQUE' and 'C347'</span></div><div class='output co'>#&gt; A collection of 2 gamma spectra: BRIQUE, C347</div><div class='input'><span class='no'>spc</span>[<span class='fl'>1</span>:<span class='fl'>3</span>, <span class='st'>"energy"</span>] <span class='co'># The slot 'energy' of the first three spectra</span></div><div class='output co'>#&gt; $BRIQUE
 #&gt;    [1]    3.827601    6.946445   10.065383   13.184414   16.303538   19.422755
 #&gt;    [7]   22.542066   25.661471   28.780968   31.900559   35.020244   38.140021
 #&gt;   [13]   41.259893   44.379857   47.499915   50.620066   53.740311   56.860649
@@ -7914,14 +7924,14 @@
 #&gt; [1009] 3241.153486 3244.491363 3247.829502 3251.167903 3254.506566 3257.845491
 #&gt; [1015] 3261.184678 3264.524127 3267.863838 3271.203812 3274.544047 3277.884544
 #&gt; [1021] 3281.225304 3284.566325 3287.907609 3291.249154
-#&gt; </div><div class='input'><span class='no'>spectra</span><span class='kw'>[[</span><span class='fl'>1</span>]]</div><div class='output co'>#&gt; Gamma spectrum:
+#&gt; </div><div class='input'><span class='no'>spc</span><span class='kw'>[[</span><span class='fl'>1</span>]]</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: BRIQUE
 #&gt; *  date: 2009-08-28 11:43:20
 #&gt; *  live_time: 8473.45
 #&gt; *  real_time: 8501.68
 #&gt; *  chanels: 1024
 #&gt; *  energy_min: 3.8276011458438
-#&gt; *  energy_max: 3243.21093320847</div><div class='input'><span class='no'>spectra</span><span class='kw'>[[</span><span class='st'>"BRIQUE"</span>]]</div><div class='output co'>#&gt; Gamma spectrum:
+#&gt; *  energy_max: 3243.21093320847</div><div class='input'><span class='no'>spc</span><span class='kw'>[[</span><span class='st'>"BRIQUE"</span>]]</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: BRIQUE
 #&gt; *  date: 2009-08-28 11:43:20
 #&gt; *  live_time: 8473.45
@@ -7930,19 +7940,10 @@
 #&gt; *  energy_min: 3.8276011458438
 #&gt; *  energy_max: 3243.21093320847</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#details">Details</a></li>
-      <li><a href="#access">Access</a></li>
-      <li><a href="#coerce">Coerce</a></li>
-      <li><a href="#subset">Subset</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>N. Frerebeau</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -7953,7 +7954,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

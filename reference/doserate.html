@@ -17,23 +17,27 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -45,7 +49,9 @@
 <meta property="og:title" content="Dose Rate Estimation — doserate" />
 <meta property="og:description" content="fit_dose builds a calibration curve for gamma dose rate estimation." />
 <meta property="og:image" content="https://crp2a.github.io/gamma/logo.png" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@nfrerebeau" />
+<meta name="twitter:site" content="@CRP2A" />
 
 
 
@@ -63,7 +69,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -116,7 +122,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/crp2a/gamma">
+  <a href="https://github.com/crp2a/gamma/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -143,29 +149,30 @@
     <p><code>fit_dose</code> builds a calibration curve for gamma dose rate estimation.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>fit_dose</span>(<span class='no'>object</span>, <span class='no'>noise</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>fit_dose</span>(<span class='no'>object</span>, <span class='no'>...</span>)
 
 <span class='fu'>predict_dose</span>(<span class='no'>object</span>, <span class='no'>spectrum</span>, <span class='no'>...</span>)
 
-<span class='co'># S4 method for GammaSpectra,GammaSpectrum</span>
-<span class='fu'>fit_dose</span>(<span class='no'>object</span>, <span class='no'>noise</span>, <span class='no'>range</span>,
-  <span class='kw'>intercept</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>weights</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>details</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)
-
-<span class='co'># S4 method for GammaSpectra,numeric</span>
-<span class='fu'>fit_dose</span>(<span class='no'>object</span>, <span class='no'>noise</span>, <span class='no'>range</span>,
-  <span class='kw'>intercept</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>weights</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>details</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)
+<span class='co'># S4 method for GammaSpectra</span>
+<span class='fu'>fit_dose</span>(
+  <span class='no'>object</span>,
+  <span class='no'>Ni_noise</span>,
+  <span class='no'>Ni_range</span>,
+  <span class='no'>NiEi_noise</span>,
+  <span class='no'>NiEi_range</span>,
+  <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.05</span>,
+  <span class='kw'>details</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='no'>...</span>
+)
 
 <span class='co'># S4 method for CalibrationCurve,missing</span>
-<span class='fu'>predict_dose</span>(<span class='no'>object</span>, <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>simplify</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+<span class='fu'>predict_dose</span>(<span class='no'>object</span>, <span class='kw'>threshold</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Ni"</span>, <span class='st'>"NiEi"</span>), <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='no'>...</span>)
 
 <span class='co'># S4 method for CalibrationCurve,GammaSpectrum</span>
-<span class='fu'>predict_dose</span>(<span class='no'>object</span>, <span class='no'>spectrum</span>,
-  <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>simplify</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+<span class='fu'>predict_dose</span>(<span class='no'>object</span>, <span class='no'>spectrum</span>, <span class='kw'>threshold</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Ni"</span>, <span class='st'>"NiEi"</span>), <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='no'>...</span>)
 
 <span class='co'># S4 method for CalibrationCurve,GammaSpectra</span>
-<span class='fu'>predict_dose</span>(<span class='no'>object</span>, <span class='no'>spectrum</span>,
-  <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>simplify</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>predict_dose</span>(<span class='no'>object</span>, <span class='no'>spectrum</span>, <span class='kw'>threshold</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Ni"</span>, <span class='st'>"NiEi"</span>), <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -174,12 +181,6 @@
       <th>object</th>
       <td><p>A <a href='GammaSpectra-class.html'>GammaSpectra</a> or <a href='CalibrationCurve-class.html'>CalibrationCurve</a>
 object.</p></td>
-    </tr>
-    <tr>
-      <th>noise</th>
-      <td><p>A <a href='GammaSpectrum-class.html'>GammaSpectrum</a> object or a length-two
-<code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> vector giving the background noise integration
-value and error, respectively.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -192,20 +193,19 @@ value and error, respectively.</p></td>
 to predict. If omitted, the fitted values are used.</p></td>
     </tr>
     <tr>
-      <th>range</th>
-      <td><p>A length-two <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> vector giving the energy
-range to integrate within (in keV).</p></td>
+      <th>Ni_noise, NiEi_noise</th>
+      <td><p>A length-two <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> vector giving
+the background noise integration value and error, respectively.</p></td>
     </tr>
     <tr>
-      <th>intercept</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: should the intercept of the
-curve be estimated? Change this only if you know what you are doing.</p></td>
+      <th>Ni_range, NiEi_range</th>
+      <td><p>A length-two <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> vector giving
+the energy range to integrate within (in keV).</p></td>
     </tr>
     <tr>
-      <th>weights</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: should weights be used in the
-fitting process. If <code>TRUE</code>, the inverse of the squared dose rate
-errors are used. Change this only if you know what you are doing.</p></td>
+      <th>alpha</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> value giving the cutoff value for
+confidence intervals (see <code><a href='https://rdrr.io/pkg/IsoplotR/man/york.html'>york</a></code>).</p></td>
     </tr>
     <tr>
       <th>details</th>
@@ -213,20 +213,36 @@ errors are used. Change this only if you know what you are doing.</p></td>
 additional informations about the instrument for which the curve is built.</p></td>
     </tr>
     <tr>
+      <th>threshold</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> sting specifying the threshold
+to be used. It must be one of <code>"Ni"</code> (default) or <code>"NiEi"</code>
+(see details).</p></td>
+    </tr>
+    <tr>
       <th>epsilon</th>
       <td><p>A <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> value giving an extra error term
 introduced by the calibration of the energy scale of the spectrum.</p></td>
-    </tr>
-    <tr>
-      <th>simplify</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: should the result be
-simplified to a matrix? If <code>FALSE</code> (default), returns a list.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <a href='CalibrationCurve-class.html'>CalibrationCurve</a> object.</p>
+    <p><code>fit_dose</code> returns a <a href='CalibrationCurve-class.html'>CalibrationCurve</a> object.</p>
+<p><code>predict_dose</code> returns a <code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code> with the following
+ columns:</p><dl>
+  <dt>name</dt><dd><p>(<code><a href='https://rdrr.io/r/base/character.html'>character</a></code>) the name of the spectra.</p></dd>
+  <dt>*_signal</dt><dd><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code>) the integrated signal value
+  (according to the value of <code>threshold</code>; see
+  <code><a href='integrate.html'>integrate_signal</a></code>).</p></dd>
+  <dt>*_error</dt><dd><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code>) the integrated signal error value
+  (according to the value of <code>threshold</code>; see
+  <code><a href='integrate.html'>integrate_signal</a></code>).</p></dd>
+  <dt>gamma_signal</dt><dd><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code>) the predicted gamma dose rate.</p></dd>
+  <dt>gamma_error</dt><dd><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code>) the predicted gamma dose rate
+  error.</p></dd>
+ 
+</dl>
+
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p><code>predict_dose</code> predicts in-situ gamma dose rate.</p>
@@ -235,93 +251,63 @@ simplified to a matrix? If <code>FALSE</code> (default), returns a list.</p></td
     <p>Mercier, N. &amp; Falguères, C. (2007). Field Gamma Dose-Rate Measurement with
  a NaI(Tl) Detector: Re-Evaluation of the "Threshold" Technique.
  <em>Ancient TL</em>, 25(1), p. 1-4.</p>
+<p>York, D., Evensen, N. M., Martínez, M. L. &amp; De Basabe Delgado, J. (2004).
+ Unified Equations for the Slope, Intercept, and Standard Errors of the Best
+ Straight Line. <em>American Journal of Physics</em>, 72(3), p. 367-75.
+ DOI: <a href='https://doi.org/10.1119/1.1632486'>10.1119/1.1632486</a>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='integrate.html'>integrate_signal</a></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Import CNF files for calibration</span>
-<span class='no'>spc_dir</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/BDX100/calibration"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
+    <pre class="examples"><div class='input'><span class='co'>## Import CNF files for calibration</span>
+<span class='no'>spc_dir</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/BDX_LaBr_1/calibration"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
 <span class='no'>spectra</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_dir</span>)
 
-<span class='co'># Set dose rate values and errors for each spectrum</span>
+<span class='co'>## Set dose rate values and errors for each spectrum</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='st'>"clermont"</span>)
-<span class='fu'>set_dose</span>(<span class='no'>spectra</span>) <span class='kw'>&lt;-</span> <span class='no'>clermont</span>[, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"gamma"</span>, <span class='st'>"gamma_error"</span>)]
+<span class='fu'>set_dose</span>(<span class='no'>spectra</span>) <span class='kw'>&lt;-</span> <span class='no'>clermont</span>[, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"gamma_dose"</span>, <span class='st'>"gamma_error"</span>)]
 
-<span class='co'># Build the calibration curve</span>
+<span class='co'>## Build the calibration curve</span>
 <span class='no'>calib_curve</span> <span class='kw'>&lt;-</span> <span class='fu'>fit_dose</span>(
   <span class='no'>spectra</span>,
-  <span class='kw'>noise</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>25279.63171</span>, <span class='fl'>1.66235</span>),
-  <span class='kw'>range</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>165</span>, <span class='fl'>2800</span>)
+  <span class='kw'>Ni_noise</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>22.61</span>, <span class='fl'>0.05</span>),
+  <span class='kw'>Ni_range</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>300</span>, <span class='fl'>2800</span>),
+  <span class='kw'>NiEi_noise</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>25279.63</span>, <span class='fl'>1.66</span>),
+  <span class='kw'>NiEi_range</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>165</span>, <span class='fl'>2800</span>)
 )
 
-<span class='co'># Check the linear model</span>
-<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='no'>calib_curve</span><span class='kw'>[[</span><span class='st'>"model"</span>]])</div><div class='output co'>#&gt; 
-#&gt; Call:
-#&gt; stats::lm(formula = fit_formula, data = fit_data, weights = fit_weights)
-#&gt; 
-#&gt; Residuals:
-#&gt;  BRIQUE    C341    C347     GOU     LMP     MAZ     PEP 
-#&gt;  -6.557  14.199   1.574 -52.632  19.994 -10.003  33.425 
-#&gt; 
-#&gt; Coefficients:
-#&gt;                Estimate Std. Error t value Pr(&gt;|t|)    
-#&gt; (Intercept)  -4.776e+01  3.059e+01  -1.562    0.179    
-#&gt; signal_value  3.186e-02  6.024e-04  52.883 4.57e-08 ***
-#&gt; ---
-#&gt; Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-#&gt; 
-#&gt; Residual standard error: 30.44 on 5 degrees of freedom
-#&gt; Multiple R-squared:  0.9982,	Adjusted R-squared:  0.9979 
-#&gt; F-statistic:  2797 on 1 and 5 DF,  p-value: 4.572e-08
-#&gt; </div><div class='input'>
-<span class='co'># Plot the curve</span>
-<span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>calib_curve</span>) +
-  <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"Signal"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='st'>"Dose rate [µGy/y]"</span>)</div><div class='img'><img src='doserate-1.png' alt='' width='700' height='433' /></div><div class='input'>
-<span class='co'># Estimate gamma dose rates</span>
-(<span class='no'>dose_rate</span> <span class='kw'>&lt;-</span> <span class='fu'>predict_dose</span>(<span class='no'>calib_curve</span>, <span class='no'>spectra</span>))</div><div class='output co'>#&gt; <span class='warning'>Warning: The following value does not lie in the curve range:</span>
-#&gt; <span class='warning'>* LMP</span></div><div class='output co'>#&gt; $BRIQUE
-#&gt;          name live_time signal_value signal_error dose_value dose_error
-#&gt; BRIQUE BRIQUE   8473.45     64058.09     4.883637   1993.019   37.68772
-#&gt; 
-#&gt; $C341
-#&gt;      name live_time signal_value signal_error dose_value dose_error
-#&gt; C341 C341    976.08     27733.18     10.55402    835.768   15.80733
-#&gt; 
-#&gt; $C347
-#&gt;      name live_time signal_value signal_error dose_value dose_error
-#&gt; C347 C347    703.92     46143.33     14.34199   1422.284   26.89862
-#&gt; 
-#&gt; $GOU
-#&gt;     name live_time signal_value signal_error dose_value dose_error
-#&gt; GOU  GOU   1008.58     52596.04     12.53753   1627.857   30.78475
-#&gt; 
-#&gt; $LMP
-#&gt;     name live_time signal_value signal_error dose_value dose_error
-#&gt; LMP  LMP     908.2     21020.28     10.23343   621.9063   11.76397
-#&gt; 
-#&gt; $MAZ
-#&gt;     name live_time signal_value signal_error dose_value dose_error
-#&gt; MAZ  MAZ    965.86     37640.75     11.53483   1151.407   21.77563
-#&gt; 
-#&gt; $PEP
-#&gt;     name live_time signal_value signal_error dose_value dose_error
-#&gt; PEP  PEP    507.07     80122.28     20.45709   2504.797   47.36931
-#&gt; </div></pre>
+<span class='co'>## Check the linear model</span>
+<span class='fu'><a href='access.html'>get_model</a></span>(<span class='no'>calib_curve</span>, <span class='st'>"Ni"</span>)</div><div class='output co'>#&gt;              value      error
+#&gt; slope     28.78006  0.6422494
+#&gt; intercept 15.31287 27.1046646</div><div class='input'><span class='fu'><a href='access.html'>get_model</a></span>(<span class='no'>calib_curve</span>, <span class='st'>"NiEi"</span>)</div><div class='output co'>#&gt;                value        error
+#&gt; slope     0.03038954 6.146198e-04
+#&gt; intercept 0.26434778 2.462384e+01</div><div class='input'>
+<span class='co'>## Plot the curve</span>
+<span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>calib_curve</span>, <span class='kw'>threshold</span> <span class='kw'>=</span> <span class='st'>"Ni"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='img'><img src='doserate-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='co'>## Estimate gamma dose rates</span>
+<span class='fu'>predict_dose</span>(<span class='no'>calib_curve</span>, <span class='no'>spectra</span>, <span class='kw'>threshold</span> <span class='kw'>=</span> <span class='st'>"Ni"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: The following value does not lie in the curve range:</span>
+#&gt; <span class='warning'>* LMP</span></div><div class='output co'>#&gt;          name Ni_signal  Ni_error gamma_dose gamma_error
+#&gt; BRIQUE BRIQUE  67.42712 0.1541155  1955.8692    43.87509
+#&gt; C341     C341  28.79357 0.3283695   843.9936    21.15128
+#&gt; C347     C347  48.81431 0.4532472  1420.1916    34.32658
+#&gt; GOU       GOU  55.02787 0.3955437  1599.0181    37.48878
+#&gt; LMP       LMP  21.71174 0.3163913   640.1779    17.06224
+#&gt; MAZ       MAZ  39.09459 0.3609312  1140.4576    27.54219
+#&gt; PEP       PEP  84.36537 0.6514870  2443.3531    57.69762</div><div class='input'><span class='fu'>predict_dose</span>(<span class='no'>calib_curve</span>, <span class='no'>spectra</span>, <span class='kw'>threshold</span> <span class='kw'>=</span> <span class='st'>"NiEi"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: The following value does not lie in the curve range:</span>
+#&gt; <span class='warning'>* LMP</span></div><div class='output co'>#&gt;          name NiEi_signal NiEi_error gamma_dose gamma_error
+#&gt; BRIQUE BRIQUE    64058.09   4.882838  1946.9606    39.37700
+#&gt; C341     C341    27733.18  10.553649   843.0632    17.05373
+#&gt; C347     C347    46143.33  14.341715  1402.5391    28.36930
+#&gt; GOU       GOU    52596.04  12.537223  1598.6341    32.33416
+#&gt; LMP       LMP    21020.28  10.233051   639.0612    12.92857
+#&gt; MAZ       MAZ    37640.75  11.534488  1144.1496    23.14276
+#&gt; PEP       PEP    80122.28  20.456902  2435.1440    49.25402</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#references">References</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>N. Frerebeau</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -332,7 +318,7 @@ simplified to a matrix? If <code>FALSE</code> (default), returns a list.</p></td
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

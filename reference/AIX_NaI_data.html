@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>An S4 Class to Represent a Spectrum Baseline — BaseLine-class • gamma</title>
+<title>CEREGE Calibration Curve Data (NaI) — AIX_NaI_data • gamma</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="An S4 Class to Represent a Spectrum Baseline — BaseLine-class" />
-<meta property="og:description" content="An S4 Class to Represent a Spectrum Baseline" />
+<meta property="og:title" content="CEREGE Calibration Curve Data (NaI) — AIX_NaI_data" />
+<meta property="og:description" content="CEREGE Calibration Curve Data (NaI)" />
 <meta property="og:image" content="https://crp2a.github.io/gamma/logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@nfrerebeau" />
@@ -140,46 +140,30 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>An S4 Class to Represent a Spectrum Baseline</h1>
-    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/AllClasses.R'><code>R/AllClasses.R</code></a></small>
-    <div class="hidden name"><code>BaseLine-class.Rd</code></div>
+    <h1>CEREGE Calibration Curve Data (NaI)</h1>
+    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <div class="hidden name"><code>AIX_NaI_data.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>An S4 Class to Represent a Spectrum Baseline</p>
+    <p>CEREGE Calibration Curve Data (NaI)</p>
     </div>
 
+    <pre class="usage"><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>AIX_NaI_data</span>)</pre>
 
 
-    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>This class extends the <a href='GammaSpectrum-class.html'>GammaSpectrum</a> class.</p>
+    <p>An object of class <code>data.frame</code> with 5 rows and 10 columns.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='GammaSpectrum-class.html'>GammaSpectrum</a>.</p>
-<p>Other class: 
-<code><a href='CalibrationCurve-class.html'>DoseRateModel-class</a></code>,
-<code><a href='GammaSpectra-class.html'>GammaSpectra-class</a></code>,
-<code><a href='GammaSpectrum-class.html'>GammaSpectrum-class</a></code>,
-<code><a href='PeakPosition-class.html'>PeakPosition-class</a></code></p></div>
+    <div class='dont-index'><p><a href='AIX_NaI_curve.html'>AIX_NaI_curve</a></p>
+<p>Other datasets: 
+<code><a href='AIX_NaI_curve.html'>AIX_NaI_curve</a></code>,
+<code><a href='BDX_LaBr_1_curve.html'>BDX_LaBr_1_curve</a></code>,
+<code><a href='BDX_LaBr_1_data.html'>BDX_LaBr_1_data</a></code>,
+<code><a href='clermont.html'>clermont</a></code></p></div>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Import a CNF file</span>
-<span class='no'>spc_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.CNF"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
-<span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_file</span>)
-
-<span class='co'>## Remove the first 35 chanels</span>
-<span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='slice.html'>slice_signal</a></span>(<span class='no'>spc</span>, -<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>:<span class='fl'>35</span>))
-
-<span class='co'>## Estimate baseline</span>
-<span class='no'>baseline</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='baseline.html'>estimate_baseline</a></span>(<span class='no'>spc</span>)
-
-<span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>spc</span>, <span class='no'>baseline</span>)</div><div class='img'><img src='BaseLine-class-1.png' alt='' width='700' height='433' /></div><div class='input'>
-<span class='co'>## Remove baseline</span>
-<span class='no'>spc_clean1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='baseline.html'>remove_baseline</a></span>(<span class='no'>spc</span>)
-<span class='no'>spc_clean2</span> <span class='kw'>&lt;-</span> <span class='no'>spc</span> - <span class='no'>baseline</span>
-
-<span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>spc_clean1</span>)</div><div class='img'><img src='BaseLine-class-2.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

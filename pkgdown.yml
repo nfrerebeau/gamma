@@ -1,10 +1,11 @@
-pandoc: '2.2'
-pkgdown: 1.4.1
-pkgdown_sha: ~
+pandoc: 2.7.3
+pkgdown: 1.5.1.9000
+pkgdown_sha: c181e5c9ac09b28974a97f5e32deddc36690fcf2
 articles:
   cerege_1: cerege_1.html
   crp2a_1: crp2a_1.html
   gamma: gamma.html
+last_built: 2020-05-12T08:41Z
 urls:
   reference: https://crp2a.github.io/gamma/reference
   article: https://crp2a.github.io/gamma/articles
