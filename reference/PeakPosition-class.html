@@ -112,7 +112,7 @@
       <a href="../articles/cerege_1.html">CEREGE Calibration Curve #1</a>
     </li>
     <li>
-      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve #1</a>
+      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve</a>
     </li>
   </ul>
 </li>
@@ -184,9 +184,9 @@ Numeric values are coerced to integer as by <code><a href='https://rdrr.io/r/bas
     
 
 <p>In the code snippets below, <code>x</code> is a <code>PeakPosition</code> object.</p><dl>
- <dt><code><a href='access.html'>get_hash(x)</a></code></dt><dd><p>Get the MD5 hash of the raw data file.</p></dd>
- <dt><code><a href='access.html'>get_chanels(x)</a></code></dt><dd><p>Get the chanels of <code>x</code>.</p></dd>
- <dt><code><a href='access.html'>get_energy(x)</a></code>, <code>set_energy(x) &lt;- value</code></dt><dd><p>Retrieves or sets
+ <dt><code><a href='mutator.html'>get_hash(x)</a></code></dt><dd><p>Get the MD5 hash of the raw data file.</p></dd>
+ <dt><code><a href='mutator.html'>get_chanels(x)</a></code></dt><dd><p>Get the chanels of <code>x</code>.</p></dd>
+ <dt><code><a href='mutator.html'>get_energy(x)</a></code>, <code>set_energy(x) &lt;- value</code></dt><dd><p>Retrieves or sets
   the energy scale of <code>x</code> according to <code>value</code>.</p></dd>
 
 </dl>
@@ -196,8 +196,8 @@ Numeric values are coerced to integer as by <code><a href='https://rdrr.io/r/bas
     
 
 <p>In the code snippets below, <code>x</code> is a <code>PeakPosition</code> object.</p><dl>
- <dt><code>as(x, "data.frame")</code></dt><dd><p>Coerces <code>x</code> to a
- <code><a href='https://rdrr.io/r/base/data.frame.html'>data frame</a></code>.</p></dd>
+ <dt><code>matrix)</code></dt><dd><p>Coerces <code>x</code> to a <code><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></code>.</p></dd>
+ <dt><code>as.data.frame)</code></dt><dd><p>Coerces <code>x</code> to a <code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code>.</p></dd>
 
 </dl>
 
@@ -214,11 +214,8 @@ Numeric values are coerced to integer as by <code><a href='https://rdrr.io/r/bas
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other class: 
-<code><a href='BaseLine-class.html'>BaseLine-class</a></code>,
-<code><a href='CalibrationCurve-class.html'>DoseRateModel-class</a></code>,
-<code><a href='GammaSpectra-class.html'>GammaSpectra-class</a></code>,
-<code><a href='GammaSpectrum-class.html'>GammaSpectrum-class</a></code></p></div>
+    <div class='dont-index'><p>Other calibration class: 
+<code><a href='CalibrationCurve-class.html'>CalibrationCurve-class</a></code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

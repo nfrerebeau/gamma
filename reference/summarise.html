@@ -112,7 +112,7 @@
       <a href="../articles/cerege_1.html">CEREGE Calibration Curve #1</a>
     </li>
     <li>
-      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve #1</a>
+      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve</a>
     </li>
   </ul>
 </li>
@@ -177,7 +177,6 @@ object.</p></td>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other IO: 
-<code><a href='operators.html'>operators</a></code>,
 <code><a href='plot.html'>plot</a>()</code>,
 <code><a href='read.html'>read</a>()</code></p></div>
 
@@ -186,26 +185,26 @@ object.</p></td>
 <span class='no'>cnf_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.CNF"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
 <span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>cnf_file</span>)
 <span class='fu'>summarise</span>(<span class='no'>spc</span>)</div><div class='output co'>#&gt;   name                date live_time real_time chanels energy_min energy_max
-#&gt; 1 LaBr 2019-02-07 11:48:18   3385.54   3403.67    1024  -7.004032   3124.915</div><div class='input'>
+#&gt; 1 LaBr 2019-02-07 11:48:18   3385.54   3403.67    1024         -7    3124.91</div><div class='input'>
 <span class='co'>## Import all CNF files in a given directory</span>
 <span class='no'>spc_dir</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/BDX_LaBr_1/calibration"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
 <span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_dir</span>)
 <span class='fu'>summarise</span>(<span class='no'>spc</span>)</div><div class='output co'>#&gt;          name                date live_time real_time chanels energy_min
-#&gt; BRIQUE BRIQUE 2009-08-28 11:43:20   8473.45   8501.68    1024   3.827601
-#&gt; C341     C341 2009-09-07 15:10:52    976.08    978.36    1024   8.993622
-#&gt; C347     C347 2009-09-07 14:56:02    703.92    705.96    1024   9.836247
-#&gt; GOU       GOU 2009-09-07 18:34:19   1008.58   1011.56    1024   7.911910
-#&gt; LMP       LMP 2009-09-07 16:59:25    908.20    910.17    1024  10.928446
-#&gt; MAZ       MAZ 2009-09-07 17:47:29    965.86    968.34    1024   9.277458
-#&gt; PEP       PEP 2009-09-07 16:31:17    507.07    508.96    1024   7.349223
+#&gt; BRIQUE BRIQUE 2009-08-28 11:43:20   8473.45   8501.68    1024       3.83
+#&gt; C341     C341 2009-09-07 15:10:52    976.08    978.36    1024       8.99
+#&gt; C347     C347 2009-09-07 14:56:02    703.92    705.96    1024       9.84
+#&gt; GOU       GOU 2009-09-07 18:34:19   1008.58   1011.56    1024       7.91
+#&gt; LMP       LMP 2009-09-07 16:59:25    908.20    910.17    1024      10.93
+#&gt; MAZ       MAZ 2009-09-07 17:47:29    965.86    968.34    1024       9.28
+#&gt; PEP       PEP 2009-09-07 16:31:17    507.07    508.96    1024       7.35
 #&gt;        energy_max
-#&gt; BRIQUE   3243.211
-#&gt; C341     3278.179
-#&gt; C347     3291.249
-#&gt; GOU      3244.377
-#&gt; LMP      3273.935
-#&gt; MAZ      3248.528
-#&gt; PEP      3252.673</div></pre>
+#&gt; BRIQUE    3243.21
+#&gt; C341      3278.18
+#&gt; C347      3291.25
+#&gt; GOU       3244.38
+#&gt; LMP       3273.94
+#&gt; MAZ       3248.53
+#&gt; PEP       3252.67</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

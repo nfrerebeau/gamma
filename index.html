@@ -76,7 +76,7 @@
       <a href="articles/cerege_1.html">CEREGE Calibration Curve #1</a>
     </li>
     <li>
-      <a href="articles/crp2a_1.html">CRP2A Calibration Curve #1</a>
+      <a href="articles/crp2a_1.html">CRP2A Calibration Curve</a>
     </li>
   </ul>
 </li>
@@ -108,12 +108,8 @@
 <a href="#gamma-" class="anchor"></a>gamma <img width="120px" src="reference/figures/logo.png" align="right">
 </h1></div>
 
-<!-- CRAN badges
-[![CRAN Version](http://www.r-pkg.org/badges/version/gamma)](https://cran.r-project.org/package=gamma)
-[![CRAN checks](https://cranchecks.info/badges/worst/gamma)](https://cran.r-project.org/web/checks/check_results_gamma.html)
-[![CRAN Downloads](http://cranlogs.r-pkg.org/badges/gamma)](https://cran.r-project.org/package=gamma)
--->
-<p><a href="https://www.repostatus.org/#wip"><img src="https://www.repostatus.org/badges/latest/wip.svg" alt="Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public."></a> <a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="lifecycle"></a></p>
+<p><a href="https://cran.r-project.org/package=gamma"><img src="http://www.r-pkg.org/badges/version/gamma" alt="CRAN Version"></a> <a href="https://cran.r-project.org/web/checks/check_results_gamma.html"><img src="https://cranchecks.info/badges/worst/gamma" alt="CRAN checks"></a> <a href="https://cran.r-project.org/package=gamma"><img src="http://cranlogs.r-pkg.org/badges/gamma" alt="CRAN Downloads"></a></p>
+<p><a href="https://www.repostatus.org/#wip"><img src="https://www.repostatus.org/badges/latest/wip.svg" alt="Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public."></a> <a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></p>
 <p><a href="https://doi.org/10.5281/zenodo.2652393"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.2652393.svg" alt="DOI"></a></p>
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
@@ -138,7 +134,6 @@
 
 <span class="co">## Find the full path to the spectrum file</span>
 <span class="no">spc_file</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/LaBr.CNF"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"gamma"</span>)
-
 <span class="co">## Import the spectrum</span>
 <span class="no">spectrum</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/read.html">read</a></span>(<span class="no">spc_file</span>)
 
@@ -152,44 +147,26 @@
   <span class="fu"><a href="reference/peaks.html">find_peaks</a></span>()
 
 <span class="co">## Set the energy values (in keV)</span>
-<span class="fu">set_energy</span>(<span class="no">peaks</span>) <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">238</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">1461</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">2615</span>)
-<span class="no">peaks</span>
-<span class="co">#&gt; 8 peaks were detected:</span>
-<span class="co">#&gt;   chanel energy</span>
-<span class="co">#&gt; 1     86    238</span>
-<span class="co">#&gt; 2    208     NA</span>
-<span class="co">#&gt; 3    314     NA</span>
-<span class="co">#&gt; 4    384     NA</span>
-<span class="co">#&gt; 5    496   1461</span>
-<span class="co">#&gt; 6    596     NA</span>
-<span class="co">#&gt; 7    722     NA</span>
-<span class="co">#&gt; 8    879   2615</span>
+(<span class="fu">set_energy</span>(<span class="no">peaks</span>) <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">238</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">1461</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">2615</span>))
+<span class="co">#&gt; [1]  238   NA   NA   NA 1461   NA   NA 2615</span>
 
 <span class="co">## Inspect peaks</span>
 <span class="fu"><a href="reference/plot.html">plot</a></span>(<span class="no">spectrum</span>, <span class="no">peaks</span>)</pre></div>
 <p><img src="reference/figures/README-usage-1.png" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb3"><pre class="r">
-<span class="co">## Calibrate the energy scale</span>
+<div class="sourceCode" id="cb3"><pre class="r"><span class="co">## Calibrate the energy scale</span>
 <span class="no">calib</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/energy.html">calibrate_energy</a></span>(<span class="no">spectrum</span>, <span class="no">peaks</span>)
 
 <span class="co">## Load the calibration curve for the dose rate estimation</span>
 <span class="co">## As this curve is instrument specific, you will have to build your own</span>
 <span class="co">## See help(fit_dose)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="st">"BDX_LaBr_1_curve"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"gamma"</span>)
-<span class="no">BDX_LaBr_1_curve</span>
-<span class="co">#&gt; Calibration curve:</span>
-<span class="co">#&gt; * laboratory: IRAMAT-CRP2A (UMR 5060)</span>
-<span class="co">#&gt; * instrument: InSpector 1000</span>
-<span class="co">#&gt; * detector: LaBr #1</span>
-<span class="co">#&gt; * authors: CRP2A Luminescence Team</span>
-<span class="co">#&gt; * date: 2020-02-28 16:31:01</span>
-
+<span class="fu"><a href="reference/plot.html">plot</a></span>(<span class="no">BDX_LaBr_1_curve</span>)</pre></div>
+<p><img src="reference/figures/README-calib-1.png" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb4"><pre class="r">
 <span class="co">## Estimate the gamma dose rate</span>
-(<span class="no">doses</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/doserate.html">predict_dose</a></span>(<span class="no">BDX_LaBr_1_curve</span>, <span class="no">calib</span>, <span class="kw">simplify</span> <span class="kw">=</span> <span class="fl">TRUE</span>))
-<span class="co">#&gt; Warning: The following value does not lie in the curve range:</span>
-<span class="co">#&gt; * LaBr</span>
-<span class="co">#&gt;      name Ni_signal  Ni_error gamma_dose gamma_error</span>
-<span class="co">#&gt; LaBr LaBr   141.014 0.3148497   4171.876    92.54298</span></pre></div>
+(<span class="no">doses</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/doserate.html">predict_dose</a></span>(<span class="no">BDX_LaBr_1_curve</span>, <span class="no">calib</span>))
+<span class="co">#&gt;   names gamma_dose_Ni gamma_error_Ni gamma_dose_NiEi gamma_error_NiEi</span>
+<span class="co">#&gt; 1  LaBr      4171.876       92.54298        3944.501         78.27257</span></pre></div>
 </div>
 <div id="contributing" class="section level2">
 <h2 class="hasAnchor">

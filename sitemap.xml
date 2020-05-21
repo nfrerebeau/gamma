@@ -34,13 +34,13 @@
     <loc>https://crp2a.github.io/gamma/reference/SNIP.html</loc>
   </url>
   <url>
-    <loc>https://crp2a.github.io/gamma/reference/access.html</loc>
-  </url>
-  <url>
     <loc>https://crp2a.github.io/gamma/reference/baseline.html</loc>
   </url>
   <url>
     <loc>https://crp2a.github.io/gamma/reference/clermont.html</loc>
+  </url>
+  <url>
+    <loc>https://crp2a.github.io/gamma/reference/coerce.html</loc>
   </url>
   <url>
     <loc>https://crp2a.github.io/gamma/reference/decay.html</loc>
@@ -61,7 +61,10 @@
     <loc>https://crp2a.github.io/gamma/reference/integrate.html</loc>
   </url>
   <url>
-    <loc>https://crp2a.github.io/gamma/reference/operators.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/mutator.html</loc>
+  </url>
+  <url>
+    <loc>https://crp2a.github.io/gamma/reference/operator.html</loc>
   </url>
   <url>
     <loc>https://crp2a.github.io/gamma/reference/peaks.html</loc>

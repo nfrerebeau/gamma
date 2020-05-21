@@ -112,7 +112,7 @@
       <a href="../articles/cerege_1.html">CEREGE Calibration Curve #1</a>
     </li>
     <li>
-      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve #1</a>
+      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve</a>
     </li>
   </ul>
 </li>
@@ -149,26 +149,25 @@
     <p>Signal Integration</p>
     </div>
 
-    <pre class="usage"><span class='fu'>integrate_signal</span>(<span class='no'>object</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>integrate_signal</span>(<span class='no'>object</span>, <span class='no'>background</span>, <span class='no'>...</span>)
 
-<span class='co'># S4 method for GammaSpectrum</span>
-<span class='fu'>integrate_signal</span>(
-  <span class='no'>object</span>,
-  <span class='no'>range</span>,
-  <span class='kw'>background</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>threshold</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Ni"</span>, <span class='st'>"NiEi"</span>),
-  <span class='no'>...</span>
-)
+<span class='co'># S4 method for GammaSpectrum,missing</span>
+<span class='fu'>integrate_signal</span>(<span class='no'>object</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
-<span class='co'># S4 method for GammaSpectra</span>
-<span class='fu'>integrate_signal</span>(
-  <span class='no'>object</span>,
-  <span class='no'>range</span>,
-  <span class='kw'>background</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>threshold</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Ni"</span>, <span class='st'>"NiEi"</span>),
-  <span class='kw'>simplify</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='no'>...</span>
-)</pre>
+<span class='co'># S4 method for GammaSpectrum,GammaSpectrum</span>
+<span class='fu'>integrate_signal</span>(<span class='no'>object</span>, <span class='no'>background</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+
+<span class='co'># S4 method for GammaSpectrum,numeric</span>
+<span class='fu'>integrate_signal</span>(<span class='no'>object</span>, <span class='no'>background</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+
+<span class='co'># S4 method for GammaSpectra,missing</span>
+<span class='fu'>integrate_signal</span>(<span class='no'>object</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>simplify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
+<span class='co'># S4 method for GammaSpectra,GammaSpectrum</span>
+<span class='fu'>integrate_signal</span>(<span class='no'>object</span>, <span class='no'>background</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>simplify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
+<span class='co'># S4 method for GammaSpectra,numeric</span>
+<span class='fu'>integrate_signal</span>(<span class='no'>object</span>, <span class='no'>background</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>simplify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -177,6 +176,10 @@
       <th>object</th>
       <td><p>A <a href='GammaSpectrum-class.html'>GammaSpectrum</a> or <a href='GammaSpectra-class.html'>GammaSpectra</a>
 object.</p></td>
+    </tr>
+    <tr>
+      <th>background</th>
+      <td><p>A <a href='GammaSpectrum-class.html'>GammaSpectrum</a> object.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -188,15 +191,8 @@ object.</p></td>
 range to integrate within (in keV).</p></td>
     </tr>
     <tr>
-      <th>background</th>
-      <td><p>A length-two <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> vector giving the
-background noise integration value and error, respectively (see details).</p></td>
-    </tr>
-    <tr>
-      <th>threshold</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> sting specifying the threshold
-to be used. It must be one of <code>"Ni"</code> (default) or <code>"NiEi"</code>
-(see details).</p></td>
+      <th>energy</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: TODO?</p></td>
     </tr>
     <tr>
       <th>simplify</th>
@@ -207,9 +203,9 @@ simplified to a matrix? The default value, <code>FALSE</code>, returns a list.</
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>If <code>simplify</code> is <code>FALSE</code> (the default) returns a list of
- length-two numeric vectors (the dose rate and its error), else returns a
- two-columns data frame.</p>
+    <p>If <code>simplify</code> is <code>FALSE</code> (the default) returns a
+ <code><a href='https://rdrr.io/r/base/list.html'>list</a></code> of numeric vectors (the signal value and its error),
+ else returns a <code><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></code>.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>It assumes that each spectrum is calibrated in energy.</p>

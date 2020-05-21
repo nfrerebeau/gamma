@@ -70,7 +70,7 @@
       <a href="../articles/cerege_1.html">CEREGE Calibration Curve #1</a>
     </li>
     <li>
-      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve #1</a>
+      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve</a>
     </li>
   </ul>
 </li>
@@ -102,7 +102,7 @@
             <h3 class="subtitle">Canberra Inspector 1000 - NaI</h3>
                         <h4 class="author">CEREGE Luminescence Team</h4>
             
-            <h4 class="date">2020-05-12</h4>
+            <h4 class="date">2020-05-21</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/crp2a/gamma/blob/master/vignettes/cerege_1.Rmd"><code>vignettes/cerege_1.Rmd</code></a></small>
       <div class="hidden name"><code>cerege_1.Rmd</code></div>
@@ -132,8 +132,8 @@
 <span class="co">#&gt; *  live_time: 7707.42</span>
 <span class="co">#&gt; *  real_time: 7714.93</span>
 <span class="co">#&gt; *  chanels: 1024</span>
-<span class="co">#&gt; *  energy_min: -7.00403203118913</span>
-<span class="co">#&gt; *  energy_max: 3124.91452789307</span></pre></body></html></div>
+<span class="co">#&gt; *  energy_min: -7</span>
+<span class="co">#&gt; *  energy_max: 3124.91</span></pre></body></html></div>
 </div>
 <div id="energy-scale-calibration" class="section level2">
 <h2 class="hasAnchor">
@@ -255,7 +255,7 @@
 <span class="no">Ni_background</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/integrate.html">integrate_signal</a></span>(
   <span class="no">noise_scaled</span>,
   <span class="kw">range</span> <span class="kw">=</span> <span class="no">Ni_integration_range</span>,
-  <span class="kw">threshold</span> <span class="kw">=</span> <span class="st">"Ni"</span>
+  <span class="kw">energy</span> <span class="kw">=</span> <span class="fl">FALSE</span>
 )
 
 <span class="co"># Integrate reference spectra</span>
@@ -263,15 +263,15 @@
   <span class="no">calib_scaled</span>,
   <span class="kw">range</span> <span class="kw">=</span> <span class="no">Ni_integration_range</span>,
   <span class="kw">background</span> <span class="kw">=</span> <span class="no">Ni_background</span>,
-  <span class="kw">threshold</span> <span class="kw">=</span> <span class="st">"Ni"</span>,
+  <span class="kw">energy</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
   <span class="kw">simplify</span> <span class="kw">=</span> <span class="fl">TRUE</span>
 )</pre></body></html></div>
 <table class="table">
 <caption>Spectra integration - Ni</caption>
 <thead><tr class="header">
 <th></th>
-<th align="right">Ni_signal</th>
-<th align="right">Ni_error</th>
+<th align="right">value</th>
+<th align="right">error</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -280,27 +280,27 @@
 <td align="right">0.019</td>
 </tr>
 <tr class="even">
-<td>BRIQUE</td>
+<td>NA</td>
 <td align="right">209.295</td>
 <td align="right">0.214</td>
 </tr>
 <tr class="odd">
-<td>C341</td>
+<td>NA</td>
 <td align="right">87.741</td>
 <td align="right">0.225</td>
 </tr>
 <tr class="even">
-<td>C347</td>
+<td>NA</td>
 <td align="right">150.692</td>
 <td align="right">0.293</td>
 </tr>
 <tr class="odd">
-<td>GOU</td>
+<td>NA</td>
 <td align="right">170.001</td>
 <td align="right">0.311</td>
 </tr>
 <tr class="even">
-<td>PEP</td>
+<td>NA</td>
 <td align="right">264.771</td>
 <td align="right">0.397</td>
 </tr>
@@ -317,7 +317,7 @@
 <span class="no">NiEi_background</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/integrate.html">integrate_signal</a></span>(
   <span class="no">noise_scaled</span>,
   <span class="kw">range</span> <span class="kw">=</span> <span class="no">NiEi_integration_range</span>,
-  <span class="kw">threshold</span> <span class="kw">=</span> <span class="st">"NiEi"</span>
+  <span class="kw">energy</span> <span class="kw">=</span> <span class="fl">TRUE</span>
 )
 
 <span class="co"># Integrate reference spectra</span>
@@ -325,15 +325,15 @@
   <span class="no">calib_scaled</span>,
   <span class="kw">range</span> <span class="kw">=</span> <span class="no">NiEi_integration_range</span>,
   <span class="kw">background</span> <span class="kw">=</span> <span class="no">NiEi_background</span>,
-  <span class="kw">threshold</span> <span class="kw">=</span> <span class="st">"NiEi"</span>,
+  <span class="kw">energy</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
   <span class="kw">simplify</span> <span class="kw">=</span> <span class="fl">TRUE</span>
 )</pre></body></html></div>
 <table class="table">
 <caption>Spectra integration - NiEi</caption>
 <thead><tr class="header">
 <th></th>
-<th align="right">NiEi_signal</th>
-<th align="right">NiEi_error</th>
+<th align="right">value</th>
+<th align="right">error</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -342,27 +342,27 @@
 <td align="right">0.536</td>
 </tr>
 <tr class="even">
-<td>BRIQUE</td>
+<td>NA</td>
 <td align="right">110923.336</td>
 <td align="right">4.934</td>
 </tr>
 <tr class="odd">
-<td>C341</td>
+<td>NA</td>
 <td align="right">46657.016</td>
 <td align="right">5.215</td>
 </tr>
 <tr class="even">
-<td>C347</td>
+<td>NA</td>
 <td align="right">81717.335</td>
 <td align="right">6.844</td>
 </tr>
 <tr class="odd">
-<td>GOU</td>
+<td>NA</td>
 <td align="right">89644.921</td>
 <td align="right">7.153</td>
 </tr>
 <tr class="even">
-<td>PEP</td>
+<td>NA</td>
 <td align="right">139711.028</td>
 <td align="right">9.137</td>
 </tr>
@@ -460,32 +460,6 @@
 </tr>
 </tbody>
 </table>
-<pre><code>#&gt;      value           error        
-#&gt;  Min.   : 9.14   Min.   : 0.2721  
-#&gt;  1st Qu.:16.86   1st Qu.:10.6674  
-#&gt;  Median :24.58   Median :21.0626  
-#&gt;  Mean   :24.58   Mean   :21.0626  
-#&gt;  3rd Qu.:32.29   3rd Qu.:31.4579  
-#&gt;  Max.   :40.01   Max.   :41.8532</code></pre>
-<pre><code>#&gt;      value              error         
-#&gt;  Min.   : 0.01735   Min.   : 0.00051  
-#&gt;  1st Qu.: 6.98436   1st Qu.:10.50745  
-#&gt;  Median :13.95136   Median :21.01439  
-#&gt;  Mean   :13.95136   Mean   :21.01439  
-#&gt;  3rd Qu.:20.91837   3rd Qu.:31.52133  
-#&gt;  Max.   :27.88537   Max.   :42.02826</code></pre>
-</div>
-<div id="check-model" class="section level3">
-<h3 class="hasAnchor">
-<a href="#check-model" class="anchor"></a>Check Model</h3>
-<div id="count-threshold-ni" class="section level4">
-<h4 class="hasAnchor">
-<a href="#count-threshold-ni" class="anchor"></a>Count Threshold (Ni)</h4>
-</div>
-<div id="energy-threshold-ni-ei" class="section level4">
-<h4 class="hasAnchor">
-<a href="#energy-threshold-ni-ei" class="anchor"></a>Energy Threshold (Ni.Ei)</h4>
-</div>
 </div>
 </div>
 <div id="r-session" class="section level2">
@@ -512,12 +486,12 @@
 #&gt;  [1] Rcpp_1.0.4.6       highr_0.8          compiler_4.0.0     pillar_1.4.4      
 #&gt;  [5] tools_4.0.0        digest_0.6.25      evaluate_0.14      memoise_1.1.0     
 #&gt;  [9] lifecycle_0.2.0    tibble_3.0.1       gtable_0.3.0       pkgconfig_2.0.3   
-#&gt; [13] rlang_0.4.6        yaml_2.2.1         pkgdown_1.5.1.9000 xfun_0.13         
+#&gt; [13] rlang_0.4.6        yaml_2.2.1         pkgdown_1.5.1.9000 xfun_0.14         
 #&gt; [17] rxylib_0.2.4       stringr_1.4.0      knitr_1.28         desc_1.2.0        
 #&gt; [21] fs_1.4.1           vctrs_0.3.0        rprojroot_1.3-2    grid_4.0.0        
-#&gt; [25] glue_1.4.0         R6_2.4.1           rmarkdown_2.1      ggplot2_3.3.0     
-#&gt; [29] farver_2.0.3       IsoplotR_3.3       backports_1.1.6    scales_1.1.1      
-#&gt; [33] htmltools_0.4.0    ellipsis_0.3.0     MASS_7.3-51.5      assertthat_0.2.1  
+#&gt; [25] glue_1.4.1         R6_2.4.1           rmarkdown_2.1      ggplot2_3.3.0     
+#&gt; [29] farver_2.0.3       IsoplotR_3.3       backports_1.1.7    scales_1.1.1      
+#&gt; [33] htmltools_0.4.0    ellipsis_0.3.1     MASS_7.3-51.5      assertthat_0.2.1  
 #&gt; [37] colorspace_1.4-1   labeling_0.3       stringi_1.4.6      munsell_0.5.0     
 #&gt; [41] crayon_1.3.4</code></pre>
 </div>

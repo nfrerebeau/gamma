@@ -112,7 +112,7 @@
       <a href="../articles/cerege_1.html">CEREGE Calibration Curve #1</a>
     </li>
     <li>
-      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve #1</a>
+      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve</a>
     </li>
   </ul>
 </li>
@@ -196,7 +196,7 @@ corresponding expected "<code>energy</code>" value (in keV).</p></td>
 <span class='no'>spc_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.TKA"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
 (<span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_file</span>))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: LaBr
-#&gt; *  date: 2020-05-12 08:40:59
+#&gt; *  date: 2020-05-21 22:30:43
 #&gt; *  live_time: 3385.54
 #&gt; *  real_time: 3403.67
 #&gt; *  chanels: 1024
@@ -211,12 +211,12 @@ corresponding expected "<code>energy</code>" value (in keV).</p></td>
 <span class='co'>## Adjust the energy scale</span>
 (<span class='no'>spc1</span> <span class='kw'>&lt;-</span> <span class='fu'>calibrate_energy</span>(<span class='no'>spc</span>, <span class='kw'>lines</span> <span class='kw'>=</span> <span class='no'>calib_lines</span>))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: LaBr
-#&gt; *  date: 2020-05-12 08:40:59
+#&gt; *  date: 2020-05-21 22:30:43
 #&gt; *  live_time: 3385.54
 #&gt; *  real_time: 3403.67
 #&gt; *  chanels: 1024
-#&gt; *  energy_min: -15.3750622102404
-#&gt; *  energy_max: 3052.2049893642</div><div class='input'>
+#&gt; *  energy_min: -15.38
+#&gt; *  energy_max: 3052.2</div><div class='input'>
 <span class='co'>## Inspect results</span>
 <span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>spc1</span>, <span class='kw'>xaxis</span> <span class='kw'>=</span> <span class='st'>"energy"</span>, <span class='kw'>yaxis</span> <span class='kw'>=</span> <span class='st'>"count"</span>) +
   <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_abline.html'>geom_vline</a></span>(<span class='kw'>xintercept</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>238</span>, <span class='fl'>1461</span>, <span class='fl'>2614.5</span>), <span class='kw'>linetype</span> <span class='kw'>=</span> <span class='fl'>3</span>)</div><div class='img'><img src='energy-1.png' alt='' width='700' height='433' /></div></pre>

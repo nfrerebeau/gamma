@@ -111,7 +111,7 @@
       <a href="../articles/cerege_1.html">CEREGE Calibration Curve #1</a>
     </li>
     <li>
-      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve #1</a>
+      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve</a>
     </li>
   </ul>
 </li>
@@ -163,12 +163,6 @@
       
       
       <tr>
-        
-        <td>
-          <p><code><a href="operators.html">`-`(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;GammaSpectrum&gt;</i>)</a></code> <code><a href="operators.html">`+`(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;GammaSpectrum&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Operators</p></td>
-      </tr><tr>
         
         <td>
           <p><code><a href="plot.html">plot(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;GammaSpectrum&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;GammaSpectra&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;PeakPosition&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;CalibrationCurve&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> </p>
@@ -302,33 +296,9 @@
       <tr>
         
         <td>
-          <p><code><a href="BaseLine-class.html">BaseLine-class</a></code> </p>
+          <p><code><a href="coerce.html">as.matrix(<i>&lt;GammaSpectrum&gt;</i>)</a></code> </p>
         </td>
-        <td><p>An S4 Class to Represent a Spectrum Baseline</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="CalibrationCurve-class.html">DoseRateModel-class</a></code> </p>
-        </td>
-        <td><p>An S4 class to Represent a Dose Rate Calibration Curve</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="GammaSpectra-class.html">GammaSpectra-class</a></code> </p>
-        </td>
-        <td><p>An S4 Class to Represent a Collection of Gamma Sectra</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="GammaSpectrum-class.html">GammaSpectrum-class</a></code> </p>
-        </td>
-        <td><p>An S4 Class to Represent a Gamma Sectrum</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="PeakPosition-class.html">PeakPosition-class</a></code> </p>
-        </td>
-        <td><p>An S4 Class to Represent a Set of Peaks</p></td>
+        <td><p>Coerce</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -345,15 +315,34 @@
       <tr>
         
         <td>
-          <p><code><a href="access.html">get_hash()</a></code> <code><a href="access.html">get_names()</a></code> <code><a href="access.html">`set_names&lt;-`()</a></code> <code><a href="access.html">get_time()</a></code> <code><a href="access.html">get_nchanels()</a></code> <code><a href="access.html">get_chanels()</a></code> <code><a href="access.html">get_counts()</a></code> <code><a href="access.html">get_rates()</a></code> <code><a href="access.html">get_energy()</a></code> <code><a href="access.html">`set_energy&lt;-`()</a></code> <code><a href="access.html">get_dose()</a></code> <code><a href="access.html">`set_dose&lt;-`()</a></code> <code><a href="access.html">get_model()</a></code> <code><a href="access.html">get_noise()</a></code> <code><a href="access.html">get_range()</a></code> <code><a href="access.html">range_energy()</a></code> </p>
+          <p><code><a href="mutator.html">get_hash()</a></code> <code><a href="mutator.html">get_names()</a></code> <code><a href="mutator.html">`set_names&lt;-`()</a></code> <code><a href="mutator.html">get_livetime()</a></code> <code><a href="mutator.html">get_realtime()</a></code> <code><a href="mutator.html">get_chanels()</a></code> <code><a href="mutator.html">get_counts()</a></code> <code><a href="mutator.html">get_rates()</a></code> <code><a href="mutator.html">get_energy()</a></code> <code><a href="mutator.html">`set_energy&lt;-`()</a></code> <code><a href="mutator.html">range_chanels()</a></code> <code><a href="mutator.html">range_energy()</a></code> <code><a href="mutator.html">length(<i>&lt;GammaSpectrum&gt;</i>)</a></code> </p>
         </td>
         <td><p>Get or Set Parts of an Object</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="subset.html">`[[`(<i>&lt;GammaSpectrum&gt;</i>)</a></code> <code><a href="subset.html">`[`(<i>&lt;GammaSpectra&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;GammaSpectra&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;DoseRateModel&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;CalibrationCurve&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;PeakPosition&gt;</i>)</a></code> </p>
+          <p><code><a href="subset.html">`[[`(<i>&lt;GammaSpectrum&gt;</i>)</a></code> <code><a href="subset.html">`[`(<i>&lt;GammaSpectra&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;DoseRateModel&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;DoseRateModel&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;CalibrationCurve&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;PeakPosition&gt;</i>)</a></code> </p>
         </td>
         <td><p>Extract or Replace Parts of an Object</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-common-operations" class="hasAnchor"><a href="#section-common-operations" class="anchor"></a>Common Operations</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="operator.html">Arith(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;GammaSpectrum&gt;</i>)</a></code> <code><a href="operator.html">Arith(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;numeric&gt;</i>)</a></code> <code><a href="operator.html">Compare(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;GammaSpectrum&gt;</i>)</a></code> <code><a href="operator.html">Compare(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;numeric&gt;</i>)</a></code> <code><a href="operator.html">Logic(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;GammaSpectrum&gt;</i>)</a></code> <code><a href="operator.html">Logic(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;numeric&gt;</i>)</a></code> <code><a href="operator.html">Logic(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;logical&gt;</i>)</a></code> <code><a href="operator.html">Math(<i>&lt;GammaSpectrum&gt;</i>)</a></code> <code><a href="operator.html">Math2(<i>&lt;GammaSpectrum&gt;</i>)</a></code> <code><a href="operator.html">Summary(<i>&lt;GammaSpectrum&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Common Operations on Matrix Objects</p></td>
       </tr>
     </tbody><tbody>
       <tr>

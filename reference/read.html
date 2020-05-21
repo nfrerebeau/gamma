@@ -112,7 +112,7 @@
       <a href="../articles/cerege_1.html">CEREGE Calibration Curve #1</a>
     </li>
     <li>
-      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve #1</a>
+      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve</a>
     </li>
   </ul>
 </li>
@@ -185,7 +185,6 @@ file extensions. It must be one or more of "<code>cnf</code>", "<code>tka</code>
 
     <div class='dont-index'><p><a href='https://rdrr.io/pkg/rxylib/man/read_xyData.html'>read_xyData</a></p>
 <p>Other IO: 
-<code><a href='operators.html'>operators</a></code>,
 <code><a href='plot.html'>plot</a>()</code>,
 <code><a href='summarise.html'>summarise</a>()</code></p></div>
 
@@ -198,20 +197,19 @@ file extensions. It must be one or more of "<code>cnf</code>", "<code>tka</code>
 #&gt; *  live_time: 3385.54
 #&gt; *  real_time: 3403.67
 #&gt; *  chanels: 1024
-#&gt; *  energy_min: -7.00403203118913
-#&gt; *  energy_max: 3124.91452789307</div><div class='input'>
+#&gt; *  energy_min: -7
+#&gt; *  energy_max: 3124.91</div><div class='input'>
 <span class='co'>## Import a TKA file</span>
 <span class='no'>tka_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.TKA"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
 (<span class='no'>tka_spc</span> <span class='kw'>&lt;-</span> <span class='fu'>read</span>(<span class='no'>tka_file</span>))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: LaBr
-#&gt; *  date: 2020-05-12 08:40:59
+#&gt; *  date: 2020-05-21 22:30:43
 #&gt; *  live_time: 3385.54
 #&gt; *  real_time: 3403.67
 #&gt; *  chanels: 1024
 #&gt; *  energy_min: NA
 #&gt; *  energy_max: NA</div><div class='input'>
 <span class='co'>## Import all files in a given directory</span>
-<span class='co'>## Skip the 35 first chanels</span>
 <span class='no'>spc_dir</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/BDX_LaBr_1/calibration"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
 (<span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'>read</span>(<span class='no'>spc_dir</span>))</div><div class='output co'>#&gt; A collection of 7 gamma spectra: BRIQUE, C341, C347, GOU, LMP, MAZ, PEP</div></pre>
   </div>

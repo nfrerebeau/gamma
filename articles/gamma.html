@@ -70,7 +70,7 @@
       <a href="../articles/cerege_1.html">CEREGE Calibration Curve #1</a>
     </li>
     <li>
-      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve #1</a>
+      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve</a>
     </li>
   </ul>
 </li>
@@ -101,7 +101,7 @@
       <h1 data-toc-skip>Manual</h1>
                         <h4 class="author">N. Frerebeau</h4>
             
-            <h4 class="date">2020-05-12</h4>
+            <h4 class="date">2020-05-21</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/crp2a/gamma/blob/master/vignettes/gamma.Rmd"><code>vignettes/gamma.Rmd</code></a></small>
       <div class="hidden name"><code>gamma.Rmd</code></div>
@@ -144,15 +144,15 @@
 <span class="co">#&gt; *  live_time: 3385.54</span>
 <span class="co">#&gt; *  real_time: 3403.67</span>
 <span class="co">#&gt; *  chanels: 1024</span>
-<span class="co">#&gt; *  energy_min: -7.00403203118913</span>
-<span class="co">#&gt; *  energy_max: 3124.91452789307</span>
+<span class="co">#&gt; *  energy_min: -7</span>
+<span class="co">#&gt; *  energy_max: 3124.91</span>
 
 <span class="co"># Import a TKA file</span>
 <span class="no">tka_test</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/LaBr.TKA"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"gamma"</span>)
 (<span class="no">spc_tka</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/read.html">read</a></span>(<span class="no">tka_test</span>))
 <span class="co">#&gt; Gamma spectrum:</span>
 <span class="co">#&gt; *  name: LaBr</span>
-<span class="co">#&gt; *  date: 2020-05-12 08:40:59</span>
+<span class="co">#&gt; *  date: 2020-05-21 22:30:43</span>
 <span class="co">#&gt; *  live_time: 3385.54</span>
 <span class="co">#&gt; *  real_time: 3403.67</span>
 <span class="co">#&gt; *  chanels: 1024</span>
@@ -248,16 +248,11 @@
 <div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="co"># Set the energy values (in keV)</span>
 <span class="fu">set_energy</span>(<span class="no">peaks</span>) <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">238</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">1461</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">2615</span>)
 <span class="no">peaks</span>
-<span class="co">#&gt; 8 peaks were detected:</span>
+<span class="co">#&gt; 3 peaks were detected:</span>
 <span class="co">#&gt;   chanel energy</span>
 <span class="co">#&gt; 1     86    238</span>
-<span class="co">#&gt; 2    208     NA</span>
-<span class="co">#&gt; 3    316     NA</span>
-<span class="co">#&gt; 4    384     NA</span>
-<span class="co">#&gt; 5    496   1461</span>
-<span class="co">#&gt; 6    596     NA</span>
-<span class="co">#&gt; 7    722     NA</span>
-<span class="co">#&gt; 8    879   2615</span>
+<span class="co">#&gt; 2    496   1461</span>
+<span class="co">#&gt; 3    879   2615</span>
 
 <span class="co"># Calibrate the spectrum using the peak positions</span>
 <span class="no">scaled</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">calibrate_energy</a></span>(<span class="no">spc_tka</span>, <span class="no">peaks</span>)
@@ -312,29 +307,31 @@
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">AIX_NaI_curve</span>) <span class="co"># CEREGE (Aix-en-Provence)</span></pre></body></html></div>
 <p>The construction of a calibration curve requires a set of reference spectra for which the gamma dose rate is known and a background noise measurement. First, each reference spectrum is integrated over a given interval, then normalized to active time and corrected for background noise. The dose rate is finally modelled by the integrated signal value used as a linear predictor.</p>
 <div class="sourceCode" id="cb16"><html><body><pre class="r"><span class="co"># Import the reference spectra</span>
-<span class="no">calib_dir</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/BDX_LaBr_1/calibration"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"gamma"</span>)
-<span class="no">calib_spc</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/read.html">read</a></span>(<span class="no">calib_dir</span>)
+<span class="no">spc_dir</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/BDX_LaBr_1/calibration"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"gamma"</span>)
+<span class="no">spc</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/read.html">read</a></span>(<span class="no">spc_dir</span>)
 
 <span class="co"># Import the spectra for background noise measurement</span>
-<span class="no">noise_dir</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/BDX_LaBr_1/background"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"gamma"</span>)
-<span class="no">noise_spc</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/read.html">read</a></span>(<span class="no">noise_dir</span>)
+<span class="no">bkg_dir</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/BDX_LaBr_1/background"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"gamma"</span>)
+<span class="no">bkg</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/read.html">read</a></span>(<span class="no">bkg_dir</span>)
 
 <span class="co"># Set the known dose rates</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="st">"clermont"</span>)
-<span class="fu">set_dose</span>(<span class="no">calib_spc</span>) <span class="kw">&lt;-</span> <span class="no">clermont</span>[, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"gamma_dose"</span>, <span class="st">"gamma_error"</span>)]
+(<span class="no">doses</span> <span class="kw">&lt;-</span> <span class="no">clermont</span>[, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"gamma_dose"</span>, <span class="st">"gamma_error"</span>)])
+<span class="co">#&gt;        gamma_dose gamma_error</span>
+<span class="co">#&gt; BRIQUE  1986.4620   35.619679</span>
+<span class="co">#&gt; C341     849.9668   21.317615</span>
+<span class="co">#&gt; C347    1423.8589   25.249756</span>
+<span class="co">#&gt; GOU     1575.2249   17.433789</span>
+<span class="co">#&gt; LAS     1083.6737    9.570593</span>
+<span class="co">#&gt; LMP      641.9004   17.560649</span>
+<span class="co">#&gt; MAZ     1141.4033   11.665045</span>
+<span class="co">#&gt; MPX      964.0196   13.274167</span>
+<span class="co">#&gt; PEP     2538.2217  112.169131</span>
 
-<span class="co"># Build the calibration curve</span>
-<span class="no">calib_curve</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/doserate.html">fit_dose</a></span>(
-  <span class="no">calib_spc</span>,
-  <span class="no">noise_spc</span>,
-  <span class="kw">Ni_noise</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">22.61</span>, <span class="fl">0.05</span>),
-  <span class="kw">Ni_range</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">300</span>, <span class="fl">2800</span>), <span class="co"># Set the integration range (in keV)</span>
-  <span class="kw">NiEi_noise</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">25280</span>, <span class="fl">1.66</span>),
-  <span class="kw">NiEi_range</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">165</span>, <span class="fl">2800</span>)
-)
-
-<span class="co"># The linear model can be accessed for further investigations</span>
-<span class="co"># summary(calib_curve[["model"]])</span>
+<span class="co">## Build the calibration curve</span>
+<span class="no">calib_curve</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/doserate.html">fit_dose</a></span>(<span class="no">spc</span>, <span class="no">bkg</span>, <span class="no">doses</span>,
+                        <span class="kw">range_Ni</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">300</span>, <span class="fl">2800</span>),
+                        <span class="kw">range_NiEi</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">165</span>, <span class="fl">2800</span>))
 
 <span class="co"># Plot the calibration curve</span>
 <span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="no">calib_curve</span>) +
