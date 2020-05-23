@@ -109,7 +109,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/cerege_1.html">CEREGE Calibration Curve #1</a>
+      <a href="../articles/cerege_1.html">CEREGE Calibration Curve - NaI #1</a>
     </li>
     <li>
       <a href="../articles/crp2a_1.html">CRP2A Calibration Curve</a>
@@ -303,14 +303,14 @@ introduced by the calibration of the energy scale of the spectrum.</p></td>
 <span class='co'>## Plot the curve</span>
 <span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>calib_curve</span>, <span class='kw'>threshold</span> <span class='kw'>=</span> <span class='st'>"Ni"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='img'><img src='doserate-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>## Estimate gamma dose rates</span>
-<span class='fu'>predict_dose</span>(<span class='no'>calib_curve</span>, <span class='no'>spc</span>)</div><div class='output co'>#&gt;    names gamma_dose_Ni gamma_error_Ni gamma_dose_NiEi gamma_error_NiEi
-#&gt; 1 BRIQUE     1955.8683       43.87228       1946.9606         39.37700
-#&gt; 2   C341      843.9938       21.12857        843.0632         17.05374
-#&gt; 3   C347     1420.1912       34.31052       1402.5391         28.36931
-#&gt; 4    GOU     1599.0175       37.47818       1598.6341         32.33417
-#&gt; 5    LMP      640.1782       17.02795        639.0612         12.92859
-#&gt; 6    MAZ     1140.4575       27.52632       1144.1496         23.14276
-#&gt; 7    PEP     2443.3517       57.68531       2435.1440         49.25402</div></pre>
+<span class='fu'>predict_dose</span>(<span class='no'>calib_curve</span>, <span class='no'>spc</span>)</div><div class='output co'>#&gt;    names   dose_Ni error_Ni dose_NiEi error_NiEi
+#&gt; 1 BRIQUE 1955.8683 43.87228 1946.9606   39.37700
+#&gt; 2   C341  843.9938 21.12857  843.0632   17.05374
+#&gt; 3   C347 1420.1912 34.31052 1402.5391   28.36931
+#&gt; 4    GOU 1599.0175 37.47818 1598.6341   32.33417
+#&gt; 5    LMP  640.1782 17.02795  639.0612   12.92859
+#&gt; 6    MAZ 1140.4575 27.52632 1144.1496   23.14276
+#&gt; 7    PEP 2443.3517 57.68531 2435.1440   49.25402</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

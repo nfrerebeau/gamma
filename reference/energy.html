@@ -109,7 +109,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/cerege_1.html">CEREGE Calibration Curve #1</a>
+      <a href="../articles/cerege_1.html">CEREGE Calibration Curve - NaI #1</a>
     </li>
     <li>
       <a href="../articles/crp2a_1.html">CRP2A Calibration Curve</a>
@@ -196,7 +196,7 @@ corresponding expected "<code>energy</code>" value (in keV).</p></td>
 <span class='no'>spc_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.TKA"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
 (<span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_file</span>))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: LaBr
-#&gt; *  date: 2020-05-23 13:44:22
+#&gt; *  date: 2020-05-23 17:06:27
 #&gt; *  live_time: 3385.54
 #&gt; *  real_time: 3403.67
 #&gt; *  chanels: 1024
@@ -211,7 +211,7 @@ corresponding expected "<code>energy</code>" value (in keV).</p></td>
 <span class='co'>## Adjust the energy scale</span>
 (<span class='no'>spc1</span> <span class='kw'>&lt;-</span> <span class='fu'>calibrate_energy</span>(<span class='no'>spc</span>, <span class='kw'>lines</span> <span class='kw'>=</span> <span class='no'>calib_lines</span>))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: LaBr
-#&gt; *  date: 2020-05-23 13:44:22
+#&gt; *  date: 2020-05-23 17:06:27
 #&gt; *  live_time: 3385.54
 #&gt; *  real_time: 3403.67
 #&gt; *  chanels: 1024
