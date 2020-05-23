@@ -149,21 +149,22 @@
 <span class="co">## Set the energy values (in keV)</span>
 <span class="fu">set_energy</span>(<span class="no">peaks</span>) <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">238</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">1461</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">2615</span>)
 
-<span class="co">## Inspect peaks</span>
-<span class="fu"><a href="reference/plot.html">plot</a></span>(<span class="no">spectrum</span>, <span class="no">peaks</span>)</pre></div>
-<p><img src="reference/figures/README-usage-1.png" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="co">## Calibrate the energy scale</span>
+<span class="co">## Calibrate the energy scale</span>
 <span class="no">calib</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/energy.html">calibrate_energy</a></span>(<span class="no">spectrum</span>, <span class="no">peaks</span>)
 
+<span class="co">## Inspect peaks</span>
+<span class="fu"><a href="reference/plot.html">plot</a></span>(<span class="no">calib</span>, <span class="no">peaks</span>)</pre></div>
+<p><img src="reference/figures/README-usage-1.png" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb3"><pre class="r">
 <span class="co">## Load the calibration curve for the dose rate estimation</span>
 <span class="co">## As this curve is instrument specific, you will have to build your own</span>
 <span class="co">## See help(fit_dose)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="st">"BDX_LaBr_1_curve"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"gamma"</span>)
-<span class="fu"><a href="reference/plot.html">plot</a></span>(<span class="no">BDX_LaBr_1_curve</span>)</pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="st">"BDX_LaBr_1"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"gamma"</span>)
+<span class="fu"><a href="reference/plot.html">plot</a></span>(<span class="no">BDX_LaBr_1</span>)</pre></div>
 <p><img src="reference/figures/README-calib-1.png" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb4"><pre class="r">
 <span class="co">## Estimate the gamma dose rate</span>
-(<span class="no">doses</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/doserate.html">predict_dose</a></span>(<span class="no">BDX_LaBr_1_curve</span>, <span class="no">calib</span>))
+(<span class="no">doses</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/doserate.html">predict_dose</a></span>(<span class="no">BDX_LaBr_1</span>, <span class="no">calib</span>))
 <span class="co">#&gt;   names gamma_dose_Ni gamma_error_Ni gamma_dose_NiEi gamma_error_NiEi</span>
 <span class="co">#&gt; 1  LaBr      4171.876       92.54298        3944.501         78.27257</span></pre></div>
 </div>

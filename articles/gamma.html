@@ -152,7 +152,7 @@
 (<span class="no">spc_tka</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/read.html">read</a></span>(<span class="no">tka_test</span>))
 <span class="co">#&gt; Gamma spectrum:</span>
 <span class="co">#&gt; *  name: LaBr</span>
-<span class="co">#&gt; *  date: 2020-05-23 11:30:06</span>
+<span class="co">#&gt; *  date: 2020-05-23 13:24:01</span>
 <span class="co">#&gt; *  live_time: 3385.54</span>
 <span class="co">#&gt; *  real_time: 3403.67</span>
 <span class="co">#&gt; *  chanels: 1024</span>
@@ -303,8 +303,8 @@
 <a href="#estimate-the-gamma-dose-rate" class="anchor"></a>Estimate the gamma dose rate</h1>
 <p>To estimate the gamma dose rate, you can either use one of the calibration curves distributed with this package or build your own.</p>
 <div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="co"># Load one of the built-in curves</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">BDX_LaBr_1_curve</span>) <span class="co"># IRAMAT-CRP2A (Bordeaux)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">AIX_NaI_curve</span>) <span class="co"># CEREGE (Aix-en-Provence)</span></pre></body></html></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">BDX_LaBr_1</span>) <span class="co"># IRAMAT-CRP2A (Bordeaux)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">AIX_NaI_1</span>) <span class="co"># CEREGE (Aix-en-Provence)</span></pre></body></html></div>
 <p>The construction of a calibration curve requires a set of reference spectra for which the gamma dose rate is known and a background noise measurement. First, each reference spectrum is integrated over a given interval, then normalized to active time and corrected for background noise. The dose rate is finally modelled by the integrated signal value used as a linear predictor.</p>
 <div class="sourceCode" id="cb16"><html><body><pre class="r"><span class="co"># Import the reference spectra</span>
 <span class="no">spc_dir</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/BDX_LaBr_1/calibration"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"gamma"</span>)

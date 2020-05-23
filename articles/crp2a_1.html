@@ -212,98 +212,14 @@
 <div id="summary" class="section level3">
 <h3 class="hasAnchor">
 <a href="#summary" class="anchor"></a>Summary</h3>
-<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="st">"BDX_LaBr_1_curve"</span>)
+<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="st">"BDX_LaBr_1"</span>)
 
 <span class="co"># Plot calibration curve</span>
-<span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="no">BDX_LaBr_1_curve</span>, <span class="kw">threshold</span> <span class="kw">=</span> <span class="st">"Ni"</span>) +
+<span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="no">BDX_LaBr_1</span>, <span class="kw">threshold</span> <span class="kw">=</span> <span class="st">"Ni"</span>) +
   <span class="kw pkg">ggplot2</span><span class="kw ns">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>()
-<span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="no">BDX_LaBr_1_curve</span>, <span class="kw">threshold</span> <span class="kw">=</span> <span class="st">"NiEi"</span>) +
+<span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="no">BDX_LaBr_1</span>, <span class="kw">threshold</span> <span class="kw">=</span> <span class="st">"NiEi"</span>) +
   <span class="kw pkg">ggplot2</span><span class="kw ns">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>()</pre></body></html></div>
 <p><img src="crp2a_1_files/figure-html/calibration-1.png" width="47%"><img src="crp2a_1_files/figure-html/calibration-2.png" width="47%"></p>
-<table class="table">
-<thead><tr class="header">
-<th align="left">name</th>
-<th align="right">live_time</th>
-<th align="right">Ni_signal</th>
-<th align="right">Ni_error</th>
-<th align="right">NiEi_signal</th>
-<th align="right">NiEi_error</th>
-<th align="right">gamma_dose</th>
-<th align="right">gamma_error</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">BRIQUE</td>
-<td align="right">8473.45</td>
-<td align="right">67.43451</td>
-<td align="right">0.1540298</td>
-<td align="right">64071.59</td>
-<td align="right">4.592473</td>
-<td align="right">2010.000</td>
-<td align="right">35.00000</td>
-</tr>
-<tr class="even">
-<td align="left">C347</td>
-<td align="right">703.92</td>
-<td align="right">49.56603</td>
-<td align="right">0.4558524</td>
-<td align="right">46580.21</td>
-<td align="right">14.298170</td>
-<td align="right">1435.816</td>
-<td align="right">25.24976</td>
-</tr>
-<tr class="odd">
-<td align="left">C341</td>
-<td align="right">976.08</td>
-<td align="right">28.80028</td>
-<td align="right">0.3283521</td>
-<td align="right">27974.89</td>
-<td align="right">10.446440</td>
-<td align="right">859.878</td>
-<td align="right">21.31762</td>
-</tr>
-<tr class="even">
-<td align="left">PEP</td>
-<td align="right">507.07</td>
-<td align="right">84.38263</td>
-<td align="right">0.6515544</td>
-<td align="right">80121.52</td>
-<td align="right">20.390773</td>
-<td align="right">2472.684</td>
-<td align="right">157.60759</td>
-</tr>
-<tr class="odd">
-<td align="left">LMP</td>
-<td align="right">908.20</td>
-<td align="right">22.08853</td>
-<td align="right">0.3176802</td>
-<td align="right">21227.36</td>
-<td align="right">10.121181</td>
-<td align="right">650.613</td>
-<td align="right">17.56065</td>
-</tr>
-<tr class="even">
-<td align="left">MAZ</td>
-<td align="right">965.86</td>
-<td align="right">39.75933</td>
-<td align="right">0.3629449</td>
-<td align="right">38008.82</td>
-<td align="right">11.452850</td>
-<td align="right">1173.550</td>
-<td align="right">11.66505</td>
-</tr>
-<tr class="odd">
-<td align="left">GOU</td>
-<td align="right">1008.58</td>
-<td align="right">55.07602</td>
-<td align="right">0.3957339</td>
-<td align="right">52645.12</td>
-<td align="right">12.434331</td>
-<td align="right">1632.992</td>
-<td align="right">17.43379</td>
-</tr>
-</tbody>
-</table>
 </div>
 <div id="check-model" class="section level3">
 <h3 class="hasAnchor">
@@ -339,17 +255,16 @@
 #&gt; [1] magrittr_1.5 gamma_0.2.0 
 #&gt; 
 #&gt; loaded via a namespace (and not attached):
-#&gt;  [1] Rcpp_1.0.4.6       highr_0.8          compiler_4.0.0     pillar_1.4.4      
-#&gt;  [5] tools_4.0.0        digest_0.6.25      evaluate_0.14      memoise_1.1.0     
-#&gt;  [9] lifecycle_0.2.0    tibble_3.0.1       gtable_0.3.0       pkgconfig_2.0.3   
-#&gt; [13] rlang_0.4.6        yaml_2.2.1         pkgdown_1.5.1.9000 xfun_0.14         
-#&gt; [17] rxylib_0.2.4       stringr_1.4.0      knitr_1.28         desc_1.2.0        
-#&gt; [21] fs_1.4.1           vctrs_0.3.0        rprojroot_1.3-2    grid_4.0.0        
-#&gt; [25] glue_1.4.1         R6_2.4.1           rmarkdown_2.1      ggplot2_3.3.0     
-#&gt; [29] farver_2.0.3       IsoplotR_3.3       backports_1.1.7    scales_1.1.1      
-#&gt; [33] htmltools_0.4.0    ellipsis_0.3.1     MASS_7.3-51.5      assertthat_0.2.1  
-#&gt; [37] colorspace_1.4-1   labeling_0.3       stringi_1.4.6      munsell_0.5.0     
-#&gt; [41] crayon_1.3.4</code></pre>
+#&gt;  [1] Rcpp_1.0.4.6       compiler_4.0.0     pillar_1.4.4       tools_4.0.0       
+#&gt;  [5] digest_0.6.25      evaluate_0.14      memoise_1.1.0      lifecycle_0.2.0   
+#&gt;  [9] tibble_3.0.1       gtable_0.3.0       pkgconfig_2.0.3    rlang_0.4.6       
+#&gt; [13] yaml_2.2.1         pkgdown_1.5.1.9000 xfun_0.14          rxylib_0.2.4      
+#&gt; [17] stringr_1.4.0      knitr_1.28         desc_1.2.0         fs_1.4.1          
+#&gt; [21] vctrs_0.3.0        rprojroot_1.3-2    grid_4.0.0         glue_1.4.1        
+#&gt; [25] R6_2.4.1           rmarkdown_2.1      ggplot2_3.3.0      farver_2.0.3      
+#&gt; [29] IsoplotR_3.3       backports_1.1.7    scales_1.1.1       htmltools_0.4.0   
+#&gt; [33] ellipsis_0.3.1     MASS_7.3-51.5      assertthat_0.2.1   colorspace_1.4-1  
+#&gt; [37] labeling_0.3       stringi_1.4.6      munsell_0.5.0      crayon_1.3.4</code></pre>
 </div>
   </div>
 
