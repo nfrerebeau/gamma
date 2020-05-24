@@ -109,7 +109,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/doserate.html">Dose Rate vs Signal Calibration Curve</a>
+      <a href="../articles/doserate.html">Calibration Curve</a>
     </li>
   </ul>
 </li>
@@ -170,7 +170,7 @@
   <span class='no'>x</span>,
   <span class='kw'>error_ellipse</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>error_bar</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>threshold</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Ni"</span>, <span class='st'>"NiEi"</span>),
+  <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>level</span> <span class='kw'>=</span> <span class='fl'>0.95</span>,
   <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>50</span>,
   <span class='no'>...</span>
@@ -215,10 +215,8 @@ be plotted?</p></td>
 be plotted?</p></td>
     </tr>
     <tr>
-      <th>threshold</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> sting specifying the threshold
-to be used. It must be one of <code>"Ni"</code> (default) or <code>"NiEi"</code>
-(see details).</p></td>
+      <th>energy</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: TODO.</p></td>
     </tr>
     <tr>
       <th>level</th>

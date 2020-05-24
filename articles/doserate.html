@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dose Rate vs Signal Calibration Curve • gamma</title>
+<title>Calibration Curve • gamma</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -17,7 +17,7 @@
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Dose Rate vs Signal Calibration Curve">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Calibration Curve">
 <meta property="og:description" content="gamma">
 <meta property="og:image" content="https://crp2a.github.io/gamma/logo.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -67,7 +67,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/doserate.html">Dose Rate vs Signal Calibration Curve</a>
+      <a href="../articles/doserate.html">Calibration Curve</a>
     </li>
   </ul>
 </li>
@@ -95,7 +95,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Dose Rate vs Signal Calibration Curve</h1>
+      <h1 data-toc-skip>Calibration Curve</h1>
                         <h4 class="author">N. Frerebeau, B. Lebrun</h4>
             
             <h4 class="date">2020-05-24</h4>
@@ -310,9 +310,9 @@
 <span class="co">#&gt; MSWD: 0.937507 on 3 degrees of freedom, p-value: 0.421443</span>
 
 <span class="co"># Plot curve</span>
-<span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="no">AIX_NaI</span>, <span class="kw">threshold</span> <span class="kw">=</span> <span class="st">"Ni"</span>) +
+<span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="no">AIX_NaI</span>, <span class="kw">model</span> <span class="kw">=</span> <span class="st">"Ni"</span>) +
   <span class="kw pkg">ggplot2</span><span class="kw ns">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>()
-<span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="no">AIX_NaI</span>, <span class="kw">threshold</span> <span class="kw">=</span> <span class="st">"NiEi"</span>) +
+<span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="no">AIX_NaI</span>, <span class="kw">model</span> <span class="kw">=</span> <span class="st">"NiEi"</span>) +
   <span class="kw pkg">ggplot2</span><span class="kw ns">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>()</pre></body></html></div>
 <p><img src="doserate_files/figure-html/calibration-1.png" width="336"><img src="doserate_files/figure-html/calibration-2.png" width="336"></p>
 </div>
