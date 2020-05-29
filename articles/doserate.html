@@ -98,7 +98,7 @@
       <h1 data-toc-skip>Calibration Curve</h1>
                         <h4 class="author">N. Frerebeau, B. Lebrun</h4>
             
-            <h4 class="date">2020-05-24</h4>
+            <h4 class="date">2020-05-29</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/crp2a/gamma/blob/master/vignettes/doserate.Rmd"><code>vignettes/doserate.Rmd</code></a></small>
       <div class="hidden name"><code>doserate.Rmd</code></div>
@@ -139,63 +139,63 @@
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="co"># Spectrum pre-processing</span>
 <span class="co"># Remove baseline for peak detection</span>
 <span class="no">bsl</span> <span class="kw">&lt;-</span> <span class="no">spc</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/slice.html">slice_signal</a></span>(-<span class="fl">1</span>:-<span class="fl">40</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/stabilize.html">stabilize_signal</a></span>(<span class="no">sqrt</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/smooth.html">smooth_signal</a></span>(<span class="kw">method</span> <span class="kw">=</span> <span class="st">"savitzky"</span>, <span class="kw">m</span> <span class="kw">=</span> <span class="fl">21</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/baseline.html">remove_baseline</a></span>()</pre></body></html></div>
+  <span class="fu"><a href="../reference/slice.html">signal_slice</a></span>(-<span class="fl">1</span>:-<span class="fl">40</span>) <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="../reference/stabilize.html">signal_stabilize</a></span>(<span class="kw">f</span> <span class="kw">=</span> <span class="no">sqrt</span>) <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="../reference/smooth.html">signal_smooth</a></span>(<span class="kw">method</span> <span class="kw">=</span> <span class="st">"savitzky"</span>, <span class="kw">m</span> <span class="kw">=</span> <span class="fl">21</span>) <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="../reference/baseline.html">signal_correct</a></span>()</pre></body></html></div>
 <div id="brique" class="section level4">
 <h4 class="hasAnchor">
 <a href="#brique" class="anchor"></a>BRIQUE</h4>
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="co"># Peak detection</span>
-<span class="no">pks</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/peaks.html">find_peaks</a></span>(<span class="no">bsl</span><span class="kw">[[</span><span class="st">"BRIQUE"</span>]])
+<span class="no">pks</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/peaks.html">peaks_find</a></span>(<span class="no">bsl</span><span class="kw">[[</span><span class="st">"BRIQUE"</span>]])
 <span class="co"># Set energy values</span>
 <span class="fu">set_energy</span>(<span class="no">pks</span>) <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">238</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">1461</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">2615</span>)
 <span class="co"># Adjust the energy scale</span>
-<span class="no">BRIQUE</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">calibrate_energy</a></span>(<span class="no">spc</span><span class="kw">[[</span><span class="st">"BRIQUE"</span>]], <span class="no">pks</span>)</pre></body></html></div>
+<span class="no">BRIQUE</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">energy_calibrate</a></span>(<span class="no">spc</span><span class="kw">[[</span><span class="st">"BRIQUE"</span>]], <span class="no">pks</span>)</pre></body></html></div>
 <p><img src="doserate_files/figure-html/plot-BRIQUE-1.png" width="672"></p>
 </div>
 <div id="c341" class="section level4">
 <h4 class="hasAnchor">
 <a href="#c341" class="anchor"></a>C341</h4>
 <div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="co"># Spectrum pre-processing and peak detection</span>
-<span class="no">pks</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/peaks.html">find_peaks</a></span>(<span class="no">bsl</span><span class="kw">[[</span><span class="st">"C341"</span>]])
+<span class="no">pks</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/peaks.html">peaks_find</a></span>(<span class="no">bsl</span><span class="kw">[[</span><span class="st">"C341"</span>]])
 <span class="co"># Set energy values</span>
 <span class="fu">set_energy</span>(<span class="no">pks</span>) <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">238</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">1461</span>, <span class="fl">NA</span>, <span class="fl">2615</span>)
 <span class="co"># Adjust the energy scale</span>
-<span class="no">C341</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">calibrate_energy</a></span>(<span class="no">spc</span><span class="kw">[[</span><span class="st">"C341"</span>]], <span class="no">pks</span>)</pre></body></html></div>
+<span class="no">C341</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">energy_calibrate</a></span>(<span class="no">spc</span><span class="kw">[[</span><span class="st">"C341"</span>]], <span class="no">pks</span>)</pre></body></html></div>
 <p><img src="doserate_files/figure-html/plot-C341-1.png" width="672"></p>
 </div>
 <div id="c347" class="section level4">
 <h4 class="hasAnchor">
 <a href="#c347" class="anchor"></a>C347</h4>
 <div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="co"># Spectrum pre-processing and peak detection</span>
-<span class="no">pks</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/peaks.html">find_peaks</a></span>(<span class="no">bsl</span><span class="kw">[[</span><span class="st">"C347"</span>]], <span class="kw">span</span> <span class="kw">=</span> <span class="fl">10</span>)
+<span class="no">pks</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/peaks.html">peaks_find</a></span>(<span class="no">bsl</span><span class="kw">[[</span><span class="st">"C347"</span>]], <span class="kw">span</span> <span class="kw">=</span> <span class="fl">10</span>)
 <span class="co"># Set energy values</span>
 <span class="fu">set_energy</span>(<span class="no">pks</span>) <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">238</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">1461</span>, <span class="fl">NA</span>, <span class="fl">2615</span>)
 <span class="co"># Adjust the energy scale</span>
-<span class="no">C347</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">calibrate_energy</a></span>(<span class="no">spc</span><span class="kw">[[</span><span class="st">"C347"</span>]], <span class="no">pks</span>)</pre></body></html></div>
+<span class="no">C347</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">energy_calibrate</a></span>(<span class="no">spc</span><span class="kw">[[</span><span class="st">"C347"</span>]], <span class="no">pks</span>)</pre></body></html></div>
 <p><img src="doserate_files/figure-html/plot-C347-1.png" width="672"></p>
 </div>
 <div id="gou" class="section level4">
 <h4 class="hasAnchor">
 <a href="#gou" class="anchor"></a>GOU</h4>
 <div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="co"># Spectrum pre-processing and peak detection</span>
-<span class="no">pks</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/peaks.html">find_peaks</a></span>(<span class="no">bsl</span><span class="kw">[[</span><span class="st">"GOU"</span>]])
+<span class="no">pks</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/peaks.html">peaks_find</a></span>(<span class="no">bsl</span><span class="kw">[[</span><span class="st">"GOU"</span>]])
 <span class="co"># Set energy values</span>
 <span class="fu">set_energy</span>(<span class="no">pks</span>) <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">238</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">1461</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">2615</span>)
 <span class="co"># Adjust the energy scale</span>
-<span class="no">GOU</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">calibrate_energy</a></span>(<span class="no">spc</span><span class="kw">[[</span><span class="st">"GOU"</span>]], <span class="no">pks</span>)</pre></body></html></div>
+<span class="no">GOU</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">energy_calibrate</a></span>(<span class="no">spc</span><span class="kw">[[</span><span class="st">"GOU"</span>]], <span class="no">pks</span>)</pre></body></html></div>
 <p><img src="doserate_files/figure-html/plot-GOU-1.png" width="672"></p>
 </div>
 <div id="pep" class="section level4">
 <h4 class="hasAnchor">
 <a href="#pep" class="anchor"></a>PEP</h4>
 <div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="co"># Spectrum pre-processing and peak detection</span>
-<span class="no">pks</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/peaks.html">find_peaks</a></span>(<span class="no">bsl</span><span class="kw">[[</span><span class="st">"PEP"</span>]])
+<span class="no">pks</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/peaks.html">peaks_find</a></span>(<span class="no">bsl</span><span class="kw">[[</span><span class="st">"PEP"</span>]])
 <span class="co"># Set energy values</span>
 <span class="fu">set_energy</span>(<span class="no">pks</span>) <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">238</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">1461</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">2615</span>)
 <span class="co"># Adjust the energy scale</span>
-<span class="no">PEP</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">calibrate_energy</a></span>(<span class="no">spc</span><span class="kw">[[</span><span class="st">"PEP"</span>]], <span class="no">pks</span>)</pre></body></html></div>
+<span class="no">PEP</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">energy_calibrate</a></span>(<span class="no">spc</span><span class="kw">[[</span><span class="st">"PEP"</span>]], <span class="no">pks</span>)</pre></body></html></div>
 <p><img src="doserate_files/figure-html/plot-PEP-1.png" width="672"></p>
 </div>
 </div>
@@ -207,7 +207,7 @@
   <span class="kw">chanel</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">86</span>, <span class="fl">496</span>, <span class="fl">870</span>),
   <span class="kw">energy</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">238</span>, <span class="fl">1461</span>, <span class="fl">2615</span>)
 )
-<span class="no">bkg_scaled</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">calibrate_energy</a></span>(<span class="no">bkg</span>, <span class="kw">lines</span> <span class="kw">=</span> <span class="no">lines</span>)</pre></body></html></div>
+<span class="no">bkg_scaled</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">energy_calibrate</a></span>(<span class="no">bkg</span>, <span class="kw">lines</span> <span class="kw">=</span> <span class="no">lines</span>)</pre></body></html></div>
 <p><img src="doserate_files/figure-html/plot-bkg-1.png" width="672"></p>
 </div>
 </div>
@@ -223,12 +223,12 @@
 <span class="no">Ni_range</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">200</span>, <span class="fl">2800</span>)
 
 <span class="co"># Integrate background spectrum</span>
-(<span class="no">Ni_bkg</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/integrate.html">integrate_signal</a></span>(<span class="no">bkg_scaled</span>, <span class="kw">range</span> <span class="kw">=</span> <span class="no">Ni_range</span>, <span class="kw">energy</span> <span class="kw">=</span> <span class="fl">FALSE</span>))
+(<span class="no">Ni_bkg</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/integrate.html">signal_integrate</a></span>(<span class="no">bkg_scaled</span>, <span class="kw">range</span> <span class="kw">=</span> <span class="no">Ni_range</span>, <span class="kw">energy</span> <span class="kw">=</span> <span class="fl">FALSE</span>))
 <span class="co">#&gt;      value      error </span>
 <span class="co">#&gt; 1.40046864 0.01906326</span>
 
 <span class="co"># Integrate reference spectra</span>
-(<span class="no">Ni_spc</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/integrate.html">integrate_signal</a></span>(<span class="no">spc_scaled</span>, <span class="kw">range</span> <span class="kw">=</span> <span class="no">Ni_range</span>, <span class="kw">background</span> <span class="kw">=</span> <span class="no">Ni_bkg</span>,
+(<span class="no">Ni_spc</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/integrate.html">signal_integrate</a></span>(<span class="no">spc_scaled</span>, <span class="kw">range</span> <span class="kw">=</span> <span class="no">Ni_range</span>, <span class="kw">background</span> <span class="kw">=</span> <span class="no">Ni_bkg</span>,
                             <span class="kw">energy</span> <span class="kw">=</span> <span class="fl">FALSE</span>, <span class="kw">simplify</span> <span class="kw">=</span> <span class="fl">TRUE</span>))
 <span class="co">#&gt;           value     error</span>
 <span class="co">#&gt; BRIQUE 209.2953 0.2135497</span>
@@ -244,12 +244,12 @@
 <span class="no">NiEi_range</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">200</span>, <span class="fl">2800</span>)
 
 <span class="co"># Integrate background spectrum</span>
-(<span class="no">NiEi_bkg</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/integrate.html">integrate_signal</a></span>(<span class="no">bkg_scaled</span>, <span class="kw">range</span> <span class="kw">=</span> <span class="no">NiEi_range</span>, <span class="kw">energy</span> <span class="kw">=</span> <span class="fl">TRUE</span>))
+(<span class="no">NiEi_bkg</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/integrate.html">signal_integrate</a></span>(<span class="no">bkg_scaled</span>, <span class="kw">range</span> <span class="kw">=</span> <span class="no">NiEi_range</span>, <span class="kw">energy</span> <span class="kw">=</span> <span class="fl">TRUE</span>))
 <span class="co">#&gt;        value        error </span>
 <span class="co">#&gt; 1108.0565661    0.5362181</span>
 
 <span class="co"># Integrate reference spectra</span>
-(<span class="no">NiEi_signal</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/integrate.html">integrate_signal</a></span>(<span class="no">spc_scaled</span>, <span class="kw">range</span> <span class="kw">=</span> <span class="no">NiEi_range</span>,
+(<span class="no">NiEi_signal</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/integrate.html">signal_integrate</a></span>(<span class="no">spc_scaled</span>, <span class="kw">range</span> <span class="kw">=</span> <span class="no">NiEi_range</span>,
                                  <span class="kw">background</span> <span class="kw">=</span> <span class="no">NiEi_bkg</span>, <span class="kw">energy</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
                                  <span class="kw">simplify</span> <span class="kw">=</span> <span class="fl">TRUE</span>))
 <span class="co">#&gt;            value    error</span>
@@ -279,7 +279,7 @@
 )
 
 <span class="co"># Build the calibration curve</span>
-<span class="no">AIX_NaI</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/doserate.html">fit_dose</a></span>(
+<span class="no">AIX_NaI</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/doserate.html">dose_fit</a></span>(
   <span class="no">spc_scaled</span>, <span class="kw">background</span> <span class="kw">=</span> <span class="no">bkg_scaled</span>, <span class="kw">doses</span> <span class="kw">=</span> <span class="no">doses</span>,
   <span class="kw">range_Ni</span> <span class="kw">=</span> <span class="no">Ni_range</span>, <span class="kw">range_NiEi</span> <span class="kw">=</span> <span class="no">NiEi_range</span>, <span class="kw">alpha</span> <span class="kw">=</span> <span class="fl">0.05</span>,
   <span class="kw">details</span> <span class="kw">=</span> <span class="no">info</span>
@@ -346,7 +346,7 @@
 <div class="sourceCode" id="cb15"><html><body><pre class="r">
 <span class="co"># Dose rate prediction</span>
 <span class="co"># (assuming that the energy scale of each spectrum was adjusted first)</span>
-(<span class="no">rates</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/doserate.html">predict_dose</a></span>(<span class="no">AIX_NaI</span>, <span class="no">test</span>, <span class="kw">sigma</span> <span class="kw">=</span> <span class="fl">2</span>))
+(<span class="no">rates</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/doserate.html">dose_predict</a></span>(<span class="no">AIX_NaI</span>, <span class="no">test</span>, <span class="kw">sigma</span> <span class="kw">=</span> <span class="fl">2</span>))
 <span class="co">#&gt;        names   dose_Ni error_Ni dose_NiEi error_NiEi</span>
 <span class="co">#&gt; 1 NAR19-P2-1  925.2131 55.19426  898.0336   53.22726</span>
 <span class="co">#&gt; 2 NAR19-P3-1 1116.4969 66.56116 1089.8538   64.59653</span>
@@ -381,7 +381,7 @@
 #&gt; [13] yaml_2.2.1         pkgdown_1.5.1.9000 xfun_0.14          rxylib_0.2.4      
 #&gt; [17] stringr_1.4.0      knitr_1.28         desc_1.2.0         fs_1.4.1          
 #&gt; [21] vctrs_0.3.0        rprojroot_1.3-2    grid_4.0.0         glue_1.4.1        
-#&gt; [25] R6_2.4.1           rmarkdown_2.1      ggplot2_3.3.0      farver_2.0.3      
+#&gt; [25] R6_2.4.1           rmarkdown_2.1      ggplot2_3.3.1      farver_2.0.3      
 #&gt; [29] IsoplotR_3.3       backports_1.1.7    scales_1.1.1       htmltools_0.4.0   
 #&gt; [33] ellipsis_0.3.1     MASS_7.3-51.5      assertthat_0.2.1   colorspace_1.4-1  
 #&gt; [37] labeling_0.3       stringi_1.4.6      munsell_0.5.0      crayon_1.3.4</code></pre>

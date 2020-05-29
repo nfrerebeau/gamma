@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Transform Intensities — stabilize_signal • gamma</title>
+<title>Transform Intensities — signal_stabilize • gamma</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,7 @@
 
 
 
-<meta property="og:title" content="Transform Intensities — stabilize_signal" />
+<meta property="og:title" content="Transform Intensities — signal_stabilize" />
 <meta property="og:description" content="Transform Intensities" />
 <meta property="og:image" content="https://crp2a.github.io/gamma/logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -138,7 +138,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Transform Intensities</h1>
-    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/signal.R'><code>R/signal.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/signal_stabilize.R'><code>R/signal_stabilize.R</code></a></small>
     <div class="hidden name"><code>stabilize.Rd</code></div>
     </div>
 
@@ -146,13 +146,13 @@
     <p>Transform Intensities</p>
     </div>
 
-    <pre class="usage"><span class='fu'>stabilize_signal</span>(<span class='no'>object</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>signal_stabilize</span>(<span class='no'>object</span>, <span class='no'>...</span>)
 
 <span class='co'># S4 method for GammaSpectrum</span>
-<span class='fu'>stabilize_signal</span>(<span class='no'>object</span>, <span class='no'>transformation</span>, <span class='no'>...</span>)
+<span class='fu'>signal_stabilize</span>(<span class='no'>object</span>, <span class='no'>f</span>, <span class='no'>...</span>)
 
 <span class='co'># S4 method for GammaSpectra</span>
-<span class='fu'>stabilize_signal</span>(<span class='no'>object</span>, <span class='no'>transformation</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>signal_stabilize</span>(<span class='no'>object</span>, <span class='no'>f</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -166,7 +166,7 @@
       <td><p>Extra arguments to be passed to <code>transformation</code>.</p></td>
     </tr>
     <tr>
-      <th>transformation</th>
+      <th>f</th>
       <td><p>A <code><a href='https://rdrr.io/r/base/function.html'>function</a></code> that takes a numeric vector as
 argument and returns a numeric vector.</p></td>
     </tr>
@@ -179,11 +179,14 @@ argument and returns a numeric vector.</p></td>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other signal processing: 
-<code><a href='baseline.html'>baseline</a></code>,
-<code><a href='peaks.html'>find_peaks</a>()</code>,
-<code><a href='integrate.html'>integrate_signal</a>()</code>,
-<code><a href='slice.html'>slice_signal</a>()</code>,
-<code><a href='smooth.html'>smooth_signal</a>()</code></p></div>
+<code><a href='baseline.html'>baseline</a>()</code>,
+<code><a href='peaks.html'>peaks_find</a>()</code>,
+<code><a href='integrate.html'>signal_integrate</a>()</code>,
+<code><a href='slice.html'>signal_slice</a>()</code>,
+<code><a href='smooth.html'>smooth</a>()</code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>N. Frerebeau</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

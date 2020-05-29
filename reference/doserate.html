@@ -47,7 +47,7 @@
 
 
 <meta property="og:title" content="Dose Rate Estimation — doserate" />
-<meta property="og:description" content="fit_dose builds a calibration curve for gamma dose rate estimation." />
+<meta property="og:description" content="dose_fit builds a calibration curve for gamma dose rate estimation." />
 <meta property="og:image" content="https://crp2a.github.io/gamma/logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@nfrerebeau" />
@@ -138,49 +138,48 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Dose Rate Estimation</h1>
-    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/doserate.R'><code>R/doserate.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/dose_fit.R'><code>R/dose_fit.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/dose_predict.R'><code>R/dose_predict.R</code></a></small>
     <div class="hidden name"><code>doserate.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><code>fit_dose</code> builds a calibration curve for gamma dose rate estimation.</p>
+    <p><code>dose_fit</code> builds a calibration curve for gamma dose rate estimation.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>fit_dose</span>(<span class='no'>object</span>, <span class='no'>background</span>, <span class='no'>doses</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>dose_fit</span>(<span class='no'>object</span>, <span class='no'>background</span>, <span class='no'>doses</span>, <span class='no'>...</span>)
 
-<span class='fu'>predict_dose</span>(<span class='no'>object</span>, <span class='no'>spectrum</span>, <span class='no'>...</span>)
+<span class='fu'>dose_predict</span>(<span class='no'>object</span>, <span class='no'>spectrum</span>, <span class='no'>...</span>)
 
 <span class='co'># S4 method for GammaSpectra,GammaSpectrum,matrix</span>
-<span class='fu'>fit_dose</span>(
+<span class='fu'>dose_fit</span>(
   <span class='no'>object</span>,
   <span class='no'>background</span>,
   <span class='no'>doses</span>,
   <span class='no'>range_Ni</span>,
   <span class='no'>range_NiEi</span>,
   <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.05</span>,
-  <span class='kw'>details</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='no'>...</span>
+  <span class='kw'>details</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>authors</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>date</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>())
 )
 
 <span class='co'># S4 method for GammaSpectra,GammaSpectrum,data.frame</span>
-<span class='fu'>fit_dose</span>(
+<span class='fu'>dose_fit</span>(
   <span class='no'>object</span>,
   <span class='no'>background</span>,
   <span class='no'>doses</span>,
   <span class='no'>range_Ni</span>,
   <span class='no'>range_NiEi</span>,
   <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.05</span>,
-  <span class='kw'>details</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+  <span class='kw'>details</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>authors</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>date</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>())
 )
 
 <span class='co'># S4 method for CalibrationCurve,missing</span>
-<span class='fu'>predict_dose</span>(<span class='no'>object</span>, <span class='kw'>sigma</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>0</span>)
+<span class='fu'>dose_predict</span>(<span class='no'>object</span>, <span class='kw'>sigma</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>0</span>)
 
 <span class='co'># S4 method for CalibrationCurve,GammaSpectrum</span>
-<span class='fu'>predict_dose</span>(<span class='no'>object</span>, <span class='no'>spectrum</span>, <span class='kw'>sigma</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>0</span>)
+<span class='fu'>dose_predict</span>(<span class='no'>object</span>, <span class='no'>spectrum</span>, <span class='kw'>sigma</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>0</span>)
 
 <span class='co'># S4 method for CalibrationCurve,GammaSpectra</span>
-<span class='fu'>predict_dose</span>(<span class='no'>object</span>, <span class='no'>spectrum</span>, <span class='kw'>sigma</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>0</span>)</pre>
+<span class='fu'>dose_predict</span>(<span class='no'>object</span>, <span class='no'>spectrum</span>, <span class='kw'>sigma</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>0</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -238,16 +237,16 @@ introduced by the calibration of the energy scale of the spectrum.</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>fit_dose</code> returns a <a href='CalibrationCurve-class.html'>CalibrationCurve</a> object.</p>
-<p><code>predict_dose</code> returns a <code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code> with the following
+    <p><code>dose_fit</code> returns a <a href='CalibrationCurve-class.html'>CalibrationCurve</a> object.</p>
+<p><code>dose_predict</code> returns a <code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code> with the following
  columns:</p><dl>
   <dt>name</dt><dd><p>(<code><a href='https://rdrr.io/r/base/character.html'>character</a></code>) the name of the spectra.</p></dd>
   <dt>*_signal</dt><dd><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code>) the integrated signal value
   (according to the value of <code>threshold</code>; see
-  <code><a href='integrate.html'>integrate_signal</a></code>).</p></dd>
+  <code><a href='integrate.html'>signal_integrate</a></code>).</p></dd>
   <dt>*_error</dt><dd><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code>) the integrated signal error value
   (according to the value of <code>threshold</code>; see
-  <code><a href='integrate.html'>integrate_signal</a></code>).</p></dd>
+  <code><a href='integrate.html'>signal_integrate</a></code>).</p></dd>
   <dt>gamma_signal</dt><dd><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code>) the predicted gamma dose rate.</p></dd>
   <dt>gamma_error</dt><dd><p>(<code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code>) the predicted gamma dose rate
   error.</p></dd>
@@ -256,7 +255,7 @@ introduced by the calibration of the energy scale of the spectrum.</p></td>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><code>predict_dose</code> predicts in-situ gamma dose rate.</p>
+    <p><code>dose_predict</code> predicts in-situ gamma dose rate.</p>
 
 <p>See <code>vignette(doserate)</code> for a reproducible example.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
@@ -270,7 +269,10 @@ introduced by the calibration of the energy scale of the spectrum.</p></td>
  DOI: <a href='https://doi.org/10.1119/1.1632486'>10.1119/1.1632486</a>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='integrate.html'>integrate_signal</a></p></div>
+    <div class='dont-index'><p><a href='integrate.html'>signal_integrate</a></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>N. Frereberrorseau</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Import CNF files</span>
@@ -295,14 +297,14 @@ introduced by the calibration of the energy scale of the spectrum.</p></td>
 #&gt; MPX      964.0196   13.274167
 #&gt; PEP     2538.2217  112.169131</div><div class='input'>
 <span class='co'>## Build the calibration curve</span>
-<span class='no'>calib_curve</span> <span class='kw'>&lt;-</span> <span class='fu'>fit_dose</span>(<span class='no'>spc</span>, <span class='no'>bkg</span>, <span class='no'>doses</span>,
+<span class='no'>calib_curve</span> <span class='kw'>&lt;-</span> <span class='fu'>dose_fit</span>(<span class='no'>spc</span>, <span class='no'>bkg</span>, <span class='no'>doses</span>,
                         <span class='kw'>range_Ni</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>300</span>, <span class='fl'>2800</span>),
                         <span class='kw'>range_NiEi</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>165</span>, <span class='fl'>2800</span>))
 
 <span class='co'>## Plot the curve</span>
 <span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>calib_curve</span>, <span class='kw'>threshold</span> <span class='kw'>=</span> <span class='st'>"Ni"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;ce&gt;</span></div><div class='output co'>#&gt; <span class='warning'>Warning: conversion failure on 'Dose rate [μGy/y]' in 'mbcsToSbcs': dot substituted for &lt;bc&gt;</span></div><div class='img'><img src='doserate-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>## Estimate gamma dose rates</span>
-<span class='fu'>predict_dose</span>(<span class='no'>calib_curve</span>, <span class='no'>spc</span>)</div><div class='output co'>#&gt;    names   dose_Ni error_Ni dose_NiEi error_NiEi
+<span class='fu'>dose_predict</span>(<span class='no'>calib_curve</span>, <span class='no'>spc</span>)</div><div class='output co'>#&gt;    names   dose_Ni error_Ni dose_NiEi error_NiEi
 #&gt; 1 BRIQUE 1955.8683 43.87228 1946.9606   39.37700
 #&gt; 2   C341  843.9938 21.12857  843.0632   17.05374
 #&gt; 3   C347 1420.1912 34.31052 1402.5391   28.36931

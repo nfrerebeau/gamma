@@ -10,7 +10,7 @@
     <loc>https://crp2a.github.io/gamma/reference/BDX_LaBr_1.html</loc>
   </url>
   <url>
-    <loc>https://crp2a.github.io/gamma/reference/BaseLine-class.html</loc>
+    <loc>https://crp2a.github.io/gamma/reference/Baseline-class.html</loc>
   </url>
   <url>
     <loc>https://crp2a.github.io/gamma/reference/CalibrationCurve-class.html</loc>
@@ -23,9 +23,6 @@
   </url>
   <url>
     <loc>https://crp2a.github.io/gamma/reference/PeakPosition-class.html</loc>
-  </url>
-  <url>
-    <loc>https://crp2a.github.io/gamma/reference/SNIP.html</loc>
   </url>
   <url>
     <loc>https://crp2a.github.io/gamma/reference/baseline.html</loc>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Peaks — find_peaks • gamma</title>
+<title>Peaks — peaks_find • gamma</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,7 @@
 
 
 
-<meta property="og:title" content="Peaks — find_peaks" />
+<meta property="og:title" content="Peaks — peaks_find" />
 <meta property="og:description" content="Finds local maxima in sequential data." />
 <meta property="og:image" content="https://crp2a.github.io/gamma/logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -138,7 +138,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Peaks</h1>
-    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/peaks.R'><code>R/peaks.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/peaks_find.R'><code>R/peaks_find.R</code></a></small>
     <div class="hidden name"><code>peaks.Rd</code></div>
     </div>
 
@@ -146,10 +146,10 @@
     <p>Finds local maxima in sequential data.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>find_peaks</span>(<span class='no'>object</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>peaks_find</span>(<span class='no'>object</span>, <span class='no'>...</span>)
 
 <span class='co'># S4 method for GammaSpectrum</span>
-<span class='fu'>find_peaks</span>(<span class='no'>object</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"MAD"</span>), <span class='kw'>SNR</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>span</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>peaks_find</span>(<span class='no'>object</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"MAD"</span>), <span class='kw'>SNR</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>span</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -196,11 +196,14 @@ half window size.</p></td>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other signal processing: 
-<code><a href='baseline.html'>baseline</a></code>,
-<code><a href='integrate.html'>integrate_signal</a>()</code>,
-<code><a href='slice.html'>slice_signal</a>()</code>,
-<code><a href='smooth.html'>smooth_signal</a>()</code>,
-<code><a href='stabilize.html'>stabilize_signal</a>()</code></p></div>
+<code><a href='baseline.html'>baseline</a>()</code>,
+<code><a href='integrate.html'>signal_integrate</a>()</code>,
+<code><a href='slice.html'>signal_slice</a>()</code>,
+<code><a href='stabilize.html'>signal_stabilize</a>()</code>,
+<code><a href='smooth.html'>smooth</a>()</code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>N. Frerebeau</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Import a Canberra CNF file</span>
@@ -208,7 +211,7 @@ half window size.</p></td>
 <span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_file</span>)
 
 <span class='co'>## Find peaks</span>
-(<span class='no'>pks</span> <span class='kw'>&lt;-</span> <span class='fu'>find_peaks</span>(<span class='no'>spc</span>))</div><div class='output co'>#&gt; 2 peaks were detected:
+(<span class='no'>pks</span> <span class='kw'>&lt;-</span> <span class='fu'>peaks_find</span>(<span class='no'>spc</span>))</div><div class='output co'>#&gt; 2 peaks were detected:
 #&gt;   chanel     energy
 #&gt; 1     35   94.93504
 #&gt; 2    496 1491.71339</div><div class='input'><span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>spc</span>, <span class='no'>pks</span>)</div><div class='img'><img src='peaks-1.png' alt='' width='700' height='433' /></div></pre>

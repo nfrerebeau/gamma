@@ -187,7 +187,7 @@
       <tr>
         
         <td>
-          <p><code><a href="plot.html">plot(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;GammaSpectrum&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;GammaSpectra&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;PeakPosition&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;CalibrationCurve&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> </p>
+          <p><code><a href="plot.html">plot(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;Baseline&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;GammaSpectra&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;GammaSpectrum&gt;</i>,<i>&lt;PeakPosition&gt;</i>)</a></code> <code><a href="plot.html">plot(<i>&lt;CalibrationCurve&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> </p>
         </td>
         <td><p>Plot</p></td>
       </tr>
@@ -206,37 +206,37 @@
       <tr>
         
         <td>
-          <p><code><a href="baseline.html">estimate_baseline()</a></code> <code><a href="baseline.html">remove_baseline()</a></code> </p>
+          <p><code><a href="baseline.html">baseline()</a></code> <code><a href="baseline.html">baseline_snip()</a></code> <code><a href="baseline.html">baseline_rubberband()</a></code> <code><a href="baseline.html">signal_correct()</a></code> </p>
         </td>
         <td><p>Baseline Estimation and Removal</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="integrate.html">integrate_signal()</a></code> </p>
+          <p><code><a href="integrate.html">signal_integrate()</a></code> </p>
         </td>
         <td><p>Signal Integration</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="peaks.html">find_peaks()</a></code> </p>
+          <p><code><a href="peaks.html">peaks_find()</a></code> </p>
         </td>
         <td><p>Peaks</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="slice.html">slice_signal()</a></code> </p>
+          <p><code><a href="slice.html">signal_slice()</a></code> </p>
         </td>
         <td><p>Choose Chanels by Position</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="smooth.html">smooth_signal()</a></code> </p>
+          <p><code><a href="smooth.html">signal_smooth()</a></code> <code><a href="smooth.html">smooth_rectangular()</a></code> <code><a href="smooth.html">smooth_triangular()</a></code> <code><a href="smooth.html">smooth_savitzky()</a></code> </p>
         </td>
         <td><p>Smooth</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="stabilize.html">stabilize_signal()</a></code> </p>
+          <p><code><a href="stabilize.html">signal_stabilize()</a></code> </p>
         </td>
         <td><p>Transform Intensities</p></td>
       </tr>
@@ -255,7 +255,7 @@
       <tr>
         
         <td>
-          <p><code><a href="energy.html">calibrate_energy()</a></code> <code><a href="energy.html">has_energy()</a></code> </p>
+          <p><code><a href="energy.html">energy_calibrate()</a></code> <code><a href="energy.html">has_energy()</a></code> </p>
         </td>
         <td><p>Energy Scale Calibration</p></td>
       </tr>
@@ -274,7 +274,7 @@
       <tr>
         
         <td>
-          <p><code><a href="doserate.html">fit_dose()</a></code> <code><a href="doserate.html">predict_dose()</a></code> </p>
+          <p><code><a href="doserate.html">dose_fit()</a></code> <code><a href="doserate.html">dose_predict()</a></code> </p>
         </td>
         <td><p>Dose Rate Estimation</p></td>
       </tr>
@@ -293,7 +293,7 @@
       <tr>
         
         <td>
-          <p><code><a href="BaseLine-class.html">BaseLine-class</a></code> </p>
+          <p><code><a href="Baseline-class.html">Baseline-class</a></code> </p>
         </td>
         <td><p>An S4 Class to Represent a Spectrum Baseline</p></td>
       </tr><tr>
@@ -342,7 +342,7 @@
       <tr>
         
         <td>
-          <p><code><a href="mutator.html">get_hash()</a></code> <code><a href="mutator.html">get_names()</a></code> <code><a href="mutator.html">`set_names&lt;-`()</a></code> <code><a href="mutator.html">get_livetime()</a></code> <code><a href="mutator.html">get_realtime()</a></code> <code><a href="mutator.html">get_chanels()</a></code> <code><a href="mutator.html">get_counts()</a></code> <code><a href="mutator.html">get_rates()</a></code> <code><a href="mutator.html">get_energy()</a></code> <code><a href="mutator.html">`set_energy&lt;-`()</a></code> <code><a href="mutator.html">get_residuals()</a></code> <code><a href="mutator.html">range_chanels()</a></code> <code><a href="mutator.html">range_energy()</a></code> <code><a href="mutator.html">length(<i>&lt;GammaSpectrum&gt;</i>)</a></code> </p>
+          <p><code><a href="mutator.html">get_hash()</a></code> <code><a href="mutator.html">get_names()</a></code> <code><a href="mutator.html">`set_names&lt;-`()</a></code> <code><a href="mutator.html">get_livetime()</a></code> <code><a href="mutator.html">get_realtime()</a></code> <code><a href="mutator.html">get_chanels()</a></code> <code><a href="mutator.html">get_counts()</a></code> <code><a href="mutator.html">get_rates()</a></code> <code><a href="mutator.html">get_energy()</a></code> <code><a href="mutator.html">`set_energy&lt;-`()</a></code> <code><a href="mutator.html">get_method()</a></code> <code><a href="mutator.html">`set_method&lt;-`()</a></code> <code><a href="mutator.html">get_residuals()</a></code> <code><a href="mutator.html">range_chanels()</a></code> <code><a href="mutator.html">range_energy()</a></code> <code><a href="mutator.html">length(<i>&lt;GammaSpectrum&gt;</i>)</a></code> </p>
         </td>
         <td><p>Get or Set Parts of an Object</p></td>
       </tr><tr>

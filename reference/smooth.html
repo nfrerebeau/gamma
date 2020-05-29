@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Smooth — smooth_signal • gamma</title>
+<title>Smooth — smooth • gamma</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,7 @@
 
 
 
-<meta property="og:title" content="Smooth — smooth_signal" />
+<meta property="og:title" content="Smooth — smooth" />
 <meta property="og:description" content="Smoothes intensities." />
 <meta property="og:image" content="https://crp2a.github.io/gamma/logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -138,7 +138,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Smooth</h1>
-    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/signal.R'><code>R/signal.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/smooth.R'><code>R/smooth.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/smooth_rectangular.R'><code>R/smooth_rectangular.R</code></a>, and 2 more</small>
     <div class="hidden name"><code>smooth.Rd</code></div>
     </div>
 
@@ -146,23 +146,37 @@
     <p>Smoothes intensities.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>smooth_signal</span>(<span class='no'>object</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>signal_smooth</span>(<span class='no'>object</span>, <span class='no'>...</span>)
+
+<span class='fu'>smooth_rectangular</span>(<span class='no'>object</span>, <span class='no'>...</span>)
+
+<span class='fu'>smooth_triangular</span>(<span class='no'>object</span>, <span class='no'>...</span>)
+
+<span class='fu'>smooth_savitzky</span>(<span class='no'>object</span>, <span class='no'>...</span>)
 
 <span class='co'># S4 method for GammaSpectrum</span>
-<span class='fu'>smooth_signal</span>(
-  <span class='no'>object</span>,
-  <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"unweighted"</span>, <span class='st'>"weighted"</span>, <span class='st'>"savitzky"</span>),
-  <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>p</span> <span class='kw'>=</span> <span class='fl'>2</span>
-)
+<span class='fu'>signal_smooth</span>(<span class='no'>object</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"rectangular"</span>, <span class='st'>"triangular"</span>, <span class='st'>"savitzky"</span>), <span class='no'>...</span>)
 
 <span class='co'># S4 method for GammaSpectra</span>
-<span class='fu'>smooth_signal</span>(
-  <span class='no'>object</span>,
-  <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"unweighted"</span>, <span class='st'>"weighted"</span>, <span class='st'>"savitzky"</span>),
-  <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>p</span> <span class='kw'>=</span> <span class='fl'>2</span>
-)</pre>
+<span class='fu'>signal_smooth</span>(<span class='no'>object</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"rectangular"</span>, <span class='st'>"triangular"</span>, <span class='st'>"savitzky"</span>), <span class='no'>...</span>)
+
+<span class='co'># S4 method for GammaSpectrum</span>
+<span class='fu'>smooth_rectangular</span>(<span class='no'>object</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>)
+
+<span class='co'># S4 method for GammaSpectra</span>
+<span class='fu'>smooth_rectangular</span>(<span class='no'>object</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>)
+
+<span class='co'># S4 method for GammaSpectrum</span>
+<span class='fu'>smooth_savitzky</span>(<span class='no'>object</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fl'>2</span>)
+
+<span class='co'># S4 method for GammaSpectra</span>
+<span class='fu'>smooth_savitzky</span>(<span class='no'>object</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fl'>2</span>)
+
+<span class='co'># S4 method for GammaSpectrum</span>
+<span class='fu'>smooth_triangular</span>(<span class='no'>object</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>)
+
+<span class='co'># S4 method for GammaSpectra</span>
+<span class='fu'>smooth_triangular</span>(<span class='no'>object</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -174,7 +188,7 @@ object.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Currently not used.</p></td>
+      <td><p>Extra parameters to be passed to further methods.</p></td>
     </tr>
     <tr>
       <th>method</th>
@@ -201,10 +215,10 @@ Only used if <code>method</code> is "<code>savitzky</code>".</p></td>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The following smoothing methods are available:</p><dl>
-  <dt>unweighted</dt><dd><p>Unweighted sliding-average or rectangular smooth.
+  <dt>rectangular</dt><dd><p>Unweighted sliding-average or rectangular smooth.
   It replaces each point in the signal with the average of \(m\) adjacent
   points.</p></dd>
-  <dt>weighted</dt><dd><p>Weighted sliding-average or triangular smooth.
+  <dt>triangular</dt><dd><p>Weighted sliding-average or triangular smooth.
   It replaces each point in the signal with the weighted mean of \(m\)
   adjacent points.</p></dd>
   <dt>savitzky</dt><dd><p>Savitzky-Golay filter. This method is based on the
@@ -230,32 +244,35 @@ Only used if <code>method</code> is "<code>savitzky</code>".</p></td>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other signal processing: 
-<code><a href='baseline.html'>baseline</a></code>,
-<code><a href='peaks.html'>find_peaks</a>()</code>,
-<code><a href='integrate.html'>integrate_signal</a>()</code>,
-<code><a href='slice.html'>slice_signal</a>()</code>,
-<code><a href='stabilize.html'>stabilize_signal</a>()</code></p></div>
+<code><a href='baseline.html'>baseline</a>()</code>,
+<code><a href='peaks.html'>peaks_find</a>()</code>,
+<code><a href='integrate.html'>signal_integrate</a>()</code>,
+<code><a href='slice.html'>signal_slice</a>()</code>,
+<code><a href='stabilize.html'>signal_stabilize</a>()</code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>N. Frerebeau</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Import CNF files</span>
 <span class='no'>spc_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.CNF"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
 <span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_file</span>)
-<span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='slice.html'>slice_signal</a></span>(<span class='no'>spc</span>, -<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>:<span class='fl'>35</span>))
+<span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='slice.html'>signal_slice</a></span>(<span class='no'>spc</span>, -<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>:<span class='fl'>35</span>))
 
 <span class='co'># Plot raw spectrum</span>
-<span class='no'>spc_clean</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='baseline.html'>remove_baseline</a></span>(<span class='no'>spc</span>)
+<span class='no'>spc_clean</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='baseline.html'>signal_correct</a></span>(<span class='no'>spc</span>)
 <span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>spc_clean</span>)</div><div class='img'><img src='smooth-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Rectangular smooth</span>
-<span class='no'>spc_unweighted</span> <span class='kw'>&lt;-</span> <span class='fu'>smooth_signal</span>(<span class='no'>spc</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"unweighted"</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>)
-<span class='no'>spc_unweighted_clean</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='baseline.html'>remove_baseline</a></span>(<span class='no'>spc_unweighted</span>)
+<span class='no'>spc_unweighted</span> <span class='kw'>&lt;-</span> <span class='fu'>smooth_rectangular</span>(<span class='no'>spc</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>)
+<span class='no'>spc_unweighted_clean</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='baseline.html'>signal_correct</a></span>(<span class='no'>spc_unweighted</span>)
 <span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>spc_unweighted_clean</span>)</div><div class='img'><img src='smooth-2.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Triangular smooth</span>
-<span class='no'>spc_weighted</span> <span class='kw'>&lt;-</span> <span class='fu'>smooth_signal</span>(<span class='no'>spc</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"weighted"</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>5</span>)
-<span class='no'>spc_weighted_clean</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='baseline.html'>remove_baseline</a></span>(<span class='no'>spc_weighted</span>)
+<span class='no'>spc_weighted</span> <span class='kw'>&lt;-</span> <span class='fu'>smooth_triangular</span>(<span class='no'>spc</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>5</span>)
+<span class='no'>spc_weighted_clean</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='baseline.html'>signal_correct</a></span>(<span class='no'>spc_weighted</span>)
 <span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>spc_weighted_clean</span>)</div><div class='img'><img src='smooth-3.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Savitzky–Golay</span>
-<span class='no'>spc_savitzky</span> <span class='kw'>&lt;-</span> <span class='fu'>smooth_signal</span>(<span class='no'>spc</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"savitzky"</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>21</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fl'>2</span>)
-<span class='no'>spc_savitzky_clean</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='baseline.html'>remove_baseline</a></span>(<span class='no'>spc_savitzky</span>)
+<span class='no'>spc_savitzky</span> <span class='kw'>&lt;-</span> <span class='fu'>smooth_savitzky</span>(<span class='no'>spc</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>21</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fl'>2</span>)
+<span class='no'>spc_savitzky_clean</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='baseline.html'>signal_correct</a></span>(<span class='no'>spc_savitzky</span>)
 <span class='fu'><a href='plot.html'>plot</a></span>(<span class='no'>spc_savitzky_clean</span>)</div><div class='img'><img src='smooth-4.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -98,7 +98,7 @@
       <h1 data-toc-skip>Manual</h1>
                         <h4 class="author">N. Frerebeau</h4>
             
-            <h4 class="date">2020-05-24</h4>
+            <h4 class="date">2020-05-29</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/crp2a/gamma/blob/master/vignettes/gamma.Rmd"><code>vignettes/gamma.Rmd</code></a></small>
       <div class="hidden name"><code>gamma.Rmd</code></div>
@@ -116,8 +116,8 @@
 <ol style="list-style-type: decimal">
 <li>Import spectrum data with <code><a href="../reference/read.html">read()</a></code>,</li>
 <li>Inspect spectrum with <code><a href="../reference/plot.html">plot()</a></code>,</li>
-<li>Calibrate the energy scale with <code><a href="../reference/energy.html">calibrate_energy()</a></code>,</li>
-<li>Estimate the gamma dose rate with <code><a href="../reference/doserate.html">predict_dose()</a></code>.</li>
+<li>Calibrate the energy scale with <code>calibrate_energy()</code>,</li>
+<li>Estimate the gamma dose rate with <code>predict_dose()</code>.</li>
 </ol>
 <p>The estimation of the gamma dose rate requires a calibration curve. This package contains several built-in curves, but as these are instrument-specific you may need to build your own (see <code>help(fit)</code>). These built-in curves are in use in several labs and can be used to reproduce published results. Check out the following vignettes for an overview of the fitting process.</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="co"># IRAMAT-CRP2A LaBr (BDX1)</span>
@@ -149,7 +149,7 @@
 (<span class="no">spc_tka</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/read.html">read</a></span>(<span class="no">tka_test</span>))
 <span class="co">#&gt; Gamma spectrum:</span>
 <span class="co">#&gt; *  name: LaBr</span>
-<span class="co">#&gt; *  date: 2020-05-24 18:04:35</span>
+<span class="co">#&gt; *  date: 2020-05-29 14:01:09</span>
 <span class="co">#&gt; *  live_time: 3385.54</span>
 <span class="co">#&gt; *  real_time: 3403.67</span>
 <span class="co">#&gt; *  chanels: 1024</span>
@@ -184,26 +184,26 @@
 <a href="#clean" class="anchor"></a>Clean</h3>
 <p>Several channels can be dropped to retain only part of the spectrum. If no specific value is provided, an attempt is made to define the number of channels to skip at the beginning of the spectrum. This drops all channels before the highest count maximum. This is intended to deal with the artefact produced by the rapid growth of random background noise towards low energies.</p>
 <div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="co"># Use a square root transformation</span>
-<span class="no">sliced</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/slice.html">slice_signal</a></span>(<span class="no">spc_tka</span>)</pre></body></html></div>
+<span class="no">sliced</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/slice.html">signal_slice</a></span>(<span class="no">spc_tka</span>)</pre></body></html></div>
 </div>
 <div id="stabilization" class="section level3">
 <h3 class="hasAnchor">
 <a href="#stabilization" class="anchor"></a>Stabilization</h3>
 <div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="co"># Use a square root transformation</span>
-<span class="no">transformed</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/stabilize.html">stabilize_signal</a></span>(<span class="no">sliced</span>, <span class="kw">transformation</span> <span class="kw">=</span> <span class="no">sqrt</span>)</pre></body></html></div>
+<span class="no">transformed</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/stabilize.html">signal_stabilize</a></span>(<span class="no">sliced</span>, <span class="kw">f</span> <span class="kw">=</span> <span class="no">sqrt</span>)</pre></body></html></div>
 </div>
 <div id="smoothing" class="section level3">
 <h3 class="hasAnchor">
 <a href="#smoothing" class="anchor"></a>Smoothing</h3>
 <div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="co"># Use a 21 point Savitzky-Golay-Filter to smooth the spectrum</span>
-<span class="no">smoothed</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/smooth.html">smooth_signal</a></span>(<span class="no">transformed</span>, <span class="kw">method</span> <span class="kw">=</span> <span class="st">"savitzky"</span>, <span class="kw">m</span> <span class="kw">=</span> <span class="fl">21</span>)</pre></body></html></div>
+<span class="no">smoothed</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/smooth.html">signal_smooth</a></span>(<span class="no">transformed</span>, <span class="kw">method</span> <span class="kw">=</span> <span class="st">"savitzky"</span>, <span class="kw">m</span> <span class="kw">=</span> <span class="fl">21</span>)</pre></body></html></div>
 </div>
 <div id="baseline-correction" class="section level3">
 <h3 class="hasAnchor">
 <a href="#baseline-correction" class="anchor"></a>Baseline correction</h3>
 <p>The baseline estimation is performed using the SNIP algorithm <span class="citation">(Ryan et al. 1988; Morháč et al. 1997; Morháč and Matoušek 2008)</span>. You can apply the LLS operator to your data, use a decreasing clipping window or change the number of iterations (see references).</p>
 <div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="co"># Estimate the baseline of a single file</span>
-<span class="no">baseline</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/baseline.html">estimate_baseline</a></span>(<span class="no">smoothed</span>, <span class="kw">decreasing</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+<span class="no">baseline</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/baseline.html">baseline</a></span>(<span class="no">smoothed</span>, <span class="kw">method</span> <span class="kw">=</span> <span class="st">"SNIP"</span>, <span class="kw">decreasing</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
 
 <span class="co"># Plot spectrum + baseline</span>
 <span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="no">smoothed</span>, <span class="no">baseline</span>) +
@@ -222,14 +222,14 @@
 <p><img src="gamma_files/figure-html/baseline-remove-1.png" width="672" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="co"># You can remove the baseline of multiple spectra in one go</span>
 <span class="co"># Note that the same parameters will be used for all spectra</span>
-<span class="no">clean</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/baseline.html">remove_baseline</a></span>(<span class="no">spc</span>)</pre></body></html></div>
+<span class="no">clean</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/baseline.html">signal_correct</a></span>(<span class="no">spc</span>)</pre></body></html></div>
 </div>
 <div id="peak-detection" class="section level3">
 <h3 class="hasAnchor">
 <a href="#peak-detection" class="anchor"></a>Peak detection</h3>
 <p>Once you have a baseline-corrected spectrum, you can try to automatically find peaks in the spectrum. A local maximum has to be the highest one in the given window and has to be higher than <span class="math inline">\(k\)</span> times the noise to be recognized as peak.</p>
 <div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="co"># Detect peaks in a single file</span>
-<span class="no">peaks</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/peaks.html">find_peaks</a></span>(<span class="no">corrected</span>)
+<span class="no">peaks</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/peaks.html">peaks_find</a></span>(<span class="no">corrected</span>)
 
 <span class="co"># Plot spectrum + peaks</span>
 <span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="no">corrected</span>, <span class="no">peaks</span>) +
@@ -252,7 +252,7 @@
 <span class="co">#&gt; 3    879   2615</span>
 
 <span class="co"># Calibrate the spectrum using the peak positions</span>
-<span class="no">scaled</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">calibrate_energy</a></span>(<span class="no">spc_tka</span>, <span class="no">peaks</span>)
+<span class="no">scaled</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">energy_calibrate</a></span>(<span class="no">spc_tka</span>, <span class="no">peaks</span>)
 
 <span class="co"># Plot the spectrum</span>
 <span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="no">scaled</span>, <span class="kw">xaxis</span> <span class="kw">=</span> <span class="st">"energy"</span>) +
@@ -267,7 +267,7 @@
 )
 
 <span class="co"># Calibrate the spectrum using these fixed lines</span>
-<span class="no">scaled2</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">calibrate_energy</a></span>(<span class="no">spc_tka</span>, <span class="kw">lines</span> <span class="kw">=</span> <span class="no">calib_lines</span>)</pre></body></html></div>
+<span class="no">scaled2</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">energy_calibrate</a></span>(<span class="no">spc_tka</span>, <span class="kw">lines</span> <span class="kw">=</span> <span class="no">calib_lines</span>)</pre></body></html></div>
 </div>
 </div>
 <div id="use-the-pipe" class="section level2">
@@ -277,17 +277,17 @@
 
 <span class="co"># Spectrum pre-processing and peak detection</span>
 <span class="no">pks</span> <span class="kw">&lt;-</span> <span class="no">spc_tka</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/slice.html">slice_signal</a></span>() <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/stabilize.html">stabilize_signal</a></span>(<span class="kw">transformation</span> <span class="kw">=</span> <span class="no">sqrt</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/smooth.html">smooth_signal</a></span>(<span class="kw">method</span> <span class="kw">=</span> <span class="st">"savitzky"</span>, <span class="kw">m</span> <span class="kw">=</span> <span class="fl">21</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/baseline.html">remove_baseline</a></span>(<span class="kw">decreasing</span> <span class="kw">=</span> <span class="fl">TRUE</span>, <span class="kw">k</span> <span class="kw">=</span> <span class="fl">100</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/peaks.html">find_peaks</a></span>()
+  <span class="fu"><a href="../reference/slice.html">signal_slice</a></span>() <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="../reference/stabilize.html">signal_stabilize</a></span>(<span class="kw">f</span> <span class="kw">=</span> <span class="no">sqrt</span>) <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="../reference/smooth.html">signal_smooth</a></span>(<span class="kw">method</span> <span class="kw">=</span> <span class="st">"savitzky"</span>, <span class="kw">m</span> <span class="kw">=</span> <span class="fl">21</span>) <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="../reference/baseline.html">signal_correct</a></span>(<span class="kw">decreasing</span> <span class="kw">=</span> <span class="fl">TRUE</span>, <span class="kw">n</span> <span class="kw">=</span> <span class="fl">100</span>) <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="../reference/peaks.html">peaks_find</a></span>()
 
 <span class="co"># Set the energy values (in keV)</span>
 <span class="fu">set_energy</span>(<span class="no">pks</span>) <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">238</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">1461</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">2615</span>)
 
 <span class="co"># Calibrate the energy scale</span>
-<span class="no">cal</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">calibrate_energy</a></span>(<span class="no">spc_tka</span>, <span class="no">pks</span>)
+<span class="no">cal</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">energy_calibrate</a></span>(<span class="no">spc_tka</span>, <span class="no">pks</span>)
 
 <span class="co"># Plot spectrum</span>
 <span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="no">cal</span>, <span class="no">pks</span>) +

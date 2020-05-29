@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Signal Integration — integrate_signal • gamma</title>
+<title>Signal Integration — signal_integrate • gamma</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,7 @@
 
 
 
-<meta property="og:title" content="Signal Integration — integrate_signal" />
+<meta property="og:title" content="Signal Integration — signal_integrate" />
 <meta property="og:description" content="Signal Integration" />
 <meta property="og:image" content="https://crp2a.github.io/gamma/logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -138,7 +138,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Signal Integration</h1>
-    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/integrate.R'><code>R/integrate.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/signal_integrate.R'><code>R/signal_integrate.R</code></a></small>
     <div class="hidden name"><code>integrate.Rd</code></div>
     </div>
 
@@ -146,25 +146,25 @@
     <p>Signal Integration</p>
     </div>
 
-    <pre class="usage"><span class='fu'>integrate_signal</span>(<span class='no'>object</span>, <span class='no'>background</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>signal_integrate</span>(<span class='no'>object</span>, <span class='no'>background</span>, <span class='no'>...</span>)
 
 <span class='co'># S4 method for GammaSpectrum,missing</span>
-<span class='fu'>integrate_signal</span>(<span class='no'>object</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'>signal_integrate</span>(<span class='no'>object</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
 <span class='co'># S4 method for GammaSpectrum,GammaSpectrum</span>
-<span class='fu'>integrate_signal</span>(<span class='no'>object</span>, <span class='no'>background</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'>signal_integrate</span>(<span class='no'>object</span>, <span class='no'>background</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
 <span class='co'># S4 method for GammaSpectrum,numeric</span>
-<span class='fu'>integrate_signal</span>(<span class='no'>object</span>, <span class='no'>background</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'>signal_integrate</span>(<span class='no'>object</span>, <span class='no'>background</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
 <span class='co'># S4 method for GammaSpectra,missing</span>
-<span class='fu'>integrate_signal</span>(<span class='no'>object</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>simplify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>signal_integrate</span>(<span class='no'>object</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>simplify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
 <span class='co'># S4 method for GammaSpectra,GammaSpectrum</span>
-<span class='fu'>integrate_signal</span>(<span class='no'>object</span>, <span class='no'>background</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>simplify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>signal_integrate</span>(<span class='no'>object</span>, <span class='no'>background</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>simplify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
 <span class='co'># S4 method for GammaSpectra,numeric</span>
-<span class='fu'>integrate_signal</span>(<span class='no'>object</span>, <span class='no'>background</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>simplify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+<span class='fu'>signal_integrate</span>(<span class='no'>object</span>, <span class='no'>background</span>, <span class='no'>range</span>, <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>simplify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -205,7 +205,7 @@ simplified to a matrix? The default value, <code>FALSE</code>, returns a list.</
  else returns a <code><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></code>.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>It assumes that each spectrum is calibrated in energy.</p>
+    <p>It assumes that each spectrum has an energy scale.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Guérin, G. &amp; Mercier, M. (2011). Determining Gamma Dose Rates by Field Gamma
@@ -218,11 +218,14 @@ simplified to a matrix? The default value, <code>FALSE</code>, returns a list.</
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other signal processing: 
-<code><a href='baseline.html'>baseline</a></code>,
-<code><a href='peaks.html'>find_peaks</a>()</code>,
-<code><a href='slice.html'>slice_signal</a>()</code>,
-<code><a href='smooth.html'>smooth_signal</a>()</code>,
-<code><a href='stabilize.html'>stabilize_signal</a>()</code></p></div>
+<code><a href='baseline.html'>baseline</a>()</code>,
+<code><a href='peaks.html'>peaks_find</a>()</code>,
+<code><a href='slice.html'>signal_slice</a>()</code>,
+<code><a href='stabilize.html'>signal_stabilize</a>()</code>,
+<code><a href='smooth.html'>smooth</a>()</code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>N. Frerebeau</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
