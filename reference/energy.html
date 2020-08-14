@@ -174,7 +174,7 @@
       <th>lines</th>
       <td><p>A <a href='PeakPosition-class.html'>PeakPosition</a> object or a <code><a href='https://rdrr.io/r/base/list.html'>list</a></code> of
 length two. If a <code>list</code> is provided, each element must be a named
-numeric vector giving the observed peak position ("<code>chanel</code>") and the
+numeric vector giving the observed peak position ("<code>channel</code>") and the
 corresponding expected "<code>energy</code>" value (in keV).</p></td>
     </tr>
     <tr>
@@ -187,34 +187,31 @@ corresponding expected "<code>energy</code>" value (in keV).</p></td>
 
     <p><code>energy_calibrate</code> returns a <a href='GammaSpectrum-class.html'>GammaSpectrum</a> object.</p>
 <p><code>has_energy</code> returns a <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> vector.</p>
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
-
-    <p>N. Frerebeau</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Import a CNF file</span>
 <span class='no'>spc_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.TKA"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
 (<span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_file</span>))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: LaBr
-#&gt; *  date: 2020-06-12 17:12:08
+#&gt; *  date: 2020-08-14 16:13:40
 #&gt; *  live_time: 3385.54
 #&gt; *  real_time: 3403.67
-#&gt; *  chanels: 1024
+#&gt; *  channels: 1024
 #&gt; *  energy_min: NA
 #&gt; *  energy_max: NA</div><div class='input'>
-<span class='co'>## Set peak positions (chanel) and expected energy values</span>
+<span class='co'>## Set peak positions (channel) and expected energy values</span>
 <span class='no'>calib_lines</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(
-  <span class='kw'>chanel</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>86</span>, <span class='fl'>495</span>, <span class='fl'>879</span>),
+  <span class='kw'>channel</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>86</span>, <span class='fl'>495</span>, <span class='fl'>879</span>),
   <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>238</span>, <span class='fl'>1461</span>, <span class='fl'>2615</span>)
 )
 
 <span class='co'>## Adjust the energy scale</span>
 (<span class='no'>spc1</span> <span class='kw'>&lt;-</span> <span class='fu'>energy_calibrate</span>(<span class='no'>spc</span>, <span class='kw'>lines</span> <span class='kw'>=</span> <span class='no'>calib_lines</span>))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: LaBr
-#&gt; *  date: 2020-06-12 17:12:08
+#&gt; *  date: 2020-08-14 16:13:40
 #&gt; *  live_time: 3385.54
 #&gt; *  real_time: 3403.67
-#&gt; *  chanels: 1024
+#&gt; *  channels: 1024
 #&gt; *  energy_min: -15.38
 #&gt; *  energy_max: 3052.2</div><div class='input'>
 <span class='co'>## Inspect results</span>
@@ -235,7 +232,7 @@ corresponding expected "<code>energy</code>" value (in keV).</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

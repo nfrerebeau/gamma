@@ -148,11 +148,11 @@
 
     <pre class="usage"><span class='fu'>signal_baseline</span>(<span class='no'>object</span>, <span class='no'>...</span>)
 
+<span class='fu'>signal_correct</span>(<span class='no'>object</span>, <span class='no'>...</span>)
+
 <span class='fu'>baseline_snip</span>(<span class='no'>object</span>, <span class='no'>...</span>)
 
 <span class='fu'>baseline_rubberband</span>(<span class='no'>object</span>, <span class='no'>...</span>)
-
-<span class='fu'>signal_correct</span>(<span class='no'>object</span>, <span class='no'>...</span>)
 
 <span class='co'># S4 method for GammaSpectrum</span>
 <span class='fu'>signal_baseline</span>(<span class='no'>object</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"SNIP"</span>, <span class='st'>"rubberband"</span>), <span class='no'>...</span>)
@@ -232,15 +232,22 @@ Only used if <code>method</code> is "<code>SNIP</code>".</p></td>
  <a href='GammaSpectra-class.html'>GammaSpectra</a> object (same as <code>object</code>).</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The following methods are availble for baseline estimation:</p><dl>
+    <p>The following methods are availble for baseline estimation:</p><dl'>
   <dt>SNIP</dt><dd><p>Sensitive Nonlinear Iterative Peak clipping algorithm.</p></dd>
   <dt>rubberband</dt><dd><p></p></dd>
  
 </dl>
 
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+
+    <p><code>baseline_rubberband</code> is slightly modified from C. Beleites'
+ <code>spc.rubberband</code>.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Morháč, M., Kliman, J., Matoušek, V., Veselský, M. &amp; Turzo, I. (1997).
+    <p>Liland, K. H. (2015). 4S Peak Filling - baseline estimation by iterative
+ mean suppression. <em>MethodsX</em>, 2, 135-140.
+ DOI: <a href='https://doi.org/10.1016/j.mex.2015.02.009'>10.1016/j.mex.2015.02.009</a>.</p>
+<p>Morháč, M., Kliman, J., Matoušek, V., Veselský, M. &amp; Turzo, I. (1997).
  Background elimination methods for multidimensional gamma-ray spectra.
  <em>Nuclear Instruments and Methods in Physics Research Section A:
  Accelerators, Spectrometers, Detectors and Associated Equipment</em>, 401(1),
@@ -263,16 +270,13 @@ Only used if <code>method</code> is "<code>SNIP</code>".</p></td>
 <code><a href='slice.html'>signal_slice</a>()</code>,
 <code><a href='stabilize.html'>signal_stabilize</a>()</code>,
 <code><a href='smooth.html'>smooth</a>()</code></p></div>
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
-
-    <p>N. Frerebeau</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Import a CNF file</span>
 <span class='no'>spc_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.CNF"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
 <span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_file</span>)
 
-<span class='co'>## Remove the first 35 chanels</span>
+<span class='co'>## Remove the first 35 channels</span>
 <span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='slice.html'>signal_slice</a></span>(<span class='no'>spc</span>, -<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>:<span class='fl'>35</span>))
 
 <span class='co'>## SNIP baseline</span>
@@ -301,7 +305,7 @@ Only used if <code>method</code> is "<code>SNIP</code>".</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

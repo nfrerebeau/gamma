@@ -134,7 +134,7 @@
 <span class="co">## Import the spectrum</span>
 <span class="no">spectrum</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/read.html">read</a></span>(<span class="no">spc_file</span>)
 
-<span class="co">## Set the expected chanel/energy peaks for the energy scale calibration</span>
+<span class="co">## Set the expected channel/energy peaks for the energy scale calibration</span>
 <span class="co">## Spectrum pre-processing and peak detection</span>
 <span class="no">peaks</span> <span class="kw">&lt;-</span> <span class="no">spectrum</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="reference/slice.html">signal_slice</a></span>() <span class="kw">%&gt;%</span>
@@ -161,8 +161,9 @@
 <span class="co">## As this curve is instrument specific, you will have to build your own</span>
 <span class="co">## See help(fit_dose)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="st">"BDX_LaBr_1"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"gamma"</span>)
-<span class="fu"><a href="reference/plot.html">plot</a></span>(<span class="no">BDX_LaBr_1</span>)
-
+<span class="fu"><a href="reference/plot.html">plot</a></span>(<span class="no">BDX_LaBr_1</span>)</pre></div>
+<p><img src="reference/figures/README-calib-1.png" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb4"><pre class="r">
 <span class="co">## Estimate the gamma dose rate</span>
 (<span class="no">doses</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/doserate.html">dose_predict</a></span>(<span class="no">BDX_LaBr_1</span>, <span class="no">spectra</span>))
 <span class="co">#&gt;            names   dose_Ni  error_Ni dose_NiEi error_NiEi</span>
@@ -174,7 +175,6 @@
 <span class="co">#&gt; 6 20160717175757  565.6418 19.579056  496.7518   9.869339</span>
 <span class="co">#&gt; 7 20160717181052  480.1928 15.805970  421.8396   8.379351</span>
 <span class="co">#&gt; 8 20160717182601  497.7403 15.232673  436.2712   8.663842</span></pre></div>
-<p><img src="reference/figures/README-calib-1.png"><!-- --></p>
 </div>
 <div id="contributing" class="section level2">
 <h2 class="hasAnchor">
@@ -222,8 +222,8 @@
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Nicolas Frerebeau <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/https://orcid.org/0000-0001-5759-4944" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Brice Lebrun <br><small class="roles"> Author </small> <a href="https://orcid.org/https://orcid.org/0000-0001-7503-8685" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Nicolas Frerebeau <br><small class="roles"> Author </small> <a href="https://orcid.org/https://orcid.org/0000-0001-5759-4944" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Brice Lebrun <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/https://orcid.org/0000-0001-7503-8685" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Guilhem Paradol <br><small class="roles"> Author </small>  </li>
 <li>
 <a href="https://www.u-bordeaux-montaigne.fr"><img src="https://crp2a.github.io/gamma/reference/figures/logo_ubm.jpg" height="64"></a> <br><small class="roles"> Copyright holder, funder </small>  </li>
@@ -253,7 +253,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

@@ -92,13 +92,13 @@
 
       
 
-      </header><div class="row">
+      </header><script src="gamma_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Manual</h1>
                         <h4 class="author">N. Frerebeau</h4>
             
-            <h4 class="date">2020-06-12</h4>
+            <h4 class="date">2020-08-14</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/crp2a/gamma/blob/master/vignettes/gamma.Rmd"><code>vignettes/gamma.Rmd</code></a></small>
       <div class="hidden name"><code>gamma.Rmd</code></div>
@@ -131,7 +131,7 @@
 <h1 class="hasAnchor">
 <a href="#import-file" class="anchor"></a>Import file</h1>
 <p>Both Canberra CNF and TKA files can be imported.</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="co"># Automatically skip the first chanels</span>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="co"># Automatically skip the first channels</span>
 <span class="co"># Import a CNF file</span>
 <span class="no">cnf_test</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/LaBr.CNF"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"gamma"</span>)
 (<span class="no">spc_cnf</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/read.html">read</a></span>(<span class="no">cnf_test</span>))
@@ -140,7 +140,7 @@
 <span class="co">#&gt; *  date: 2019-02-07 11:48:18</span>
 <span class="co">#&gt; *  live_time: 3385.54</span>
 <span class="co">#&gt; *  real_time: 3403.67</span>
-<span class="co">#&gt; *  chanels: 1024</span>
+<span class="co">#&gt; *  channels: 1024</span>
 <span class="co">#&gt; *  energy_min: -7</span>
 <span class="co">#&gt; *  energy_max: 3124.91</span>
 
@@ -149,10 +149,10 @@
 (<span class="no">spc_tka</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/read.html">read</a></span>(<span class="no">tka_test</span>))
 <span class="co">#&gt; Gamma spectrum:</span>
 <span class="co">#&gt; *  name: LaBr</span>
-<span class="co">#&gt; *  date: 2020-06-12 17:12:08</span>
+<span class="co">#&gt; *  date: 2020-08-14 16:13:40</span>
 <span class="co">#&gt; *  live_time: 3385.54</span>
 <span class="co">#&gt; *  real_time: 3403.67</span>
-<span class="co">#&gt; *  chanels: 1024</span>
+<span class="co">#&gt; *  channels: 1024</span>
 <span class="co">#&gt; *  energy_min: NA</span>
 <span class="co">#&gt; *  energy_max: NA</span>
 
@@ -240,16 +240,16 @@
 <div id="energy-scale-calibration" class="section level3">
 <h3 class="hasAnchor">
 <a href="#energy-scale-calibration" class="anchor"></a>Energy scale calibration</h3>
-<p>If you know the correspondence between several channels and the energy scale, you can use these pairs of values to calibrate the spectrum. A second order polynomial model is fitted on these energy <em>vs</em> chanel values, then used to predict the new energy scale of the spectrum.</p>
+<p>If you know the correspondence between several channels and the energy scale, you can use these pairs of values to calibrate the spectrum. A second order polynomial model is fitted on these energy <em>vs</em> channel values, then used to predict the new energy scale of the spectrum.</p>
 <p>You can use the results of the peak detection and set the expected energy values.</p>
 <div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="co"># Set the energy values (in keV)</span>
 <span class="fu">set_energy</span>(<span class="no">peaks</span>) <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">238</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">1461</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">2615</span>)
 <span class="no">peaks</span>
 <span class="co">#&gt; 3 peaks were detected:</span>
-<span class="co">#&gt;   chanel energy</span>
-<span class="co">#&gt; 1     86    238</span>
-<span class="co">#&gt; 2    496   1461</span>
-<span class="co">#&gt; 3    879   2615</span>
+<span class="co">#&gt;   channel energy</span>
+<span class="co">#&gt; 1      86    238</span>
+<span class="co">#&gt; 2     496   1461</span>
+<span class="co">#&gt; 3     879   2615</span>
 
 <span class="co"># Calibrate the spectrum using the peak positions</span>
 <span class="no">scaled</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/energy.html">energy_calibrate</a></span>(<span class="no">spc_tka</span>, <span class="no">peaks</span>)
@@ -260,9 +260,9 @@
   <span class="kw pkg">ggplot2</span><span class="kw ns">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>()</pre></body></html></div>
 <p><img src="gamma_files/figure-html/calibrate-fit-1.png" width="672" style="display: block; margin: auto;"></p>
 <p>Alternatively, you can do it by hand.</p>
-<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="co"># Create a list of chanel-enegy pairs</span>
+<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="co"># Create a list of channel-enegy pairs</span>
 <span class="no">calib_lines</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(
-  <span class="kw">chanel</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">84</span>, <span class="fl">492</span>, <span class="fl">865</span>),
+  <span class="kw">channel</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">84</span>, <span class="fl">492</span>, <span class="fl">865</span>),
   <span class="kw">energy</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">238</span>, <span class="fl">1461</span>, <span class="fl">2615</span>)
 )
 
@@ -337,7 +337,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>
