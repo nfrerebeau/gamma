@@ -83,7 +83,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -255,8 +255,19 @@ introduced by the calibration of the energy scale of the spectrum.</p></td>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><code>dose_predict</code> predicts in-situ gamma dose rate.</p>
+    <p><code>dose_predict</code> predicts in situ gamma dose rate.</p>
 
+<p>To estimate the gamma dose rate, one of the calibration curves distributed
+ with this package can be used (fig. \@ref(fig:curve)). These built-in curves
+ are in use in several luminescence dating laboratories and can be used to
+ replicate published results. As these curves are instrument specific, the
+ user may have to build its own curve.</p>
+<p>The construction of a calibration curve requires a set of reference spectra
+ for which the gamma dose rate is known and a background noise measurement.
+ First, each reference spectrum is integrated over a given interval, then
+ normalized to active time and corrected for background noise. The dose rate
+ is finally modelled by the integrated signal value used as a linear
+ predictor (York *et al.*, 2004).</p>
 <p>See <code>vignette(doserate)</code> for a reproducible example.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 

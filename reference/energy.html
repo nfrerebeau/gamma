@@ -83,7 +83,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -187,13 +187,29 @@ corresponding expected "<code>energy</code>" value (in keV).</p></td>
 
     <p><code>energy_calibrate</code> returns a <a href='GammaSpectrum-class.html'>GammaSpectrum</a> object.</p>
 <p><code>has_energy</code> returns a <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> vector.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The energy calibration of a spectrum is the most tricky part. To do this,
+ the user must specify the position of at least three observed peaks and the
+ corresponding energy value (in keV). A second order polynomial model is
+ fitted on these energy <em>vs</em> channel values, then used to predict the
+ new energy scale of the spectrum.</p>
+<p>The package allows to provide the channel-energy pairs to be use. However,
+ the spectrum can be noisy so it is difficult to properly determine the peak
+ channel. In this case, a better approach may be to pre-process the spectrum
+ (variance-stabilization, smoothing and baseline correction) and perform a
+ peak detection. Once the identified peaks are satisfactory, you can set the
+ corresponding energy values (in keV) and use these lines to calibrate the
+ energy scale of the spectrum.</p>
+<p>Regardless of the approach you choose, it is strongly recommended to check
+ the result before proceeding.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Import a CNF file</span>
 <span class='no'>spc_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.TKA"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
 (<span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_file</span>))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: LaBr
-#&gt; *  date: 2020-08-14 16:13:40
+#&gt; *  date: 2020-08-17 14:45:48
 #&gt; *  live_time: 3385.54
 #&gt; *  real_time: 3403.67
 #&gt; *  channels: 1024
@@ -208,7 +224,7 @@ corresponding expected "<code>energy</code>" value (in keV).</p></td>
 <span class='co'>## Adjust the energy scale</span>
 (<span class='no'>spc1</span> <span class='kw'>&lt;-</span> <span class='fu'>energy_calibrate</span>(<span class='no'>spc</span>, <span class='kw'>lines</span> <span class='kw'>=</span> <span class='no'>calib_lines</span>))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: LaBr
-#&gt; *  date: 2020-08-14 16:13:40
+#&gt; *  date: 2020-08-17 14:45:48
 #&gt; *  live_time: 3385.54
 #&gt; *  real_time: 3403.67
 #&gt; *  channels: 1024
