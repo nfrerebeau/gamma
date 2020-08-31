@@ -209,7 +209,7 @@ corresponding expected "<code>energy</code>" value (in keV).</p></td>
 <span class='no'>spc_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.TKA"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
 (<span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_file</span>))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: LaBr
-#&gt; *  date: 2020-08-19 13:16:20
+#&gt; *  date: 2020-08-31 10:06:26
 #&gt; *  live_time: 3385.54
 #&gt; *  real_time: 3403.67
 #&gt; *  channels: 1024
@@ -224,7 +224,7 @@ corresponding expected "<code>energy</code>" value (in keV).</p></td>
 <span class='co'>## Adjust the energy scale</span>
 (<span class='no'>spc1</span> <span class='kw'>&lt;-</span> <span class='fu'>energy_calibrate</span>(<span class='no'>spc</span>, <span class='kw'>lines</span> <span class='kw'>=</span> <span class='no'>calib_lines</span>))</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: LaBr
-#&gt; *  date: 2020-08-19 13:16:20
+#&gt; *  date: 2020-08-31 10:06:26
 #&gt; *  live_time: 3385.54
 #&gt; *  real_time: 3403.67
 #&gt; *  channels: 1024
