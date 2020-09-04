@@ -98,7 +98,7 @@
       <h1 data-toc-skip>Calibration Curve</h1>
                         <h4 class="author">N. Frerebeau, B. Lebrun</h4>
             
-            <h4 class="date">2020-08-31</h4>
+            <h4 class="date">2020-09-04</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/crp2a/gamma/blob/master/vignettes/doserate.Rmd"><code>vignettes/doserate.Rmd</code></a></small>
       <div class="hidden name"><code>doserate.Rmd</code></div>
@@ -287,27 +287,42 @@
 
 <span class="co"># Summary</span>
 <span class="fu"><a href="../reference/summarise.html">summarise</a></span>(<span class="no">AIX_NaI</span>)
-<span class="co">#&gt; --- Ni -------------------------------------------------------------------------</span>
-<span class="co">#&gt; Residuals:</span>
+<span class="co">#&gt; $Ni</span>
+<span class="co">#&gt; $Ni$residuals</span>
 <span class="co">#&gt; [1]  33.402986   7.968894   6.460507 -18.670747  78.089036</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Coefficients:</span>
+<span class="co">#&gt; $Ni$coefficients</span>
 <span class="co">#&gt;            Estimate Std. Error</span>
 <span class="co">#&gt; Intercept 40.013121 41.8531813</span>
 <span class="co">#&gt; Slope      9.140417  0.2721024</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; MSWD: 0.893809 on 3 degrees of freedom, p-value: 0.443393</span>
+<span class="co">#&gt; $Ni$MSWD</span>
+<span class="co">#&gt; [1] 0.8938093</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; --- NiEi -----------------------------------------------------------------------</span>
-<span class="co">#&gt; Residuals:</span>
+<span class="co">#&gt; $Ni$df</span>
+<span class="co">#&gt; [1] 3</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $Ni$p_value</span>
+<span class="co">#&gt; [1] 0.4433926</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $NiEi</span>
+<span class="co">#&gt; $NiEi$residuals</span>
 <span class="co">#&gt; [1]  33.906630  12.519006 -21.932843  -8.121213  86.160947</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Coefficients:</span>
+<span class="co">#&gt; $NiEi$coefficients</span>
 <span class="co">#&gt;              Estimate   Std. Error</span>
 <span class="co">#&gt; Intercept 27.88537142 4.202826e+01</span>
 <span class="co">#&gt; Slope      0.01735135 5.142132e-04</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; MSWD: 0.937507 on 3 degrees of freedom, p-value: 0.421443</span>
+<span class="co">#&gt; $NiEi$MSWD</span>
+<span class="co">#&gt; [1] 0.9375068</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $NiEi$df</span>
+<span class="co">#&gt; [1] 3</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $NiEi$p_value</span>
+<span class="co">#&gt; [1] 0.421443</span>
 
 <span class="co"># Plot curve</span>
 <span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="no">AIX_NaI</span>, <span class="kw">model</span> <span class="kw">=</span> <span class="st">"Ni"</span>) +
