@@ -146,10 +146,10 @@
     <p>Reads a gamma ray spectrum file.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>read</span>(<span class='no'>file</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>read</span>(<span class='kw'>file</span>, <span class='kw'>...</span>)
 
 <span class='co'># S4 method for character</span>
-<span class='fu'>read</span>(<span class='no'>file</span>, <span class='kw'>extensions</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"cnf"</span>, <span class='st'>"tka"</span>), <span class='no'>...</span>)</pre>
+<span class='fu'>read</span>(<span class='kw'>file</span>, extensions = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"cnf"</span>, <span class='st'>"tka"</span>), <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -183,11 +183,15 @@ file extensions. It must be one or more of "<code>cnf</code>", "<code>tka</code>
     <div class='dont-index'><p><a href='https://rdrr.io/pkg/rxylib/man/read_xyData.html'>read_xyData</a></p>
 <p>Other IO: 
 <code><a href='summarise.html'>summarise</a>()</code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>N. Frerebeau</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Import a Canberra CNF file</span>
-<span class='no'>cnf_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.CNF"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
-(<span class='no'>cnf_spc</span> <span class='kw'>&lt;-</span> <span class='fu'>read</span>(<span class='no'>cnf_file</span>))</div><div class='output co'>#&gt; Gamma spectrum:
+<span class='kw'>cnf_file</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.CNF"</span>, package = <span class='st'>"gamma"</span>)
+(<span class='kw'>cnf_spc</span> <span class='op'>&lt;-</span> <span class='fu'>read</span>(<span class='kw'>cnf_file</span>))
+</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: LaBr
 #&gt; *  date: 2019-02-07 11:48:18
 #&gt; *  live_time: 3385.54
@@ -196,18 +200,20 @@ file extensions. It must be one or more of "<code>cnf</code>", "<code>tka</code>
 #&gt; *  energy_min: -7
 #&gt; *  energy_max: 3124.91</div><div class='input'>
 <span class='co'>## Import a TKA file</span>
-<span class='no'>tka_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.TKA"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
-(<span class='no'>tka_spc</span> <span class='kw'>&lt;-</span> <span class='fu'>read</span>(<span class='no'>tka_file</span>))</div><div class='output co'>#&gt; Gamma spectrum:
+<span class='kw'>tka_file</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.TKA"</span>, package = <span class='st'>"gamma"</span>)
+(<span class='kw'>tka_spc</span> <span class='op'>&lt;-</span> <span class='fu'>read</span>(<span class='kw'>tka_file</span>))
+</div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: LaBr
-#&gt; *  date: 2020-09-04 12:08:29
+#&gt; *  date: 2020-09-16 15:15:31
 #&gt; *  live_time: 3385.54
 #&gt; *  real_time: 3403.67
 #&gt; *  channels: 1024
 #&gt; *  energy_min: NA
 #&gt; *  energy_max: NA</div><div class='input'>
 <span class='co'>## Import all files in a given directory</span>
-<span class='no'>spc_dir</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/BDX_LaBr_1/calibration"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
-(<span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'>read</span>(<span class='no'>spc_dir</span>))</div><div class='output co'>#&gt; A collection of 7 gamma spectra: BRIQUE, C341, C347, GOU, LMP, MAZ, PEP</div></pre>
+<span class='kw'>spc_dir</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/BDX_LaBr_1/calibration"</span>, package = <span class='st'>"gamma"</span>)
+(<span class='kw'>spc</span> <span class='op'>&lt;-</span> <span class='fu'>read</span>(<span class='kw'>spc_dir</span>))
+</div><div class='output co'>#&gt; A collection of 7 gamma spectra: BRIQUE, C341, C347, GOU, LMP, MAZ, PEP</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -223,7 +229,7 @@ file extensions. It must be one or more of "<code>cnf</code>", "<code>tka</code>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

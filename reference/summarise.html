@@ -146,19 +146,19 @@
     <p>Summarize</p>
     </div>
 
-    <pre class="usage"><span class='fu'>summarise</span>(<span class='no'>object</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>summarise</span>(<span class='kw'>object</span>, <span class='kw'>...</span>)
 
 <span class='co'># S4 method for GammaSpectrum</span>
-<span class='fu'>summarise</span>(<span class='no'>object</span>)
+<span class='fu'>summarise</span>(<span class='kw'>object</span>)
 
 <span class='co'># S4 method for GammaSpectra</span>
-<span class='fu'>summarise</span>(<span class='no'>object</span>)
+<span class='fu'>summarise</span>(<span class='kw'>object</span>)
 
 <span class='co'># S4 method for DoseRateModel</span>
-<span class='fu'>summarise</span>(<span class='no'>object</span>)
+<span class='fu'>summarise</span>(<span class='kw'>object</span>)
 
 <span class='co'># S4 method for CalibrationCurve</span>
-<span class='fu'>summarise</span>(<span class='no'>object</span>)</pre>
+<span class='fu'>summarise</span>(<span class='kw'>object</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -181,17 +181,22 @@ object.</p></td>
 
     <div class='dont-index'><p>Other IO: 
 <code><a href='read.html'>read</a>()</code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>N. Frerebeau</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Import a Canberra CNF file</span>
-<span class='no'>cnf_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.CNF"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
-<span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>cnf_file</span>)
-<span class='fu'>summarise</span>(<span class='no'>spc</span>)</div><div class='output co'>#&gt;   name                date live_time real_time channels energy_min energy_max
+<span class='kw'>cnf_file</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.CNF"</span>, package = <span class='st'>"gamma"</span>)
+<span class='kw'>spc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='kw'>cnf_file</span>)
+<span class='fu'>summarise</span>(<span class='kw'>spc</span>)
+</div><div class='output co'>#&gt;   name                date live_time real_time channels energy_min energy_max
 #&gt; 1 LaBr 2019-02-07 11:48:18   3385.54   3403.67     1024         -7    3124.91</div><div class='input'>
 <span class='co'>## Import all CNF files in a given directory</span>
-<span class='no'>spc_dir</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/BDX_LaBr_1/calibration"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
-<span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_dir</span>)
-<span class='fu'>summarise</span>(<span class='no'>spc</span>)</div><div class='output co'>#&gt;          name                date live_time real_time channels energy_min
+<span class='kw'>spc_dir</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/BDX_LaBr_1/calibration"</span>, package = <span class='st'>"gamma"</span>)
+<span class='kw'>spc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='kw'>spc_dir</span>)
+<span class='fu'>summarise</span>(<span class='kw'>spc</span>)
+</div><div class='output co'>#&gt;          name                date live_time real_time channels energy_min
 #&gt; BRIQUE BRIQUE 2009-08-28 11:43:20   8473.45   8501.68     1024       3.83
 #&gt; C341     C341 2009-09-07 15:10:52    976.08    978.36     1024       8.99
 #&gt; C347     C347 2009-09-07 14:56:02    703.92    705.96     1024       9.84
@@ -222,7 +227,7 @@ object.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

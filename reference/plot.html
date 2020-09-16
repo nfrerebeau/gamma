@@ -147,33 +147,33 @@
     </div>
 
     <pre class="usage"><span class='co'># S4 method for GammaSpectrum,missing</span>
-<span class='fu'>plot</span>(<span class='no'>x</span>, <span class='kw'>xaxis</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"channel"</span>, <span class='st'>"energy"</span>), <span class='kw'>yaxis</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"count"</span>, <span class='st'>"rate"</span>), <span class='no'>...</span>)
+<span class='fu'>plot</span>(<span class='kw'>x</span>, xaxis = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"channel"</span>, <span class='st'>"energy"</span>), yaxis = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"count"</span>, <span class='st'>"rate"</span>), <span class='kw'>...</span>)
 
 <span class='co'># S4 method for GammaSpectrum,Baseline</span>
-<span class='fu'>plot</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>xaxis</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"channel"</span>, <span class='st'>"energy"</span>), <span class='kw'>yaxis</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"count"</span>, <span class='st'>"rate"</span>), <span class='no'>...</span>)
+<span class='fu'>plot</span>(<span class='kw'>x</span>, <span class='kw'>y</span>, xaxis = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"channel"</span>, <span class='st'>"energy"</span>), yaxis = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"count"</span>, <span class='st'>"rate"</span>), <span class='kw'>...</span>)
 
 <span class='co'># S4 method for GammaSpectra,missing</span>
 <span class='fu'>plot</span>(
-  <span class='no'>x</span>,
-  <span class='kw'>xaxis</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"channel"</span>, <span class='st'>"energy"</span>),
-  <span class='kw'>yaxis</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"count"</span>, <span class='st'>"rate"</span>),
-  <span class='kw'>select</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>facet</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='no'>...</span>
+  <span class='kw'>x</span>,
+  xaxis = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"channel"</span>, <span class='st'>"energy"</span>),
+  yaxis = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"count"</span>, <span class='st'>"rate"</span>),
+  select = <span class='kw'>NULL</span>,
+  facet = <span class='fl'>FALSE</span>,
+  <span class='kw'>...</span>
 )
 
 <span class='co'># S4 method for GammaSpectrum,PeakPosition</span>
-<span class='fu'>plot</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='no'>...</span>)
+<span class='fu'>plot</span>(<span class='kw'>x</span>, <span class='kw'>y</span>, <span class='kw'>...</span>)
 
 <span class='co'># S4 method for CalibrationCurve,missing</span>
 <span class='fu'>plot</span>(
-  <span class='no'>x</span>,
-  <span class='kw'>error_ellipse</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>error_bar</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>energy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>level</span> <span class='kw'>=</span> <span class='fl'>0.95</span>,
-  <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>50</span>,
-  <span class='no'>...</span>
+  <span class='kw'>x</span>,
+  error_ellipse = <span class='fl'>TRUE</span>,
+  error_bar = <span class='fl'>FALSE</span>,
+  energy = <span class='fl'>FALSE</span>,
+  level = <span class='fl'>0.95</span>,
+  n = <span class='fl'>50</span>,
+  <span class='kw'>...</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -236,21 +236,27 @@ the error ellipses.</p></td>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='https://rdrr.io/pkg/IsoplotR/man/ellipse.html'>ellipse</a>, <a href='https://rdrr.io/pkg/IsoplotR/man/isochron.html'>isochron</a></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>N. Frerebeau</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Import CNF files</span>
-<span class='no'>spc_dir</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/BDX_LaBr_1/calibration"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
-<span class='no'>spc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_dir</span>)
+<span class='kw'>spc_dir</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/BDX_LaBr_1/calibration"</span>, package = <span class='st'>"gamma"</span>)
+<span class='kw'>spc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='kw'>spc_dir</span>)
 
 <span class='co'># Plot all spectra</span>
-<span class='fu'>plot</span>(<span class='no'>spc</span>, <span class='kw'>yaxis</span> <span class='kw'>=</span> <span class='st'>"rate"</span>, <span class='kw'>facet</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>) +
-  <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span>()</div><div class='img'><img src='plot-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>plot</span>(<span class='kw'>spc</span>, yaxis = <span class='st'>"rate"</span>, facet = <span class='fl'>FALSE</span>) <span class='op'>+</span>
+  <span class='kw'>ggplot2</span>::<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span>()
+</div><div class='img'><img src='plot-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Plot the spectrum named 'BRIQUE'</span>
-<span class='fu'>plot</span>(<span class='no'>spc</span>, <span class='kw'>xaxis</span> <span class='kw'>=</span> <span class='st'>"energy"</span>, <span class='kw'>yaxis</span> <span class='kw'>=</span> <span class='st'>"count"</span>, <span class='kw'>select</span> <span class='kw'>=</span> <span class='st'>"BRIQUE"</span>) +
-  <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span>()</div><div class='img'><img src='plot-2.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>plot</span>(<span class='kw'>spc</span>, xaxis = <span class='st'>"energy"</span>, yaxis = <span class='st'>"count"</span>, select = <span class='st'>"BRIQUE"</span>) <span class='op'>+</span>
+  <span class='kw'>ggplot2</span>::<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span>()
+</div><div class='img'><img src='plot-2.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Plot the first three spectra</span>
-<span class='fu'>plot</span>(<span class='no'>spc</span>, <span class='kw'>xaxis</span> <span class='kw'>=</span> <span class='st'>"channel"</span>, <span class='kw'>yaxis</span> <span class='kw'>=</span> <span class='st'>"rate"</span>, <span class='kw'>select</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>3</span>, <span class='kw'>facet</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>) +
-  <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span>()</div><div class='img'><img src='plot-3.png' alt='' width='700' height='433' /></div></pre>
+<span class='fu'>plot</span>(<span class='kw'>spc</span>, xaxis = <span class='st'>"channel"</span>, yaxis = <span class='st'>"rate"</span>, select = <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span>, facet = <span class='fl'>TRUE</span>) <span class='op'>+</span>
+  <span class='kw'>ggplot2</span>::<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span>()
+</div><div class='img'><img src='plot-3.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -266,7 +272,7 @@ the error ellipses.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
