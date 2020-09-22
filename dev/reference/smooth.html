@@ -8,21 +8,36 @@
 
 <title>Smooth — smooth • gamma</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,12 +45,14 @@
 
 
 
+
 <meta property="og:title" content="Smooth — smooth" />
+<meta property="og:description" content="Smoothes intensities." />
+<meta property="og:image" content="https://crp2a.github.io/gamma/logo.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@nfrerebeau" />
+<meta name="twitter:site" content="@CRP2A" />
 
-<meta property="og:description" content="Smoothes a spectrum." />
-
-<meta property="og:image" content="http://gamma.archaeo.science/logo.png" />
-<meta name="twitter:card" content="summary" />
 
 <meta name="robots" content="noindex">
 
@@ -49,9 +66,10 @@
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -65,7 +83,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9002</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">1.0.0.9000</span>
       </span>
     </div>
 
@@ -73,7 +91,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -91,10 +109,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/cerege_1.html">CEREGE Calibration Curve #1</a>
-    </li>
-    <li>
-      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve #1</a>
+      <a href="../articles/doserate.html">Calibration Curve</a>
     </li>
   </ul>
 </li>
@@ -102,11 +117,10 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/crp2a/gamma">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/crp2a/gamma/">
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -117,32 +131,53 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Smooth</h1>
-    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/smooth.R'><code>R/smooth.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/crp2a/gamma/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/smooth.R'><code>R/smooth.R</code></a>, <a href='https://github.com/crp2a/gamma/blob/master/R/smooth_rectangular.R'><code>R/smooth_rectangular.R</code></a>, and 2 more</small>
     <div class="hidden name"><code>smooth.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    
-    <p>Smoothes a spectrum.</p>
-    
+    <p>Smoothes intensities.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>smooth</span>(<span class='no'>object</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>signal_smooth</span>(<span class='kw'>object</span>, <span class='kw'>...</span>)
 
-<span class='co'># S4 method for GammaSpectra</span>
-<span class='fu'>smooth</span>(<span class='no'>object</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"unweighted"</span>,
-  <span class='st'>"weighted"</span>, <span class='st'>"savitzky"</span>), <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fl'>2</span>)
+<span class='fu'>smooth_rectangular</span>(<span class='kw'>object</span>, <span class='kw'>...</span>)
+
+<span class='fu'>smooth_triangular</span>(<span class='kw'>object</span>, <span class='kw'>...</span>)
+
+<span class='fu'>smooth_savitzky</span>(<span class='kw'>object</span>, <span class='kw'>...</span>)
 
 <span class='co'># S4 method for GammaSpectrum</span>
-<span class='fu'>smooth</span>(<span class='no'>object</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"unweighted"</span>,
-  <span class='st'>"weighted"</span>, <span class='st'>"savitzky"</span>), <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fl'>2</span>)</pre>
-    
+<span class='fu'>signal_smooth</span>(<span class='kw'>object</span>, method = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"rectangular"</span>, <span class='st'>"triangular"</span>, <span class='st'>"savitzky"</span>), <span class='kw'>...</span>)
+
+<span class='co'># S4 method for GammaSpectra</span>
+<span class='fu'>signal_smooth</span>(<span class='kw'>object</span>, method = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"rectangular"</span>, <span class='st'>"triangular"</span>, <span class='st'>"savitzky"</span>), <span class='kw'>...</span>)
+
+<span class='co'># S4 method for GammaSpectrum</span>
+<span class='fu'>smooth_rectangular</span>(<span class='kw'>object</span>, m = <span class='fl'>3</span>, <span class='kw'>...</span>)
+
+<span class='co'># S4 method for GammaSpectra</span>
+<span class='fu'>smooth_rectangular</span>(<span class='kw'>object</span>, m = <span class='fl'>3</span>, <span class='kw'>...</span>)
+
+<span class='co'># S4 method for GammaSpectrum</span>
+<span class='fu'>smooth_savitzky</span>(<span class='kw'>object</span>, m = <span class='fl'>3</span>, p = <span class='fl'>2</span>, <span class='kw'>...</span>)
+
+<span class='co'># S4 method for GammaSpectra</span>
+<span class='fu'>smooth_savitzky</span>(<span class='kw'>object</span>, m = <span class='fl'>3</span>, p = <span class='fl'>2</span>, <span class='kw'>...</span>)
+
+<span class='co'># S4 method for GammaSpectrum</span>
+<span class='fu'>smooth_triangular</span>(<span class='kw'>object</span>, m = <span class='fl'>3</span>, <span class='kw'>...</span>)
+
+<span class='co'># S4 method for GammaSpectra</span>
+<span class='fu'>smooth_triangular</span>(<span class='kw'>object</span>, m = <span class='fl'>3</span>, <span class='kw'>...</span>)</pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -153,131 +188,121 @@ object.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Currently not used.</p></td>
+      <td><p>Extra parameters to be passed to further methods.</p></td>
     </tr>
     <tr>
       <th>method</th>
-      <td><p>A <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character</a></code> string specifying the smoothing
+      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> string specifying the smoothing
 method to be used. It must be one of "<code>unweighted</code>" (default),
 "<code>weighted</code>" or "<code>savitzky</code>" (see details).
 Any unambiguous substring can be given.</p></td>
     </tr>
     <tr>
       <th>m</th>
-      <td><p>An odd <code><a href='https://www.rdocumentation.org/packages/base/topics/integer'>integer</a></code> scalar giving the number of adjacent
+      <td><p>An odd <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> giving the number of adjacent
 points to be used.</p></td>
     </tr>
     <tr>
       <th>p</th>
-      <td><p>An <code><a href='https://www.rdocumentation.org/packages/base/topics/integer'>integer</a></code> scalar giving the polynomial degree.
-Only used if <code>method</code> is <code>savitzky</code>.</p></td>
+      <td><p>An <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> giving the polynomial degree.
+Only used if <code>method</code> is "<code>savitzky</code>".</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A <a href='GammaSpectrum-class.html'>GammaSpectrum</a> or <a href='GammaSpectra-class.html'>GammaSpectra</a> object.</p>
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The following smoothing methods are available:</p><dl class='dl-horizontal'>
-  <dt>unweighted</dt><dd><p>Unweighted sliding-average or rectangular smooth.
+    <p>The following smoothing methods are available:</p><dl>
+  <dt>rectangular</dt><dd><p>Unweighted sliding-average or rectangular smooth.
   It replaces each point in the signal with the average of \(m\) adjacent
   points.</p></dd>
-  <dt>weighted</dt><dd><p>Weighted sliding-average or triangular smooth.
+  <dt>triangular</dt><dd><p>Weighted sliding-average or triangular smooth.
   It replaces each point in the signal with the weighted mean of \(m\)
   adjacent points.</p></dd>
   <dt>savitzky</dt><dd><p>Savitzky-Golay filter. This method is based on the
   least-squares fitting of polynomials to segments of \(m\) adjacent
   points.</p></dd>
- </dl><p>There will be \((m - 1) / 2\) points both at the beginning and at the end
+ 
+</dl><p>There will be \((m - 1) / 2\) points both at the beginning and at the end
  of the spectrum for which a complete \(m\)-width smooth cannot be
  calculated. To prevent data loss, progressively smaller smooths are used at
  the ends of the spectrum if <code>method</code> is <code>unweighted</code> or
  <code>weighted</code>. If the Savitzky-Golay filter is used, the original
  \((m - 1) / 2\) points at the ends of the spectrum are preserved.</p>
-    
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Gorry, P. A. (1990). General Least-Squares Smoothing and Differentiation by
  the Convolution (Savitzky-Golay) Method. <em>Analytical Chemistry</em>, 62(6),
  p. 570-573.
  DOI: <a href='https://doi.org/10.1021/ac00205a007'>10.1021/ac00205a007</a>.</p>
-<p>Savitzky, A. and Golay, M. J. E. (1964). Smoothing and Differentiation of
+<p>Savitzky, A. &amp; Golay, M. J. E. (1964). Smoothing and Differentiation of
  Data by Simplified Least Squares Procedures. <em>Analytical Chemistry</em>,
  36(8), p. 1627-1639.
  DOI: <a href='https://doi.org/10.1021/ac60214a047'>10.1021/ac60214a047</a>.</p>
-    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other signal processing: <code><a href='integrateSignal.html'>integrateSignal</a></code>,
-  <code><a href='peaks.html'>peaks</a></code>, <code><a href='processBaseline.html'>processBaseline</a></code>,
-  <code><a href='stabilize.html'>stabilize</a></code></p></div>
-    
+    <div class='dont-index'><p>Other signal processing: 
+<code><a href='baseline.html'>baseline</a></code>,
+<code><a href='peaks_find.html'>peaks_find</a>()</code>,
+<code><a href='signal_integrate.html'>signal_integrate</a>()</code>,
+<code><a href='signal_slice.html'>signal_slice</a>()</code>,
+<code><a href='signal_stabilize.html'>signal_stabilize</a>()</code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>N. Frerebeau</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>magrittr</span>)</div><div class='output co'>#&gt; <span class='message'></span>
-#&gt; <span class='message'>Attaching package: ‘magrittr’</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:testthat’:</span>
-#&gt; <span class='message'></span>
-#&gt; <span class='message'>    equals, is_less_than, not</span></div><div class='input'>
-<span class='co'># Import CNF files</span>
-<span class='no'>spc_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"extdata/test_CNF.cnf"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamma"</span>)
-<span class='no'>spectrum</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='no'>spc_file</span>, <span class='kw'>skip</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+    <pre class="examples"><div class='input'><span class='co'># Import CNF files</span>
+<span class='kw'>spc_file</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.CNF"</span>, package = <span class='st'>"gamma"</span>)
+<span class='kw'>spc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='kw'>spc_file</span>)
+<span class='kw'>spc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='signal_slice.html'>signal_slice</a></span>(<span class='kw'>spc</span>, <span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span><span class='op'>:</span><span class='fl'>35</span>))
 
-<span class='co'># Plot spectrum</span>
-<span class='no'>spectrum</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='processBaseline.html'>removeBaseline</a></span>() <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='plot.html'>plot</a></span>()</div><div class='img'><img src='smooth-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='co'># Plot raw spectrum</span>
+<span class='kw'>spc_clean</span> <span class='op'>&lt;-</span> <span class='fu'><a href='baseline.html'>signal_correct</a></span>(<span class='kw'>spc</span>)
+<span class='fu'><a href='plot.html'>plot</a></span>(<span class='kw'>spc_clean</span>)
+</div><div class='img'><img src='smooth-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Rectangular smooth</span>
-<span class='no'>spectrum</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>smooth</span>(<span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"unweighted"</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>3</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='processBaseline.html'>removeBaseline</a></span>() <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='plot.html'>plot</a></span>()</div><div class='img'><img src='smooth-2.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='kw'>spc_unweighted</span> <span class='op'>&lt;-</span> <span class='fu'>smooth_rectangular</span>(<span class='kw'>spc</span>, m = <span class='fl'>3</span>)
+<span class='kw'>spc_unweighted_clean</span> <span class='op'>&lt;-</span> <span class='fu'><a href='baseline.html'>signal_correct</a></span>(<span class='kw'>spc_unweighted</span>)
+<span class='fu'><a href='plot.html'>plot</a></span>(<span class='kw'>spc_unweighted_clean</span>)
+</div><div class='img'><img src='smooth-2.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Triangular smooth</span>
-<span class='no'>spectrum</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>smooth</span>(<span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"weighted"</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>5</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='processBaseline.html'>removeBaseline</a></span>() <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='plot.html'>plot</a></span>()</div><div class='img'><img src='smooth-3.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='kw'>spc_weighted</span> <span class='op'>&lt;-</span> <span class='fu'>smooth_triangular</span>(<span class='kw'>spc</span>, m = <span class='fl'>5</span>)
+<span class='kw'>spc_weighted_clean</span> <span class='op'>&lt;-</span> <span class='fu'><a href='baseline.html'>signal_correct</a></span>(<span class='kw'>spc_weighted</span>)
+<span class='fu'><a href='plot.html'>plot</a></span>(<span class='kw'>spc_weighted_clean</span>)
+</div><div class='img'><img src='smooth-3.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Savitzky–Golay</span>
-<span class='no'>spectrum</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>smooth</span>(<span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"savitzky"</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fl'>2</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='processBaseline.html'>removeBaseline</a></span>() <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='plot.html'>plot</a></span>()</div><div class='img'><img src='smooth-4.png' alt='' width='700' height='433' /></div></pre>
+<span class='kw'>spc_savitzky</span> <span class='op'>&lt;-</span> <span class='fu'>smooth_savitzky</span>(<span class='kw'>spc</span>, m = <span class='fl'>21</span>, p = <span class='fl'>2</span>)
+<span class='kw'>spc_savitzky_clean</span> <span class='op'>&lt;-</span> <span class='fu'><a href='baseline.html'>signal_correct</a></span>(<span class='kw'>spc_savitzky</span>)
+<span class='fu'><a href='plot.html'>plot</a></span>(<span class='kw'>spc_savitzky_clean</span>)
+</div><div class='img'><img src='smooth-4.png' alt='' width='700' height='433' /></div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#references">References</a></li>
-
-      <li><a href="#see-also">See also</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>N. Frerebeau</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
-  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href='https://www.u-bordeaux-montaigne.fr'><img src="http://gamma.archaeo.science/reference/figures/logo_ubm.jpg" height="48" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="http://gamma.archaeo.science/reference/figures/logo_lascarbx.jpg" height="64" /></a>.</p>
+  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guilhem Paradol, <a href='https://www.u-bordeaux-montaigne.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_ubm.jpg" height="64" /></a>, <a href='https://www.cnrs.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_cnrs.jpg" height="64" /></a>, <a href='https://lascarbx.labex.u-bordeaux.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_idex.png" height="80" /></a>, <a href='https://amidex.univ-amu.fr'><img src="https://crp2a.github.io/gamma/reference/figures/logo_amidex.jpg" height="48" /></a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

@@ -6,20 +6,30 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Manual • gamma</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Manual">
-<meta property="og:description" content="">
-<meta property="og:image" content="http://gamma.archaeo.science/logo.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:description" content="gamma">
+<meta property="og:image" content="https://crp2a.github.io/gamma/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@nfrerebeau">
+<meta name="twitter:site" content="@CRP2A">
 <meta name="robots" content="noindex">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -32,7 +42,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9002</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">1.0.0.9000</span>
       </span>
     </div>
 
@@ -40,7 +50,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -58,10 +68,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/cerege_1.html">CEREGE Calibration Curve #1</a>
-    </li>
-    <li>
-      <a href="../articles/crp2a_1.html">CRP2A Calibration Curve #1</a>
+      <a href="../articles/doserate.html">Calibration Curve</a>
     </li>
   </ul>
 </li>
@@ -71,8 +78,8 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/crp2a/gamma">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/crp2a/gamma/">
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -85,16 +92,14 @@
 <!--/.navbar -->
 
       
-      </header><div class="row">
+
+      </header><script src="gamma_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Manual</h1>
+      <h1 data-toc-skip>Manual</h1>
                         <h4 class="author">N. Frerebeau</h4>
-                        <h4 class="author">B. Lebrun</h4>
-                        <h4 class="author">G. Guérin</h4>
-                        <h4 class="author">C. Lahaye</h4>
             
-            <h4 class="date">2019-06-14</h4>
+            <h4 class="date">2020-09-22</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/crp2a/gamma/blob/master/vignettes/gamma.Rmd"><code>vignettes/gamma.Rmd</code></a></small>
       <div class="hidden name"><code>gamma.Rmd</code></div>
@@ -103,64 +108,74 @@
 
     
     
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://crp2a.github.io/gamma">gamma</a></span>)
+</pre></div>
 <div id="overview" class="section level1">
 <h1 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h1>
-<p><code>gamma</code> is intended to process in-situ gamma-ray spectrometry measurements for luminescence dating. This package allows to import, inspect and (automatically) correct the energy scale of the spectrum. It provides methods for estimating the gamma dose rate by the use of a calibration curve. This package only supports Canberra CNF and TKA files.</p>
+<p><strong>gamma</strong> is intended to process in-situ gamma-ray spectrometry measurements for luminescence dating. This package allows to import, inspect and (automatically) correct the energy scale of the spectrum. It provides methods for estimating the gamma dose rate by the use of a calibration curve. This package only supports Canberra CNF and TKA files.</p>
 <p>Typical workflow:</p>
 <ol style="list-style-type: decimal">
 <li>Import spectrum data with <code><a href="../reference/read.html">read()</a></code>,</li>
 <li>Inspect spectrum with <code><a href="../reference/plot.html">plot()</a></code>,</li>
-<li>Calibrate the energy scale with <code><a href="../reference/calibrate.html">calibrate()</a></code>,</li>
-<li>Estimate the gamma dose rate with <code><a href="../reference/predict.html">predict()</a></code>.</li>
+<li>Calibrate the energy scale with <code>calibrate_energy()</code>,</li>
+<li>Estimate the gamma dose rate with <code>predict_dose()</code>.</li>
 </ol>
-<p>The estimation of the gamma dose rate requires a calibration curve. This package contains several built-in curves, but as these are instrument-specific you may need to build your own (see <code><a href="https://www.rdocumentation.org/packages/utils/topics/help">help(fit)</a></code>). These built-in curves are in use in several labs and can be used to reproduce published results. Check out the following vignettes for an overview of the fitting process.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># IRAMAT-CRP2A LaBr (BDX1)</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">utils<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/vignette">vignette</a></span>(<span class="st">"CRP2A#1"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co"># CEREGE NaI (AIX1)</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">utils<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/vignette">vignette</a></span>(<span class="st">"CEREGE#1"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a></code></pre></div>
-<p>Note that <code>gamma</code> uses the <em>International System of Units</em>: energy values are assumed to be in keV and dose rates in µGy/y.</p>
+<p>The estimation of the gamma dose rate requires a calibration curve. This package contains several built-in curves, but as these are instrument-specific you may need to build your own (see <code>help(fit)</code>). These built-in curves are in use in several labs and can be used to reproduce published results. Check out the following vignettes for an overview of the fitting process.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="co"># IRAMAT-CRP2A LaBr (BDX1)</span>
+<span class="kw">utils</span>::<span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span>(<span class="st">"CRP2A#1"</span>, package = <span class="st">"gamma"</span>)
+
+<span class="co"># CEREGE NaI (AIX1)</span>
+<span class="kw">utils</span>::<span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span>(<span class="st">"CEREGE#1"</span>, package = <span class="st">"gamma"</span>)
+</pre></div>
+<p>Note that <strong>gamma</strong> uses the <em>International System of Units</em>: energy values are assumed to be in keV and dose rates in µGy/y.</p>
 </div>
 <div id="import-file" class="section level1">
 <h1 class="hasAnchor">
 <a href="#import-file" class="anchor"></a>Import file</h1>
-<p>Both Canberra CNF and TKA files can be imported. Several channels can be skipped during import to retain only part of the spectrum.</p>
-<p>If <code>skip</code> is <code>TRUE</code>, an attempt is made to define the number of channels to skip at the beginning of the spectrum. This skips all channels before the highest count maximum. This is intended to deal with the artefact produced by the rapid growth of random background noise towards low energies.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># Automatically skip the first chanels</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co"># Import a CNF file</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">cnf_test &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata/test_CNF.cnf"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">(spc_cnf &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(cnf_test, <span class="dt">skip =</span> <span class="ot">TRUE</span>))</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; Gamma spectrum:</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt;   Reference: test_CNF</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt;   Instrument: InSpector 1000</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt;   Date: 2019-02-07 11:48:18</span></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt;   Number of chanels: 989</span></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt;   Energy range (keV): 97.94 - 3124.91</span></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt;   Dose rate: unknown</span></a>
-<a class="sourceLine" id="cb2-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co"># Import a TKA file</span></a>
-<a class="sourceLine" id="cb2-14" data-line-number="14">tka_test &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata/test_TKA.tka"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
-<a class="sourceLine" id="cb2-15" data-line-number="15">(spc_tka &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(tka_test, <span class="dt">skip =</span> <span class="ot">TRUE</span>))</a>
-<a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co">#&gt; Gamma spectrum:</span></a>
-<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co">#&gt;   Reference: test_TKA</span></a>
-<a class="sourceLine" id="cb2-18" data-line-number="18"><span class="co">#&gt;   Instrument: unknown</span></a>
-<a class="sourceLine" id="cb2-19" data-line-number="19"><span class="co">#&gt;   Date: 2019-06-14 14:37:43</span></a>
-<a class="sourceLine" id="cb2-20" data-line-number="20"><span class="co">#&gt;   Number of chanels: 989</span></a>
-<a class="sourceLine" id="cb2-21" data-line-number="21"><span class="co">#&gt;   Energy range (keV): not calibrated</span></a>
-<a class="sourceLine" id="cb2-22" data-line-number="22"><span class="co">#&gt;   Dose rate: unknown</span></a>
-<a class="sourceLine" id="cb2-23" data-line-number="23"></a>
-<a class="sourceLine" id="cb2-24" data-line-number="24"><span class="co"># Import all files in a given directory</span></a>
-<a class="sourceLine" id="cb2-25" data-line-number="25">files_test &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
-<a class="sourceLine" id="cb2-26" data-line-number="26">(spc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(files_test, <span class="dt">skip =</span> <span class="ot">TRUE</span>))</a>
-<a class="sourceLine" id="cb2-27" data-line-number="27"><span class="co">#&gt; A collection of 2 gamma spectra: test_CNF, test_TKA</span></a></code></pre></div>
+<p>Both Canberra CNF and TKA files can be imported.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="co"># Automatically skip the first channels</span>
+<span class="co"># Import a CNF file</span>
+<span class="kw">cnf_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/LaBr.CNF"</span>, package = <span class="st">"gamma"</span>)
+(<span class="kw">spc_cnf</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read.html">read</a></span>(<span class="kw">cnf_test</span>))
+<span class="co">#&gt; Gamma spectrum:</span>
+<span class="co">#&gt; *  name: LaBr</span>
+<span class="co">#&gt; *  date: 2019-02-07 11:48:18</span>
+<span class="co">#&gt; *  live_time: 3385.54</span>
+<span class="co">#&gt; *  real_time: 3403.67</span>
+<span class="co">#&gt; *  channels: 1024</span>
+<span class="co">#&gt; *  energy_min: -7</span>
+<span class="co">#&gt; *  energy_max: 3124.91</span>
+
+<span class="co"># Import a TKA file</span>
+<span class="kw">tka_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/LaBr.TKA"</span>, package = <span class="st">"gamma"</span>)
+(<span class="kw">spc_tka</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read.html">read</a></span>(<span class="kw">tka_test</span>))
+<span class="co">#&gt; Gamma spectrum:</span>
+<span class="co">#&gt; *  name: LaBr</span>
+<span class="co">#&gt; *  date: 2020-09-22 05:42:48</span>
+<span class="co">#&gt; *  live_time: 3385.54</span>
+<span class="co">#&gt; *  real_time: 3403.67</span>
+<span class="co">#&gt; *  channels: 1024</span>
+<span class="co">#&gt; *  energy_min: NA</span>
+<span class="co">#&gt; *  energy_max: NA</span>
+
+<span class="co"># Import all files in a given directory</span>
+<span class="kw">files_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata"</span>, package = <span class="st">"gamma"</span>)
+(<span class="kw">spc</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read.html">read</a></span>(<span class="kw">files_test</span>))
+<span class="co">#&gt; A collection of 3 gamma spectra: BeGe, LaBr, LaBr</span>
+</pre></div>
 </div>
 <div id="inspect-spectrum" class="section level1">
 <h1 class="hasAnchor">
 <a href="#inspect-spectrum" class="anchor"></a>Inspect spectrum</h1>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co"># Plot CNF spectrum</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="../reference/plot.html">plot</a></span>(spc_cnf) <span class="op">+</span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="co"># Plot CNF spectrum</span>
+<span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="kw">spc_cnf</span>) <span class="op">+</span>
+  <span class="kw">ggplot2</span>::<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>()
+</pre></div>
 <p><img src="gamma_files/figure-html/inspect-1.png" width="672" style="display: block; margin: auto;"></p>
 </div>
 <div id="calibrate-the-energy-scale" class="section level1">
@@ -173,100 +188,140 @@
 <h2 class="hasAnchor">
 <a href="#workflow" class="anchor"></a>Workflow</h2>
 <p>The following steps illustrate how to properly fine-tune the parameters for spectrum processing before peak detection.</p>
+<div id="clean" class="section level3">
+<h3 class="hasAnchor">
+<a href="#clean" class="anchor"></a>Clean</h3>
+<p>Several channels can be dropped to retain only part of the spectrum. If no specific value is provided, an attempt is made to define the number of channels to skip at the beginning of the spectrum. This drops all channels before the highest count maximum. This is intended to deal with the artefact produced by the rapid growth of random background noise towards low energies.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="co"># Use a square root transformation</span>
+<span class="kw">sliced</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/signal_slice.html">signal_slice</a></span>(<span class="kw">spc_tka</span>)
+</pre></div>
+</div>
 <div id="stabilization" class="section level3">
 <h3 class="hasAnchor">
 <a href="#stabilization" class="anchor"></a>Stabilization</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># Use a square root transformation</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">transformed &lt;-<span class="st"> </span>gamma<span class="op">::</span><span class="kw"><a href="http://gamma.archaeo.science/reference/stabilize.html">stabilize</a></span>(spc_tka, <span class="dt">transformation =</span> sqrt)</a></code></pre></div>
+<p>The stabilization step aims at improving the identification of peaks with a low signal-to-noise ratio. This particularly targets higher energy peaks.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="co"># Use a square root transformation</span>
+<span class="kw">transformed</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/signal_stabilize.html">signal_stabilize</a></span>(<span class="kw">sliced</span>, f = <span class="kw">sqrt</span>)
+</pre></div>
 </div>
 <div id="smoothing" class="section level3">
 <h3 class="hasAnchor">
 <a href="#smoothing" class="anchor"></a>Smoothing</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># Use a 21 point Savitzky-Golay-Filter to smooth the spectrum</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">smoothed &lt;-<span class="st"> </span><span class="kw"><a href="../reference/smooth.html">smooth</a></span>(transformed, <span class="dt">method =</span> <span class="st">"savitzky"</span>, <span class="dt">m =</span> <span class="dv">21</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit">
+<span class="co"># Use a 21 point Savitzky-Golay-Filter to smooth the spectrum</span>
+<span class="kw">smoothed</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/smooth.html">signal_smooth</a></span>(<span class="kw">transformed</span>, method = <span class="st">"savitzky"</span>, m = <span class="fl">21</span>)
+</pre></div>
 </div>
 <div id="baseline-correction" class="section level3">
 <h3 class="hasAnchor">
 <a href="#baseline-correction" class="anchor"></a>Baseline correction</h3>
 <p>The baseline estimation is performed using the SNIP algorithm <span class="citation">(Ryan et al. 1988; Morháč et al. 1997; Morháč and Matoušek 2008)</span>. You can apply the LLS operator to your data, use a decreasing clipping window or change the number of iterations (see references).</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># Estimate the baseline of a single file</span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">baseline &lt;-<span class="st"> </span><span class="kw"><a href="../reference/processBaseline.html">estimateBaseline</a></span>(smoothed, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co"># Plot spectrum + baseline</span></a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="kw"><a href="../reference/plot.html">plot</a></span>(smoothed, baseline) <span class="op">+</span></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Spectrum + baseline"</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit">
+<span class="co"># Estimate the baseline of a single file</span>
+<span class="kw">baseline</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/baseline.html">signal_baseline</a></span>(<span class="kw">smoothed</span>, method = <span class="st">"SNIP"</span>, decreasing = <span class="fl">TRUE</span>)
+
+<span class="co"># Plot spectrum + baseline</span>
+<span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="kw">smoothed</span>, <span class="kw">baseline</span>) <span class="op">+</span>
+  <span class="kw">ggplot2</span>::<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(title = <span class="st">"Spectrum + baseline"</span>) <span class="op">+</span>
+  <span class="kw">ggplot2</span>::<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>()
+</pre></div>
 <p><img src="gamma_files/figure-html/baseline-estimate-1.png" width="672" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># Substract the estimated baseline</span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">corrected &lt;-<span class="st"> </span>smoothed <span class="op">-</span><span class="st"> </span>baseline</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co"># Or, remove the baseline in one go</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co"># corrected &lt;- removeBaseline(smoothed)</span></a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="co"># Plot the corrected spectrum</span></a>
-<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="kw"><a href="../reference/plot.html">plot</a></span>(corrected) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Baseline-corrected spectrum"</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit">
+<span class="co"># Substract the estimated baseline</span>
+<span class="kw">corrected</span> <span class="op">&lt;-</span> <span class="kw">smoothed</span> <span class="op">-</span> <span class="kw">baseline</span>
+<span class="co"># Or, remove the baseline in one go</span>
+<span class="co"># corrected &lt;- removeBaseline(smoothed)</span>
+
+<span class="co"># Plot the corrected spectrum</span>
+<span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="kw">corrected</span>) <span class="op">+</span>
+  <span class="kw">ggplot2</span>::<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(title = <span class="st">"Baseline-corrected spectrum"</span>) <span class="op">+</span>
+  <span class="kw">ggplot2</span>::<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>()
+</pre></div>
 <p><img src="gamma_files/figure-html/baseline-remove-1.png" width="672" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># You can remove the baseline of multiple spectra in one go</span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co"># Note that the same parameters will be used for all spectra</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3">clean &lt;-<span class="st"> </span><span class="kw"><a href="../reference/processBaseline.html">removeBaseline</a></span>(spc)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit">
+<span class="co"># You can remove the baseline of multiple spectra in one go</span>
+<span class="co"># Note that the same parameters will be used for all spectra</span>
+<span class="kw">clean</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/baseline.html">signal_correct</a></span>(<span class="kw">spc</span>)
+</pre></div>
 </div>
 <div id="peak-detection" class="section level3">
 <h3 class="hasAnchor">
 <a href="#peak-detection" class="anchor"></a>Peak detection</h3>
 <p>Once you have a baseline-corrected spectrum, you can try to automatically find peaks in the spectrum. A local maximum has to be the highest one in the given window and has to be higher than <span class="math inline">\(k\)</span> times the noise to be recognized as peak.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># Detect peaks in a single file</span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">peaks &lt;-<span class="st"> </span><span class="kw"><a href="../reference/peaks.html">findPeaks</a></span>(corrected)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit">
+<span class="co"># Detect peaks in a single file</span>
+<span class="kw">peaks</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/peaks_find.html">peaks_find</a></span>(<span class="kw">corrected</span>)
+
+<span class="co"># Plot spectrum + peaks</span>
+<span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="kw">corrected</span>, <span class="kw">peaks</span>) <span class="op">+</span>
+  <span class="kw">ggplot2</span>::<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(title = <span class="st">"Peaks"</span>) <span class="op">+</span>
+  <span class="kw">ggplot2</span>::<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>()
+</pre></div>
+<p><img src="gamma_files/figure-html/peak-detection-1.png" width="700"></p>
 </div>
 <div id="energy-scale-calibration" class="section level3">
 <h3 class="hasAnchor">
 <a href="#energy-scale-calibration" class="anchor"></a>Energy scale calibration</h3>
-<p>If you know the correspondence between several channels and the energy scale, you can use these pairs of values to calibrate the spectrum. A second order polynomial model is fitted on these energy <em>vs</em> chanel values, then used to predict the new energy scale of the spectrum.</p>
+<p>If you know the correspondence between several channels and the energy scale, you can use these pairs of values to calibrate the spectrum. A second order polynomial model is fitted on these energy <em>vs</em> channel values, then used to predict the new energy scale of the spectrum.</p>
 <p>You can use the results of the peak detection and set the expected energy values.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># Set the energy values (in keV)</span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw">setEnergy</span>(peaks) &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">238</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="dv">1461</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="dv">2615</span>)</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co"># Calibrate the spectrum using the peak positions</span></a>
-<a class="sourceLine" id="cb10-5" data-line-number="5">scaled &lt;-<span class="st"> </span><span class="kw"><a href="../reference/calibrate.html">calibrate</a></span>(spc_tka, peaks)</a>
-<a class="sourceLine" id="cb10-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co"># Plot the spectrum (note the top scale)</span></a>
-<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="kw"><a href="../reference/plot.html">plot</a></span>(scaled) <span class="op">+</span></a>
-<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Calibrated spectrum"</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit">
+<span class="co"># Set the energy values (in keV)</span>
+<span class="fu">set_energy</span>(<span class="kw">peaks</span>) <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">238</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">1461</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">2615</span>)
+<span class="kw">peaks</span>
+<span class="co">#&gt; 3 peaks were detected:</span>
+<span class="co">#&gt;   channel energy</span>
+<span class="co">#&gt; 1      86    238</span>
+<span class="co">#&gt; 2     496   1461</span>
+<span class="co">#&gt; 3     879   2615</span>
+
+<span class="co"># Calibrate the spectrum using the peak positions</span>
+<span class="kw">scaled</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/energy.html">energy_calibrate</a></span>(<span class="kw">spc_tka</span>, <span class="kw">peaks</span>)
+
+<span class="co"># Plot the spectrum</span>
+<span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="kw">scaled</span>, xaxis = <span class="st">"energy"</span>) <span class="op">+</span>
+  <span class="kw">ggplot2</span>::<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(title = <span class="st">"Calibrated spectrum"</span>) <span class="op">+</span>
+  <span class="kw">ggplot2</span>::<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>()
+</pre></div>
 <p><img src="gamma_files/figure-html/calibrate-fit-1.png" width="672" style="display: block; margin: auto;"></p>
 <p>Alternatively, you can do it by hand.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co"># Create a list of chanel-enegy pairs</span></a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="co"># Names are optional, but values must always be set in this order:</span></a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co"># channel then energy</span></a>
-<a class="sourceLine" id="cb11-4" data-line-number="4">calib_lines &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(</a>
-<a class="sourceLine" id="cb11-5" data-line-number="5">  <span class="dt">Pb212 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dt">chanel =</span> <span class="dv">84</span>, <span class="dt">energy =</span> <span class="dv">238</span>),</a>
-<a class="sourceLine" id="cb11-6" data-line-number="6">  <span class="dt">K40 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dt">chanel =</span> <span class="dv">492</span>, <span class="dt">energy =</span> <span class="dv">1461</span>),</a>
-<a class="sourceLine" id="cb11-7" data-line-number="7">  <span class="dt">Tl208 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dt">chanel =</span> <span class="dv">865</span>, <span class="dt">energy =</span> <span class="dv">2615</span>)</a>
-<a class="sourceLine" id="cb11-8" data-line-number="8">)</a>
-<a class="sourceLine" id="cb11-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb11-10" data-line-number="10"><span class="co"># Calibrate the spectrum using these fixed lines</span></a>
-<a class="sourceLine" id="cb11-11" data-line-number="11">scaled2 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/calibrate.html">calibrate</a></span>(spc_tka, <span class="dt">lines =</span> calib_lines)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit">
+<span class="co"># Create a list of channel-enegy pairs</span>
+<span class="kw">calib_lines</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(
+  channel = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">84</span>, <span class="fl">492</span>, <span class="fl">865</span>),
+  energy = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">238</span>, <span class="fl">1461</span>, <span class="fl">2615</span>)
+)
+
+<span class="co"># Calibrate the spectrum using these fixed lines</span>
+<span class="kw">scaled2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/energy.html">energy_calibrate</a></span>(<span class="kw">spc_tka</span>, lines = <span class="kw">calib_lines</span>)
+</pre></div>
 </div>
 </div>
 <div id="use-the-pipe" class="section level2">
 <h2 class="hasAnchor">
 <a href="#use-the-pipe" class="anchor"></a>Use the pipe!</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co"># Spectrum pre-processing and peak detection</span></a>
-<a class="sourceLine" id="cb12-2" data-line-number="2">pks &lt;-<span class="st"> </span>spc_tka <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/stabilize.html">stabilize</a></span>(<span class="dt">transformation =</span> sqrt) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="../reference/smooth.html">smooth</a></span>(<span class="dt">method =</span> <span class="st">"savitzky"</span>, <span class="dt">m =</span> <span class="dv">21</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="../reference/processBaseline.html">removeBaseline</a></span>(<span class="dt">decreasing =</span> <span class="ot">TRUE</span>, <span class="dt">k =</span> <span class="dv">100</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="../reference/peaks.html">findPeaks</a></span>()</a>
-<a class="sourceLine" id="cb12-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb12-8" data-line-number="8"><span class="co"># Set the energy values (in keV)</span></a>
-<a class="sourceLine" id="cb12-9" data-line-number="9"><span class="kw">setEnergy</span>(pks) &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">238</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="dv">1461</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="dv">2615</span>)</a>
-<a class="sourceLine" id="cb12-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb12-11" data-line-number="11"><span class="co"># Calibrate the energy scale</span></a>
-<a class="sourceLine" id="cb12-12" data-line-number="12">cal &lt;-<span class="st"> </span><span class="kw"><a href="../reference/calibrate.html">calibrate</a></span>(spc_tka, pks)</a>
-<a class="sourceLine" id="cb12-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb12-14" data-line-number="14"><span class="co"># Plot spectrum</span></a>
-<a class="sourceLine" id="cb12-15" data-line-number="15"><span class="kw"><a href="../reference/plot.html">plot</a></span>(cal, pks) <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-16" data-line-number="16"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw">magrittr</span>)
+
+<span class="co"># Spectrum pre-processing and peak detection</span>
+<span class="kw">pks</span> <span class="op">&lt;-</span> <span class="kw">spc_tka</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/signal_slice.html">signal_slice</a></span>() <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/signal_stabilize.html">signal_stabilize</a></span>(f = <span class="kw">sqrt</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/smooth.html">signal_smooth</a></span>(method = <span class="st">"savitzky"</span>, m = <span class="fl">21</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/baseline.html">signal_correct</a></span>(method = <span class="st">"SNIP"</span>, decreasing = <span class="fl">TRUE</span>, n = <span class="fl">100</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/peaks_find.html">peaks_find</a></span>()
+
+<span class="co"># Set the energy values (in keV)</span>
+<span class="fu">set_energy</span>(<span class="kw">pks</span>) <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">238</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">1461</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">2615</span>)
+
+<span class="co"># Calibrate the energy scale</span>
+<span class="kw">cal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/energy.html">energy_calibrate</a></span>(<span class="kw">spc_tka</span>, <span class="kw">pks</span>)
+
+<span class="co"># Plot spectrum</span>
+<span class="fu"><a href="../reference/plot.html">plot</a></span>(<span class="kw">cal</span>, <span class="kw">pks</span>) <span class="op">+</span>
+  <span class="kw">ggplot2</span>::<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>()
+</pre></div>
 <p><img src="gamma_files/figure-html/pipe-1.png" width="672" style="display: block; margin: auto;"></p>
 </div>
 </div>
@@ -274,156 +329,54 @@
 <h1 class="hasAnchor">
 <a href="#estimate-the-gamma-dose-rate" class="anchor"></a>Estimate the gamma dose rate</h1>
 <p>To estimate the gamma dose rate, you can either use one of the calibration curves distributed with this package or build your own.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co"># Load one of the built-in curves</span></a>
-<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(BDX1) <span class="co"># IRAMAT-CRP2A (Bordeaux)</span></a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(AIX1) <span class="co"># CEREGE (Aix-en-Provence)</span></a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit">
+<span class="co"># Load one of the built-in curves</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="kw">BDX_LaBr_1</span>) <span class="co"># IRAMAT-CRP2A (Bordeaux)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="kw">AIX_NaI_1</span>) <span class="co"># CEREGE (Aix-en-Provence)</span>
+</pre></div>
 <p>The construction of a calibration curve requires a set of reference spectra for which the gamma dose rate is known and a background noise measurement. First, each reference spectrum is integrated over a given interval, then normalized to active time and corrected for background noise. The dose rate is finally modelled by the integrated signal value used as a linear predictor.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="co"># Import the reference spectra</span></a>
-<a class="sourceLine" id="cb14-2" data-line-number="2">calib_dir &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata/crp2a/calibration"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
-<a class="sourceLine" id="cb14-3" data-line-number="3">calib_spc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(calib_dir, <span class="dt">skip =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb14-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="co"># Import the spectra for background noise measurement</span></a>
-<a class="sourceLine" id="cb14-6" data-line-number="6">noise_dir &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata/crp2a/background"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
-<a class="sourceLine" id="cb14-7" data-line-number="7">noise_spc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(noise_dir, <span class="dt">skip =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb14-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb14-9" data-line-number="9"><span class="co"># Set the known dose rates</span></a>
-<a class="sourceLine" id="cb14-10" data-line-number="10"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="st">"clermont"</span>)</a>
-<a class="sourceLine" id="cb14-11" data-line-number="11"><span class="kw">setDoseRate</span>(calib_spc) &lt;-<span class="st"> </span>clermont[, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"gamma"</span>, <span class="st">"gamma_error"</span>)]</a>
-<a class="sourceLine" id="cb14-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb14-13" data-line-number="13"><span class="co"># Build the calibration curve</span></a>
-<a class="sourceLine" id="cb14-14" data-line-number="14">calib_curve &lt;-<span class="st"> </span><span class="kw"><a href="../reference/fit.html">fit</a></span>(</a>
-<a class="sourceLine" id="cb14-15" data-line-number="15">  calib_spc,</a>
-<a class="sourceLine" id="cb14-16" data-line-number="16">  noise_spc,</a>
-<a class="sourceLine" id="cb14-17" data-line-number="17">  <span class="dt">range =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">165</span>, <span class="dv">2800</span>), <span class="co"># Set the integration range (in keV)</span></a>
-<a class="sourceLine" id="cb14-18" data-line-number="18">  <span class="dt">intercept =</span> <span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb14-19" data-line-number="19">)</a>
-<a class="sourceLine" id="cb14-20" data-line-number="20"></a>
-<a class="sourceLine" id="cb14-21" data-line-number="21"><span class="co"># The linear model can be accessed for further investigations</span></a>
-<a class="sourceLine" id="cb14-22" data-line-number="22"><span class="co"># summary(calib_curve[["model"]])</span></a>
-<a class="sourceLine" id="cb14-23" data-line-number="23"></a>
-<a class="sourceLine" id="cb14-24" data-line-number="24"><span class="co"># Plot the calibration curve</span></a>
-<a class="sourceLine" id="cb14-25" data-line-number="25"><span class="kw"><a href="../reference/plot.html">plot</a></span>(calib_curve) <span class="op">+</span></a>
-<a class="sourceLine" id="cb14-26" data-line-number="26"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>()</a></code></pre></div>
-<p><img src="gamma_files/figure-html/dose-rate-calib-1.png" width="480" style="display: block; margin: auto;"></p>
-<p>New dose rate values can be predicted.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="co"># Import spectra</span></a>
-<a class="sourceLine" id="cb15-2" data-line-number="2">test_dir &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata/crp2a/test"</span>, <span class="dt">package =</span> <span class="st">"gamma"</span>)</a>
-<a class="sourceLine" id="cb15-3" data-line-number="3">test_spc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read.html">read</a></span>(test_dir, <span class="dt">skip =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb15-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb15-5" data-line-number="5"><span class="co"># Estimate the gamma dose rate</span></a>
-<a class="sourceLine" id="cb15-6" data-line-number="6">dose_rate &lt;-<span class="st"> </span><span class="kw"><a href="../reference/predict.html">predict</a></span>(calib_curve, test_spc, <span class="dt">simplify =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
-<table class="table">
-<caption>Gamma dose rate estimates</caption>
-<thead><tr class="header">
-<th></th>
-<th align="right">Dose</th>
-<th align="right">Error</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>BR2011-08</td>
-<td align="right">313.556</td>
-<td align="right">11.123</td>
-</tr>
-<tr class="even">
-<td>BR2011-15A</td>
-<td align="right">195.203</td>
-<td align="right">6.930</td>
-</tr>
-<tr class="odd">
-<td>BR2011-15B</td>
-<td align="right">193.636</td>
-<td align="right">6.871</td>
-</tr>
-<tr class="even">
-<td>BR2011-16</td>
-<td align="right">141.555</td>
-<td align="right">5.025</td>
-</tr>
-<tr class="odd">
-<td>BR2011-20</td>
-<td align="right">1358.215</td>
-<td align="right">48.169</td>
-</tr>
-<tr class="even">
-<td>BR2011-23</td>
-<td align="right">393.508</td>
-<td align="right">13.957</td>
-</tr>
-<tr class="odd">
-<td>BR2011-24</td>
-<td align="right">349.160</td>
-<td align="right">12.386</td>
-</tr>
-<tr class="even">
-<td>BR2011-26</td>
-<td align="right">338.510</td>
-<td align="right">12.007</td>
-</tr>
-<tr class="odd">
-<td>BR2011-27</td>
-<td align="right">272.827</td>
-<td align="right">9.680</td>
-</tr>
-<tr class="even">
-<td>BR2011-29</td>
-<td align="right">235.378</td>
-<td align="right">8.349</td>
-</tr>
-</tbody>
-</table>
+<p>See <code>vignette(doserate)</code> for a reproducible example.</p>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h1>
 <div id="refs" class="references">
 <div id="ref-morhac1997">
-<p>Morháč, Miroslav, Ján Kliman, Vladislav Matoušek, Martin Veselský, and Ivan Turzo. 1997. “Background Elimination Methods for Multidimensional Coincidence <span class="math inline">\(\gamma\)</span>-Ray Spectra.” <em>Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment</em> 401 (1): 113–32. <a href="https://doi.org/10.1016/S0168-9002(97)01023-1" class="uri">https://doi.org/10.1016/S0168-9002(97)01023-1</a>.</p>
+<p>Morháč, Miroslav, Ján Kliman, Vladislav Matoušek, Martin Veselský, and Ivan Turzo. 1997. “Background Elimination Methods for Multidimensional Coincidence Γ-Ray Spectra.” <em>Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment</em> 401 (1): 113–32. <a href="https://doi.org/10.1016/S0168-9002(97)01023-1">https://doi.org/10.1016/S0168-9002(97)01023-1</a>.</p>
 </div>
 <div id="ref-morhac2008">
-<p>Morháč, Miroslav, and Vladislav Matoušek. 2008. “Peak Clipping Algorithms for Background Estimation in Spectroscopic Data.” <em>Applied Spectroscopy</em> 62 (1): 91–106. <a href="https://doi.org/10.1366/000370208783412762" class="uri">https://doi.org/10.1366/000370208783412762</a>.</p>
+<p>Morháč, Miroslav, and Vladislav Matoušek. 2008. “Peak Clipping Algorithms for Background Estimation in Spectroscopic Data.” <em>Applied Spectroscopy</em> 62 (1): 91–106. <a href="https://doi.org/10.1366/000370208783412762">https://doi.org/10.1366/000370208783412762</a>.</p>
 </div>
 <div id="ref-ryan1988">
-<p>Ryan, C.G., E. Clayton, W.L. Griffin, S.H. Sie, and D.R. Cousens. 1988. “SNIP, a Statistics-Sensitive Background Treatment for the Quantitative Analysis of PIXE Spectra in Geoscience Applications.” <em>Nuclear Instruments and Methods in Physics Research Section B: Beam Interactions with Materials and Atoms</em> 34 (3): 396–402. <a href="https://doi.org/10.1016/0168-583X(88)90063-8" class="uri">https://doi.org/10.1016/0168-583X(88)90063-8</a>.</p>
+<p>Ryan, C. G., E. Clayton, W. L. Griffin, S. H. Sie, and D. R. Cousens. 1988. “SNIP, a Statistics-Sensitive Background Treatment for the Quantitative Analysis of Pixe Spectra in Geoscience Applications.” <em>Nuclear Instruments and Methods in Physics Research Section B: Beam Interactions with Materials and Atoms</em> 34 (3): 396–402. <a href="https://doi.org/10.1016/0168-583X(88)90063-8">https://doi.org/10.1016/0168-583X(88)90063-8</a>.</p>
 </div>
 </div>
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li><a href="#overview">Overview</a></li>
-      <li><a href="#import-file">Import file</a></li>
-      <li><a href="#inspect-spectrum">Inspect spectrum</a></li>
-      <li>
-<a href="#calibrate-the-energy-scale">Calibrate the energy scale</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#workflow">Workflow</a></li>
-      <li><a href="#use-the-pipe">Use the pipe!</a></li>
-      </ul>
-</li>
-      <li><a href="#estimate-the-gamma-dose-rate">Estimate the gamma dose rate</a></li>
-      <li><a href="#references">References</a></li>
-      </ul>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
 </div>
-      </div>
 
 </div>
+
 
 
       <footer><div class="copyright">
-  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guillaume Guérin, Christelle Lahaye, <a href="https://www.u-bordeaux-montaigne.fr"><img src="http://gamma.archaeo.science/reference/figures/logo_ubm.jpg" height="48"></a>, <a href="https://lascarbx.labex.u-bordeaux.fr"><img src="http://gamma.archaeo.science/reference/figures/logo_lascarbx.jpg" height="64"></a>.</p>
+  <p>Developed by Nicolas Frerebeau, Brice Lebrun, Guilhem Paradol, <a href="https://www.u-bordeaux-montaigne.fr"><img src="https://crp2a.github.io/gamma/reference/figures/logo_ubm.jpg" height="64"></a>, <a href="https://www.cnrs.fr"><img src="https://crp2a.github.io/gamma/reference/figures/logo_cnrs.jpg" height="64"></a>, <a href="https://lascarbx.labex.u-bordeaux.fr"><img src="https://crp2a.github.io/gamma/reference/figures/logo_idex.png" height="80"></a>, <a href="https://amidex.univ-amu.fr"><img src="https://crp2a.github.io/gamma/reference/figures/logo_amidex.jpg" height="48"></a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>
