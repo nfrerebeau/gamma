@@ -146,21 +146,21 @@
     <p>Calibrates the energy scale of a gamma spectrum.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>energy_calibrate</span>(<span class='kw'>object</span>, <span class='kw'>lines</span>, <span class='kw'>...</span>)
+    <pre class="usage"><span class='fu'>energy_calibrate</span><span class='op'>(</span><span class='va'>object</span>, <span class='va'>lines</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>has_energy</span>(<span class='kw'>object</span>)
+<span class='fu'>has_energy</span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span>
 
 <span class='co'># S4 method for GammaSpectrum,list</span>
-<span class='fu'>energy_calibrate</span>(<span class='kw'>object</span>, <span class='kw'>lines</span>, <span class='kw'>...</span>)
+<span class='fu'>energy_calibrate</span><span class='op'>(</span><span class='va'>object</span>, <span class='va'>lines</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for GammaSpectrum,PeakPosition</span>
-<span class='fu'>energy_calibrate</span>(<span class='kw'>object</span>, <span class='kw'>lines</span>, <span class='kw'>...</span>)
+<span class='fu'>energy_calibrate</span><span class='op'>(</span><span class='va'>object</span>, <span class='va'>lines</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for GammaSpectrum</span>
-<span class='fu'>has_energy</span>(<span class='kw'>object</span>)
+<span class='fu'>has_energy</span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span>
 
 <span class='co'># S4 method for GammaSpectra</span>
-<span class='fu'>has_energy</span>(<span class='kw'>object</span>)</pre>
+<span class='fu'>has_energy</span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -209,35 +209,35 @@ corresponding expected "<code>energy</code>" value (in keV).</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Import a CNF file</span>
-<span class='kw'>spc_file</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.TKA"</span>, package = <span class='st'>"gamma"</span>)
-(<span class='kw'>spc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='kw'>spc_file</span>))
+<span class='va'>spc_file</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"extdata/LaBr.TKA"</span>, package <span class='op'>=</span> <span class='st'>"gamma"</span><span class='op'>)</span>
+<span class='op'>(</span><span class='va'>spc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span><span class='op'>(</span><span class='va'>spc_file</span><span class='op'>)</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: LaBr
-#&gt; *  date: 2020-09-24 08:50:18
+#&gt; *  date: 2020-09-30 17:30:05
 #&gt; *  live_time: 3385.54
 #&gt; *  real_time: 3403.67
 #&gt; *  channels: 1024
 #&gt; *  energy_min: NA
 #&gt; *  energy_max: NA</div><div class='input'>
 <span class='co'>## Set peak positions (channel) and expected energy values</span>
-<span class='kw'>calib_lines</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(
-  channel = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>86</span>, <span class='fl'>495</span>, <span class='fl'>879</span>),
-  energy = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>238</span>, <span class='fl'>1461</span>, <span class='fl'>2615</span>)
-)
+<span class='va'>calib_lines</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
+  channel <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>86</span>, <span class='fl'>495</span>, <span class='fl'>879</span><span class='op'>)</span>,
+  energy <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>238</span>, <span class='fl'>1461</span>, <span class='fl'>2615</span><span class='op'>)</span>
+<span class='op'>)</span>
 
 <span class='co'>## Adjust the energy scale</span>
-(<span class='kw'>spc1</span> <span class='op'>&lt;-</span> <span class='fu'>energy_calibrate</span>(<span class='kw'>spc</span>, lines = <span class='kw'>calib_lines</span>))
+<span class='op'>(</span><span class='va'>spc1</span> <span class='op'>&lt;-</span> <span class='fu'>energy_calibrate</span><span class='op'>(</span><span class='va'>spc</span>, lines <span class='op'>=</span> <span class='va'>calib_lines</span><span class='op'>)</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: LaBr
-#&gt; *  date: 2020-09-24 08:50:18
+#&gt; *  date: 2020-09-30 17:30:05
 #&gt; *  live_time: 3385.54
 #&gt; *  real_time: 3403.67
 #&gt; *  channels: 1024
 #&gt; *  energy_min: -15.38
 #&gt; *  energy_max: 3052.2</div><div class='input'>
 <span class='co'>## Inspect results</span>
-<span class='fu'><a href='plot.html'>plot</a></span>(<span class='kw'>spc1</span>, xaxis = <span class='st'>"energy"</span>, yaxis = <span class='st'>"count"</span>) <span class='op'>+</span>
-  <span class='kw'>ggplot2</span>::<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_abline.html'>geom_vline</a></span>(xintercept = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>238</span>, <span class='fl'>1461</span>, <span class='fl'>2614.5</span>), linetype = <span class='fl'>3</span>)
+<span class='fu'><a href='plot.html'>plot</a></span><span class='op'>(</span><span class='va'>spc1</span>, xaxis <span class='op'>=</span> <span class='st'>"energy"</span>, yaxis <span class='op'>=</span> <span class='st'>"count"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>ggplot2</span><span class='fu'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_abline.html'>geom_vline</a></span><span class='op'>(</span>xintercept <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>238</span>, <span class='fl'>1461</span>, <span class='fl'>2614.5</span><span class='op'>)</span>, linetype <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span>
 </div><div class='img'><img src='energy-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
