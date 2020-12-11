@@ -120,20 +120,20 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the released version of <strong>gamma</strong> from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"gamma"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"gamma"</span><span class="op">)</span></code></pre></div>
 <p>Or install the development version from GitHub with:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"crp2a/gamma"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"crp2a/gamma"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="co">## A minimal example</span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">## A minimal example</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://crp2a.github.io/gamma/">gamma</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">magrittr</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://magrittr.tidyverse.org">magrittr</a></span><span class="op">)</span>
 
 <span class="co">## Find the full path to the spectrum file</span>
 <span class="va">spc_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata/LaBr.CNF"</span>, package <span class="op">=</span> <span class="st">"gamma"</span><span class="op">)</span>
@@ -156,10 +156,10 @@
 <span class="va">calib</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/energy.html">energy_calibrate</a></span><span class="op">(</span><span class="va">spectrum</span>, <span class="va">peaks</span><span class="op">)</span>
 
 <span class="co">## Inspect peaks</span>
-<span class="fu"><a href="reference/plot.html">plot</a></span><span class="op">(</span><span class="va">calib</span>, <span class="va">peaks</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="reference/plot.html">plot</a></span><span class="op">(</span><span class="va">calib</span>, <span class="va">peaks</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-usage-1.png" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="co">## Estimate the gamma dose rate of a set of spectra</span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">## Estimate the gamma dose rate of a set of spectra</span>
 <span class="co">## You may want to give extra attention to the energy calibration step</span>
 <span class="va">spc_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata/BDX_LaBr_1/test"</span>, package <span class="op">=</span> <span class="st">"gamma"</span><span class="op">)</span>
 <span class="va">spectra</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read.html">read</a></span><span class="op">(</span><span class="va">spc_file</span><span class="op">)</span>
@@ -168,10 +168,10 @@
 <span class="co">## As this curve is instrument specific, you will have to build your own</span>
 <span class="co">## See help(fit_dose)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"BDX_LaBr_1"</span>, package <span class="op">=</span> <span class="st">"gamma"</span><span class="op">)</span>
-<span class="fu"><a href="reference/plot.html">plot</a></span><span class="op">(</span><span class="va">BDX_LaBr_1</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="reference/plot.html">plot</a></span><span class="op">(</span><span class="va">BDX_LaBr_1</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-calib-1.png" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
 <span class="co">## Estimate the gamma dose rate</span>
 <span class="op">(</span><span class="va">doses</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/doserate.html">dose_predict</a></span><span class="op">(</span><span class="va">BDX_LaBr_1</span>, <span class="va">spectra</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;            names   dose_Ni  error_Ni dose_NiEi error_NiEi</span>
@@ -182,7 +182,7 @@
 <span class="co">#&gt; 5 20130813181639 1065.0899 26.314061 1024.9325  20.341807</span>
 <span class="co">#&gt; 6 20160717175757  565.6418 19.579056  496.7518   9.869339</span>
 <span class="co">#&gt; 7 20160717181052  480.1928 15.805970  421.8396   8.379351</span>
-<span class="co">#&gt; 8 20160717182601  497.7403 15.232673  436.2712   8.663842</span></pre></div>
+<span class="co">#&gt; 8 20160717182601  497.7403 15.232673  436.2712   8.663842</span></code></pre></div>
 </div>
 <div id="contributing" class="section level2">
 <h2 class="hasAnchor">

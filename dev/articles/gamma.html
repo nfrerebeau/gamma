@@ -100,7 +100,7 @@
       <h1 data-toc-skip>Manual</h1>
                         <h4 class="author">N. Frerebeau</h4>
             
-            <h4 class="date">2020-10-27</h4>
+            <h4 class="date">2020-12-11</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/crp2a/gamma/blob/master/vignettes/gamma.Rmd"><code>vignettes/gamma.Rmd</code></a></small>
       <div class="hidden name"><code>gamma.Rmd</code></div>
@@ -109,8 +109,8 @@
 
     
     
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://crp2a.github.io/gamma/">gamma</a></span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://crp2a.github.io/gamma/">gamma</a></span><span class="op">)</span></code></pre></div>
 <div id="overview" class="section level1">
 <h1 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h1>
@@ -123,20 +123,20 @@
 <li>Estimate the gamma dose rate with <code>predict_dose()</code>.</li>
 </ol>
 <p>The estimation of the gamma dose rate requires a calibration curve. This package contains several built-in curves, but as these are instrument-specific you may need to build your own (see <code>help(fit)</code>). These built-in curves are in use in several labs and can be used to reproduce published results. Check out the following vignettes for an overview of the fitting process.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="co"># IRAMAT-CRP2A LaBr (BDX1)</span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># IRAMAT-CRP2A LaBr (BDX1)</span>
 <span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span><span class="op">(</span><span class="st">"CRP2A#1"</span>, package <span class="op">=</span> <span class="st">"gamma"</span><span class="op">)</span>
 
 <span class="co"># CEREGE NaI (AIX1)</span>
-<span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span><span class="op">(</span><span class="st">"CEREGE#1"</span>, package <span class="op">=</span> <span class="st">"gamma"</span><span class="op">)</span></pre></div>
+<span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span><span class="op">(</span><span class="st">"CEREGE#1"</span>, package <span class="op">=</span> <span class="st">"gamma"</span><span class="op">)</span></code></pre></div>
 <p>Note that <strong>gamma</strong> uses the <em>International System of Units</em>: energy values are assumed to be in keV and dose rates in µGy/y.</p>
 </div>
 <div id="import-file" class="section level1">
 <h1 class="hasAnchor">
 <a href="#import-file" class="anchor"></a>Import file</h1>
 <p>Both Canberra CNF and TKA files can be imported.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="co"># Automatically skip the first channels</span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Automatically skip the first channels</span>
 <span class="co"># Import a CNF file</span>
 <span class="va">cnf_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata/LaBr.CNF"</span>, package <span class="op">=</span> <span class="st">"gamma"</span><span class="op">)</span>
 <span class="op">(</span><span class="va">spc_cnf</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read.html">read</a></span><span class="op">(</span><span class="va">cnf_test</span><span class="op">)</span><span class="op">)</span>
@@ -154,7 +154,7 @@
 <span class="op">(</span><span class="va">spc_tka</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read.html">read</a></span><span class="op">(</span><span class="va">tka_test</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; Gamma spectrum:</span>
 <span class="co">#&gt; *  name: LaBr</span>
-<span class="co">#&gt; *  date: 2020-10-27 07:33:06</span>
+<span class="co">#&gt; *  date: 2020-12-11 10:30:57</span>
 <span class="co">#&gt; *  live_time: 3385.54</span>
 <span class="co">#&gt; *  real_time: 3403.67</span>
 <span class="co">#&gt; *  channels: 1024</span>
@@ -164,15 +164,15 @@
 <span class="co"># Import all files in a given directory</span>
 <span class="va">files_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, package <span class="op">=</span> <span class="st">"gamma"</span><span class="op">)</span>
 <span class="op">(</span><span class="va">spc</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read.html">read</a></span><span class="op">(</span><span class="va">files_test</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; A collection of 3 gamma spectra: BeGe, LaBr, LaBr</span></pre></div>
+<span class="co">#&gt; A collection of 3 gamma spectra: BeGe, LaBr, LaBr</span></code></pre></div>
 </div>
 <div id="inspect-spectrum" class="section level1">
 <h1 class="hasAnchor">
 <a href="#inspect-spectrum" class="anchor"></a>Inspect spectrum</h1>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="co"># Plot CNF spectrum</span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Plot CNF spectrum</span>
 <span class="fu"><a href="../reference/plot.html">plot</a></span><span class="op">(</span><span class="va">spc_cnf</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="gamma_files/figure-html/inspect-1.png" width="672" style="display: block; margin: auto;"></p>
 </div>
 <div id="calibrate-the-energy-scale" class="section level1">
@@ -189,40 +189,40 @@
 <h3 class="hasAnchor">
 <a href="#clean" class="anchor"></a>Clean</h3>
 <p>Several channels can be dropped to retain only part of the spectrum. If no specific value is provided, an attempt is made to define the number of channels to skip at the beginning of the spectrum. This drops all channels before the highest count maximum. This is intended to deal with the artefact produced by the rapid growth of random background noise towards low energies.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="co"># Use a square root transformation</span>
-<span class="va">sliced</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/signal_slice.html">signal_slice</a></span><span class="op">(</span><span class="va">spc_tka</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Use a square root transformation</span>
+<span class="va">sliced</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/signal_slice.html">signal_slice</a></span><span class="op">(</span><span class="va">spc_tka</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="stabilization" class="section level3">
 <h3 class="hasAnchor">
 <a href="#stabilization" class="anchor"></a>Stabilization</h3>
 <p>The stabilization step aims at improving the identification of peaks with a low signal-to-noise ratio. This particularly targets higher energy peaks.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="co"># Use a square root transformation</span>
-<span class="va">transformed</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/signal_stabilize.html">signal_stabilize</a></span><span class="op">(</span><span class="va">sliced</span>, f <span class="op">=</span> <span class="va">sqrt</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Use a square root transformation</span>
+<span class="va">transformed</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/signal_stabilize.html">signal_stabilize</a></span><span class="op">(</span><span class="va">sliced</span>, f <span class="op">=</span> <span class="va">sqrt</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="smoothing" class="section level3">
 <h3 class="hasAnchor">
 <a href="#smoothing" class="anchor"></a>Smoothing</h3>
-<div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="co"># Use a 21 point Savitzky-Golay-Filter to smooth the spectrum</span>
-<span class="va">smoothed</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/smooth.html">signal_smooth</a></span><span class="op">(</span><span class="va">transformed</span>, method <span class="op">=</span> <span class="st">"savitzky"</span>, m <span class="op">=</span> <span class="fl">21</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Use a 21 point Savitzky-Golay-Filter to smooth the spectrum</span>
+<span class="va">smoothed</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/smooth.html">signal_smooth</a></span><span class="op">(</span><span class="va">transformed</span>, method <span class="op">=</span> <span class="st">"savitzky"</span>, m <span class="op">=</span> <span class="fl">21</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="baseline-correction" class="section level3">
 <h3 class="hasAnchor">
 <a href="#baseline-correction" class="anchor"></a>Baseline correction</h3>
 <p>The baseline estimation is performed using the SNIP algorithm <span class="citation">(Ryan et al. 1988; Morháč et al. 1997; Morháč and Matoušek 2008)</span>. You can apply the LLS operator to your data, use a decreasing clipping window or change the number of iterations (see references).</p>
-<div class="sourceCode" id="cb8"><pre class="downlit">
-<span class="co"># Estimate the baseline of a single file</span>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Estimate the baseline of a single file</span>
 <span class="va">baseline</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/baseline.html">signal_baseline</a></span><span class="op">(</span><span class="va">smoothed</span>, method <span class="op">=</span> <span class="st">"SNIP"</span>, decreasing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
 <span class="co"># Plot spectrum + baseline</span>
 <span class="fu"><a href="../reference/plot.html">plot</a></span><span class="op">(</span><span class="va">smoothed</span>, <span class="va">baseline</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Spectrum + baseline"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="gamma_files/figure-html/baseline-estimate-1.png" width="672" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb9"><pre class="downlit">
-<span class="co"># Substract the estimated baseline</span>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Substract the estimated baseline</span>
 <span class="va">corrected</span> <span class="op">&lt;-</span> <span class="va">smoothed</span> <span class="op">-</span> <span class="va">baseline</span>
 <span class="co"># Or, remove the baseline in one go</span>
 <span class="co"># corrected &lt;- removeBaseline(smoothed)</span>
@@ -230,25 +230,25 @@
 <span class="co"># Plot the corrected spectrum</span>
 <span class="fu"><a href="../reference/plot.html">plot</a></span><span class="op">(</span><span class="va">corrected</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Baseline-corrected spectrum"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="gamma_files/figure-html/baseline-remove-1.png" width="672" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb10"><pre class="downlit">
-<span class="co"># You can remove the baseline of multiple spectra in one go</span>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># You can remove the baseline of multiple spectra in one go</span>
 <span class="co"># Note that the same parameters will be used for all spectra</span>
-<span class="va">clean</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/baseline.html">signal_correct</a></span><span class="op">(</span><span class="va">spc</span><span class="op">)</span></pre></div>
+<span class="va">clean</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/baseline.html">signal_correct</a></span><span class="op">(</span><span class="va">spc</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="peak-detection" class="section level3">
 <h3 class="hasAnchor">
 <a href="#peak-detection" class="anchor"></a>Peak detection</h3>
 <p>Once you have a baseline-corrected spectrum, you can try to automatically find peaks in the spectrum. A local maximum has to be the highest one in the given window and has to be higher than <span class="math inline">\(k\)</span> times the noise to be recognized as peak.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit">
-<span class="co"># Detect peaks in a single file</span>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Detect peaks in a single file</span>
 <span class="va">peaks</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/peaks_find.html">peaks_find</a></span><span class="op">(</span><span class="va">corrected</span><span class="op">)</span>
 
 <span class="co"># Plot spectrum + peaks</span>
 <span class="fu"><a href="../reference/plot.html">plot</a></span><span class="op">(</span><span class="va">corrected</span>, <span class="va">peaks</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Peaks"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="gamma_files/figure-html/peak-detection-1.png" width="700"></p>
 </div>
 <div id="energy-scale-calibration" class="section level3">
@@ -256,8 +256,8 @@
 <a href="#energy-scale-calibration" class="anchor"></a>Energy scale calibration</h3>
 <p>If you know the correspondence between several channels and the energy scale, you can use these pairs of values to calibrate the spectrum. A second order polynomial model is fitted on these energy <em>vs</em> channel values, then used to predict the new energy scale of the spectrum.</p>
 <p>You can use the results of the peak detection and set the expected energy values.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit">
-<span class="co"># Set the energy values (in keV)</span>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Set the energy values (in keV)</span>
 <span class="fu">set_energy</span><span class="op">(</span><span class="va">peaks</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">238</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">1461</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">2615</span><span class="op">)</span>
 <span class="va">peaks</span>
 <span class="co">#&gt; 3 peaks were detected:</span>
@@ -272,25 +272,25 @@
 <span class="co"># Plot the spectrum</span>
 <span class="fu"><a href="../reference/plot.html">plot</a></span><span class="op">(</span><span class="va">scaled</span>, xaxis <span class="op">=</span> <span class="st">"energy"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Calibrated spectrum"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="gamma_files/figure-html/calibrate-fit-1.png" width="672" style="display: block; margin: auto;"></p>
 <p>Alternatively, you can do it by hand.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit">
-<span class="co"># Create a list of channel-enegy pairs</span>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Create a list of channel-enegy pairs</span>
 <span class="va">calib_lines</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
   channel <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">84</span>, <span class="fl">492</span>, <span class="fl">865</span><span class="op">)</span>,
   energy <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">238</span>, <span class="fl">1461</span>, <span class="fl">2615</span><span class="op">)</span>
 <span class="op">)</span>
 
 <span class="co"># Calibrate the spectrum using these fixed lines</span>
-<span class="va">scaled2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/energy.html">energy_calibrate</a></span><span class="op">(</span><span class="va">spc_tka</span>, lines <span class="op">=</span> <span class="va">calib_lines</span><span class="op">)</span></pre></div>
+<span class="va">scaled2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/energy.html">energy_calibrate</a></span><span class="op">(</span><span class="va">spc_tka</span>, lines <span class="op">=</span> <span class="va">calib_lines</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 <div id="use-the-pipe" class="section level2">
 <h2 class="hasAnchor">
 <a href="#use-the-pipe" class="anchor"></a>Use the pipe!</h2>
-<div class="sourceCode" id="cb14"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">magrittr</span><span class="op">)</span>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://magrittr.tidyverse.org">magrittr</a></span><span class="op">)</span>
 
 <span class="co"># Spectrum pre-processing and peak detection</span>
 <span class="va">pks</span> <span class="op">&lt;-</span> <span class="va">spc_tka</span> <span class="op">%&gt;%</span>
@@ -308,7 +308,7 @@
 
 <span class="co"># Plot spectrum</span>
 <span class="fu"><a href="../reference/plot.html">plot</a></span><span class="op">(</span><span class="va">cal</span>, <span class="va">pks</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="gamma_files/figure-html/pipe-1.png" width="672" style="display: block; margin: auto;"></p>
 </div>
 </div>
@@ -316,10 +316,10 @@
 <h1 class="hasAnchor">
 <a href="#estimate-the-gamma-dose-rate" class="anchor"></a>Estimate the gamma dose rate</h1>
 <p>To estimate the gamma dose rate, you can either use one of the calibration curves distributed with this package or build your own.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit">
-<span class="co"># Load one of the built-in curves</span>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Load one of the built-in curves</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">BDX_LaBr_1</span><span class="op">)</span> <span class="co"># IRAMAT-CRP2A (Bordeaux)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">AIX_NaI_1</span><span class="op">)</span> <span class="co"># CEREGE (Aix-en-Provence)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">AIX_NaI_1</span><span class="op">)</span> <span class="co"># CEREGE (Aix-en-Provence)</span></code></pre></div>
 <p>The construction of a calibration curve requires a set of reference spectra for which the gamma dose rate is known and a background noise measurement. First, each reference spectrum is integrated over a given interval, then normalized to active time and corrected for background noise. The dose rate is finally modelled by the integrated signal value used as a linear predictor.</p>
 <p>See <code>vignette(doserate)</code> for a reproducible example.</p>
 </div>
