@@ -83,7 +83,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
       </span>
     </div>
 
@@ -91,7 +91,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -120,7 +120,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/crp2a/gamma/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -242,8 +242,8 @@ scale calibration (see <code><a href='energy.html'>energy_calibrate</a></code>).
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Import a Canberra CNF file</span>
-<span class='kw'>spc_file</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/LaBr.CNF"</span>, package = <span class='st'>"gamma"</span>)
-(<span class='kw'>spc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='kw'>spc_file</span>))
+<span class='va'>spc_file</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"extdata/LaBr.CNF"</span>, package <span class='op'>=</span> <span class='st'>"gamma"</span><span class='op'>)</span>
+<span class='op'>(</span><span class='va'>spc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span><span class='op'>(</span><span class='va'>spc_file</span><span class='op'>)</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; Gamma spectrum:
 #&gt; *  name: LaBr
 #&gt; *  date: 2019-02-07 11:48:18
@@ -253,18 +253,18 @@ scale calibration (see <code><a href='energy.html'>energy_calibrate</a></code>).
 #&gt; *  energy_min: -7
 #&gt; *  energy_max: 3124.91</div><div class='input'>
 <span class='co'>## Access</span>
-<span class='fu'><a href='mutator.html'>get_hash</a></span>(<span class='kw'>spc</span>)
-</div><div class='output co'>#&gt; [1] "e0a2c67173cf7f407db7148ae0058bbf"</div><div class='input'><span class='fu'><a href='mutator.html'>get_names</a></span>(<span class='kw'>spc</span>)
-</div><div class='output co'>#&gt; [1] "LaBr"</div><div class='input'><span class='fu'><a href='mutator.html'>get_livetime</a></span>(<span class='kw'>spc</span>)
-</div><div class='output co'>#&gt; [1] 3385.54</div><div class='input'><span class='fu'><a href='mutator.html'>get_realtime</a></span>(<span class='kw'>spc</span>)
+<span class='fu'><a href='mutator.html'>get_hash</a></span><span class='op'>(</span><span class='va'>spc</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "e0a2c67173cf7f407db7148ae0058bbf"</div><div class='input'><span class='fu'><a href='mutator.html'>get_names</a></span><span class='op'>(</span><span class='va'>spc</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "LaBr"</div><div class='input'><span class='fu'><a href='mutator.html'>get_livetime</a></span><span class='op'>(</span><span class='va'>spc</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 3385.54</div><div class='input'><span class='fu'><a href='mutator.html'>get_realtime</a></span><span class='op'>(</span><span class='va'>spc</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; [1] 3403.67</div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span>(<span class='kw'>spc</span>)
-</div><div class='output co'>#&gt; [1] 1024</div><div class='input'><span class='fu'><a href='mutator.html'>range_energy</a></span>(<span class='kw'>spc</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>spc</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 1024</div><div class='input'><span class='fu'><a href='mutator.html'>range_energy</a></span><span class='op'>(</span><span class='va'>spc</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; [1]   -7.004032 3124.914528</div><div class='input'>
 <span class='co'>## Subset</span>
-<span class='kw'>spc</span>[[<span class='st'>"date"</span>]]
-</div><div class='output co'>#&gt; [1] "2019-02-07 11:48:18 UTC"</div><div class='input'><span class='kw'>spc</span>[[<span class='st'>"instrument"</span>]]
-</div><div class='output co'>#&gt; [1] "InSpector 1000"</div><div class='input'><span class='kw'>spc</span>[[<span class='st'>"file_format"</span>]]
+<span class='va'>spc</span><span class='op'>[[</span><span class='st'>"date"</span><span class='op'>]</span><span class='op'>]</span>
+</div><div class='output co'>#&gt; [1] "2019-02-07 11:48:18 UTC"</div><div class='input'><span class='va'>spc</span><span class='op'>[[</span><span class='st'>"instrument"</span><span class='op'>]</span><span class='op'>]</span>
+</div><div class='output co'>#&gt; [1] "InSpector 1000"</div><div class='input'><span class='va'>spc</span><span class='op'>[[</span><span class='st'>"file_format"</span><span class='op'>]</span><span class='op'>]</span>
 </div><div class='output co'>#&gt; [1] "CNF"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

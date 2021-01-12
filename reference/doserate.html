@@ -83,7 +83,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gamma</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
       </span>
     </div>
 
@@ -91,7 +91,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -120,7 +120,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/crp2a/gamma/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -146,40 +146,40 @@
     <p><code>dose_fit</code> builds a calibration curve for gamma dose rate estimation.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>dose_fit</span>(<span class='kw'>object</span>, <span class='kw'>background</span>, <span class='kw'>doses</span>, <span class='kw'>...</span>)
+    <pre class="usage"><span class='fu'>dose_fit</span><span class='op'>(</span><span class='va'>object</span>, <span class='va'>background</span>, <span class='va'>doses</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>dose_predict</span>(<span class='kw'>object</span>, <span class='kw'>spectrum</span>, <span class='kw'>...</span>)
+<span class='fu'>dose_predict</span><span class='op'>(</span><span class='va'>object</span>, <span class='va'>spectrum</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for GammaSpectra,GammaSpectrum,matrix</span>
-<span class='fu'>dose_fit</span>(
-  <span class='kw'>object</span>,
-  <span class='kw'>background</span>,
-  <span class='kw'>doses</span>,
-  <span class='kw'>range_Ni</span>,
-  <span class='kw'>range_NiEi</span>,
-  alpha = <span class='fl'>0.05</span>,
-  details = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(authors = <span class='st'>""</span>, date = <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>())
-)
+<span class='fu'>dose_fit</span><span class='op'>(</span>
+  <span class='va'>object</span>,
+  <span class='va'>background</span>,
+  <span class='va'>doses</span>,
+  <span class='va'>range_Ni</span>,
+  <span class='va'>range_NiEi</span>,
+  alpha <span class='op'>=</span> <span class='fl'>0.05</span>,
+  details <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>authors <span class='op'>=</span> <span class='st'>""</span>, date <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+<span class='op'>)</span>
 
 <span class='co'># S4 method for GammaSpectra,GammaSpectrum,data.frame</span>
-<span class='fu'>dose_fit</span>(
-  <span class='kw'>object</span>,
-  <span class='kw'>background</span>,
-  <span class='kw'>doses</span>,
-  <span class='kw'>range_Ni</span>,
-  <span class='kw'>range_NiEi</span>,
-  alpha = <span class='fl'>0.05</span>,
-  details = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(authors = <span class='st'>""</span>, date = <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>())
-)
+<span class='fu'>dose_fit</span><span class='op'>(</span>
+  <span class='va'>object</span>,
+  <span class='va'>background</span>,
+  <span class='va'>doses</span>,
+  <span class='va'>range_Ni</span>,
+  <span class='va'>range_NiEi</span>,
+  alpha <span class='op'>=</span> <span class='fl'>0.05</span>,
+  details <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>authors <span class='op'>=</span> <span class='st'>""</span>, date <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+<span class='op'>)</span>
 
 <span class='co'># S4 method for CalibrationCurve,missing</span>
-<span class='fu'>dose_predict</span>(<span class='kw'>object</span>, sigma = <span class='fl'>1</span>, epsilon = <span class='fl'>0</span>)
+<span class='fu'>dose_predict</span><span class='op'>(</span><span class='va'>object</span>, sigma <span class='op'>=</span> <span class='fl'>1</span>, epsilon <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span>
 
 <span class='co'># S4 method for CalibrationCurve,GammaSpectrum</span>
-<span class='fu'>dose_predict</span>(<span class='kw'>object</span>, <span class='kw'>spectrum</span>, sigma = <span class='fl'>1</span>, epsilon = <span class='fl'>0</span>)
+<span class='fu'>dose_predict</span><span class='op'>(</span><span class='va'>object</span>, <span class='va'>spectrum</span>, sigma <span class='op'>=</span> <span class='fl'>1</span>, epsilon <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span>
 
 <span class='co'># S4 method for CalibrationCurve,GammaSpectra</span>
-<span class='fu'>dose_predict</span>(<span class='kw'>object</span>, <span class='kw'>spectrum</span>, sigma = <span class='fl'>1</span>, epsilon = <span class='fl'>0</span>)</pre>
+<span class='fu'>dose_predict</span><span class='op'>(</span><span class='va'>object</span>, <span class='va'>spectrum</span>, sigma <span class='op'>=</span> <span class='fl'>1</span>, epsilon <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -288,16 +288,16 @@ introduced by the calibration of the energy scale of the spectrum.</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Import CNF files</span>
 <span class='co'>## Spectra</span>
-<span class='kw'>spc_dir</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/BDX_LaBr_1/calibration"</span>, package = <span class='st'>"gamma"</span>)
-<span class='kw'>spc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='kw'>spc_dir</span>)
+<span class='va'>spc_dir</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"extdata/BDX_LaBr_1/calibration"</span>, package <span class='op'>=</span> <span class='st'>"gamma"</span><span class='op'>)</span>
+<span class='va'>spc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span><span class='op'>(</span><span class='va'>spc_dir</span><span class='op'>)</span>
 
 <span class='co'>## Background</span>
-<span class='kw'>bkg_dir</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/BDX_LaBr_1/background"</span>, package = <span class='st'>"gamma"</span>)
-<span class='kw'>bkg</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span>(<span class='kw'>bkg_dir</span>)
+<span class='va'>bkg_dir</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"extdata/BDX_LaBr_1/background"</span>, package <span class='op'>=</span> <span class='st'>"gamma"</span><span class='op'>)</span>
+<span class='va'>bkg</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read.html'>read</a></span><span class='op'>(</span><span class='va'>bkg_dir</span><span class='op'>)</span>
 
 <span class='co'>## Get dose rate values</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='st'>"clermont"</span>)
-(<span class='kw'>doses</span> <span class='op'>&lt;-</span> <span class='kw'>clermont</span>[, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"gamma_dose"</span>, <span class='st'>"gamma_error"</span>)])
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>"clermont"</span><span class='op'>)</span>
+<span class='op'>(</span><span class='va'>doses</span> <span class='op'>&lt;-</span> <span class='va'>clermont</span><span class='op'>[</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"gamma_dose"</span>, <span class='st'>"gamma_error"</span><span class='op'>)</span><span class='op'>]</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;        gamma_dose gamma_error
 #&gt; BRIQUE  1986.4620   35.619679
 #&gt; C341     849.9668   21.317615
@@ -309,15 +309,15 @@ introduced by the calibration of the energy scale of the spectrum.</p></td>
 #&gt; MPX      964.0196   13.274167
 #&gt; PEP     2538.2217  112.169131</div><div class='input'>
 <span class='co'>## Build the calibration curve</span>
-<span class='kw'>calib_curve</span> <span class='op'>&lt;-</span> <span class='fu'>dose_fit</span>(<span class='kw'>spc</span>, <span class='kw'>bkg</span>, <span class='kw'>doses</span>,
-                        range_Ni = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>300</span>, <span class='fl'>2800</span>),
-                        range_NiEi = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>165</span>, <span class='fl'>2800</span>))
+<span class='va'>calib_curve</span> <span class='op'>&lt;-</span> <span class='fu'>dose_fit</span><span class='op'>(</span><span class='va'>spc</span>, <span class='va'>bkg</span>, <span class='va'>doses</span>,
+                        range_Ni <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>300</span>, <span class='fl'>2800</span><span class='op'>)</span>,
+                        range_NiEi <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>165</span>, <span class='fl'>2800</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='co'>## Plot the curve</span>
-<span class='fu'><a href='plot.html'>plot</a></span>(<span class='kw'>calib_curve</span>, threshold = <span class='st'>"Ni"</span>)
+<span class='fu'><a href='plot.html'>plot</a></span><span class='op'>(</span><span class='va'>calib_curve</span>, threshold <span class='op'>=</span> <span class='st'>"Ni"</span><span class='op'>)</span>
 </div><div class='img'><img src='doserate-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>## Estimate gamma dose rates</span>
-<span class='fu'>dose_predict</span>(<span class='kw'>calib_curve</span>, <span class='kw'>spc</span>)
+<span class='fu'>dose_predict</span><span class='op'>(</span><span class='va'>calib_curve</span>, <span class='va'>spc</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;    names   dose_Ni error_Ni dose_NiEi error_NiEi
 #&gt; 1 BRIQUE 1955.8683 43.87228 1946.9606   39.37700
 #&gt; 2   C341  843.9938 21.12857  843.0632   17.05374
